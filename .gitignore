@@ -1,6 +1,7 @@
 /apk/
 /Binaries/
-/Build/
+/Build/Android_*
+/Build/Receipts
 /Config/
 /Content/
 /Intermediate/
