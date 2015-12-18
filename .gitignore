@@ -1,0 +1,22 @@
+/apk/
+/Binaries/
+/Build/
+/Config/
+/Content/
+/Intermediate/
+/Saved/
+/Source/
+
+
+
+
+
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
