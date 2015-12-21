@@ -27,6 +27,7 @@ README.md   | readme 파일
 
 의존 라이브러리
 -------------
+[Android]
 
 1. [네이버 아이디 로그인](https://nid.naver.com/devcenter/docs.nhn?menu=Android)
 2. android support library v13
@@ -38,5 +39,13 @@ README.md   | readme 파일
 
 
 
+[iOS]
 
+1. [네이버 아이디 로그인-4.1.4](https://nid.naver.com/devcenter/docs.nhn?menu=IOS)
+2. [AFNetworking](https://github.com/AFNetworking/AFNetworking)(UIImageView+AFNetworking)
+<br>1.x ~ 2.x 모두 사용 가능하며 2.6.1에서 테스트 진행했습니다.
+
+라이선스
+-------------
+........
 
