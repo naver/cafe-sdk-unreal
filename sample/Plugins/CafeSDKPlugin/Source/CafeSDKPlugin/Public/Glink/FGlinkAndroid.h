@@ -14,17 +14,17 @@ public:
     FGlinkAndroid();
     void executeMain();
     
-    void executeArticlePost(int menuId, FString subject, FString content);
+    void executeArticlePost(int32 menuId, FString subject, FString content);
     
-    void executeArticlePostWithImage(int menuId, FString subject, FString content, FString filePath);
+    void executeArticlePostWithImage(int32 menuId, FString subject, FString content, FString filePath);
     
-    void executeArticlePostWithVideo(int menuId, FString subject, FString content, FString filePath);
+    void executeArticlePostWithVideo(int32 menuId, FString subject, FString content, FString filePath);
     
 private:
     static FName GetClassName();
     FJavaClassMethod initMethod;
     FJavaClassMethod executeMainMethod;
-//    FJavaClassMethod executeArticlePostMethod;
+    FJavaClassMethod executeArticlePostMethod;
 //    FJavaClassMethod executeArticlePostWithImageMethod;
 //    FJavaClassMethod executeArticlePostWithVideoMethod;
     

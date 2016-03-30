@@ -17,7 +17,7 @@ FGlinkAndroid::FGlinkAndroid()
 , FJavaClassObject(GetClassName(), "()V")
 , initMethod(GetClassMethod("init", "(Ljava/lang/String;Ljava/lang/String;I)V"))
 , executeMainMethod(GetClassMethod("startHome", "(Landroid/app/Activity;)V"))
-//, executeArticlePostMethod(GetClassMethod("startWrite", "(Landroid/app/Activity;I;Ljava/lang/String;Ljava/lang/String)V"))
+, executeArticlePostMethod(GetClassMethod("startWrite", "(Landroid/app/Activity;ILjava/lang/String;Ljava/lang/String;)V"))
 //, executeArticlePostWithImageMethod(GetClassMethod("startImageWrite", "(Landroid/app/Activity;I;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String)V"))
 //, executeArticlePostWithVideoMethod(GetClassMethod("startVideoWrite", "(Landroid/app/Activity;I;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String)V"))
 {
@@ -31,17 +31,17 @@ void FGlinkAndroid::executeMain()
     CallMethod<void>(executeMainMethod, FJavaWrapper::GameActivityThis);
 }
 
-//void FGlinkAndroid::executeArticlePost(int menuId, FString subject, FString content) {
-//    CallMethod<void>(executeArticlePostMethod, FJavaWrapper::GameActivityThis, menuId, GetJString(subject), GetJString(content));
-//}
-//
-//void FGlinkAndroid::executeArticlePostWithImage(int menuId, FString subject, FString content, FString filePath) {
+void FGlinkAndroid::executeArticlePost(int32 menuId, FString subject, FString content) {
+    CallMethod<void>(executeArticlePostMethod, FJavaWrapper::GameActivityThis, menuId, GetJString(subject), GetJString(content));
+}
+
+void FGlinkAndroid::executeArticlePostWithImage(int menuId, FString subject, FString content, FString filePath) {
 //    CallMethod<void>(executeArticlePostWithImageMethod, FJavaWrapper::GameActivityThis, GetJString(subject), GetJString(content), GetJString(filePath));
-//}
-//
-//void FGlinkAndroid::executeArticlePostWithVideo(int menuId, FString subject, FString content, FString filePath) {
+}
+
+void FGlinkAndroid::executeArticlePostWithVideo(int menuId, FString subject, FString content, FString filePath) {
 //    CallMethod<void>(executeArticlePostWithVideoMethod, FJavaWrapper::GameActivityThis, GetJString(subject), GetJString(content), GetJString(filePath));
-//}
+}
 
 FName FGlinkAndroid::GetClassName()
 {

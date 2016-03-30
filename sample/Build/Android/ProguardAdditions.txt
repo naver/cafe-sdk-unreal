@@ -1,3 +1,7 @@
+
+
 -keep class com.naver.glink.android.sdk.** {
     *;
 }
+
+
