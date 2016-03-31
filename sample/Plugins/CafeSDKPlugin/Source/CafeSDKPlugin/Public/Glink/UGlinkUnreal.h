@@ -6,9 +6,6 @@ UCLASS()
 class CAFESDKPLUGIN_API UGlinkUnreal : public UObject {
     GENERATED_UCLASS_BODY()
 public:
-    FGlink* glink;
-    
-    //UGlinkUnreal();
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSDK")
     void executeMain();
@@ -21,4 +18,7 @@ public:
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSDK")
     void executeArticlePostWithVideo(int32 menuId, FString subject, FString content, FString filePath);
+    
+private:
+    FGlink *glink;
 };

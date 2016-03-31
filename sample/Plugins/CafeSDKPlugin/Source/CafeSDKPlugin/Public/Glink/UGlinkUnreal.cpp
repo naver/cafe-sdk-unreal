@@ -4,10 +4,6 @@
 
 
 
-//UGlinkUnreal::UGlinkUnreal() {
-//
-//}
-
 UGlinkUnreal::UGlinkUnreal( const FObjectInitializer& ObjectInitializer )
 : Super( ObjectInitializer )
 {
