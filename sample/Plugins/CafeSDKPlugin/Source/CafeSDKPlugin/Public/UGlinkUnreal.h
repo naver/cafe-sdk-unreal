@@ -1,11 +1,13 @@
 #pragma once
-#include "FGlink.h"
 #include "UGlinkUnreal.generated.h"
 
 UCLASS()
 class CAFESDKPLUGIN_API UGlinkUnreal : public UObject {
     GENERATED_UCLASS_BODY()
 public:
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSDK")
+    void StartProfile();
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSDK")
     void executeMain();
@@ -18,7 +20,4 @@ public:
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSDK")
     void executeArticlePostWithVideo(int32 menuId, FString subject, FString content, FString filePath);
-    
-private:
-    FGlink *glink;
 };

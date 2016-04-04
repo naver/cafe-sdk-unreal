@@ -2,11 +2,11 @@
 
 #include "CafeSDKPluginPrivatePCH.h"
 #include "CafeSDKUserWidget.h"
-#include "Glink/UGlinkUnreal.h"
+#include "UGlinkUnreal.h"
 
 
-
-void UCafeSDKUserWidget::StartGlink() {
+void UCafeSDKUserWidget::StartGlink()
+{
     UGlinkUnreal *glinkUnreal = NewObject<UGlinkUnreal>();
     glinkUnreal->executeMain();
 

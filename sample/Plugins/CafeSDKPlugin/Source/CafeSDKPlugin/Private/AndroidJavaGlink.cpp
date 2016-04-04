@@ -1,10 +1,7 @@
 #include "CafeSDKPluginPrivatePCH.h"
+#include "AndroidJavaGlink.h"
 
 #if PLATFORM_ANDROID
-
-#include "FGlinkAndroid.h"
-#include "Android/AndroidApplication.h"
-
 
 FAndroidJavaGlink::FAndroidJavaGlink()
 {
@@ -77,34 +74,6 @@ FName FAndroidJavaGlink::GetClassName()
     {
         return FName("");
     }
-}
-
-
-FGlinkAndroid::FGlinkAndroid()
-{
-    Glink.Init(
-        FGlinkAndroid::NaverLoginClientId,
-        FGlinkAndroid::NaverLoginClientSecret,
-        FGlinkAndroid::CafeId
-    );
-}
-
-
-void FGlinkAndroid::executeMain()
-{
-    Glink.StartMenu();
-}
-
-void FGlinkAndroid::executeArticlePost(int32 menuId, FString subject, FString content)
-{
-}
-
-void FGlinkAndroid::executeArticlePostWithImage(int menuId, FString subject, FString content, FString filePath)
-{
-}
-
-void FGlinkAndroid::executeArticlePostWithVideo(int menuId, FString subject, FString content, FString filePath)
-{
 }
 
 #endif // PLATFORM_ANDROID

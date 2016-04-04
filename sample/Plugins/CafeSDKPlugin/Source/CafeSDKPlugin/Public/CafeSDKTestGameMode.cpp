@@ -3,7 +3,7 @@
 #include "CafeSDKPluginPrivatePCH.h"
 #include "CafeSDKTestGameMode.h"
 
-#include "Glink/UGlinkUnreal.h"
+#include "UGlinkUnreal.h"
 
 
 void ACafeSDKTestGameMode::BeginPlay()

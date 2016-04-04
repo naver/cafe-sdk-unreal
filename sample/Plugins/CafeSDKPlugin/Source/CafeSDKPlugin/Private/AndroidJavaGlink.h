@@ -1,10 +1,9 @@
-
 #pragma once
 
 #if PLATFORM_ANDROID
 
 #include "Core.h"
-#include "FGlink.h"
+#include "Android/AndroidApplication.h"
 #include "Android/AndroidJava.h"
 #include "Runtime/Launch/Public/Android/AndroidJNI.h"
 
@@ -36,23 +35,6 @@ private:
     FJavaClassMethod StartEventMethod;
     FJavaClassMethod StartMenuMethod;
     FJavaClassMethod StartProfileMethod;
-};
-
-
-class FGlinkAndroid : public FGlink
-{
-public:
-    FGlinkAndroid();
-    void executeMain();
-    
-    void executeArticlePost(int32 menuId, FString subject, FString content);
-    
-    void executeArticlePostWithImage(int32 menuId, FString subject, FString content, FString filePath);
-    
-    void executeArticlePostWithVideo(int32 menuId, FString subject, FString content, FString filePath);
-    
-private:
-    FAndroidJavaGlink Glink;
 };
 
 #endif // PLATFORM_ANDROID
