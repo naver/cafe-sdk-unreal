@@ -4,42 +4,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingRight="11dp"
-    android:paddingLeft="11dp"
-    android:paddingTop="24dp">
+    android:paddingLeft="11dp">
 
-  <RelativeLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginBottom="8dp">
-
-    <Button
-        android:id="@+id/cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/gl_btn_boardcancel"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp"
-        android:text="취소"
-        android:textColor="@color/gray4"
-        android:textSize="14dp"/>
-
-    <Button
-        android:id="@+id/join"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/gl_btn_boardconfirm"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp"
-        android:text="완료"
-        android:textColor="@color/white1"
-        android:textSize="14dp"/>
-  </RelativeLayout>
-
-  <include layout="@layout/include_divider"/>
-
-  <Button
+    <TextView
       android:id="@+id/menus_button"
       android:layout_width="match_parent"
       android:layout_height="40dp"
@@ -52,7 +19,7 @@
       android:singleLine="true"
       android:layout_marginTop="3dp"/>
 
-  <include layout="@layout/include_divider_opacity_5"/>
+  <include layout="@layout/view_divider_opacity_5"/>
 
   <EditText
       android:id="@+id/subject"
@@ -66,5 +33,5 @@
       android:textSize="16dp"
       android:imeOptions="flagNoFullscreen"/>
 
-  <include layout="@layout/include_divider_opacity_5"/>
+  <include layout="@layout/view_divider_opacity_5"/>
 </LinearLayout>

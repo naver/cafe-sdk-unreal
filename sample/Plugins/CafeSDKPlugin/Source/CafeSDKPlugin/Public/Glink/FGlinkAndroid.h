@@ -1,6 +1,8 @@
 
 #pragma once
 
+#if PLATFORM_ANDROID
+
 #include "Core.h"
 #include "FGlink.h"
 #include "Android/AndroidJava.h"
@@ -52,3 +54,5 @@ public:
 private:
     FAndroidJavaGlink Glink;
 };
+
+#endif // PLATFORM_ANDROID

@@ -4,28 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gl_img_plate"
     tools:context="com.naver.glink.android.sdk.ui.ArticlesFragment">
 
   <RelativeLayout
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:background="@drawable/gl_img_plate">
+      android:layout_height="match_parent">
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh_layout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipChildren="false">
+        android:orientation="vertical">
 
-      <ListView
-          android:id="@android:id/list"
+      <include android:id="@+id/header_for_portrait" layout="@layout/item_articles_header"/>
+
+      <android.support.v4.widget.SwipeRefreshLayout
+          android:id="@+id/swipe_refresh_layout"
           android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:divider="@null"
-          android:dividerHeight="0dp"
-          android:listSelector="@drawable/gl_list_selector"
-          android:cacheColorHint="@android:color/transparent"/>
-    </android.support.v4.widget.SwipeRefreshLayout>
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          android:clipChildren="false">
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:listSelector="@drawable/gl_list_selector"
+            android:cacheColorHint="@android:color/transparent"/>
+      </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@android:id/empty"
@@ -34,9 +43,24 @@
         android:clickable="true"
         android:orientation="vertical">
 
-      <include layout="@layout/item_articles_header"/>
-      <include layout="@layout/item_empty"/>
+      <include android:id="@+id/empty_header_for_portrait" layout="@layout/item_articles_header"/>
+
+      <include
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          layout="@layout/item_empty"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="12dp"
+        android:background="@drawable/gl_btn_back"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -44,15 +68,15 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="8dp"
-        android:layout_marginRight="11dp">
+        android:layout_marginRight="12dp">
 
-      <Button
+      <TextView
           android:id="@+id/article_write"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:background="@drawable/gl_btn_flwrite"/>
 
-      <Button
+      <TextView
           android:id="@+id/search"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -60,5 +84,5 @@
     </LinearLayout>
   </RelativeLayout>
 
-  <include layout="@layout/include_network_error"/>
+  <include layout="@layout/view_fragment_error"/>
 </FrameLayout>

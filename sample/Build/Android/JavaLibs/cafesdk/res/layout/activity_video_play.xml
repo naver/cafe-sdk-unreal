@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/black2"
     tools:context="com.naver.glink.android.sdk.ui.VideoPlayActivity">
-  
-  <VideoView
+
+<VideoView
       android:id="@+id/video_view"
       android:layout_width="match_parent"
       android:layout_height="match_parent"

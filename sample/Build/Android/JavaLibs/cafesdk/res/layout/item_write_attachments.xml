@@ -2,10 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="77dp"
-    android:orientation="horizontal"
     android:paddingBottom="4dp"
     android:paddingRight="11dp"
-    android:paddingLeft="11dp">
+    android:paddingLeft="11dp"
+    android:clickable="true"
+    android:orientation="horizontal">
 
   <RelativeLayout
       android:id="@+id/attachment1"
@@ -22,7 +23,7 @@
         android:layout_centerInParent="true"
         android:background="#e9ecef"/>
 
-    <Button
+      <TextView
         android:id="@+id/delete_attachment1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,7 +67,7 @@
         android:layout_centerInParent="true"
         android:background="#e9ecef"/>
 
-    <Button
+      <TextView
         android:id="@+id/delete_attachment2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -110,7 +111,7 @@
         android:layout_centerInParent="true"
         android:background="#e9ecef"/>
 
-    <Button
+      <TextView
         android:id="@+id/delete_attachment3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -154,7 +155,7 @@
         android:layout_centerInParent="true"
         android:background="#e9ecef"/>
 
-    <Button
+      <TextView
         android:id="@+id/delete_attachment4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

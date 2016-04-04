@@ -1,3 +1,7 @@
+#include "CafeSDKPluginPrivatePCH.h"
+
+#if PLATFORM_ANDROID
+
 #include "FGlinkAndroid.h"
 #include "Android/AndroidApplication.h"
 
@@ -102,3 +106,5 @@ void FGlinkAndroid::executeArticlePostWithImage(int menuId, FString subject, FSt
 void FGlinkAndroid::executeArticlePostWithVideo(int menuId, FString subject, FString content, FString filePath)
 {
 }
+
+#endif // PLATFORM_ANDROID
