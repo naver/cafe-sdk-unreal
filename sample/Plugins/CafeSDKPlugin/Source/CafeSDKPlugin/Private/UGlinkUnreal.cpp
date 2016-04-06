@@ -1,9 +1,12 @@
 #include "CafeSDKPluginPrivatePCH.h"
 #include "UGlinkUnreal.h"
-#include "AndroidJavaGlink.h"
 
 
 #if PLATFORM_ANDROID
+
+#include "AndroidJavaGlink.h"
+#include "AndroidJavaCafeSdk.h"
+
 
 UGlinkUnreal::UGlinkUnreal( const FObjectInitializer& ObjectInitializer )
     : Super( ObjectInitializer )
@@ -18,19 +21,53 @@ void UGlinkUnreal::StartProfile()
     Glink.StartProfile();
 }
 
-void UGlinkUnreal::executeMain()
+void UGlinkUnreal::StartHome()
 {
     FAndroidJavaGlink Glink;
     Glink.StartHome();
 }
 
-void UGlinkUnreal::executeArticlePost(int32 menuId, FString subject, FString content) {
+void UGlinkUnreal::StartNotice()
+{
+    FAndroidJavaGlink Glink;
+    Glink.StartNotice();
 }
 
-void UGlinkUnreal::executeArticlePostWithImage(int32 menuId, FString subject, FString content, FString filePath) {
+void UGlinkUnreal::StartEvent()
+{
+//    FAndroidJavaGlink Glink;
+//    Glink.StartEvent();
+    
+    FAndroidJavaCafeSdk CafeSdk;
+    CafeSdk.ShowMessage();
 }
 
-void UGlinkUnreal::executeArticlePostWithVideo(int32 menuId, FString subject, FString content, FString filePath) {
+#else
+
+UGlinkUnreal::UGlinkUnreal( const FObjectInitializer& ObjectInitializer )
+    : Super( ObjectInitializer )
+{
+    // do nothing.
+}
+
+void UGlinkUnreal::StartProfile()
+{
+    // do nothing.
+}
+
+void UGlinkUnreal::StartHome()
+{
+    // do nothing.
+}
+
+void UGlinkUnreal::StartNotice()
+{
+    // do nothing.
+}
+
+void UGlinkUnreal::StartEvent()
+{
+    // do nothing.
 }
 
 #endif

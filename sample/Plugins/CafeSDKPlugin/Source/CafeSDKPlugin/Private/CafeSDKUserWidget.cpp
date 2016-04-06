@@ -7,7 +7,6 @@
 
 void UCafeSDKUserWidget::StartGlink()
 {
-    UGlinkUnreal *glinkUnreal = NewObject<UGlinkUnreal>();
-    glinkUnreal->executeMain();
-
+    UGlinkUnreal* glinkUnreal = NewObject<UGlinkUnreal>();
+    glinkUnreal->StartHome();
 }

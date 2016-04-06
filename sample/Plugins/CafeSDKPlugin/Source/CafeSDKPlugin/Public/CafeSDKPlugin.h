@@ -22,7 +22,7 @@ public:
      */
     static inline FCafeSDKPluginModule& Get()
     {
-        return FModuleManager::LoadModuleChecked< FCafeSDKPluginModule >( "MYGOGO" );
+        return FModuleManager::LoadModuleChecked< FCafeSDKPluginModule >( "CafeSDK" );
     }
     
     /**
@@ -32,6 +32,6 @@ public:
      */
     static inline bool IsAvailable()
     {
-        return FModuleManager::Get().IsModuleLoaded( "MYGOGO" );
+        return FModuleManager::Get().IsModuleLoaded( "CafeSDK" );
     }
 };

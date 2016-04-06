@@ -7,7 +7,6 @@
 #include "Android/AndroidJava.h"
 #include "Runtime/Launch/Public/Android/AndroidJNI.h"
 
-
 class FAndroidJavaGlink
 {
 public:
