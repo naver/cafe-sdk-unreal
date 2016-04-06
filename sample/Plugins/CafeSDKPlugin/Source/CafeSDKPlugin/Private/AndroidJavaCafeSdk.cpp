@@ -7,15 +7,17 @@
 
 FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     : FJavaClassObject(GetClassName(), "()V")
-    , InitMethod(GetClassMethod("init", "()V"))
-    , ShowMessageMethod(GetClassMethod("showMessage", "(Landroid/app/Activity;)V"))
+    , InitMethod(GetClassMethod("init", "(Ljava/lang/String;Ljava/lang/String;I)V"))
 {
-    CallMethod<void>(InitMethod);
 }
 
-void FAndroidJavaCafeSdk::ShowMessage()
+void FAndroidJavaCafeSdk::Init(FString ClientId, FString ClientSecret, int32 CafeId) const
 {
-    CallMethod<void>(ShowMessageMethod, FJavaWrapper::GameActivityThis);
+    CallMethod<void>(InitMethod,
+        FJavaClassObject::GetJString(ClientId),
+        FJavaClassObject::GetJString(ClientSecret),
+        CafeId
+        );
 }
 
 FName FAndroidJavaCafeSdk::GetClassName()
@@ -34,30 +36,50 @@ FName FAndroidJavaCafeSdk::GetClassName()
 
 static void ShowMessage(const FString& message)
 {
-    FJavaAndroidMessageBox MessageBox;
-    MessageBox.SetText(message);
-    MessageBox.AddButton("ok");
-    MessageBox.Show();
-}
-
-extern "C" void Java_cafesdk_CafeSdk_nativeShowMessageBox(JNIEnv* jenv, jobject thiz)
-{
-    ShowMessage("show message box.");
-}
-
-extern "C" void Java_cafesdk_CafeSdk_nativeOnSdkStarted(JNIEnv* jenv, jobject thiz)
-{
     if (FTaskGraphInterface::IsRunning())
     {
         FEvent* Event = FPlatformProcess::GetSynchEventFromPool();
         
-        FGraphEventRef Task = FFunctionGraphTask::CreateAndDispatchWhenReady([&]()
+        FGraphEventRef Task = FFunctionGraphTask::CreateAndDispatchWhenReady([=]()
         {
-            ShowMessage("cafe sdk started.");
-        }, TStatId(), NULL, ENamedThreads::MainQueue);
+            FJavaAndroidMessageBox MessageBox;
+            MessageBox.SetText(message);
+            MessageBox.AddButton("ok");
+            MessageBox.Show();
+        }, TStatId(), NULL, ENamedThreads::GameThread);
         
         FTaskGraphInterface::Get().TriggerEventWhenTaskCompletes(Event, Task, ENamedThreads::GameThread);
     }
+}
+
+extern "C" void Java_cafesdk_CafeSdk_nativeOnSdkStarted(JNIEnv* jenv, jobject thiz)
+{
+    ShowMessage("nativeOnSdkStarted");
+}
+
+extern "C" void Java_cafesdk_CafeSdk_nativeOnSdkStopped(JNIEnv* env, jobject thiz)
+{
+    ShowMessage("nativeOnSdkStopped");
+}
+
+extern "C" void Java_cafesdk_CafeSdk_nativeOnClickAppSchemeBanner(JNIEnv* env, jobject thiz, jstring appScheme)
+{
+    ShowMessage("nativeOnClickAppSchemeBanner");
+}
+
+extern "C" void Java_cafesdk_CafeSdk_nativeOnJoined(JNIEnv* env, jobject thiz)
+{
+    ShowMessage("nativeOnJoined");
+}
+
+extern "C" void Java_cafesdk_CafeSdk_nativeOnPostedArticle(JNIEnv* env, jobject thiz, jint menuId)
+{
+    ShowMessage("nativeOnPostedArticle");
+}
+
+extern "C" void Java_cafesdk_CafeSdk_nativeOnPostedComment(JNIEnv* env, jobject thiz, jint articleId)
+{
+    ShowMessage("nativeOnPostedComment");
 }
 
 #endif // PLATFORM_ANDROID

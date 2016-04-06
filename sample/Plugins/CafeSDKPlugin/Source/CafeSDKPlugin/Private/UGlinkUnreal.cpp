@@ -11,8 +11,8 @@
 UGlinkUnreal::UGlinkUnreal( const FObjectInitializer& ObjectInitializer )
     : Super( ObjectInitializer )
 {
-    FAndroidJavaGlink Glink;
-    Glink.Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
+    FAndroidJavaCafeSdk CafeSdk;
+    CafeSdk.Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
 }
 
 void UGlinkUnreal::StartProfile()
@@ -35,11 +35,8 @@ void UGlinkUnreal::StartNotice()
 
 void UGlinkUnreal::StartEvent()
 {
-//    FAndroidJavaGlink Glink;
-//    Glink.StartEvent();
-    
-    FAndroidJavaCafeSdk CafeSdk;
-    CafeSdk.ShowMessage();
+    FAndroidJavaGlink Glink;
+    Glink.StartEvent();
 }
 
 #else

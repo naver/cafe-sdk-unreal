@@ -9,7 +9,7 @@ class FAndroidJavaCafeSdk  : public FJavaClassObject
 {
 public:
     FAndroidJavaCafeSdk();
-    void ShowMessage();
+    void Init(FString ClientId, FString ClientSecret, int32 CafeId) const;
     
 private:
     static FName GetClassName();
