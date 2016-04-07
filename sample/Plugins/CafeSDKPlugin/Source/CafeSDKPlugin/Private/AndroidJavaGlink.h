@@ -18,7 +18,11 @@ public:
     void StartNotice() const;
     void StartEvent() const;
     void StartMenu() const;
+    void StartMenuById(int32 MenuId) const;
     void StartProfile() const;
+    
+    bool IsShow() const;
+    void SyncGameUserId(FString GameUserId) const;
     
 private:
     static FName GetClassName();
@@ -33,7 +37,10 @@ private:
     FJavaClassMethod StartNoticeMethod;
     FJavaClassMethod StartEventMethod;
     FJavaClassMethod StartMenuMethod;
+    FJavaClassMethod StartMenuByIdMethod;
     FJavaClassMethod StartProfileMethod;
+    FJavaClassMethod IsShowMethod;
+    FJavaClassMethod SyncGameUserIdMethod;
 };
 
 #endif // PLATFORM_ANDROID

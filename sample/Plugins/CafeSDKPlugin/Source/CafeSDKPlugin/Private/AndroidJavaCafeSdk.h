@@ -15,7 +15,6 @@ private:
     static FName GetClassName();
     
     FJavaClassMethod InitMethod;
-    FJavaClassMethod ShowMessageMethod;
 };
 
 #endif // PLATFORM_ANDROID

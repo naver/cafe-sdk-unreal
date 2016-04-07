@@ -36,6 +36,8 @@ FName FAndroidJavaCafeSdk::GetClassName()
 
 static void ShowMessage(const FString& message)
 {
+    return;
+    
     if (FTaskGraphInterface::IsRunning())
     {
         FEvent* Event = FPlatformProcess::GetSynchEventFromPool();
