@@ -1,3 +1,4 @@
+// Copyright 2016 NAVER Corp. All rights reserved.
 
 #pragma once
 
@@ -21,5 +22,17 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     static void StartMenu();
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void StartMenuById(int32 MenuId);
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void StartProfile();
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void StartWrite(int32 MenuId, FString Subject, FString Text);
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void StartImageWrite(int32 MenuId, FString Subject, FString Text, FString ImageUri);
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void StartVideoWrite(int32 MenuId, FString Subject, FString Text, FString VideoUri);
 };

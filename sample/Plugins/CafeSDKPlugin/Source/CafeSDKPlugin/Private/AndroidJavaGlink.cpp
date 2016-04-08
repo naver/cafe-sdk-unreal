@@ -1,3 +1,5 @@
+// Copyright 2016 NAVER Corp. All rights reserved.
+
 #include "CafeSDKPluginPrivatePCH.h"
 #include "AndroidJavaGlink.h"
 
@@ -8,12 +10,17 @@ FAndroidJavaGlink::FAndroidJavaGlink()
     Class = FAndroidApplication::FindJavaClass(GetClassName().GetPlainANSIString());
     
     InitMethod = GetClassStaticMethod("init", "(Ljava/lang/String;Ljava/lang/String;I)V");
+    
     StartHomeMethod = GetClassStaticMethod("startHome", "(Landroid/app/Activity;)V");
     StartNoticeMethod = GetClassStaticMethod("startNotice", "(Landroid/app/Activity;)V");
     StartEventMethod = GetClassStaticMethod("startEvent", "(Landroid/app/Activity;)V");
     StartMenuMethod = GetClassStaticMethod("startMenu", "(Landroid/app/Activity;)V");
     StartMenuByIdMethod = GetClassStaticMethod("startMenu", "(Landroid/app/Activity;I)V");
     StartProfileMethod = GetClassStaticMethod("startProfile", "(Landroid/app/Activity;)V");
+    StartWriteMethod = GetClassStaticMethod("startWrite", "(Landroid/app/Activity;ILjava/lang/String;Ljava/lang/String;)V");
+    StartImageWriteMethod = GetClassStaticMethod("startImageWrite", "(Landroid/app/Activity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    StartVideoWriteMethod = GetClassStaticMethod("startVideoWrite", "(Landroid/app/Activity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    
     IsShowMethod = GetClassStaticMethod("isShowGlink", "(Landroid/app/Activity;)Z");
     SyncGameUserIdMethod = GetClassStaticMethod("syncGameUserId", "(Landroid/app/Activity;Ljava/lang/String;)V");
 }
@@ -59,6 +66,47 @@ void FAndroidJavaGlink::StartTab(const FJavaClassMethod& JavaClassMethod) const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     JEnv->CallStaticVoidMethod(Class, JavaClassMethod.Method, FJavaWrapper::GameActivityThis);
+}
+
+void FAndroidJavaGlink::StartWrite(int32 MenuId, FString Subject, FString Text) const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    
+    JEnv->CallStaticVoidMethod(Class,
+        StartWriteMethod.Method,
+        FJavaWrapper::GameActivityThis,
+        MenuId,
+        FJavaClassObject::GetJString(Subject),
+        FJavaClassObject::GetJString(Text)
+        );
+}
+
+void FAndroidJavaGlink::StartImageWrite(int32 MenuId, FString Subject, FString Text, FString ImageUri) const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    
+    JEnv->CallStaticVoidMethod(Class,
+        StartWriteMethod.Method,
+        FJavaWrapper::GameActivityThis,
+        MenuId,
+        FJavaClassObject::GetJString(Subject),
+        FJavaClassObject::GetJString(Text),
+        FJavaClassObject::GetJString(ImageUri)
+        );
+}
+
+void FAndroidJavaGlink::StartVideoWrite(int32 MenuId, FString Subject, FString Text, FString VideoUri) const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    
+    JEnv->CallStaticVoidMethod(Class,
+        StartWriteMethod.Method,
+        FJavaWrapper::GameActivityThis,
+        MenuId,
+        FJavaClassObject::GetJString(Subject),
+        FJavaClassObject::GetJString(Text),
+        FJavaClassObject::GetJString(VideoUri)
+        );
 }
 
 bool FAndroidJavaGlink::IsShow() const

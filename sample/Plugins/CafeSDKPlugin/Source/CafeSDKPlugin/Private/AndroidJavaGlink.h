@@ -1,3 +1,5 @@
+// Copyright 2016 NAVER Corp. All rights reserved.
+
 #pragma once
 
 #if PLATFORM_ANDROID
@@ -20,6 +22,9 @@ public:
     void StartMenu() const;
     void StartMenuById(int32 MenuId) const;
     void StartProfile() const;
+    void StartWrite(int32 MenuId, FString Subject, FString Text) const;
+    void StartImageWrite(int32 MenuId, FString Subject, FString Text, FString ImageUri) const;
+    void StartVideoWrite(int32 MenuId, FString Subject, FString Text, FString VideoUri) const;
     
     bool IsShow() const;
     void SyncGameUserId(FString GameUserId) const;
@@ -39,6 +44,9 @@ private:
     FJavaClassMethod StartMenuMethod;
     FJavaClassMethod StartMenuByIdMethod;
     FJavaClassMethod StartProfileMethod;
+    FJavaClassMethod StartWriteMethod;
+    FJavaClassMethod StartImageWriteMethod;
+    FJavaClassMethod StartVideoWriteMethod;
     FJavaClassMethod IsShowMethod;
     FJavaClassMethod SyncGameUserIdMethod;
 };

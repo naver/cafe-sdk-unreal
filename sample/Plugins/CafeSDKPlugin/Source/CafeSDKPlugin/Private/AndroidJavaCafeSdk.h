@@ -1,3 +1,5 @@
+// Copyright 2016 NAVER Corp. All rights reserved.
+
 #pragma once
 
 #if PLATFORM_ANDROID

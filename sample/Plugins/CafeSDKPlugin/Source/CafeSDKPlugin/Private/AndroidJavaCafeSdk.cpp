@@ -1,3 +1,5 @@
+// Copyright 2016 NAVER Corp. All rights reserved.
+
 #include "CafeSDKPluginPrivatePCH.h"
 #include "AndroidJavaCafeSdk.h"
 

@@ -1,14 +1,10 @@
-// Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
+// Copyright 2016 NAVER Corp. All rights reserved.
 
 #pragma once
 
 #include "CoreUObject.h"
 #include "Engine.h"
-
 #include "ModuleManager.h"
-
-
-
 
 class FCafeSDKPluginModule : public IModuleInterface
 {
