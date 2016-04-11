@@ -5,8 +5,28 @@
 
 #if PLATFORM_ANDROID
 
-#include "AndroidJavaGlink.h"
-#include "AndroidJavaCafeSdk.h"
+#include "Android/AndroidJavaGlink.h"
+#include "Android/AndroidJavaCafeSdk.h"
+
+FAndroidJavaGlink* GetSharedGlink()
+{
+    static FAndroidJavaGlink* Glink = nullptr;
+    if (Glink == nullptr)
+    {
+        Glink = new FAndroidJavaGlink();
+    }
+    return Glink;
+}
+
+FAndroidJavaCafeSdk* GetSharedCafeSdk()
+{
+    static FAndroidJavaCafeSdk* CafeSdk = nullptr;
+    if (CafeSdk == nullptr)
+    {
+        CafeSdk = new FAndroidJavaCafeSdk();
+    }
+    return CafeSdk;
+}
 
 UCafeSdkBlueprintLibrary::UCafeSdkBlueprintLibrary(const FObjectInitializer& ObjectInitializer)
     : Super(ObjectInitializer)
@@ -14,91 +34,65 @@ UCafeSdkBlueprintLibrary::UCafeSdkBlueprintLibrary(const FObjectInitializer& Obj
     // do nothing.
 }
 
+void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int32 CafeId)
+{
+    GetSharedCafeSdk()->Init(ClientId, ClientSecret, CafeId);
+}
+
 void UCafeSdkBlueprintLibrary::StartHome()
 {
-    FAndroidJavaCafeSdk CafeSdk;
-    CafeSdk.Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
-    
-    FAndroidJavaGlink Glink;
-    Glink.StartHome();
+    GetSharedGlink()->StartHome();
 }
 
 void UCafeSdkBlueprintLibrary::StartNotice()
 {
-    FAndroidJavaCafeSdk CafeSdk;
-    CafeSdk.Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
-    
-    FAndroidJavaGlink Glink;
-    Glink.StartNotice();
+    GetSharedGlink()->StartNotice();
 }
 
 void UCafeSdkBlueprintLibrary::StartEvent()
 {
-    FAndroidJavaCafeSdk CafeSdk;
-    CafeSdk.Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
-    
-    FAndroidJavaGlink Glink;
-    Glink.StartEvent();
+    GetSharedGlink()->StartEvent();
 }
 
 void UCafeSdkBlueprintLibrary::StartMenu()
 {
-    FAndroidJavaCafeSdk CafeSdk;
-    CafeSdk.Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
-    
-    FAndroidJavaGlink Glink;
-    Glink.StartMenu();
+    GetSharedGlink()->StartMenu();
 }
 
 void UCafeSdkBlueprintLibrary::StartMenuById(int32 MenuId)
 {
-    FAndroidJavaCafeSdk CafeSdk;
-    CafeSdk.Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
-    
-    FAndroidJavaGlink Glink;
-    Glink.StartMenuById(MenuId);
+    GetSharedGlink()->StartMenuById(MenuId);
 }
 
 void UCafeSdkBlueprintLibrary::StartProfile()
 {
-    FAndroidJavaCafeSdk CafeSdk;
-    CafeSdk.Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
-    
-    FAndroidJavaGlink Glink;
-    Glink.StartProfile();
+    GetSharedGlink()->StartProfile();
 }
 
 void UCafeSdkBlueprintLibrary::StartWrite(int32 MenuId, FString Subject, FString Text)
 {
-    FAndroidJavaCafeSdk CafeSdk;
-    CafeSdk.Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
-    
-    FAndroidJavaGlink Glink;
-    Glink.StartWrite(MenuId, Subject, Text);
+    GetSharedGlink()->StartWrite(MenuId, Subject, Text);
 }
 
 void UCafeSdkBlueprintLibrary::StartImageWrite(int32 MenuId, FString Subject, FString Text, FString ImageUri)
 {
-    FAndroidJavaCafeSdk CafeSdk;
-    CafeSdk.Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
-    
-    FAndroidJavaGlink Glink;
-    Glink.StartImageWrite(MenuId, Subject, Text, ImageUri);
+    GetSharedGlink()->StartImageWrite(MenuId, Subject, Text, ImageUri);
 }
 
 void UCafeSdkBlueprintLibrary::StartVideoWrite(int32 MenuId, FString Subject, FString Text, FString VideoUri)
 {
-    FAndroidJavaCafeSdk CafeSdk;
-    CafeSdk.Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
-    
-    FAndroidJavaGlink Glink;
-    Glink.StartVideoWrite(MenuId, Subject, Text, VideoUri);
+    GetSharedGlink()->StartVideoWrite(MenuId, Subject, Text, VideoUri);
 }
 
 #else
 
 UCafeSdkBlueprintLibrary::UCafeSdkBlueprintLibrary(const FObjectInitializer& ObjectInitializer)
     : Super(ObjectInitializer)
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int32 CafeId)
 {
     // do nothing.
 }

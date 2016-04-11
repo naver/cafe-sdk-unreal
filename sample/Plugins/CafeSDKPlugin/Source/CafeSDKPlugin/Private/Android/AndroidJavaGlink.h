@@ -2,8 +2,6 @@
 
 #pragma once
 
-#if PLATFORM_ANDROID
-
 #include "Core.h"
 #include "Android/AndroidApplication.h"
 #include "Android/AndroidJava.h"
@@ -50,5 +48,3 @@ private:
     FJavaClassMethod IsShowMethod;
     FJavaClassMethod SyncGameUserIdMethod;
 };
-
-#endif // PLATFORM_ANDROID

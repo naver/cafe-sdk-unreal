@@ -3,8 +3,6 @@
 #include "CafeSDKPluginPrivatePCH.h"
 #include "AndroidJavaGlink.h"
 
-#if PLATFORM_ANDROID
-
 FAndroidJavaGlink::FAndroidJavaGlink()
 {
     Class = FAndroidApplication::FindJavaClass(GetClassName().GetPlainANSIString());
@@ -144,5 +142,3 @@ FName FAndroidJavaGlink::GetClassName()
         return FName("");
     }
 }
-
-#endif // PLATFORM_ANDROID

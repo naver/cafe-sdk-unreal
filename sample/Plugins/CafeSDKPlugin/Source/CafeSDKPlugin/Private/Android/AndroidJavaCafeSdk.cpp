@@ -2,10 +2,8 @@
 
 #include "CafeSDKPluginPrivatePCH.h"
 #include "AndroidJavaCafeSdk.h"
-
-#if PLATFORM_ANDROID
-
 #include "Runtime/Launch/Public/Android/AndroidJNI.h"
+#include "Android/AndroidJavaMessageBox.h"
 
 FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     : FJavaClassObject(GetClassName(), "()V")
@@ -33,8 +31,6 @@ FName FAndroidJavaCafeSdk::GetClassName()
         return FName("");
     }
 }
-
-#include "Android/AndroidJavaMessageBox.h"
 
 static void ShowMessage(const FString& message)
 {
@@ -85,5 +81,3 @@ extern "C" void Java_cafesdk_CafeSdk_nativeOnPostedComment(JNIEnv* env, jobject 
 {
     ShowMessage("nativeOnPostedComment");
 }
-
-#endif // PLATFORM_ANDROID

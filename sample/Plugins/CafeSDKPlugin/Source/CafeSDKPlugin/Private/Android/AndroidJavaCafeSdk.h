@@ -2,8 +2,6 @@
 
 #pragma once
 
-#if PLATFORM_ANDROID
-
 #include "Core.h"
 #include "Android/AndroidJava.h"
 
@@ -18,5 +16,3 @@ private:
     
     FJavaClassMethod InitMethod;
 };
-
-#endif // PLATFORM_ANDROID

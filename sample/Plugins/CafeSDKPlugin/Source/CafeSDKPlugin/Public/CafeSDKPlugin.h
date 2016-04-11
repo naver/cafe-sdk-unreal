@@ -18,7 +18,7 @@ public:
      */
     static inline FCafeSDKPluginModule& Get()
     {
-        return FModuleManager::LoadModuleChecked< FCafeSDKPluginModule >( "CafeSDK" );
+        return FModuleManager::LoadModuleChecked< FCafeSDKPluginModule >( "CafeSDKPlugin" );
     }
     
     /**
@@ -28,6 +28,6 @@ public:
      */
     static inline bool IsAvailable()
     {
-        return FModuleManager::Get().IsModuleLoaded( "CafeSDK" );
+        return FModuleManager::Get().IsModuleLoaded( "CafeSDKPlugin" );
     }
 };
