@@ -3,7 +3,6 @@
 #include "CafeSDKPluginPrivatePCH.h"
 #include "AndroidJavaCafeSdk.h"
 #include "Runtime/Launch/Public/Android/AndroidJNI.h"
-#include "Android/AndroidJavaMessageBox.h"
 
 FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     : FJavaClassObject(GetClassName(), "()V")
@@ -32,52 +31,37 @@ FName FAndroidJavaCafeSdk::GetClassName()
     }
 }
 
-static void ShowMessage(const FString& message)
-{
-    return;
-    
-    if (FTaskGraphInterface::IsRunning())
-    {
-        FEvent* Event = FPlatformProcess::GetSynchEventFromPool();
-        
-        FGraphEventRef Task = FFunctionGraphTask::CreateAndDispatchWhenReady([=]()
-        {
-            FJavaAndroidMessageBox MessageBox;
-            MessageBox.SetText(message);
-            MessageBox.AddButton("ok");
-            MessageBox.Show();
-        }, TStatId(), NULL, ENamedThreads::GameThread);
-        
-        FTaskGraphInterface::Get().TriggerEventWhenTaskCompletes(Event, Task, ENamedThreads::GameThread);
-    }
-}
-
 extern "C" void Java_cafesdk_CafeSdk_nativeOnSdkStarted(JNIEnv* jenv, jobject thiz)
 {
-    ShowMessage("nativeOnSdkStarted");
+    FCafeSDKPluginModule::OnCafeSdkStarted.Broadcast();
 }
 
-extern "C" void Java_cafesdk_CafeSdk_nativeOnSdkStopped(JNIEnv* env, jobject thiz)
+extern "C" void Java_cafesdk_CafeSdk_nativeOnSdkStopped(JNIEnv* jenv, jobject thiz)
 {
-    ShowMessage("nativeOnSdkStopped");
+    FCafeSDKPluginModule::OnCafeSdkStopped.Broadcast();
 }
 
-extern "C" void Java_cafesdk_CafeSdk_nativeOnClickAppSchemeBanner(JNIEnv* env, jobject thiz, jstring appScheme)
+extern "C" void Java_cafesdk_CafeSdk_nativeOnClickAppSchemeBanner(JNIEnv* jenv, jobject thiz, jstring AppScheme)
 {
-    ShowMessage("nativeOnClickAppSchemeBanner");
+    const char* AppSchemeChars = jenv->GetStringUTFChars(AppScheme, 0);
+    
+    FString appScheme = UTF8_TO_TCHAR(AppSchemeChars);
+    FCafeSDKPluginModule::OnCafeSdkClickAppSchemeBanner.Broadcast(appScheme);
+    
+    jenv->ReleaseStringUTFChars(AppScheme, AppSchemeChars);
 }
 
-extern "C" void Java_cafesdk_CafeSdk_nativeOnJoined(JNIEnv* env, jobject thiz)
+extern "C" void Java_cafesdk_CafeSdk_nativeOnJoined(JNIEnv* jenv, jobject thiz)
 {
-    ShowMessage("nativeOnJoined");
+    FCafeSDKPluginModule::OnCafeSdkJoined.Broadcast();
 }
 
-extern "C" void Java_cafesdk_CafeSdk_nativeOnPostedArticle(JNIEnv* env, jobject thiz, jint menuId)
+extern "C" void Java_cafesdk_CafeSdk_nativeOnPostedArticle(JNIEnv* jenv, jobject thiz, jint MenuId)
 {
-    ShowMessage("nativeOnPostedArticle");
+    FCafeSDKPluginModule::OnCafeSdkPostedArticle.Broadcast(MenuId);
 }
 
-extern "C" void Java_cafesdk_CafeSdk_nativeOnPostedComment(JNIEnv* env, jobject thiz, jint articleId)
+extern "C" void Java_cafesdk_CafeSdk_nativeOnPostedComment(JNIEnv* jenv, jobject thiz, jint ArticleId)
 {
-    ShowMessage("nativeOnPostedComment");
+    FCafeSDKPluginModule::OnCafeSdkPostedComment.Broadcast(ArticleId);
 }

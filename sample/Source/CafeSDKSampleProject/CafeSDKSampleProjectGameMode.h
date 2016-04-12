@@ -13,4 +13,11 @@ class CAFESDKSAMPLEPROJECT_API ACafeSDKSampleProjectGameMode : public AGameMode
 	GENERATED_BODY()
 	
     virtual void InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage) override;
+    
+    void OnCafeSdkStarted();
+    void OnCafeSdkStopped();
+    void OnCafeSdkClickAppSchemeBanner(const FString& AppScheme);
+    void OnCafeSdkJoined();
+    void OnCafeSdkPostedArticle(int32 MenuId);
+    void OnCafeSdkPostedComment(int32 ArticleId);
 };

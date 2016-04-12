@@ -4,6 +4,13 @@
 
 #define LOCTEXT_NAMESPACE "FCafeSDKPluginModule"
 
+FCafeSDKPluginModule::FOnCafeSdkStarted FCafeSDKPluginModule::OnCafeSdkStarted;
+FCafeSDKPluginModule::FOnCafeSdkStopped FCafeSDKPluginModule::OnCafeSdkStopped;
+FCafeSDKPluginModule::FOnCafeSdkClickAppSchemeBanner FCafeSDKPluginModule::OnCafeSdkClickAppSchemeBanner;
+FCafeSDKPluginModule::FOnCafeSdkJoined FCafeSDKPluginModule::OnCafeSdkJoined;
+FCafeSDKPluginModule::FOnCafeSdkPostedArticle FCafeSDKPluginModule::OnCafeSdkPostedArticle;
+FCafeSDKPluginModule::FOnCafeSdkPostedComment FCafeSDKPluginModule::OnCafeSdkPostedComment;
+
 class CafeSDKPluginModule : public FCafeSDKPluginModule
 {
     /** IModuleInterface implementation */

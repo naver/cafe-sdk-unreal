@@ -30,4 +30,18 @@ public:
     {
         return FModuleManager::Get().IsModuleLoaded( "CafeSDKPlugin" );
     }
+    
+    DECLARE_MULTICAST_DELEGATE(FOnCafeSdkStarted);
+    DECLARE_MULTICAST_DELEGATE(FOnCafeSdkStopped);
+    DECLARE_MULTICAST_DELEGATE_OneParam(FOnCafeSdkClickAppSchemeBanner, const FString& /*AppScheme*/);
+    DECLARE_MULTICAST_DELEGATE(FOnCafeSdkJoined);
+    DECLARE_MULTICAST_DELEGATE_OneParam(FOnCafeSdkPostedArticle, int32 /*MenuId*/);
+    DECLARE_MULTICAST_DELEGATE_OneParam(FOnCafeSdkPostedComment, int32 /*ArticleId*/);
+    
+    static FOnCafeSdkStarted OnCafeSdkStarted;
+    static FOnCafeSdkStopped OnCafeSdkStopped;
+    static FOnCafeSdkClickAppSchemeBanner OnCafeSdkClickAppSchemeBanner;
+    static FOnCafeSdkJoined OnCafeSdkJoined;
+    static FOnCafeSdkPostedArticle OnCafeSdkPostedArticle;
+    static FOnCafeSdkPostedComment OnCafeSdkPostedComment;
 };
