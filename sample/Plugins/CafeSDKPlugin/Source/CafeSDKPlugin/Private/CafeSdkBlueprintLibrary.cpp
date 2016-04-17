@@ -84,6 +84,71 @@ void UCafeSdkBlueprintLibrary::StartVideoWrite(int32 MenuId, FString Subject, FS
     GetSharedGlink()->StartVideoWrite(MenuId, Subject, Text, VideoUri);
 }
 
+#elif PLATFORM_IOS
+
+#import <NaverCafeSDK/NCSDKManager.h>
+#include "IOSAppDelegate.h"
+
+UCafeSdkBlueprintLibrary::UCafeSdkBlueprintLibrary(const FObjectInitializer& ObjectInitializer)
+: Super(ObjectInitializer)
+{
+}
+
+void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int32 CafeId)
+{
+    [[NCSDKManager getSharedInstance] setNaverLoginClientId:ClientId.GetNSString()
+                                     naverLoginClientSecret:ClientSecret.GetNSString()
+                                                     cafeId:CafeId];
+}
+
+void UCafeSdkBlueprintLibrary::StartHome()
+{
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [[NCSDKManager getSharedInstance] setParentViewController:[IOSAppDelegate GetDelegate].IOSController];
+        [[NCSDKManager getSharedInstance] presentMainViewController];
+    });
+}
+
+void UCafeSdkBlueprintLibrary::StartNotice()
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::StartEvent()
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::StartMenu()
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::StartMenuById(int32 MenuId)
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::StartProfile()
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::StartWrite(int32 MenuId, FString Subject, FString Text)
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::StartImageWrite(int32 MenuId, FString Subject, FString Text, FString ImageUri)
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::StartVideoWrite(int32 MenuId, FString Subject, FString Text, FString VideoUri)
+{
+    // do nothing.
+}
+
 #else
 
 UCafeSdkBlueprintLibrary::UCafeSdkBlueprintLibrary(const FObjectInitializer& ObjectInitializer)

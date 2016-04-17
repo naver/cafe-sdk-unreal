@@ -45,6 +45,41 @@ namespace UnrealBuildTool.Rules
                     // ... add any modules that your module loads dynamically here ...
                 }
             );
+
+            if (Target.Platform == UnrealTargetPlatform.IOS)
+            {
+                // Add Libraries
+                PublicAdditionalLibraries.Add(UEBuildConfiguration.UEThirdPartySourceDirectory + "NaverCafeSDK/ios_naver_oauth_login/thirdPartyModule/libNaverLogin.a");
+
+                // Add framework
+                PublicAdditionalFrameworks.Add(
+                    new UEBuildFramework(
+						"NaverCafeSDK",
+						"../../ThirdPartyFrameworks/NaverCafeSDK.embeddedframework.zip",
+						"Resources/NaverCafeSDK.bundle"
+                    )
+                );
+
+                //PublicAdditionalFrameworks.Add(
+                //    new UEBuildFramework(
+                //        "AFNetworking",
+                //        "../../ThirdPartyFrameworks/AFNetworking.embeddedframework.zip"
+                //    )
+                //);
+
+                PublicFrameworks.AddRange(
+                    new string[] {
+						"UIKit",
+						"Foundation",
+						"MediaPlayer",
+						"SystemConfiguration",
+						"Security",
+						"MobileCoreServices",
+						"GameKit",
+                    }
+                );
+            }
+
 		}
 	}
 }
