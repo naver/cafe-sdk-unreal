@@ -50,6 +50,7 @@ namespace UnrealBuildTool.Rules
             {
                 // Add Libraries
                 PublicAdditionalLibraries.Add(UEBuildConfiguration.UEThirdPartySourceDirectory + "NaverCafeSDK/ios_naver_oauth_login/thirdPartyModule/libNaverLogin.a");
+                PublicAdditionalLibraries.Add(UEBuildConfiguration.UEThirdPartySourceDirectory + "NaverCafeSDK/libAFNetworking.a");
 
                 // Add framework
                 PublicAdditionalFrameworks.Add(
