@@ -73,12 +73,6 @@ namespace UnrealBuildTool.Rules
 						"../../ThirdPartyFrameworks/AFNetworking.embeddedframework.zip"
                     )
                 );
-                //PublicAdditionalFrameworks.Add(
-                //    new UEBuildFramework(
-                //        "AFNetworking",
-                //        "../../ThirdPartyFrameworks/AFNetworking.embeddedframework.zip"
-                //    )
-                //);
 
                 PublicFrameworks.AddRange(
                     new string[] {
