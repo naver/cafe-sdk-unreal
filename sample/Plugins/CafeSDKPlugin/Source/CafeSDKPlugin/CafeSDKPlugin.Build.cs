@@ -52,21 +52,21 @@ namespace UnrealBuildTool.Rules
                 PublicAdditionalFrameworks.Add(
                     new UEBuildFramework(
 						"NaverCafeSDK",
-						"../../iOS/ThirdPartyFrameworks/NaverCafeSDK.embeddedframework.zip",
+						"../../ThirdPartyFrameworks/iOS/NaverCafeSDK.embeddedframework.zip",
 						"Resources/NaverCafeSDK.bundle"
                     )
                 );
                 PublicAdditionalFrameworks.Add(
                     new UEBuildFramework(
 						"NaverLogin",
-						"../../iOS/ThirdPartyFrameworks/NaverLogin.embeddedframework.zip",
+						"../../ThirdPartyFrameworks/iOS/NaverLogin.embeddedframework.zip",
 						"Resources/NaverAuth.bundle"
                     )
                 );
                 PublicAdditionalFrameworks.Add(
                     new UEBuildFramework(
 						"AFNetworking",
-						"../../iOS/ThirdPartyFrameworks/AFNetworking.embeddedframework.zip"
+						"../../ThirdPartyFrameworks/iOS/AFNetworking.embeddedframework.zip"
                     )
                 );
 
