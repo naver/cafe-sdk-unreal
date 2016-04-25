@@ -48,29 +48,25 @@ namespace UnrealBuildTool.Rules
 
             if (Target.Platform == UnrealTargetPlatform.IOS)
             {
-                // Add Libraries
-                //PublicAdditionalLibraries.Add(UEBuildConfiguration.UEThirdPartySourceDirectory + "NaverCafeSDK/ios_naver_oauth_login/thirdPartyModule/libNaverLogin.a");
-                //PublicAdditionalLibraries.Add(UEBuildConfiguration.UEThirdPartySourceDirectory + "NaverCafeSDK/libAFNetworking.a");
-
                 // Add framework
                 PublicAdditionalFrameworks.Add(
                     new UEBuildFramework(
 						"NaverCafeSDK",
-						"../../ThirdPartyFrameworks/NaverCafeSDK.embeddedframework.zip",
+						"../../iOS/ThirdPartyFrameworks/NaverCafeSDK.embeddedframework.zip",
 						"Resources/NaverCafeSDK.bundle"
                     )
                 );
                 PublicAdditionalFrameworks.Add(
                     new UEBuildFramework(
 						"NaverLogin",
-						"../../ThirdPartyFrameworks/NaverLogin.embeddedframework.zip",
+						"../../iOS/ThirdPartyFrameworks/NaverLogin.embeddedframework.zip",
 						"Resources/NaverAuth.bundle"
                     )
                 );
                 PublicAdditionalFrameworks.Add(
                     new UEBuildFramework(
 						"AFNetworking",
-						"../../ThirdPartyFrameworks/AFNetworking.embeddedframework.zip"
+						"../../iOS/ThirdPartyFrameworks/AFNetworking.embeddedframework.zip"
                     )
                 );
 
