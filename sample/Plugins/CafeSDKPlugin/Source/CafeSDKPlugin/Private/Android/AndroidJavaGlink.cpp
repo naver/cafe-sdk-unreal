@@ -21,6 +21,8 @@ FAndroidJavaGlink::FAndroidJavaGlink()
     
     IsShowMethod = GetClassStaticMethod("isShowGlink", "(Landroid/app/Activity;)Z");
     SyncGameUserIdMethod = GetClassStaticMethod("syncGameUserId", "(Landroid/app/Activity;Ljava/lang/String;)V");
+    
+    StartMoreMethod = GetClassStaticMethod("startMore", "(Landroid/app/Activity;)V");
 }
 
 void FAndroidJavaGlink::Init(FString ClientId, FString ClientSecret, int32 CafeId) const
@@ -117,6 +119,11 @@ void FAndroidJavaGlink::SyncGameUserId(FString GameUserId) const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     JEnv->CallStaticVoidMethod(Class, SyncGameUserIdMethod.Method, FJavaWrapper::GameActivityThis, FJavaClassObject::GetJString(GameUserId));
+}
+
+void FAndroidJavaGlink::StartMore() const
+{
+    StartTab(StartMoreMethod);
 }
 
 FJavaClassMethod FAndroidJavaGlink::GetClassStaticMethod(const char* MethodName, const char* FuncSig) const

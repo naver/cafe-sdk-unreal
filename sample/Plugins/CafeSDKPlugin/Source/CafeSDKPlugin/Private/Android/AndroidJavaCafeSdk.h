@@ -3,13 +3,13 @@
 #pragma once
 
 #include "Core.h"
-#include "Android/AndroidJava.h"
+#include "AndroidJava.h"
 
-class FAndroidJavaCafeSdk  : public FJavaClassObject
+class FAndroidJavaCafeSdk : public FJavaClassObject
 {
 public:
     FAndroidJavaCafeSdk();
-    void Init(FString ClientId, FString ClientSecret, int32 CafeId) const;
+    void Init(FString ClientId, FString ClientSecret, int32 CafeId);
     
 private:
     static FName GetClassName();

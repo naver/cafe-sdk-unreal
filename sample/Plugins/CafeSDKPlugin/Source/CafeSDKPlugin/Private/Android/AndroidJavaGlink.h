@@ -27,6 +27,8 @@ public:
     bool IsShow() const;
     void SyncGameUserId(FString GameUserId) const;
     
+    void StartMore() const;
+    
 private:
     static FName GetClassName();
     
@@ -47,4 +49,5 @@ private:
     FJavaClassMethod StartVideoWriteMethod;
     FJavaClassMethod IsShowMethod;
     FJavaClassMethod SyncGameUserIdMethod;
+    FJavaClassMethod StartMoreMethod;
 };

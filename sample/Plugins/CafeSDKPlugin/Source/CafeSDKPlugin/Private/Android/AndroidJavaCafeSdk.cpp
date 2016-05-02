@@ -10,7 +10,7 @@ FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
 {
 }
 
-void FAndroidJavaCafeSdk::Init(FString ClientId, FString ClientSecret, int32 CafeId) const
+void FAndroidJavaCafeSdk::Init(FString ClientId, FString ClientSecret, int32 CafeId)
 {
     CallMethod<void>(InitMethod,
         FJavaClassObject::GetJString(ClientId),

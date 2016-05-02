@@ -84,6 +84,11 @@ void UCafeSdkBlueprintLibrary::StartVideoWrite(int32 MenuId, FString Subject, FS
     GetSharedGlink()->StartVideoWrite(MenuId, Subject, Text, VideoUri);
 }
 
+void UCafeSdkBlueprintLibrary::StartMore()
+{
+    GetSharedGlink()->StartMore();
+}
+
 #elif PLATFORM_IOS
 
 #import <NaverCafeSDK/NCSDKManager.h>
@@ -149,6 +154,11 @@ void UCafeSdkBlueprintLibrary::StartVideoWrite(int32 MenuId, FString Subject, FS
     // do nothing.
 }
 
+void UCafeSdkBlueprintLibrary::StartMore()
+{
+    // do nothing.
+}
+
 #else
 
 UCafeSdkBlueprintLibrary::UCafeSdkBlueprintLibrary(const FObjectInitializer& ObjectInitializer)
@@ -203,6 +213,11 @@ void UCafeSdkBlueprintLibrary::StartImageWrite(int32 MenuId, FString Subject, FS
 }
 
 void UCafeSdkBlueprintLibrary::StartVideoWrite(int32 MenuId, FString Subject, FString Text, FString VideoUri)
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::StartMore()
 {
     // do nothing.
 }
