@@ -16,3 +16,5 @@ private:
     
     FJavaClassMethod InitMethod;
 };
+
+FAndroidJavaCafeSdk* GetSharedCafeSdk();

@@ -45,6 +45,7 @@ Binaries/*
 
 # Builds
 Build/*
+!Build/Android
 
 # Don't ignore icon files in Build
 !Build/**/*.ico
@@ -67,7 +68,7 @@ DerivedDataCache/*
 .ctrlp_cache/
 
 ## Build generated
-build/
+# build/
 DerivedData/
 
 ## Various settings

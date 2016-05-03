@@ -51,3 +51,5 @@ private:
     FJavaClassMethod SyncGameUserIdMethod;
     FJavaClassMethod StartMoreMethod;
 };
+
+FAndroidJavaGlink* GetSharedGlink();

@@ -3,6 +3,16 @@
 #include "CafeSDKPluginPrivatePCH.h"
 #include "AndroidJavaGlink.h"
 
+FAndroidJavaGlink* GetSharedGlink()
+{
+    static FAndroidJavaGlink* Glink = nullptr;
+    if (Glink == nullptr)
+    {
+        Glink = new FAndroidJavaGlink();
+    }
+    return Glink;
+}
+
 FAndroidJavaGlink::FAndroidJavaGlink()
 {
     Class = FAndroidApplication::FindJavaClass(GetClassName().GetPlainANSIString());

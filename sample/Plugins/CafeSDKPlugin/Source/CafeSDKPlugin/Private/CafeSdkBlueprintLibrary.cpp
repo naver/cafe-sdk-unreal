@@ -8,26 +8,6 @@
 #include "Android/AndroidJavaGlink.h"
 #include "Android/AndroidJavaCafeSdk.h"
 
-FAndroidJavaGlink* GetSharedGlink()
-{
-    static FAndroidJavaGlink* Glink = nullptr;
-    if (Glink == nullptr)
-    {
-        Glink = new FAndroidJavaGlink();
-    }
-    return Glink;
-}
-
-FAndroidJavaCafeSdk* GetSharedCafeSdk()
-{
-    static FAndroidJavaCafeSdk* CafeSdk = nullptr;
-    if (CafeSdk == nullptr)
-    {
-        CafeSdk = new FAndroidJavaCafeSdk();
-    }
-    return CafeSdk;
-}
-
 UCafeSdkBlueprintLibrary::UCafeSdkBlueprintLibrary(const FObjectInitializer& ObjectInitializer)
     : Super(ObjectInitializer)
 {
