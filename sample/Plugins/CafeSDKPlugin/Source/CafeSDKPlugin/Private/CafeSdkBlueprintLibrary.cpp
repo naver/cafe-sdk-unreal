@@ -72,7 +72,13 @@ void UCafeSdkBlueprintLibrary::StartMore()
 #elif PLATFORM_IOS
 
 #import <NaverCafeSDK/NCSDKManager.h>
+#import <NaverCafeSDK/NCSDKLoginManager.h>
 #include "IOSAppDelegate.h"
+
+static void ListenNCSDKOpenURL(UIApplication* application, NSURL* url, NSString* sourceApplication, id annotation)
+{
+    [[NCSDKLoginManager getSharedInstance] finishNaverLoginWithURL:url];
+}
 
 UCafeSdkBlueprintLibrary::UCafeSdkBlueprintLibrary(const FObjectInitializer& ObjectInitializer)
 : Super(ObjectInitializer)
@@ -84,6 +90,7 @@ void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int3
     [[NCSDKManager getSharedInstance] setNaverLoginClientId:ClientId.GetNSString()
                                      naverLoginClientSecret:ClientSecret.GetNSString()
                                                      cafeId:CafeId];
+	FIOSCoreDelegates::OnOpenURL.AddStatic(&ListenNCSDKOpenURL);
 }
 
 void UCafeSdkBlueprintLibrary::StartHome()
