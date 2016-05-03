@@ -13,7 +13,7 @@ void ACafeSDKSampleProjectGameMode::InitGame(const FString& MapName, const FStri
     
     if (FCafeSDKPluginModule::IsAvailable())
     {
-        UCafeSdkBlueprintLibrary::Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
+        UCafeSdkBlueprintLibrary::Init("U5ZHoj_OStOHOJ8mec_s", "piPHPA9i4E", 28334359);
         
         FCafeSDKPluginModule::OnCafeSdkStarted.AddUObject(this,
             &ACafeSDKSampleProjectGameMode::OnCafeSdkStarted);

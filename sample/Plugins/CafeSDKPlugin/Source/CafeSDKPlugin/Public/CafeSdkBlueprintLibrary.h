@@ -38,4 +38,7 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void StartVideoWrite(int32 MenuId, FString Subject, FString Text, FString VideoUri);
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void StartMore();
 };
