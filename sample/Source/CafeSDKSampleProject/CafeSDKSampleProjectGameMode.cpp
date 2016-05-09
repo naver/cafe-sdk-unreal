@@ -5,7 +5,7 @@
 #include "CafeSDKPlugin.h"
 #include "CafeSdkBlueprintLibrary.h"
 
-DEFINE_LOG_CATEGORY(LogCafeSDK);
+DEFINE_LOG_CATEGORY(LogCafeSdk);
 
 void ACafeSDKSampleProjectGameMode::InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage)
 {
@@ -32,6 +32,9 @@ void ACafeSDKSampleProjectGameMode::InitGame(const FString& MapName, const FStri
         
         FCafeSDKPluginModule::OnCafeSdkPostedComment.AddUObject(this,
             &ACafeSDKSampleProjectGameMode::OnCafeSdkPostedComment);
+        
+        GEngine->GameViewport->OnScreenshotCaptured().AddUObject(this,
+            &ACafeSDKSampleProjectGameMode::OnScreenshotCaptured);
     }
 }
 
@@ -41,20 +44,20 @@ void ACafeSDKSampleProjectGameMode::InitGame(const FString& MapName, const FStri
 
 void ShowMessage(FString Message)
 {
-    if (FTaskGraphInterface::IsRunning())
-    {
-        FEvent* Event = FPlatformProcess::GetSynchEventFromPool();
-        
-        FGraphEventRef Task = FFunctionGraphTask::CreateAndDispatchWhenReady([=]()
-        {
-            FJavaAndroidMessageBox MessageBox;
-            MessageBox.SetText(Message);
-            MessageBox.AddButton("ok");
-            MessageBox.Show();
-        }, TStatId(), NULL, ENamedThreads::GameThread);
-        
-        FTaskGraphInterface::Get().TriggerEventWhenTaskCompletes(Event, Task, ENamedThreads::GameThread);
-    }
+//    if (FTaskGraphInterface::IsRunning())
+//    {
+//        FEvent* Event = FPlatformProcess::GetSynchEventFromPool();
+//        
+//        FGraphEventRef Task = FFunctionGraphTask::CreateAndDispatchWhenReady([=]()
+//        {
+//            FJavaAndroidMessageBox MessageBox;
+//            MessageBox.SetText(Message);
+//            MessageBox.AddButton("ok");
+//            MessageBox.Show();
+//        }, TStatId(), NULL, ENamedThreads::GameThread);
+//        
+//        FTaskGraphInterface::Get().TriggerEventWhenTaskCompletes(Event, Task, ENamedThreads::GameThread);
+//    }
 }
 
 #else
@@ -97,4 +100,39 @@ void ACafeSDKSampleProjectGameMode::OnCafeSdkPostedComment(int32 ArticleId)
 {
     FString Message = FString::Printf(TEXT("OnCafeSdkPostedComment: %d"), ArticleId);
     ShowMessage(Message);
+}
+
+#include "HighResScreenshot.h"
+#include "ImageUtils.h"
+
+void ACafeSDKSampleProjectGameMode::OnScreenshotCaptured(int32 Width, int32 Height, const TArray<FColor>& Colors)
+{
+    auto Bitmap = TArray<FColor>(Colors);
+    GetHighResScreenshotConfig().MergeMaskIntoAlpha(Bitmap);
+    
+    FIntRect SourceRect(0, 0, GScreenshotResolutionX, GScreenshotResolutionY);
+    if (GIsHighResScreenshot)
+    {
+        SourceRect = GetHighResScreenshotConfig().CaptureRegion;
+    }
+    
+    FString ScreenshotName = FScreenshotRequest::GetFilename();
+    
+    if (!FPaths::GetExtension(ScreenshotName).IsEmpty())
+    {
+        ScreenshotName = FPaths::GetBaseFilename(ScreenshotName, false);
+        ScreenshotName += TEXT(".png");
+    }
+    
+    // Save the contents of the array to a png file.
+    TArray<uint8> CompressedBitmap;
+    FImageUtils::CompressImageArray(Width, Height, Bitmap, CompressedBitmap);
+    FFileHelper::SaveArrayToFile(CompressedBitmap, *ScreenshotName);
+    
+#if PLATFORM_ANDROID
+    extern FString GFilePathBase;
+    FString BasePath = GFilePathBase + TEXT("/UE4Game/") + FApp::GetGameName() + TEXT("/") + FApp::GetGameName() + TEXT("/Saved/Screenshots/");
+    FString ScreenshotPath = FPaths::ConvertRelativePathToFull(BasePath, ScreenshotName);
+    UCafeSdkBlueprintLibrary::StartImageWrite(-1, "", "", TEXT("file://") + ScreenshotPath);
+#endif
 }

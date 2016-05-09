@@ -5,7 +5,7 @@
 #include "GameFramework/GameMode.h"
 #include "CafeSDKSampleProjectGameMode.generated.h"
 
-ENGINE_API DECLARE_LOG_CATEGORY_EXTERN(LogCafeSDK, Log, Warning);
+ENGINE_API DECLARE_LOG_CATEGORY_EXTERN(LogCafeSdk, Log, Warning);
 
 UCLASS()
 class CAFESDKSAMPLEPROJECT_API ACafeSDKSampleProjectGameMode : public AGameMode
@@ -20,4 +20,5 @@ class CAFESDKSAMPLEPROJECT_API ACafeSDKSampleProjectGameMode : public AGameMode
     void OnCafeSdkJoined();
     void OnCafeSdkPostedArticle(int32 MenuId);
     void OnCafeSdkPostedComment(int32 ArticleId);
+    void OnScreenshotCaptured(int32 Width, int32 Height, const TArray<FColor>& Colors);
 };

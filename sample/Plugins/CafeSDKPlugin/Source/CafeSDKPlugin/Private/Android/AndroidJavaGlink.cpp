@@ -96,7 +96,7 @@ void FAndroidJavaGlink::StartImageWrite(int32 MenuId, FString Subject, FString T
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     
     JEnv->CallStaticVoidMethod(Class,
-        StartWriteMethod.Method,
+        StartImageWriteMethod.Method,
         FJavaWrapper::GameActivityThis,
         MenuId,
         FJavaClassObject::GetJString(Subject),
@@ -110,7 +110,7 @@ void FAndroidJavaGlink::StartVideoWrite(int32 MenuId, FString Subject, FString T
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     
     JEnv->CallStaticVoidMethod(Class,
-        StartWriteMethod.Method,
+        StartVideoWriteMethod.Method,
         FJavaWrapper::GameActivityThis,
         MenuId,
         FJavaClassObject::GetJString(Subject),

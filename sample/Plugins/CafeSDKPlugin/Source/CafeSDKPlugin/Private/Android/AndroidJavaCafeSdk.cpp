@@ -79,4 +79,5 @@ extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnPostedComment(JNIEnv* jenv, 
 
 extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnWidgetScreenshotClick(JNIEnv* jenv, jobject thiz)
 {
+    FScreenshotRequest::RequestScreenshot("CafeSdkScreenshot.png", false, false);
 }
