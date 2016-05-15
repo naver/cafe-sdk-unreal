@@ -79,6 +79,7 @@ namespace UnrealBuildTool.Rules
 						"Security",
 						"MobileCoreServices",
 						"GameKit",
+                        "AssetsLibrary",
                     }
                 );
             }

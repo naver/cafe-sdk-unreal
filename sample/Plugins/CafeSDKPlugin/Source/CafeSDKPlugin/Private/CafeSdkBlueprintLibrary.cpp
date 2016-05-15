@@ -71,14 +71,7 @@ void UCafeSdkBlueprintLibrary::StartMore()
 
 #elif PLATFORM_IOS
 
-#import <NaverCafeSDK/NCSDKManager.h>
-#import <NaverCafeSDK/NCSDKLoginManager.h>
-#include "IOSAppDelegate.h"
-
-static void ListenNCSDKOpenURL(UIApplication* application, NSURL* url, NSString* sourceApplication, id annotation)
-{
-    [[NCSDKLoginManager getSharedInstance] finishNaverLoginWithURL:url];
-}
+#include "IOS/IOSCafeSdk.h"
 
 UCafeSdkBlueprintLibrary::UCafeSdkBlueprintLibrary(const FObjectInitializer& ObjectInitializer)
 : Super(ObjectInitializer)
@@ -87,63 +80,57 @@ UCafeSdkBlueprintLibrary::UCafeSdkBlueprintLibrary(const FObjectInitializer& Obj
 
 void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int32 CafeId)
 {
-    [[NCSDKManager getSharedInstance] setNaverLoginClientId:ClientId.GetNSString()
-                                     naverLoginClientSecret:ClientSecret.GetNSString()
-                                                     cafeId:CafeId];
-	FIOSCoreDelegates::OnOpenURL.AddStatic(&ListenNCSDKOpenURL);
+    GetSharedCafeSdk()->Init(ClientId, ClientSecret, CafeId);
 }
 
 void UCafeSdkBlueprintLibrary::StartHome()
 {
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        [[NCSDKManager getSharedInstance] setParentViewController:[IOSAppDelegate GetDelegate].IOSController];
-        [[NCSDKManager getSharedInstance] presentMainViewController];
-    });
+    GetSharedCafeSdk()->StartHome();
 }
 
 void UCafeSdkBlueprintLibrary::StartNotice()
 {
-    // do nothing.
+    GetSharedCafeSdk()->StartNotice();
 }
 
 void UCafeSdkBlueprintLibrary::StartEvent()
 {
-    // do nothing.
+    GetSharedCafeSdk()->StartEvent();
 }
 
 void UCafeSdkBlueprintLibrary::StartMenu()
 {
-    // do nothing.
+    GetSharedCafeSdk()->StartMenu();
 }
 
 void UCafeSdkBlueprintLibrary::StartMenuById(int32 MenuId)
 {
-    // do nothing.
+    GetSharedCafeSdk()->StartMenuById(MenuId);
 }
 
 void UCafeSdkBlueprintLibrary::StartProfile()
 {
-    // do nothing.
+    GetSharedCafeSdk()->StartProfile();
 }
 
 void UCafeSdkBlueprintLibrary::StartWrite(int32 MenuId, FString Subject, FString Text)
 {
-    // do nothing.
+    GetSharedCafeSdk()->StartWrite(MenuId, Subject, Text);
 }
 
 void UCafeSdkBlueprintLibrary::StartImageWrite(int32 MenuId, FString Subject, FString Text, FString ImageUri)
 {
-    // do nothing.
+    GetSharedCafeSdk()->StartImageWrite(MenuId, Subject, Text, ImageUri);
 }
 
 void UCafeSdkBlueprintLibrary::StartVideoWrite(int32 MenuId, FString Subject, FString Text, FString VideoUri)
 {
-    // do nothing.
+    GetSharedCafeSdk()->StartVideoWrite(MenuId, Subject, Text, VideoUri);
 }
 
 void UCafeSdkBlueprintLibrary::StartMore()
 {
-    // do nothing.
+    GetSharedCafeSdk()->StartMore();
 }
 
 #else
