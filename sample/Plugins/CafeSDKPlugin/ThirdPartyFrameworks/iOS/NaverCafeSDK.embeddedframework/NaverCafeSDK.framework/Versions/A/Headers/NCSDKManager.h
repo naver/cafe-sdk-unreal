@@ -117,11 +117,12 @@ typedef NS_ENUM(NSUInteger, GLArticlePostType) {
  네이버 카페 ViewController에 제일 상단 ViewController 제거
  */
 - (void)dismissTopViewController;
-- (void)showToast:(NSString *)str;
 
-#ifndef BUILD_REAL
+/*
+ 테스트용
+ */
+- (void)showToast:(NSString *)str;
 - (void)presentEtc;
-#endif
 @end
 
 @protocol NCSDKManagerDelegate <NSObject>

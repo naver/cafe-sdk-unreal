@@ -104,7 +104,6 @@ void ACafeSDKSampleProjectGameMode::OnCafeSdkPostedComment(int32 ArticleId)
 
 #include "HighResScreenshot.h"
 #include "ImageUtils.h"
-
 void ACafeSDKSampleProjectGameMode::OnScreenshotCaptured(int32 Width, int32 Height, const TArray<FColor>& Colors)
 {
     auto Bitmap = TArray<FColor>(Colors);
@@ -134,5 +133,13 @@ void ACafeSDKSampleProjectGameMode::OnScreenshotCaptured(int32 Width, int32 Heig
     FString BasePath = GFilePathBase + TEXT("/UE4Game/") + FApp::GetGameName() + TEXT("/") + FApp::GetGameName() + TEXT("/Saved/Screenshots/");
     FString ScreenshotPath = FPaths::ConvertRelativePathToFull(BasePath, ScreenshotName);
     UCafeSdkBlueprintLibrary::StartImageWrite(-1, "", "", TEXT("file://") + ScreenshotPath);
+#elif PLATFORM_IOS
+    FString Result = ScreenshotName;
+    Result.ReplaceInline(TEXT("../"), TEXT(""));
+    Result.ReplaceInline(TEXT(".."), TEXT(""));
+    Result.ReplaceInline(FPlatformProcess::BaseDir(), TEXT(""));
+    
+    FString WritePathBase = FString([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]) + TEXT("/");
+    UCafeSdkBlueprintLibrary::StartImageWrite(-1, "", "", WritePathBase + Result);
 #endif
 }

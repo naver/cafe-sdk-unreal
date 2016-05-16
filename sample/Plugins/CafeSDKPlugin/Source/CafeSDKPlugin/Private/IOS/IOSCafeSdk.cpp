@@ -134,6 +134,9 @@ void FIOSCafeSdk::SyncGameUserId(FString GameUserId) const
 
 void FIOSCafeSdk::StartMore() const
 {
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [[NCSDKManager getSharedInstance] presentEtc];
+    });
 }
 
 @implementation CafeCallbackObject
