@@ -135,6 +135,7 @@ void FIOSCafeSdk::SyncGameUserId(FString GameUserId) const
 void FIOSCafeSdk::StartMore() const
 {
     dispatch_sync(dispatch_get_main_queue(), ^{
+        SetParentViewController();        
         [[NCSDKManager getSharedInstance] presentEtc];
     });
 }
