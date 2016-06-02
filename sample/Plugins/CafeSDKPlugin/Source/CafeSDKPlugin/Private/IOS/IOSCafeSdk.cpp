@@ -16,6 +16,11 @@ FIOSCafeSdk* GetSharedCafeSdk()
 
 static CafeCallbackObject *cafeCallbackObject = nil;
 
+static void ListenNCSDKOpenURL(UIApplication* application, NSURL* url, NSString* sourceApplication, id annotation)
+{
+    [[NCSDKLoginManager getSharedInstance] finishNaverLoginWithURL:url];
+}
+
 FIOSCafeSdk::FIOSCafeSdk()
 {
 }
@@ -26,10 +31,6 @@ void FIOSCafeSdk::SetParentViewController() const
     [[NCSDKManager getSharedInstance] setNcSDKDelegate:cafeCallbackObject];
 }
 
-static void ListenNCSDKOpenURL(UIApplication* application, NSURL* url, NSString* sourceApplication, id annotation)
-{
-    [[NCSDKLoginManager getSharedInstance] finishNaverLoginWithURL:url];
-}
 
 void FIOSCafeSdk::Init(FString ClientId, FString ClientSecret, int32 CafeId) const
 {
@@ -37,15 +38,22 @@ void FIOSCafeSdk::Init(FString ClientId, FString ClientSecret, int32 CafeId) con
     [[NCSDKManager getSharedInstance] setNaverLoginClientId:ClientId.GetNSString()
                                      naverLoginClientSecret:ClientSecret.GetNSString()
                                                      cafeId:CafeId];
+    [[NCSDKManager getSharedInstance] setOrientationIsLandscape:NO];
     FIOSCoreDelegates::OnOpenURL.AddStatic(&ListenNCSDKOpenURL);
 }
 
 void FIOSCafeSdk::StartHome() const
 {
-    SetParentViewController();
-    dispatch_sync(dispatch_get_main_queue(), ^{
+    dispatch_block_t block = ^{
+        SetParentViewController();
         [[NCSDKManager getSharedInstance] presentMainViewController];
-    });
+    };
+
+    if (![[NSThread currentThread] isMainThread]) {
+        dispatch_sync(dispatch_get_main_queue(), block);
+    } else {
+        block();
+    }
 }
 
 void FIOSCafeSdk::StartNotice() const
@@ -90,12 +98,18 @@ void FIOSCafeSdk::StartProfile() const
 
 void FIOSCafeSdk::StartWrite(int32 MenuId, FString Subject, FString Text) const
 {
-    SetParentViewController();
-    dispatch_sync(dispatch_get_main_queue(), ^{
+    dispatch_block_t block = ^{
+        SetParentViewController();
         [[NCSDKManager getSharedInstance] presentArticlePostViewControllerWithMenuId:MenuId
                                                                              subject:[NSString stringWithFString:Subject]
                                                                              content:[NSString stringWithFString:Text]];
-    });
+    };
+    
+    if (![[NSThread currentThread] isMainThread]) {
+        dispatch_sync(dispatch_get_main_queue(), block);
+    } else {
+        block();
+    }
 }
 
 void FIOSCafeSdk::StartImageWrite(int32 MenuId, FString Subject, FString Text, FString ImageUri) const
@@ -146,6 +160,13 @@ void FIOSCafeSdk::StartMore() const
     FCafeSDKPluginModule::OnCafeSdkStarted.Broadcast();
 }
 - (void)ncSDKViewDidUnLoad {
+    if ([NCSDKManager getSharedInstance].useWidget) {
+        [[NCWidget getSharedInstance] setRootView:[IOSAppDelegate GetDelegate].RootView];
+        [[NCWidget getSharedInstance] setNcWidgetDelegate:self];
+        [[IOSAppDelegate GetDelegate].RootView addSubview:[NCWidget getSharedInstance].view];
+        [[NCWidget getSharedInstance].view setHidden:NO];
+    }
+    
     FCafeSDKPluginModule::OnCafeSdkStopped.Broadcast();
 }
 - (void)ncSDKJoinedCafeMember {
@@ -162,6 +183,15 @@ void FIOSCafeSdk::StartMore() const
     });
 }
 - (void)ncSDKRequestScreenShot {
+    FScreenshotRequest::RequestScreenshot("CafeSdkScreenshot.png", false, false);
+}
+- (void)ncWidgetPostArticle {
+    GetSharedCafeSdk()->StartWrite(0, "", "");
+}
+- (void)ncWidtetExecuteGLink {
+    GetSharedCafeSdk()->StartHome();
+}
+- (void)ncWidgetPostArticleWithImage {
     FScreenshotRequest::RequestScreenshot("CafeSdkScreenshot.png", false, false);
 }
 @end

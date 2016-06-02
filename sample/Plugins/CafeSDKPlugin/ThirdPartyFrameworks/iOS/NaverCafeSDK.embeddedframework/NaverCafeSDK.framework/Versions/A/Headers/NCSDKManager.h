@@ -27,6 +27,11 @@ typedef NS_ENUM(NSUInteger, GLArticlePostType) {
 @property (nonatomic, weak) id parentViewController;
 
 /*
+ 네이버카페 위젯기능 사용유무
+ */
+@property (nonatomic, assign) BOOL useWidget;
+
+/*
  NCSDKManager 싱글톤 객체
  */
 + (NCSDKManager *)getSharedInstance;

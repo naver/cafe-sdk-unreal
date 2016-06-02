@@ -41,4 +41,10 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void StartMore();
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void StartWriteFromScreenshot();
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static bool IsSupportedOSVersion();
 };
