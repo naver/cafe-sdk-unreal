@@ -4,7 +4,7 @@
 
 #import <NaverCafeSDK/NCSDKManager.h>
 #import <NaverCafeSDK/NCSDKLoginManager.h>
-
+#import <NaverCafeSDK/NCWidget.h>
 class FIOSCafeSdk
 {
 public:
@@ -29,24 +29,10 @@ public:
     
 private:
     void SetParentViewController() const;
-//    jclass Class;
-//    FJavaClassMethod InitMethod;
-//    FJavaClassMethod StartHomeMethod;
-//    FJavaClassMethod StartNoticeMethod;
-//    FJavaClassMethod StartEventMethod;
-//    FJavaClassMethod StartMenuMethod;
-//    FJavaClassMethod StartMenuByIdMethod;
-//    FJavaClassMethod StartProfileMethod;
-//    FJavaClassMethod StartWriteMethod;
-//    FJavaClassMethod StartImageWriteMethod;
-//    FJavaClassMethod StartVideoWriteMethod;
-//    FJavaClassMethod IsShowMethod;
-//    FJavaClassMethod SyncGameUserIdMethod;
-//    FJavaClassMethod StartMoreMethod;
 };
 
 FIOSCafeSdk* GetSharedCafeSdk();
 
-@interface CafeCallbackObject : NSObject <NCSDKManagerDelegate>
+@interface CafeCallbackObject : NSObject <NCSDKManagerDelegate, NCWidgetDelegate>
 @end
 

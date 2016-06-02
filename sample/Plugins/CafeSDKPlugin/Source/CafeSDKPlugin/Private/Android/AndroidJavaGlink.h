@@ -29,6 +29,8 @@ public:
     
     void StartMore() const;
     
+    bool IsSupportedAndroidVersion() const;
+    
 private:
     static FName GetClassName();
     
@@ -50,6 +52,7 @@ private:
     FJavaClassMethod IsShowMethod;
     FJavaClassMethod SyncGameUserIdMethod;
     FJavaClassMethod StartMoreMethod;
+    FJavaClassMethod GetAndroidVersionMethod;
 };
 
 FAndroidJavaGlink* GetSharedGlink();

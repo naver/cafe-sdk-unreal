@@ -32,6 +32,7 @@ FAndroidJavaGlink::FAndroidJavaGlink()
     IsShowMethod = GetClassStaticMethod("isShowGlink", "(Landroid/app/Activity;)Z");
     SyncGameUserIdMethod = GetClassStaticMethod("syncGameUserId", "(Landroid/app/Activity;Ljava/lang/String;)V");
     
+    GetAndroidVersionMethod = GetClassStaticMethod("getAndroidVersion", "()I");
     StartMoreMethod = GetClassStaticMethod("startMore", "(Landroid/app/Activity;)V");
 }
 
@@ -134,6 +135,15 @@ void FAndroidJavaGlink::SyncGameUserId(FString GameUserId) const
 void FAndroidJavaGlink::StartMore() const
 {
     StartTab(StartMoreMethod);
+}
+
+bool FAndroidJavaGlink::IsSupportedAndroidVersion() const
+{
+    static const int kSupportedMinVersion = 17; // kitkat.
+    
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    int version = JEnv->CallStaticIntMethod(Class, GetAndroidVersionMethod.Method);
+    return version > kSupportedMinVersion;
 }
 
 FJavaClassMethod FAndroidJavaGlink::GetClassStaticMethod(const char* MethodName, const char* FuncSig) const
