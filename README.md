@@ -47,5 +47,9 @@ README.md   | readme 파일
 
 라이선스
 -------------
-........
+NAVER Cafe SDK for Unreal Engine
+
+Copyright 2016 NAVER Corp. All rights reserved.
+
+Unauthorized use, modification and redistribution of this software are strongly prohibited.
 
