@@ -6,11 +6,14 @@ Cafe SDK에 대하여 자세히 알고싶으시면 [네이버 CafeSDK 공식카�
 
 
 
-
-v.1.0.0
+v.1.6.0
 -------------
-UE4용 CafeSDK Plugin
+####updated
+1. 카페 위젯을 지원하여 게임내 어디서든 카페를 이용 할 수 있습니다.
+![Overviw](/guide/images/widget_screenshot.gif)
 
+####fixed
+1. 게시글 간 이동이 자연스럽게 보이도록 수정
 
 
 폴더 구조
@@ -19,7 +22,7 @@ UE4용 CafeSDK Plugin
 file      | 설명 		
 ---			| ---		
 guide/			| 가이드 문서 및 CafeSDK 설명
-lib/		 	| Android용 CafeSDK 라이브러리 파일
+lib/		 	| Android/iOS 용 CafeSDK 라이브러리 파일
 sample/		| CafeSDK 샘플 UE4 프로젝트
 LICENSE     | 라이선스 파일
 README.md   | readme 파일
@@ -43,7 +46,7 @@ README.md   | readme 파일
 
 1. [네이버 아이디 로그인-4.1.4](https://nid.naver.com/devcenter/docs.nhn?menu=IOS)
 2. [AFNetworking](https://github.com/AFNetworking/AFNetworking)(UIImageView+AFNetworking)
-<br>1.x ~ 2.x 모두 사용 가능하며 2.6.1에서 테스트 진행했습니다.
+<br>1.x ~ 2.x 모두 사용 가능하며 2.6.3에서 테스트 진행했습니다.
 
 라이선스
 -------------
