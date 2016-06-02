@@ -27,6 +27,8 @@ public:
     
     void StartMore() const;
     
+    bool IsSupportedIOSVersion() const;
+    
 private:
     void SetParentViewController() const;
 };
@@ -34,5 +36,14 @@ private:
 FIOSCafeSdk* GetSharedCafeSdk();
 
 @interface CafeCallbackObject : NSObject <NCSDKManagerDelegate, NCWidgetDelegate>
++ (CafeCallbackObject*)getSharedInstance;
+- (void)setSDKInfoWithClientId:(NSString *)clientId clientSecret:(NSString *)clientSecret cafeId:(NSInteger)cafeId;
+- (void)startHome;
+- (void)startNotice;
+- (void)startEvent;
+- (void)startMenu;
+- (void)startProfile;
+- (void)startMore;
+- (void)startMainThreadWithBlock:(void (^)(void))block;
 @end
 
