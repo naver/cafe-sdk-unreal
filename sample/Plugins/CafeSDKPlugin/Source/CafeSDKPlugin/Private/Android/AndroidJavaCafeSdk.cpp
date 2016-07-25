@@ -67,9 +67,9 @@ extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnJoined(JNIEnv* jenv, jobject
     FCafeSDKPluginModule::OnCafeSdkJoined.Broadcast();
 }
 
-extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnPostedArticle(JNIEnv* jenv, jobject thiz, jint MenuId)
+extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnPostedArticle(JNIEnv* jenv, jobject thiz, jint MenuId, jint ImageCount, jint VideoCount)
 {
-    FCafeSDKPluginModule::OnCafeSdkPostedArticle.Broadcast(MenuId);
+    FCafeSDKPluginModule::OnCafeSdkPostedArticle.Broadcast(MenuId, ImageCount, VideoCount);
 }
 
 extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnPostedComment(JNIEnv* jenv, jobject thiz, jint ArticleId)
@@ -77,7 +77,22 @@ extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnPostedComment(JNIEnv* jenv, 
     FCafeSDKPluginModule::OnCafeSdkPostedComment.Broadcast(ArticleId);
 }
 
+extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnVoted(JNIEnv* jenv, jobject thiz, jint ArticleId)
+{
+    FCafeSDKPluginModule::OnCafeSdkDidVote.Broadcast(ArticleId);
+}
+
 extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnWidgetScreenshotClick(JNIEnv* jenv, jobject thiz)
 {
     FScreenshotRequest::RequestScreenshot("CafeSdkScreenshot.png", false, false);
+}
+
+extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnRecordFinished(JNIEnv* jenv, jobject thiz, jstring FileUrl)
+{
+    const char* FileUrlChars = jenv->GetStringUTFChars(FileUrl, 0);
+    
+    FString fileUrl = UTF8_TO_TCHAR(FileUrlChars);
+    FCafeSDKPluginModule::OnCafeSdkRecordFinish.Broadcast(fileUrl);
+    
+    jenv->ReleaseStringUTFChars(FileUrl, FileUrlChars);
 }

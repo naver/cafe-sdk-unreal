@@ -46,5 +46,17 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     static void StartWriteFromScreenshot();
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void ShowWidgetWhenUnloadSdk(bool bUse);
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void StopWidget();
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void SetUseVideoRecord(bool bUse);
+
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void SyncGameUserId(FString GameUserId);
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static bool IsSupportedOSVersion();
 };

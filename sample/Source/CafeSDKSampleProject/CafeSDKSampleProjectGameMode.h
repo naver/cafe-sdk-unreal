@@ -18,7 +18,10 @@ class CAFESDKSAMPLEPROJECT_API ACafeSDKSampleProjectGameMode : public AGameMode
     void OnCafeSdkStopped();
     void OnCafeSdkClickAppSchemeBanner(const FString& AppScheme);
     void OnCafeSdkJoined();
-    void OnCafeSdkPostedArticle(int32 MenuId);
+    void OnCafeSdkPostedArticle(int32 MenuId, int32 ImageCount, int32 VideoCount);
     void OnCafeSdkPostedComment(int32 ArticleId);
+    void OnCafeSdkRecordFinish(const FString& FileUri);
+    void OnCafeSdkDidVote(int32 ArticleId);
+    
     void OnScreenshotCaptured(int32 Width, int32 Height, const TArray<FColor>& Colors);
 };

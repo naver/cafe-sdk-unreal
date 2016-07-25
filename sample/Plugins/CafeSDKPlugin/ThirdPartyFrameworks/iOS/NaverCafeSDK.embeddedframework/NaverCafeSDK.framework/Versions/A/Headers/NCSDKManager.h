@@ -12,6 +12,13 @@ typedef NS_ENUM(NSUInteger, GLArticlePostType) {
     kGLArticlePostTypeImage = 1,
     kGLArticlePostTypeVideo = 2,
 };
+typedef NS_ENUM(NSUInteger, GLTabType) {
+    kGLTabTypeHome = 0,
+    kGLTabTypeNotice = 1,
+    kGLTabTypeEvent = 2,
+    kGLTabTypeMenuList = 3,
+    kGLTabTypeProfile = 4,
+};
 
 @protocol NCSDKManagerDelegate;
 
@@ -25,11 +32,6 @@ typedef NS_ENUM(NSUInteger, GLArticlePostType) {
  네이버 카페를 띄울 ViewController
  */
 @property (nonatomic, weak) id parentViewController;
-
-/*
- 네이버카페 위젯기능 사용유무
- */
-@property (nonatomic, assign) BOOL useWidget;
 
 /*
  NCSDKManager 싱글톤 객체
@@ -57,9 +59,8 @@ typedef NS_ENUM(NSUInteger, GLArticlePostType) {
                        cafeId:(NSInteger)cafeId;
 
 /*
- 네이버ID와 게임사용자ID 연동을 위해 사용자 게임사용자ID 세팅, fieldName 기본값:게임ID
+ 네이버ID와 게임사용자ID 연동을 위해 사용자 게임사용자ID 세팅
  */
-- (void)setGameUserId:(NSString *)gameUserId fieldName:(NSString *)fieldName;
 - (void)syncGameUserId:(NSString *)gameUserId;
 /*
  투명도 조절 기능 제거
@@ -124,6 +125,15 @@ typedef NS_ENUM(NSUInteger, GLArticlePostType) {
 - (void)dismissTopViewController;
 
 /*
+ 위젯실행
+ */
+- (void)startWidget;
+- (void)stopWidget;
+
+@property (nonatomic, assign) BOOL showWidgetWhenUnloadSDK;
+@property (nonatomic, assign) BOOL useWidgetVideoRecord;
+
+/*
  테스트용
  */
 - (void)showToast:(NSString *)str;
@@ -142,7 +152,14 @@ typedef NS_ENUM(NSUInteger, GLArticlePostType) {
 - (void)ncSDKViewDidUnLoad;
 
 - (void)ncSDKJoinedCafeMember;
-- (void)ncSDKPostedArticleAtMenu:(NSInteger)menuId;
+- (void)ncSDKPostedArticleAtMenu:(NSInteger)menuId
+                attachImageCount:(NSInteger)imageCount
+                attachVideoCount:(NSInteger)videoCount;
 - (void)ncSDKPostedCommentAtArticle:(NSInteger)articleId;
 - (void)ncSDKRequestScreenShot;
+- (void)ncSDKDidVoteAtArticle:(NSInteger)articleId;
+
+- (void)ncSDKWidgetPostArticleWithImage;
+- (void)ncSDKWidgetSuccessVideoRecord;
+
 @end
