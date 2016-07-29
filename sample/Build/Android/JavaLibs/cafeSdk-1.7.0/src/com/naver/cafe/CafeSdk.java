@@ -1,5 +1,6 @@
 package com.naver.cafe;
 
+//import com.epicgames.ue4.GameActivity;
 import com.naver.glink.android.sdk.Glink;
 import com.naver.glink.android.sdk.Glink.OnClickAppSchemeBannerListener;
 import com.naver.glink.android.sdk.Glink.OnJoinedListener;
@@ -18,14 +19,18 @@ public class CafeSdk {
 
   private static native void nativeOnJoined();
 
-  private static native void nativeOnPostedArticle(int menuId);
+  private static native void nativeOnPostedArticle(int menuId, int imageCount, int videoCount);
 
   private static native void nativeOnPostedComment(int articleId);
 
+  private static native void nativeOnVoted(int articleId);
+
   private static native void nativeOnWidgetScreenshotClick();
 
+  private static native void nativeOnRecordFinished(String uri);
+
   public void init(String clientId, String clientSecret, int cafeId) {
-    Glink.initStage(clientId, clientSecret, cafeId);
+    Glink.init(clientId, clientSecret, cafeId);
 
     Glink.setOnSdkStartedListener(new OnSdkStartedListener() {
       @Override public void onSdkStarted() {
@@ -52,8 +57,8 @@ public class CafeSdk {
     });
 
     Glink.setOnPostedArticleListener(new OnPostedArticleListener() {
-      @Override public void onPostedArticle(final int menuId) {
-        nativeOnPostedArticle(menuId);
+      @Override public void onPostedArticle(int menuId, int imageCount, int videoCount) {
+        nativeOnPostedArticle(menuId, imageCount, videoCount);
       }
     });
 
@@ -63,9 +68,21 @@ public class CafeSdk {
       }
     });
 
+    Glink.setOnVotedListener(new Glink.OnVotedListener() {
+      @Override public void onVoted(int articleId) {
+        nativeOnVoted(articleId);
+      }
+    });
+
     Glink.setOnWidgetScreenshotClickListener(new Glink.OnWidgetScreenshotClickListener() {
       @Override public void onScreenshotClick() {
         nativeOnWidgetScreenshotClick();
+      }
+    });
+
+    Glink.setOnRecordFinishListener(new Glink.OnRecordFinishListener() {
+      @Override public void onRecordFinished(String uri) {
+        // Glink.startVideoWrite(GameActivity.Get(), -1, null, null, uri);
       }
     });
   }
