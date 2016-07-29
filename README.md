@@ -6,14 +6,14 @@ Cafe SDK에 대하여 자세히 알고싶으시면 [네이버 CafeSDK 공식카�
 
 
 
-v.1.6.0
+v.1.7.0
 -------------
 ####updated
-1. 카페 위젯을 지원하여 게임내 어디서든 카페를 이용 할 수 있습니다.
-![Overviw](/guide/images/widget_screenshot.gif)
+1. 위젯을 통하여 동영상 녹확 기능을 제공합니다.
+2. 콜백 API 개선 (투표 완료 콜백을 제공합니다)
 
-####fixed
-1. 게시글 간 이동이 자연스럽게 보이도록 수정
+####issue
+1. iOS 동영상 녹화는 언리얼 ReplayKit 이슈로 인해 지원하지 않습니다.
 
 
 폴더 구조
@@ -28,25 +28,24 @@ LICENSE     | 라이선스 파일
 README.md   | readme 파일
 
 
-의존 라이브러리
+의존 라이브러리 iOS
 -------------
-[Android]
+
+1. [네이버 아이디 로그인-4.0.7](https://nid.naver.com/devcenter/docs.nhn?menu=IOS)
+2. [AFNetworking](https://github.com/AFNetworking/AFNetworking)(UIImageView+AFNetworking)
+<br>1.x ~ 2.x 모두 사용 가능하며 2.6.3에서 테스트 진행했습니다.
+
+
+의존 라이브러리 Android
+-------------
 
 1. [네이버 아이디 로그인](https://nid.naver.com/devcenter/docs.nhn?menu=Android)
-2. android support library v13
+2. android support library v4
 3. [naver volleyer](http://mvnrepository.com/artifact/com.navercorp.volleyextensions/volleyer)   (2.0.1 사용 중)
 4. [volley](http://mvnrepository.com/artifact/com.mcxiaoke.volley/library/) (1.0.2사용 중)
 5. [google gson](http://mvnrepository.com/artifact/com.google.code.gson/gson)  (2.3.1 사용 중)
 6. [glide](http://mvnrepository.com/artifact/com.github.bumptech.glide/glide)  (3.6.1 사용 중)
 7. [otto](http://mvnrepository.com/artifact/com.squareup/otto)  (1.3.8 사용 중)
-
-
-
-[iOS]
-
-1. [네이버 아이디 로그인-4.1.4](https://nid.naver.com/devcenter/docs.nhn?menu=IOS)
-2. [AFNetworking](https://github.com/AFNetworking/AFNetworking)(UIImageView+AFNetworking)
-<br>1.x ~ 2.x 모두 사용 가능하며 2.6.3에서 테스트 진행했습니다.
 
 라이선스
 -------------
