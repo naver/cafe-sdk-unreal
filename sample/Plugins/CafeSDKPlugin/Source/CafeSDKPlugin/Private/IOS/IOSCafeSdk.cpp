@@ -175,9 +175,9 @@ bool FIOSCafeSdk::IsSupportedOSVersion() const
 }
 
 - (void)setParentViewController {
-    [[NCSDKLoginManager getSharedInstance] setIsNaverAppOauthEnable:NO];
     [[NCSDKManager getSharedInstance] setParentViewController:[IOSAppDelegate GetDelegate].IOSController];
-    [[NCSDKManager getSharedInstance] setNcSDKDelegate:self];    
+    [[NCSDKManager getSharedInstance] setNcSDKDelegate:self];
+    [[NCSDKLoginManager getSharedInstance] setIsNaverAppOauthEnable:NO];
 }
 - (void)startHome {
     [[NCSDKManager getSharedInstance] presentMainViewController];
