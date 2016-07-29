@@ -10,6 +10,8 @@ FCafeSDKPluginModule::FOnCafeSdkClickAppSchemeBanner FCafeSDKPluginModule::OnCaf
 FCafeSDKPluginModule::FOnCafeSdkJoined FCafeSDKPluginModule::OnCafeSdkJoined;
 FCafeSDKPluginModule::FOnCafeSdkPostedArticle FCafeSDKPluginModule::OnCafeSdkPostedArticle;
 FCafeSDKPluginModule::FOnCafeSdkPostedComment FCafeSDKPluginModule::OnCafeSdkPostedComment;
+FCafeSDKPluginModule::FOnCafeSdkRecordFinish FCafeSDKPluginModule::OnCafeSdkRecordFinish;
+FCafeSDKPluginModule::FOnCafeSdkDidVote FCafeSDKPluginModule::OnCafeSdkDidVote;
 
 class CafeSDKPluginModule : public FCafeSDKPluginModule
 {

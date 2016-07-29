@@ -32,6 +32,10 @@ FAndroidJavaGlink::FAndroidJavaGlink()
     IsShowMethod = GetClassStaticMethod("isShowGlink", "(Landroid/app/Activity;)Z");
     SyncGameUserIdMethod = GetClassStaticMethod("syncGameUserId", "(Landroid/app/Activity;Ljava/lang/String;)V");
     
+    ShowWidgetWhenUnloadSdkMethod = GetClassStaticMethod("showWidgetWhenUnloadSdk", "(Landroid/app/Activity;Z)V");;
+    StopWidgetMethod = GetClassStaticMethod("stopWidget", "(Landroid/app/Activity;)V");;
+    SetUseVideoRecordMethod = GetClassStaticMethod("setUseVideoRecord", "(Landroid/app/Activity;Z)V");;
+    
     GetAndroidVersionMethod = GetClassStaticMethod("getAndroidVersion", "()I");
     StartMoreMethod = GetClassStaticMethod("startMore", "(Landroid/app/Activity;)V");
 }
@@ -130,6 +134,24 @@ void FAndroidJavaGlink::SyncGameUserId(FString GameUserId) const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     JEnv->CallStaticVoidMethod(Class, SyncGameUserIdMethod.Method, FJavaWrapper::GameActivityThis, FJavaClassObject::GetJString(GameUserId));
+}
+
+void FAndroidJavaGlink::ShowWidgetWhenUnloadSdk(bool bUse) const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    JEnv->CallStaticVoidMethod(Class, ShowWidgetWhenUnloadSdkMethod.Method, FJavaWrapper::GameActivityThis, bUse);
+}
+
+void FAndroidJavaGlink::StopWidget() const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    JEnv->CallStaticVoidMethod(Class, StopWidgetMethod.Method, FJavaWrapper::GameActivityThis);
+}
+
+void FAndroidJavaGlink::SetUseVideoRecord(bool bUse) const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    JEnv->CallStaticVoidMethod(Class, SetUseVideoRecordMethod.Method, FJavaWrapper::GameActivityThis, bUse);
 }
 
 void FAndroidJavaGlink::StartMore() const

@@ -27,6 +27,10 @@ public:
     bool IsShow() const;
     void SyncGameUserId(FString GameUserId) const;
     
+    void ShowWidgetWhenUnloadSdk(bool bUse) const;
+    void StopWidget() const;
+    void SetUseVideoRecord(bool bUse) const;
+    
     void StartMore() const;
     
     bool IsSupportedAndroidVersion() const;
@@ -52,6 +56,9 @@ private:
     FJavaClassMethod IsShowMethod;
     FJavaClassMethod SyncGameUserIdMethod;
     FJavaClassMethod StartMoreMethod;
+    FJavaClassMethod ShowWidgetWhenUnloadSdkMethod;
+    FJavaClassMethod StopWidgetMethod;
+    FJavaClassMethod SetUseVideoRecordMethod;
     FJavaClassMethod GetAndroidVersionMethod;
 };
 

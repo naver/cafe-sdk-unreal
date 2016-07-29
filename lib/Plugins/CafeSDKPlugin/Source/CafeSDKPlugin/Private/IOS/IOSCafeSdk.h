@@ -4,7 +4,7 @@
 
 #import <NaverCafeSDK/NCSDKManager.h>
 #import <NaverCafeSDK/NCSDKLoginManager.h>
-#import <NaverCafeSDK/NCWidget.h>
+
 class FIOSCafeSdk
 {
 public:
@@ -25,9 +25,13 @@ public:
     bool IsShow() const;
     void SyncGameUserId(FString GameUserId) const;
     
+    void ShowWidgetWhenUnloadSdk(bool bUse) const;
+    void StopWidget() const;
+    void SetUseVideoRecord(bool bUse) const;
+    
     void StartMore() const;
     
-    bool IsSupportedIOSVersion() const;
+    bool IsSupportedOSVersion() const;
     
 private:
     void SetParentViewController() const;
@@ -35,7 +39,7 @@ private:
 
 FIOSCafeSdk* GetSharedCafeSdk();
 
-@interface CafeCallbackObject : NSObject <NCSDKManagerDelegate, NCWidgetDelegate>
+@interface CafeCallbackObject : NSObject <NCSDKManagerDelegate>
 + (CafeCallbackObject*)getSharedInstance;
 - (void)setSDKInfoWithClientId:(NSString *)clientId clientSecret:(NSString *)clientSecret cafeId:(NSInteger)cafeId;
 - (void)startHome;

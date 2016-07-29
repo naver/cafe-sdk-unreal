@@ -35,8 +35,10 @@ public:
     DECLARE_MULTICAST_DELEGATE(FOnCafeSdkStopped);
     DECLARE_MULTICAST_DELEGATE_OneParam(FOnCafeSdkClickAppSchemeBanner, const FString& /*AppScheme*/);
     DECLARE_MULTICAST_DELEGATE(FOnCafeSdkJoined);
-    DECLARE_MULTICAST_DELEGATE_OneParam(FOnCafeSdkPostedArticle, int32 /*MenuId*/);
+    DECLARE_MULTICAST_DELEGATE_ThreeParams(FOnCafeSdkPostedArticle, int32 /*MenuId*/, int32 /*ImageCount*/, int32 /*VideoCount*/);
     DECLARE_MULTICAST_DELEGATE_OneParam(FOnCafeSdkPostedComment, int32 /*ArticleId*/);
+    DECLARE_MULTICAST_DELEGATE_OneParam(FOnCafeSdkRecordFinish, const FString& /*FileUri*/);
+    DECLARE_MULTICAST_DELEGATE_OneParam(FOnCafeSdkDidVote, int32 /*ArticleId*/);
     
     static FOnCafeSdkStarted OnCafeSdkStarted;
     static FOnCafeSdkStopped OnCafeSdkStopped;
@@ -44,4 +46,6 @@ public:
     static FOnCafeSdkJoined OnCafeSdkJoined;
     static FOnCafeSdkPostedArticle OnCafeSdkPostedArticle;
     static FOnCafeSdkPostedComment OnCafeSdkPostedComment;
+    static FOnCafeSdkRecordFinish OnCafeSdkRecordFinish;
+    static FOnCafeSdkDidVote OnCafeSdkDidVote;
 };

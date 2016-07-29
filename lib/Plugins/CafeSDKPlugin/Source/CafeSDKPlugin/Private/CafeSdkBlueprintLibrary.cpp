@@ -86,6 +86,26 @@ void UCafeSdkBlueprintLibrary::StartWriteFromScreenshot()
     FScreenshotRequest::RequestScreenshot("CafeSdkScreenshot.png", false, false);
 }
 
+void UCafeSdkBlueprintLibrary::ShowWidgetWhenUnloadSdk(bool bUse)
+{
+    GetSharedGlink()->ShowWidgetWhenUnloadSdk(bUse);
+}
+
+void UCafeSdkBlueprintLibrary::StopWidget()
+{
+    GetSharedGlink()->StopWidget();
+}
+
+void UCafeSdkBlueprintLibrary::SetUseVideoRecord(bool bUse)
+{
+    GetSharedGlink()->SetUseVideoRecord(bUse);
+}
+
+void UCafeSdkBlueprintLibrary::SyncGameUserId(FString gameId)
+{
+    
+}
+
 bool UCafeSdkBlueprintLibrary::IsSupportedOSVersion()
 {
     return GetSharedGlink()->IsSupportedAndroidVersion();
@@ -160,9 +180,28 @@ void UCafeSdkBlueprintLibrary::StartWriteFromScreenshot()
     FScreenshotRequest::RequestScreenshot("CafeSdkScreenshot.png", false, false);
 }
 
+void UCafeSdkBlueprintLibrary::StopWidget()
+{
+    GetSharedCafeSdk()->StopWidget();
+}
+
+void UCafeSdkBlueprintLibrary::ShowWidgetWhenUnloadSdk(bool bUse)
+{
+    GetSharedCafeSdk()->ShowWidgetWhenUnloadSdk(bUse);
+}
+void UCafeSdkBlueprintLibrary::SetUseVideoRecord(bool bUse)
+{
+    GetSharedCafeSdk()->SetUseVideoRecord(bUse);
+}
+
+void UCafeSdkBlueprintLibrary::SyncGameUserId(FString GameUserId)
+{
+    GetSharedCafeSdk()->SyncGameUserId(GameUserId);
+}
+
 bool UCafeSdkBlueprintLibrary::IsSupportedOSVersion()
 {
-    return false;
+    return GetSharedCafeSdk()->IsSupportedOSVersion();
 }
 
 #else
@@ -231,6 +270,26 @@ void UCafeSdkBlueprintLibrary::StartMore()
 void UCafeSdkBlueprintLibrary::StartWriteFromScreenshot()
 {
     FScreenshotRequest::RequestScreenshot("CafeSdkScreenshot.png", false, false);
+}
+
+void UCafeSdkBlueprintLibrary::ShowWidgetWhenUnloadSdk(bool bUse)
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::StopWidget()
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::SetUseVideoRecord(bool bUse)
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::SyncGameUserId(FString gameId)
+{
+    // do nothing.
 }
 
 bool UCafeSdkBlueprintLibrary::IsSupportedOSVersion()

@@ -82,6 +82,7 @@ namespace UnrealBuildTool.Rules
                         "AssetsLibrary",
                     }
                 );
+                PublicWeakFrameworks.Add("ReplayKit");
             }
 
 		}

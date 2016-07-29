@@ -29,7 +29,8 @@ void FIOSCafeSdk::Init(FString ClientId, FString ClientSecret, int32 CafeId) con
     [[CafeCallbackObject getSharedInstance] setSDKInfoWithClientId:ClientId.GetNSString()
                                                       clientSecret:ClientSecret.GetNSString()
                                                             cafeId:CafeId];
-    FIOSCoreDelegates::OnOpenURL.AddStatic(&ListenNCSDKOpenURL);
+//    외부앱 로그인 처리시 이슈로 인해 사용불가
+//    FIOSCoreDelegates::OnOpenURL.AddStatic(&ListenNCSDKOpenURL);
 }
 
 void FIOSCafeSdk::StartHome() const
@@ -119,6 +120,21 @@ void FIOSCafeSdk::SyncGameUserId(FString GameUserId) const
     [[NCSDKManager getSharedInstance] syncGameUserId:[NSString stringWithFString:GameUserId]];
 }
 
+void FIOSCafeSdk::ShowWidgetWhenUnloadSdk(bool bUse) const
+{
+    [[NCSDKManager getSharedInstance] setShowWidgetWhenUnloadSDK:bUse];
+}
+void FIOSCafeSdk::StopWidget() const
+{
+    [[NCSDKManager getSharedInstance] stopWidget];
+}
+
+void FIOSCafeSdk::SetUseVideoRecord(bool bUse) const
+{
+    //언리얼 녹화 기능 사용할 수 없음.
+    [[NCSDKManager getSharedInstance] setUseWidgetVideoRecord:false];
+}
+
 void FIOSCafeSdk::StartMore() const
 {
     [[CafeCallbackObject getSharedInstance] performSelectorOnMainThread:@selector(startMore)
@@ -126,7 +142,7 @@ void FIOSCafeSdk::StartMore() const
                                                           waitUntilDone:NO];
 }
 
-bool FIOSCafeSdk::IsSupportedIOSVersion() const
+bool FIOSCafeSdk::IsSupportedOSVersion() const
 {
     bool isSupported = false;
     static NSString *reqSysVer = @"7.0";
@@ -156,12 +172,12 @@ bool FIOSCafeSdk::IsSupportedIOSVersion() const
                                      naverLoginClientSecret:clientSecret
                                                      cafeId:cafeId];
     [[NCSDKManager getSharedInstance] setOrientationIsLandscape:YES];
-    [[NCWidget getSharedInstance] setNcWidgetDelegate:self];
 }
 
 - (void)setParentViewController {
+    [[NCSDKLoginManager getSharedInstance] setIsNaverAppOauthEnable:NO];
     [[NCSDKManager getSharedInstance] setParentViewController:[IOSAppDelegate GetDelegate].IOSController];
-    [[NCSDKManager getSharedInstance] setNcSDKDelegate:self];
+    [[NCSDKManager getSharedInstance] setNcSDKDelegate:self];    
 }
 - (void)startHome {
     [[NCSDKManager getSharedInstance] presentMainViewController];
@@ -193,15 +209,14 @@ bool FIOSCafeSdk::IsSupportedIOSVersion() const
     FCafeSDKPluginModule::OnCafeSdkStarted.Broadcast();
 }
 - (void)ncSDKViewDidUnLoad {
-    [[NCSDKManager getSharedInstance] startWidget];
     FCafeSDKPluginModule::OnCafeSdkStopped.Broadcast();
 }
 - (void)ncSDKJoinedCafeMember {
     FCafeSDKPluginModule::OnCafeSdkJoined.Broadcast();
 }
-- (void)ncSDKPostedArticleAtMenu:(NSInteger)menuId {
+- (void)ncSDKPostedArticleAtMenu:(NSInteger)menuId attachImageCount:(NSInteger)imageCount attachVideoCount:(NSInteger)videoCount {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        FCafeSDKPluginModule::OnCafeSdkPostedArticle.Broadcast(menuId);
+        FCafeSDKPluginModule::OnCafeSdkPostedArticle.Broadcast(menuId, imageCount, videoCount);
     });
 }
 - (void)ncSDKPostedCommentAtArticle:(NSInteger)articleId {
@@ -212,13 +227,14 @@ bool FIOSCafeSdk::IsSupportedIOSVersion() const
 - (void)ncSDKRequestScreenShot {
     FScreenshotRequest::RequestScreenshot("CafeSdkScreenshot.png", false, false);
 }
-- (void)ncWidgetPostArticle {
-    GetSharedCafeSdk()->StartWrite(0, "", "");
+- (void)ncSDKDidVoteAtArticle:(NSInteger)articleId {
+    FCafeSDKPluginModule::OnCafeSdkDidVote.Broadcast(articleId);
 }
-- (void)ncWidtetExecuteGLink {
-    GetSharedCafeSdk()->StartHome();
-}
-- (void)ncWidgetPostArticleWithImage {
+
+- (void)ncSDKWidgetPostArticleWithImage {
     FScreenshotRequest::RequestScreenshot("CafeSdkScreenshot.png", false, false);
+}
+- (void)ncSDKWidgetSuccessVideoRecord {
+    FCafeSDKPluginModule::OnCafeSdkRecordFinish.Broadcast("");
 }
 @end
