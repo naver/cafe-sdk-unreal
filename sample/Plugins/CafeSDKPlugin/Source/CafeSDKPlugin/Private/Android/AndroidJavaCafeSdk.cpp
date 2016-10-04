@@ -17,13 +17,14 @@ FAndroidJavaCafeSdk* GetSharedCafeSdk()
 
 FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     : FJavaClassObject(GetClassName(), "()V")
-    , InitMethod(GetClassMethod("init", "(Ljava/lang/String;Ljava/lang/String;I)V"))
+    , InitMethod(GetClassMethod("init", "(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;I)V"))
 {
 }
 
 void FAndroidJavaCafeSdk::Init(FString ClientId, FString ClientSecret, int32 CafeId)
 {
     CallMethod<void>(InitMethod,
+        FJavaWrapper::GameActivityThis,
         FJavaClassObject::GetJString(ClientId),
         FJavaClassObject::GetJString(ClientSecret),
         CafeId

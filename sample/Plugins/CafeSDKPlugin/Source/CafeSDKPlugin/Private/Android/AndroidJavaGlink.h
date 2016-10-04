@@ -12,8 +12,6 @@ class FAndroidJavaGlink
 public:
     FAndroidJavaGlink();
     
-    void Init(FString ClientId, FString ClientSecret, int32 CafeId) const;
-    
     void StartHome() const;
     void StartNotice() const;
     void StartEvent() const;
@@ -43,7 +41,6 @@ private:
     void StartTab(const FJavaClassMethod& JavaClassMethod) const;
     
     jclass Class;
-    FJavaClassMethod InitMethod;
     FJavaClassMethod StartHomeMethod;
     FJavaClassMethod StartNoticeMethod;
     FJavaClassMethod StartEventMethod;

@@ -17,8 +17,6 @@ FAndroidJavaGlink::FAndroidJavaGlink()
 {
     Class = FAndroidApplication::FindJavaClass(GetClassName().GetPlainANSIString());
     
-    InitMethod = GetClassStaticMethod("init", "(Ljava/lang/String;Ljava/lang/String;I)V");
-    
     StartHomeMethod = GetClassStaticMethod("startHome", "(Landroid/app/Activity;)V");
     StartNoticeMethod = GetClassStaticMethod("startNotice", "(Landroid/app/Activity;)V");
     StartEventMethod = GetClassStaticMethod("startEvent", "(Landroid/app/Activity;)V");
@@ -38,12 +36,6 @@ FAndroidJavaGlink::FAndroidJavaGlink()
     
     GetAndroidVersionMethod = GetClassStaticMethod("getAndroidVersion", "()I");
     StartMoreMethod = GetClassStaticMethod("startMore", "(Landroid/app/Activity;)V");
-}
-
-void FAndroidJavaGlink::Init(FString ClientId, FString ClientSecret, int32 CafeId) const
-{
-    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
-    JEnv->CallStaticVoidMethod(Class, InitMethod.Method, FJavaClassObject::GetJString(ClientId), FJavaClassObject::GetJString(ClientSecret), CafeId);
 }
 
 void FAndroidJavaGlink::StartHome() const
