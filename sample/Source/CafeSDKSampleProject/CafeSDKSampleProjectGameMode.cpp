@@ -14,6 +14,7 @@ void ACafeSDKSampleProjectGameMode::InitGame(const FString& MapName, const FStri
     if (FCafeSDKPluginModule::IsAvailable())
     {
         UCafeSdkBlueprintLibrary::Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
+        UCafeSdkBlueprintLibrary::InitGlobal("mmYHaJQA9LnL1GCJ9efi", 1000001, "en");
         
         //카페 SDK 시작
         FCafeSDKPluginModule::OnCafeSdkStarted.AddUObject(this,

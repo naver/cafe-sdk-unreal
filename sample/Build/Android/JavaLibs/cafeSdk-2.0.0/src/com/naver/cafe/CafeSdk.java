@@ -16,6 +16,7 @@ import com.naver.glink.android.sdk.Glink.OnSdkStoppedListener;
 public class CafeSdk {
 
   private static Handler sHandler = new Handler(Looper.getMainLooper());
+  private static boolean sInitializedListeners;
 
   private static native void nativeOnSdkStarted();
 
@@ -35,10 +36,24 @@ public class CafeSdk {
 
   private static native void nativeOnRecordFinished(String uri);
 
-  public void init(final Activity activity, String clientId, String clientSecret, int cafeId) {
+  public void init(Activity activity, String clientId, String clientSecret, int cafeId) {
     if (activity == null) return;
-    
+
     Glink.init(activity, clientId, clientSecret, cafeId);
+    initListeners(activity);
+  }
+  
+  public void initGlobal(Activity activity, String clientId, int cafeId,
+      String defaultCafeLangCode) {
+    if (activity == null) return;
+
+    Glink.initGlobal(activity, clientId, cafeId, defaultCafeLangCode);
+    initListeners(activity);
+  }
+
+  private void initListeners(final Activity activity) {
+    if (sInitializedListeners) return;
+    sInitializedListeners = true;
 
     Glink.setOnSdkStartedListener(new OnSdkStartedListener() {
       @Override public void onSdkStarted() {

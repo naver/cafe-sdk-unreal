@@ -20,6 +20,12 @@ void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int3
     GetSharedCafeSdk()->Init(ClientId, ClientSecret, CafeId);
 }
 
+void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CafeId, FString DefaultCafeLangCode)
+{
+    if (!IsSupportedOSVersion()) return;
+    GetSharedCafeSdk()->InitGlobal(ClientId, CafeId, DefaultCafeLangCode);
+}
+
 void UCafeSdkBlueprintLibrary::StartHome()
 {
     if (!IsSupportedOSVersion()) return;
@@ -125,6 +131,11 @@ void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int3
     GetSharedCafeSdk()->Init(ClientId, ClientSecret, CafeId);
 }
 
+void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CafeId, FString DefaultCafeLangCode)
+{
+    // do nothing.
+}
+
 void UCafeSdkBlueprintLibrary::StartHome()
 {
     GetSharedCafeSdk()->StartHome();
@@ -213,6 +224,11 @@ UCafeSdkBlueprintLibrary::UCafeSdkBlueprintLibrary(const FObjectInitializer& Obj
 }
 
 void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int32 CafeId)
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CafeId, FString DefaultCafeLangCode)
 {
     // do nothing.
 }
