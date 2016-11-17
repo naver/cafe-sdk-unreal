@@ -28,6 +28,7 @@ public:
     void ShowWidgetWhenUnloadSdk(bool bUse) const;
     void StopWidget() const;
     void SetUseVideoRecord(bool bUse) const;
+    void SetThemeColor(FString themeColorCSSString, FString tabBackgroundColorCSSString) const;
     
     void StartMore() const;
     
@@ -50,6 +51,7 @@ private:
     FJavaClassMethod StartWriteMethod;
     FJavaClassMethod StartImageWriteMethod;
     FJavaClassMethod StartVideoWriteMethod;
+    FJavaClassMethod SetThemeColorMethod;
     FJavaClassMethod IsShowMethod;
     FJavaClassMethod SyncGameUserIdMethod;
     FJavaClassMethod StartMoreMethod;

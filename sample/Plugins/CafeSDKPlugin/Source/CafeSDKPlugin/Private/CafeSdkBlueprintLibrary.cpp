@@ -107,9 +107,19 @@ void UCafeSdkBlueprintLibrary::SetUseVideoRecord(bool bUse)
     GetSharedGlink()->SetUseVideoRecord(bUse);
 }
 
-void UCafeSdkBlueprintLibrary::SyncGameUserId(FString gameId)
+void UCafeSdkBlueprintLibrary::SyncGameUserId(FString GameUserId)
 {
-    
+    GetSharedGlink()->SyncGameUserId(GameUserId);
+}
+
+void UCafeSdkBlueprintLibrary::SetThemeColor(FString themeColorCSSString, FString tabBackgroundColorCSSString)
+{
+    GetSharedGlink()->SetThemeColor(themeColorCSSString, tabBackgroundColorCSSString);
+}
+
+void UCafeSdkBlueprintLibrary::SetXButtonType(EXButtonType Type)
+{
+    // TODO:
 }
 
 bool UCafeSdkBlueprintLibrary::IsSupportedOSVersion()
@@ -210,6 +220,16 @@ void UCafeSdkBlueprintLibrary::SyncGameUserId(FString GameUserId)
     GetSharedCafeSdk()->SyncGameUserId(GameUserId);
 }
 
+void UCafeSdkBlueprintLibrary::SetThemeColor(FString themeColorCSSString, FString tabBackgroundColorCSSString)
+{
+    
+}
+
+void UCafeSdkBlueprintLibrary::SetXButtonType(EXButtonType Type)
+{
+    
+}
+
 bool UCafeSdkBlueprintLibrary::IsSupportedOSVersion()
 {
     return GetSharedCafeSdk()->IsSupportedOSVersion();
@@ -304,6 +324,16 @@ void UCafeSdkBlueprintLibrary::SetUseVideoRecord(bool bUse)
 }
 
 void UCafeSdkBlueprintLibrary::SyncGameUserId(FString gameId)
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::SetThemeColor(FString themeColorCSSString, FString tabBackgroundColorCSSString)
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::SetXButtonType(EXButtonType Type)
 {
     // do nothing.
 }

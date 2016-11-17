@@ -30,9 +30,10 @@ FAndroidJavaGlink::FAndroidJavaGlink()
     IsShowMethod = GetClassStaticMethod("isShowGlink", "(Landroid/app/Activity;)Z");
     SyncGameUserIdMethod = GetClassStaticMethod("syncGameUserId", "(Landroid/app/Activity;Ljava/lang/String;)V");
     
-    ShowWidgetWhenUnloadSdkMethod = GetClassStaticMethod("showWidgetWhenUnloadSdk", "(Landroid/app/Activity;Z)V");;
-    StopWidgetMethod = GetClassStaticMethod("stopWidget", "(Landroid/app/Activity;)V");;
-    SetUseVideoRecordMethod = GetClassStaticMethod("setUseVideoRecord", "(Landroid/app/Activity;Z)V");;
+    ShowWidgetWhenUnloadSdkMethod = GetClassStaticMethod("showWidgetWhenUnloadSdk", "(Landroid/app/Activity;Z)V");
+    StopWidgetMethod = GetClassStaticMethod("stopWidget", "(Landroid/app/Activity;)V");
+    SetUseVideoRecordMethod = GetClassStaticMethod("setUseVideoRecord", "(Landroid/app/Activity;Z)V");
+    SetThemeColorMethod = GetClassStaticMethod("setThemeColor", "(Ljava/lang/String;Ljava/lang/String;)V");
     
     GetAndroidVersionMethod = GetClassStaticMethod("getAndroidVersion", "()I");
     StartMoreMethod = GetClassStaticMethod("startMore", "(Landroid/app/Activity;)V");
@@ -113,6 +114,17 @@ void FAndroidJavaGlink::StartVideoWrite(int32 MenuId, FString Subject, FString T
         FJavaClassObject::GetJString(Subject),
         FJavaClassObject::GetJString(Text),
         FJavaClassObject::GetJString(VideoUri)
+        );
+}
+
+void FAndroidJavaGlink::SetThemeColor(FString themeColorCSSString, FString tabBackgroundColorCSSString) const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    
+    JEnv->CallStaticVoidMethod(Class,
+        SetThemeColorMethod.Method,
+        FJavaClassObject::GetJString(themeColorCSSString),
+        FJavaClassObject::GetJString(tabBackgroundColorCSSString)
         );
 }
 

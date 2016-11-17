@@ -13,8 +13,20 @@ void ACafeSDKSampleProjectGameMode::InitGame(const FString& MapName, const FStri
     
     if (FCafeSDKPluginModule::IsAvailable())
     {
-        UCafeSdkBlueprintLibrary::Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
+        // 국내 카페 초기화.
+        UCafeSdkBlueprintLibrary::Init("UKvNABLDsyEJusJGsXL2", "rK4suc_Qd0", 28266581);
+        
+        // 글로벌 카페 초기화. 국내 카페만 사용할 경우 initGlobal을 하지 않아도 됩니다.
         UCafeSdkBlueprintLibrary::InitGlobal("7WROsNhGXM6F0qeCk5vK", 1013314, "en");
+        
+        /*
+         * 테마 설정.
+         * - theme color는 css color 포맷으로 설정하시면 됩니다.
+         * - 다만, theme color에 alpha값이 없어야 합니다.
+         */
+        UCafeSdkBlueprintLibrary::SetThemeColor("#00c73c", "#44484e");
+        
+        UCafeSdkBlueprintLibrary::SyncGameUserId("SyncGameUserId");
         
         //카페 SDK 시작
         FCafeSDKPluginModule::OnCafeSdkStarted.AddUObject(this,
