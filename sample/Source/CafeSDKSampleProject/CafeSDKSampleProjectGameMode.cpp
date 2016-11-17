@@ -4,6 +4,7 @@
 #include "CafeSDKSampleProjectGameMode.h"
 #include "CafeSDKPlugin.h"
 #include "CafeSdkBlueprintLibrary.h"
+#include "CafeSdkStatisticsBlueprintLibrary.h"
 
 DEFINE_LOG_CATEGORY(LogCafeSdk);
 
