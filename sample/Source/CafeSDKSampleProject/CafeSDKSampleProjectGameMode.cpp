@@ -28,6 +28,7 @@ void ACafeSDKSampleProjectGameMode::InitGame(const FString& MapName, const FStri
         UCafeSdkBlueprintLibrary::SetThemeColor("#00c73c", "#44484e");
         
         UCafeSdkBlueprintLibrary::SyncGameUserId("SyncGameUserId");
+        UCafeSdkBlueprintLibrary::SetXButtonType(EXButtonType::kXButtonTypeMinimize);
         
         //카페 SDK 시작
         FCafeSDKPluginModule::OnCafeSdkStarted.AddUObject(this,

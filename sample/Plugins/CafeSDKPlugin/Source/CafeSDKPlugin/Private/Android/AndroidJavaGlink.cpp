@@ -34,6 +34,7 @@ FAndroidJavaGlink::FAndroidJavaGlink()
     StopWidgetMethod = GetClassStaticMethod("stopWidget", "(Landroid/app/Activity;)V");
     SetUseVideoRecordMethod = GetClassStaticMethod("setUseVideoRecord", "(Landroid/app/Activity;Z)V");
     SetThemeColorMethod = GetClassStaticMethod("setThemeColor", "(Ljava/lang/String;Ljava/lang/String;)V");
+    SetXButtonTypeCloseMethod = GetClassStaticMethod("setXButtonTypeClose", "(Landroid/app/Activity;Z)V");
     
     GetAndroidVersionMethod = GetClassStaticMethod("getAndroidVersion", "()I");
     StartMoreMethod = GetClassStaticMethod("startMore", "(Landroid/app/Activity;)V");
@@ -117,15 +118,21 @@ void FAndroidJavaGlink::StartVideoWrite(int32 MenuId, FString Subject, FString T
         );
 }
 
-void FAndroidJavaGlink::SetThemeColor(FString themeColorCSSString, FString tabBackgroundColorCSSString) const
+void FAndroidJavaGlink::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     
     JEnv->CallStaticVoidMethod(Class,
         SetThemeColorMethod.Method,
-        FJavaClassObject::GetJString(themeColorCSSString),
-        FJavaClassObject::GetJString(tabBackgroundColorCSSString)
+        FJavaClassObject::GetJString(ThemeColorCSSString),
+        FJavaClassObject::GetJString(TabBackgroundColorCSSString)
         );
+}
+
+void FAndroidJavaGlink::SetXButtonTypeClose(bool bUse) const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    JEnv->CallStaticVoidMethod(Class, SetXButtonTypeCloseMethod.Method, FJavaWrapper::GameActivityThis, bUse);
 }
 
 bool FAndroidJavaGlink::IsShow() const

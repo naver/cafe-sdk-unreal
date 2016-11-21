@@ -112,14 +112,15 @@ void UCafeSdkBlueprintLibrary::SyncGameUserId(FString GameUserId)
     GetSharedGlink()->SyncGameUserId(GameUserId);
 }
 
-void UCafeSdkBlueprintLibrary::SetThemeColor(FString themeColorCSSString, FString tabBackgroundColorCSSString)
+void UCafeSdkBlueprintLibrary::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString)
 {
-    GetSharedGlink()->SetThemeColor(themeColorCSSString, tabBackgroundColorCSSString);
+    GetSharedGlink()->SetThemeColor(ThemeColorCSSString, TabBackgroundColorCSSString);
 }
 
 void UCafeSdkBlueprintLibrary::SetXButtonType(EXButtonType Type)
 {
-    // TODO:
+    bool bUse = Type == EXButtonType::kXButtonTypeClose;
+    GetSharedGlink()->SetXButtonTypeClose(bUse);
 }
 
 bool UCafeSdkBlueprintLibrary::IsSupportedOSVersion()
@@ -220,7 +221,7 @@ void UCafeSdkBlueprintLibrary::SyncGameUserId(FString GameUserId)
     GetSharedCafeSdk()->SyncGameUserId(GameUserId);
 }
 
-void UCafeSdkBlueprintLibrary::SetThemeColor(FString themeColorCSSString, FString tabBackgroundColorCSSString)
+void UCafeSdkBlueprintLibrary::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString)
 {
     
 }
@@ -328,7 +329,7 @@ void UCafeSdkBlueprintLibrary::SyncGameUserId(FString gameId)
     // do nothing.
 }
 
-void UCafeSdkBlueprintLibrary::SetThemeColor(FString themeColorCSSString, FString tabBackgroundColorCSSString)
+void UCafeSdkBlueprintLibrary::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString)
 {
     // do nothing.
 }

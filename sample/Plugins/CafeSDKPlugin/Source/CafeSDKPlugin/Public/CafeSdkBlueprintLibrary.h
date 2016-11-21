@@ -68,7 +68,7 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     static void SyncGameUserId(FString GameUserId);
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
-    static void SetThemeColor(FString themeColorCSSString, FString tabBackgroundColorCSSString);
+    static void SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString);
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void SetXButtonType(EXButtonType Type);
