@@ -11,7 +11,7 @@ public:
     FAndroidJavaCafeSdk();
     
     void Init(FString ClientId, FString ClientSecret, int32 CafeId);
-    void InitGlobal(FString ClientId, int32 CafeId, FString DefaultCafeLangCode);
+    void InitGlobal(FString ClientId, int32 CafeId, FString DefaultChannelCode);
     
 private:
     static FName GetClassName();

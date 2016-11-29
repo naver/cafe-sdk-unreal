@@ -32,13 +32,13 @@ void FAndroidJavaCafeSdk::Init(FString ClientId, FString ClientSecret, int32 Caf
         );
 }
 
-void FAndroidJavaCafeSdk::InitGlobal(FString ClientId, int32 CafeId, FString DefaultCafeLangCode)
+void FAndroidJavaCafeSdk::InitGlobal(FString ClientId, int32 CafeId, FString DefaultChannelCode)
 {
     CallMethod<void>(InitGlobalMethod,
         FJavaWrapper::GameActivityThis,
         FJavaClassObject::GetJString(ClientId),
         CafeId,
-        FJavaClassObject::GetJString(DefaultCafeLangCode)
+        FJavaClassObject::GetJString(DefaultChannelCode)
         );
 }
 

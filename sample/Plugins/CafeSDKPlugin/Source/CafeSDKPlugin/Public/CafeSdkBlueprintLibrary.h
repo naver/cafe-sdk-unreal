@@ -20,7 +20,7 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     static void Init(FString ClientId, FString ClientSecret, int32 CafeId);
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
-    static void InitGlobal(FString ClientId, int32 CafeId, FString DefaultCafeLangCode);
+    static void InitGlobal(FString ClientId, int32 CommunityId, FString DefaultChannelCode);
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void StartHome();

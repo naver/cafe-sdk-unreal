@@ -20,10 +20,10 @@ void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int3
     GetSharedCafeSdk()->Init(ClientId, ClientSecret, CafeId);
 }
 
-void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CafeId, FString DefaultCafeLangCode)
+void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CommunityId, FString DefaultChannelCode)
 {
     if (!IsSupportedOSVersion()) return;
-    GetSharedCafeSdk()->InitGlobal(ClientId, CafeId, DefaultCafeLangCode);
+    GetSharedCafeSdk()->InitGlobal(ClientId, CommunityId, DefaultChannelCode);
 }
 
 void UCafeSdkBlueprintLibrary::StartHome()
@@ -142,9 +142,9 @@ void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int3
     GetSharedCafeSdk()->Init(ClientId, ClientSecret, CafeId);
 }
 
-void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CafeId, FString DefaultCafeLangCode)
+void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CommunityId, FString DefaultChannelCode)
 {
-    // do nothing.
+    GetSharedCafeSdk()->InitGlobal(ClientId, CommunityId, DefaultChannelCode);
 }
 
 void UCafeSdkBlueprintLibrary::StartHome()
@@ -223,12 +223,12 @@ void UCafeSdkBlueprintLibrary::SyncGameUserId(FString GameUserId)
 
 void UCafeSdkBlueprintLibrary::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString)
 {
-    
+    GetSharedCafeSdk()->SetThemeColor(ThemeColorCSSString, TabBackgroundColorCSSString);
 }
 
 void UCafeSdkBlueprintLibrary::SetXButtonType(EXButtonType Type)
 {
-    
+    GetSharedCafeSdk()->SetXButtonTypeClose(Type);
 }
 
 bool UCafeSdkBlueprintLibrary::IsSupportedOSVersion()
@@ -249,7 +249,7 @@ void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int3
     // do nothing.
 }
 
-void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CafeId, FString DefaultCafeLangCode)
+void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CommunityId, FString DefaultChannelCode)
 {
     // do nothing.
 }

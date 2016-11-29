@@ -11,6 +11,7 @@ public:
     FIOSCafeSdk();
     
     void Init(FString ClientId, FString ClientSecret, int32 CafeId) const;
+    void InitGlobal(FString ClientId, int32 CommunityId, FString DefaultChannelCode) const;
     
     void StartHome() const;
     void StartNotice() const;
@@ -28,7 +29,9 @@ public:
     void ShowWidgetWhenUnloadSdk(bool bUse) const;
     void StopWidget() const;
     void SetUseVideoRecord(bool bUse) const;
-    
+    void SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const;
+    void SetXButtonTypeClose(EXButtonType Type) const;
+
     void StartMore() const;
     
     bool IsSupportedOSVersion() const;
@@ -42,6 +45,7 @@ FIOSCafeSdk* GetSharedCafeSdk();
 @interface CafeCallbackObject : NSObject <NCSDKManagerDelegate>
 + (CafeCallbackObject*)getSharedInstance;
 - (void)setSDKInfoWithClientId:(NSString *)clientId clientSecret:(NSString *)clientSecret cafeId:(NSInteger)cafeId;
+- (void)setGlobalSDKInfoWithClientId:(NSString *)clientId communityId:(NSInteger)communityId defaultChannelCode:(NSString *)channelCode;
 - (void)startHome;
 - (void)startNotice;
 - (void)startEvent;
