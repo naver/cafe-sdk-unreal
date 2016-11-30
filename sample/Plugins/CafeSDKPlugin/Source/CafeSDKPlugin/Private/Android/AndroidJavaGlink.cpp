@@ -37,7 +37,6 @@ FAndroidJavaGlink::FAndroidJavaGlink()
     SetXButtonTypeCloseMethod = GetClassStaticMethod("setXButtonTypeClose", "(Landroid/app/Activity;Z)V");
     
     GetAndroidVersionMethod = GetClassStaticMethod("getAndroidVersion", "()I");
-    StartMoreMethod = GetClassStaticMethod("startMore", "(Landroid/app/Activity;)V");
 }
 
 void FAndroidJavaGlink::StartHome() const
@@ -163,11 +162,6 @@ void FAndroidJavaGlink::SetUseVideoRecord(bool bUse) const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     JEnv->CallStaticVoidMethod(Class, SetUseVideoRecordMethod.Method, FJavaWrapper::GameActivityThis, bUse);
-}
-
-void FAndroidJavaGlink::StartMore() const
-{
-    StartTab(StartMoreMethod);
 }
 
 bool FAndroidJavaGlink::IsSupportedAndroidVersion() const

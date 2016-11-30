@@ -83,7 +83,7 @@ void UCafeSdkBlueprintLibrary::StartVideoWrite(int32 MenuId, FString Subject, FS
 void UCafeSdkBlueprintLibrary::StartMore()
 {
     if (!IsSupportedOSVersion()) return;
-    GetSharedGlink()->StartMore();
+    GetSharedCafeSdk()->StartMore();
 }
 
 void UCafeSdkBlueprintLibrary::StartWriteFromScreenshot()

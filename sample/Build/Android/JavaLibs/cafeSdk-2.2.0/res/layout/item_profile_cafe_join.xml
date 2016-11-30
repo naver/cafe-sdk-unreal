@@ -50,7 +50,6 @@
         android:layout_marginLeft="22dp"
         android:layout_marginRight="22dp"
         android:layout_marginBottom="22dp"
-        android:src="@drawable/gl_with_naver_cafe"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"/>
 

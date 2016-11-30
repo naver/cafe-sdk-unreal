@@ -15,11 +15,16 @@
       android:textSize="14dp"
       android:singleLine="true"/>
 
-  <ImageView
+  <FrameLayout
       android:id="@+id/check_icon"
       android:layout_width="18dp"
       android:layout_height="18dp"
-      android:layout_gravity="center_vertical"
-      android:scaleType="center"
-      android:src="@drawable/menu_item_check_icon"/>
+      android:layout_gravity="center_vertical">
+
+    <ImageView
+        android:layout_width="11dp"
+        android:layout_height="6dp"
+        android:layout_gravity="center"
+        android:src="@drawable/menu_item_check_icon"/>
+  </FrameLayout>
 </LinearLayout>

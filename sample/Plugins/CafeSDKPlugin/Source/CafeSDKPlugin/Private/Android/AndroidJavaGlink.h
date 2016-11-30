@@ -31,8 +31,6 @@ public:
     void SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const;
     void SetXButtonTypeClose(bool bUse) const;
     
-    void StartMore() const;
-    
     bool IsSupportedAndroidVersion() const;
     
 private:
@@ -56,7 +54,6 @@ private:
     FJavaClassMethod SetXButtonTypeCloseMethod;
     FJavaClassMethod IsShowMethod;
     FJavaClassMethod SyncGameUserIdMethod;
-    FJavaClassMethod StartMoreMethod;
     FJavaClassMethod ShowWidgetWhenUnloadSdkMethod;
     FJavaClassMethod StopWidgetMethod;
     FJavaClassMethod SetUseVideoRecordMethod;

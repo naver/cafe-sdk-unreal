@@ -92,18 +92,6 @@
             android:layout_centerInParent="true"
             android:visibility="gone"/>
 
-        <TextView
-            android:id="@+id/stop_close_test"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginRight="21dp"
-            android:layout_toLeftOf="@+id/close"
-            android:layout_centerInParent="true"
-            android:text="끄기"
-            android:textColor="@color/white1"
-            android:textSize="17dp"
-            android:visibility="visible"/>
-
         <SeekBar
             android:id="@+id/transparent_seekbar"
             style="@style/Glink.SeekBar"

@@ -25,7 +25,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="22dp"
             android:layout_marginBottom="22dp"
-            android:src="@drawable/gl_with_naver_cafe"
             android:layout_alignParentBottom="true"/>
       </RelativeLayout>
 

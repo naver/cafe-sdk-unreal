@@ -120,4 +120,8 @@ public class CafeSdk {
       }
     });
   }
+
+  public void startMore(Activity activity) {
+    // do nothing.
+  }
 }
