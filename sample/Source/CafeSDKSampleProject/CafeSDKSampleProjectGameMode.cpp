@@ -15,10 +15,10 @@ void ACafeSDKSampleProjectGameMode::InitGame(const FString& MapName, const FStri
     if (FCafeSDKPluginModule::IsAvailable())
     {
         // 국내 카페 초기화.
-        UCafeSdkBlueprintLibrary::Init("UKvNABLDsyEJusJGsXL2", "rK4suc_Qd0", 28266581);
+        UCafeSdkBlueprintLibrary::Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
         
         // 글로벌 카페 초기화. 국내 카페만 사용할 경우 initGlobal을 하지 않아도 됩니다.
-        UCafeSdkBlueprintLibrary::InitGlobal("Yx8MMmu5GcHYPOwZ4cYW", 1013311, "en");
+        UCafeSdkBlueprintLibrary::InitGlobal("IHCd_HmSiMcXOMC37xZ8", 1013329, NULL);
         
         /*
          * 테마 설정.

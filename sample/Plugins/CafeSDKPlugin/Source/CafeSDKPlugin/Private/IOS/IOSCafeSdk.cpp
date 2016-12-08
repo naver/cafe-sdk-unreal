@@ -188,15 +188,13 @@ bool FIOSCafeSdk::IsSupportedOSVersion() const
     [[NCSDKManager getSharedInstance] setOrientationIsLandscape:YES];
 }
 - (void)setGlobalSDKInfoWithClientId:(NSString *)clientId communityId:(NSInteger)communityId defaultChannelCode:(NSString *)channelCode {
-//  [[NCSDKManager getSharedInstance] setChannelCode:channelCode];
+    [[NCSDKManager getSharedInstance] setChannelCode:channelCode];
     [[NCSDKManager getSharedInstance] setNeoIdConsumerKey:clientId communityId:communityId];
-    
     [[NCSDKManager getSharedInstance] setOrientationIsLandscape:YES];
 }
 - (void)setParentViewController {
     [[NCSDKManager getSharedInstance] setParentViewController:[IOSAppDelegate GetDelegate].IOSController];
     [[NCSDKManager getSharedInstance] setNcSDKDelegate:self];
-    [[NCSDKLoginManager getSharedInstance] setIsNaverAppOauthEnable:NO];
 }
 - (void)startHome {
     [[NCSDKManager getSharedInstance] presentMainViewController];
