@@ -19,6 +19,9 @@
         android:layout_height="match_parent"
         android:divider="@null"
         android:dividerHeight="0dp"
+        android:scrollbarThumbVertical="@color/black2_opacity_20"
+        android:scrollbarSize="4dp"
+        android:theme="@android:style/Theme.Holo.Light"
         android:cacheColorHint="@android:color/transparent"/>
   </LinearLayout>
 
