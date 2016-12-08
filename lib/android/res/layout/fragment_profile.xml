@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gl_img_plate"
-    tools:context="com.naver.glink.android.sdk.ui.profile.ProfileFragment">
+    tools:context="com.naver.glink.android.sdk.ui.profile.ProfileMainFragment">
 
   <android.support.v4.widget.SwipeRefreshLayout
       android:id="@+id/swipe_refresh_layout"
@@ -20,8 +20,9 @@
         android:divider="@null"
         android:dividerHeight="0dp"
         android:listSelector="@drawable/gl_list_selector"
-        android:cacheColorHint="@android:color/transparent"/>
-
+        android:cacheColorHint="@android:color/transparent"
+        android:theme="@android:style/Theme.Holo.Light"
+        android:choiceMode="singleChoice"/>
   </android.support.v4.widget.SwipeRefreshLayout>
 
   <TextView
