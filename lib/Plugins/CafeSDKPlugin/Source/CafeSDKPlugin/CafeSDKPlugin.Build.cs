@@ -69,6 +69,18 @@ namespace UnrealBuildTool.Rules
 						"../../ThirdPartyFrameworks/iOS/AFNetworking.embeddedframework.zip"
                     )
                 );
+                PublicAdditionalFrameworks.Add(
+                    new UEBuildFramework(
+                        "SDWebImage",
+                        "../../ThirdPartyFrameworks/iOS/SDWebImage.embeddedframework.zip"
+                    )
+                );
+                PublicAdditionalFrameworks.Add(
+                    new UEBuildFramework(
+                        "FLAnimatedImage",
+                        "../../ThirdPartyFrameworks/iOS/FLAnimatedImage.embeddedframework.zip"
+                    )
+                );
 
                 PublicFrameworks.AddRange(
                     new string[] {

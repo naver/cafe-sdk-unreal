@@ -1,6 +1,7 @@
 // Copyright 2016 NAVER Corp. All rights reserved.
 
 #include "CafeSDKPluginPrivatePCH.h"
+#include "IOSCafeSdk.h"
 #include "IOSAppDelegate.h"
 #include "IOSView.h"
 #include "IOSPlatformString.h"
@@ -136,7 +137,7 @@ void FIOSCafeSdk::StopWidget() const
 
 void FIOSCafeSdk::SetUseVideoRecord(bool bUse) const
 {
-    //언리얼 녹화 기능 사용할 수 없음.
+    //Available Unreal Engine 4.13 (Support for the Apple Replay Kit Framework)
     [[NCSDKManager getSharedInstance] setUseWidgetVideoRecord:false];
 }
 void FIOSCafeSdk::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const

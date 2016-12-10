@@ -29,8 +29,13 @@ void FIOSCafeSdk::Init(FString ClientId, FString ClientSecret, int32 CafeId) con
     [[CafeCallbackObject getSharedInstance] setSDKInfoWithClientId:ClientId.GetNSString()
                                                       clientSecret:ClientSecret.GetNSString()
                                                             cafeId:CafeId];
-//    외부앱 로그인 처리시 이슈로 인해 사용불가
+//    If you want to use Naver App Login
 //    FIOSCoreDelegates::OnOpenURL.AddStatic(&ListenNCSDKOpenURL);
+}
+void FIOSCafeSdk::InitGlobal(FString ClientId, int32 CommunityId, FString DefaultChannelCode) const {
+    [[CafeCallbackObject getSharedInstance] setGlobalSDKInfoWithClientId:ClientId.GetNSString()
+                                                             communityId:CommunityId
+                                                      defaultChannelCode:DefaultChannelCode.GetNSString()];
 }
 
 void FIOSCafeSdk::StartHome() const
@@ -134,6 +139,15 @@ void FIOSCafeSdk::SetUseVideoRecord(bool bUse) const
     //언리얼 녹화 기능 사용할 수 없음.
     [[NCSDKManager getSharedInstance] setUseWidgetVideoRecord:false];
 }
+void FIOSCafeSdk::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const
+{
+    [[NCSDKManager getSharedInstance] setThemeColor:[NSString stringWithFString:ThemeColorCSSString]];
+}
+void FIOSCafeSdk::SetXButtonTypeClose(EXButtonType Type) const
+{
+    GLXButtonType xType = Type == EXButtonType::kXButtonTypeClose ? kGLXButtonTypeClose : kGLXButtonTypeMinimize;
+    [[NCSDKManager getSharedInstance] setXButtonType:xType];
+}
 
 void FIOSCafeSdk::StartMore() const
 {
@@ -173,11 +187,14 @@ bool FIOSCafeSdk::IsSupportedOSVersion() const
                                                      cafeId:cafeId];
     [[NCSDKManager getSharedInstance] setOrientationIsLandscape:YES];
 }
-
+- (void)setGlobalSDKInfoWithClientId:(NSString *)clientId communityId:(NSInteger)communityId defaultChannelCode:(NSString *)channelCode {
+    [[NCSDKManager getSharedInstance] setChannelCode:channelCode];
+    [[NCSDKManager getSharedInstance] setNeoIdConsumerKey:clientId communityId:communityId];
+    [[NCSDKManager getSharedInstance] setOrientationIsLandscape:YES];
+}
 - (void)setParentViewController {
-    [[NCSDKLoginManager getSharedInstance] setIsNaverAppOauthEnable:NO];
     [[NCSDKManager getSharedInstance] setParentViewController:[IOSAppDelegate GetDelegate].IOSController];
-    [[NCSDKManager getSharedInstance] setNcSDKDelegate:self];    
+    [[NCSDKManager getSharedInstance] setNcSDKDelegate:self];
 }
 - (void)startHome {
     [[NCSDKManager getSharedInstance] presentMainViewController];

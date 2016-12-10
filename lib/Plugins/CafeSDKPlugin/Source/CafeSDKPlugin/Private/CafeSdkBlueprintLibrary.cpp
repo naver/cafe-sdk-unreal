@@ -20,6 +20,12 @@ void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int3
     GetSharedCafeSdk()->Init(ClientId, ClientSecret, CafeId);
 }
 
+void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CommunityId, FString DefaultChannelCode)
+{
+    if (!IsSupportedOSVersion()) return;
+    GetSharedCafeSdk()->InitGlobal(ClientId, CommunityId, DefaultChannelCode);
+}
+
 void UCafeSdkBlueprintLibrary::StartHome()
 {
     if (!IsSupportedOSVersion()) return;
@@ -77,7 +83,7 @@ void UCafeSdkBlueprintLibrary::StartVideoWrite(int32 MenuId, FString Subject, FS
 void UCafeSdkBlueprintLibrary::StartMore()
 {
     if (!IsSupportedOSVersion()) return;
-    GetSharedGlink()->StartMore();
+    GetSharedCafeSdk()->StartMore();
 }
 
 void UCafeSdkBlueprintLibrary::StartWriteFromScreenshot()
@@ -101,9 +107,20 @@ void UCafeSdkBlueprintLibrary::SetUseVideoRecord(bool bUse)
     GetSharedGlink()->SetUseVideoRecord(bUse);
 }
 
-void UCafeSdkBlueprintLibrary::SyncGameUserId(FString gameId)
+void UCafeSdkBlueprintLibrary::SyncGameUserId(FString GameUserId)
 {
-    
+    GetSharedGlink()->SyncGameUserId(GameUserId);
+}
+
+void UCafeSdkBlueprintLibrary::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString)
+{
+    GetSharedGlink()->SetThemeColor(ThemeColorCSSString, TabBackgroundColorCSSString);
+}
+
+void UCafeSdkBlueprintLibrary::SetXButtonType(EXButtonType Type)
+{
+    bool bUse = Type == EXButtonType::kXButtonTypeClose;
+    GetSharedGlink()->SetXButtonTypeClose(bUse);
 }
 
 bool UCafeSdkBlueprintLibrary::IsSupportedOSVersion()
@@ -123,6 +140,11 @@ UCafeSdkBlueprintLibrary::UCafeSdkBlueprintLibrary(const FObjectInitializer& Obj
 void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int32 CafeId)
 {
     GetSharedCafeSdk()->Init(ClientId, ClientSecret, CafeId);
+}
+
+void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CommunityId, FString DefaultChannelCode)
+{
+    GetSharedCafeSdk()->InitGlobal(ClientId, CommunityId, DefaultChannelCode);
 }
 
 void UCafeSdkBlueprintLibrary::StartHome()
@@ -199,6 +221,16 @@ void UCafeSdkBlueprintLibrary::SyncGameUserId(FString GameUserId)
     GetSharedCafeSdk()->SyncGameUserId(GameUserId);
 }
 
+void UCafeSdkBlueprintLibrary::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString)
+{
+    GetSharedCafeSdk()->SetThemeColor(ThemeColorCSSString, TabBackgroundColorCSSString);
+}
+
+void UCafeSdkBlueprintLibrary::SetXButtonType(EXButtonType Type)
+{
+    GetSharedCafeSdk()->SetXButtonTypeClose(Type);
+}
+
 bool UCafeSdkBlueprintLibrary::IsSupportedOSVersion()
 {
     return GetSharedCafeSdk()->IsSupportedOSVersion();
@@ -213,6 +245,11 @@ UCafeSdkBlueprintLibrary::UCafeSdkBlueprintLibrary(const FObjectInitializer& Obj
 }
 
 void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int32 CafeId)
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CommunityId, FString DefaultChannelCode)
 {
     // do nothing.
 }
@@ -288,6 +325,16 @@ void UCafeSdkBlueprintLibrary::SetUseVideoRecord(bool bUse)
 }
 
 void UCafeSdkBlueprintLibrary::SyncGameUserId(FString gameId)
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString)
+{
+    // do nothing.
+}
+
+void UCafeSdkBlueprintLibrary::SetXButtonType(EXButtonType Type)
 {
     // do nothing.
 }

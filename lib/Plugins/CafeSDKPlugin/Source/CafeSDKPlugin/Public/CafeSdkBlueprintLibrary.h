@@ -4,6 +4,13 @@
 
 #include "CafeSdkBlueprintLibrary.generated.h"
 
+UENUM()
+enum class EXButtonType : uint8
+{
+    kXButtonTypeMinimize = 0,
+    kXButtonTypeClose = 1
+};
+
 UCLASS()
 class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibrary
 {
@@ -11,6 +18,9 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void Init(FString ClientId, FString ClientSecret, int32 CafeId);
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void InitGlobal(FString ClientId, int32 CommunityId, FString DefaultChannelCode);
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void StartHome();
@@ -53,9 +63,15 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void SetUseVideoRecord(bool bUse);
-
+    
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void SyncGameUserId(FString GameUserId);
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString);
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void SetXButtonType(EXButtonType Type);
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static bool IsSupportedOSVersion();
