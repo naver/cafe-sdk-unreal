@@ -17,8 +17,6 @@ FAndroidJavaGlink::FAndroidJavaGlink()
 {
     Class = FAndroidApplication::FindJavaClass(GetClassName().GetPlainANSIString());
     
-    InitMethod = GetClassStaticMethod("init", "(Ljava/lang/String;Ljava/lang/String;I)V");
-    
     StartHomeMethod = GetClassStaticMethod("startHome", "(Landroid/app/Activity;)V");
     StartNoticeMethod = GetClassStaticMethod("startNotice", "(Landroid/app/Activity;)V");
     StartEventMethod = GetClassStaticMethod("startEvent", "(Landroid/app/Activity;)V");
@@ -32,18 +30,13 @@ FAndroidJavaGlink::FAndroidJavaGlink()
     IsShowMethod = GetClassStaticMethod("isShowGlink", "(Landroid/app/Activity;)Z");
     SyncGameUserIdMethod = GetClassStaticMethod("syncGameUserId", "(Landroid/app/Activity;Ljava/lang/String;)V");
     
-    ShowWidgetWhenUnloadSdkMethod = GetClassStaticMethod("showWidgetWhenUnloadSdk", "(Landroid/app/Activity;Z)V");;
-    StopWidgetMethod = GetClassStaticMethod("stopWidget", "(Landroid/app/Activity;)V");;
-    SetUseVideoRecordMethod = GetClassStaticMethod("setUseVideoRecord", "(Landroid/app/Activity;Z)V");;
+    ShowWidgetWhenUnloadSdkMethod = GetClassStaticMethod("showWidgetWhenUnloadSdk", "(Landroid/app/Activity;Z)V");
+    StopWidgetMethod = GetClassStaticMethod("stopWidget", "(Landroid/app/Activity;)V");
+    SetUseVideoRecordMethod = GetClassStaticMethod("setUseVideoRecord", "(Landroid/app/Activity;Z)V");
+    SetThemeColorMethod = GetClassStaticMethod("setThemeColor", "(Ljava/lang/String;Ljava/lang/String;)V");
+    SetXButtonTypeCloseMethod = GetClassStaticMethod("setXButtonTypeClose", "(Landroid/app/Activity;Z)V");
     
     GetAndroidVersionMethod = GetClassStaticMethod("getAndroidVersion", "()I");
-    StartMoreMethod = GetClassStaticMethod("startMore", "(Landroid/app/Activity;)V");
-}
-
-void FAndroidJavaGlink::Init(FString ClientId, FString ClientSecret, int32 CafeId) const
-{
-    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
-    JEnv->CallStaticVoidMethod(Class, InitMethod.Method, FJavaClassObject::GetJString(ClientId), FJavaClassObject::GetJString(ClientSecret), CafeId);
 }
 
 void FAndroidJavaGlink::StartHome() const
@@ -124,6 +117,23 @@ void FAndroidJavaGlink::StartVideoWrite(int32 MenuId, FString Subject, FString T
         );
 }
 
+void FAndroidJavaGlink::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    
+    JEnv->CallStaticVoidMethod(Class,
+        SetThemeColorMethod.Method,
+        FJavaClassObject::GetJString(ThemeColorCSSString),
+        FJavaClassObject::GetJString(TabBackgroundColorCSSString)
+        );
+}
+
+void FAndroidJavaGlink::SetXButtonTypeClose(bool bUse) const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    JEnv->CallStaticVoidMethod(Class, SetXButtonTypeCloseMethod.Method, FJavaWrapper::GameActivityThis, bUse);
+}
+
 bool FAndroidJavaGlink::IsShow() const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
@@ -152,11 +162,6 @@ void FAndroidJavaGlink::SetUseVideoRecord(bool bUse) const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     JEnv->CallStaticVoidMethod(Class, SetUseVideoRecordMethod.Method, FJavaWrapper::GameActivityThis, bUse);
-}
-
-void FAndroidJavaGlink::StartMore() const
-{
-    StartTab(StartMoreMethod);
 }
 
 bool FAndroidJavaGlink::IsSupportedAndroidVersion() const

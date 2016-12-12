@@ -12,8 +12,6 @@ class FAndroidJavaGlink
 public:
     FAndroidJavaGlink();
     
-    void Init(FString ClientId, FString ClientSecret, int32 CafeId) const;
-    
     void StartHome() const;
     void StartNotice() const;
     void StartEvent() const;
@@ -30,8 +28,8 @@ public:
     void ShowWidgetWhenUnloadSdk(bool bUse) const;
     void StopWidget() const;
     void SetUseVideoRecord(bool bUse) const;
-    
-    void StartMore() const;
+    void SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const;
+    void SetXButtonTypeClose(bool bUse) const;
     
     bool IsSupportedAndroidVersion() const;
     
@@ -43,7 +41,6 @@ private:
     void StartTab(const FJavaClassMethod& JavaClassMethod) const;
     
     jclass Class;
-    FJavaClassMethod InitMethod;
     FJavaClassMethod StartHomeMethod;
     FJavaClassMethod StartNoticeMethod;
     FJavaClassMethod StartEventMethod;
@@ -53,9 +50,10 @@ private:
     FJavaClassMethod StartWriteMethod;
     FJavaClassMethod StartImageWriteMethod;
     FJavaClassMethod StartVideoWriteMethod;
+    FJavaClassMethod SetThemeColorMethod;
+    FJavaClassMethod SetXButtonTypeCloseMethod;
     FJavaClassMethod IsShowMethod;
     FJavaClassMethod SyncGameUserIdMethod;
-    FJavaClassMethod StartMoreMethod;
     FJavaClassMethod ShowWidgetWhenUnloadSdkMethod;
     FJavaClassMethod StopWidgetMethod;
     FJavaClassMethod SetUseVideoRecordMethod;
