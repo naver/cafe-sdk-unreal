@@ -2,7 +2,7 @@
 
 #include "CafeSDKPluginPrivatePCH.h"
 #include "CafeSdkBlueprintLibrary.h"
-#include "CafeSdkInterface.h"
+#include "CafeSdk.h"
 
 
 UCafeSdkBlueprintLibrary::UCafeSdkBlueprintLibrary(const FObjectInitializer& ObjectInitializer)
@@ -17,10 +17,10 @@ void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int3
     GetSharedCafeSdk()->Init(ClientId, ClientSecret, CafeId);
 }
 
-void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CommunityId, FString DefaultChannelCode)
+void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CommunityId)
 {
     if (!IsCafeSdkAvailable()) return;
-    GetSharedCafeSdk()->InitGlobal(ClientId, CommunityId, DefaultChannelCode);
+    GetSharedCafeSdk()->InitGlobal(ClientId, CommunityId);
 }
 
 void UCafeSdkBlueprintLibrary::StartHome()
@@ -47,40 +47,28 @@ void UCafeSdkBlueprintLibrary::StartMenu()
     GetSharedCafeSdk()->StartMenu();
 }
 
-void UCafeSdkBlueprintLibrary::StartMenuById(int32 MenuId)
-{
-    if (!IsCafeSdkAvailable()) return;
-    GetSharedCafeSdk()->StartMenuById(MenuId);
-}
-
 void UCafeSdkBlueprintLibrary::StartProfile()
 {
     if (!IsCafeSdkAvailable()) return;
     GetSharedCafeSdk()->StartProfile();
 }
 
-void UCafeSdkBlueprintLibrary::StartWrite(int32 MenuId, FString Subject, FString Text)
+void UCafeSdkBlueprintLibrary::StartWrite()
 {
     if (!IsCafeSdkAvailable()) return;
-    GetSharedCafeSdk()->StartWrite(MenuId, Subject, Text);
+    GetSharedCafeSdk()->StartWrite();
 }
 
-void UCafeSdkBlueprintLibrary::StartImageWrite(int32 MenuId, FString Subject, FString Text, FString ImageUri)
+void UCafeSdkBlueprintLibrary::StartImageWrite(FString ImageUri)
 {
     if (!IsCafeSdkAvailable()) return;
-    GetSharedCafeSdk()->StartImageWrite(MenuId, Subject, Text, ImageUri);
+    GetSharedCafeSdk()->StartImageWrite(ImageUri);
 }
 
-void UCafeSdkBlueprintLibrary::StartVideoWrite(int32 MenuId, FString Subject, FString Text, FString VideoUri)
+void UCafeSdkBlueprintLibrary::StartVideoWrite(FString VideoUri)
 {
     if (!IsCafeSdkAvailable()) return;
-    GetSharedCafeSdk()->StartVideoWrite(MenuId, Subject, Text, VideoUri);
-}
-
-void UCafeSdkBlueprintLibrary::StartMore()
-{
-    if (!IsCafeSdkAvailable()) return;
-    GetSharedCafeSdk()->StartMore();
+    GetSharedCafeSdk()->StartVideoWrite(VideoUri);
 }
 
 void UCafeSdkBlueprintLibrary::StartWriteFromScreenshot()
@@ -89,16 +77,34 @@ void UCafeSdkBlueprintLibrary::StartWriteFromScreenshot()
     FScreenshotRequest::RequestScreenshot("CafeSdkScreenshot.png", false, false);
 }
 
-void UCafeSdkBlueprintLibrary::ShowWidgetWhenUnloadSdk(bool bUse)
+void UCafeSdkBlueprintLibrary::StartMore()
 {
     if (!IsCafeSdkAvailable()) return;
-    GetSharedCafeSdk()->ShowWidgetWhenUnloadSdk(bUse);
+    GetSharedCafeSdk()->StartMore();
+}
+
+void UCafeSdkBlueprintLibrary::StartWidget()
+{
+    if (!IsCafeSdkAvailable()) return;
+    GetSharedCafeSdk()->StartWidget();
 }
 
 void UCafeSdkBlueprintLibrary::StopWidget()
 {
     if (!IsCafeSdkAvailable()) return;
     GetSharedCafeSdk()->StopWidget();
+}
+
+void UCafeSdkBlueprintLibrary::ShowWidgetWhenUnloadSdk(bool bUse)
+{
+    if (!IsCafeSdkAvailable()) return;
+    GetSharedCafeSdk()->ShowWidgetWhenUnloadSdk(bUse);
+}
+
+void UCafeSdkBlueprintLibrary::SetWidgetStartPosition(bool bIsLeft, int32 HeightPercentage)
+{
+    if (!IsCafeSdkAvailable()) return;
+    GetSharedCafeSdk()->SetWidgetStartPosition(bIsLeft, HeightPercentage);
 }
 
 void UCafeSdkBlueprintLibrary::SetUseVideoRecord(bool bUse)
@@ -117,13 +123,6 @@ void UCafeSdkBlueprintLibrary::SetThemeColor(FString ThemeColorCSSString, FStrin
 {
     if (!IsCafeSdkAvailable()) return;
     GetSharedCafeSdk()->SetThemeColor(ThemeColorCSSString, TabBackgroundColorCSSString);
-}
-
-void UCafeSdkBlueprintLibrary::SetXButtonType(EXButtonType Type)
-{
-    if (!IsCafeSdkAvailable()) return;
-    bool bUse = Type == EXButtonType::kXButtonTypeClose;
-    GetSharedCafeSdk()->SetXButtonTypeClose(bUse);
 }
 
 bool UCafeSdkBlueprintLibrary::IsSupportedOSVersion()

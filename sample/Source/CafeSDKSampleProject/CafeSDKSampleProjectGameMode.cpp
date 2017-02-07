@@ -18,7 +18,7 @@ void ACafeSDKSampleProjectGameMode::InitGame(const FString& MapName, const FStri
         UCafeSdkBlueprintLibrary::Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
         
         // 글로벌 카페 초기화. 국내 카페만 사용할 경우 initGlobal을 하지 않아도 됩니다.
-        UCafeSdkBlueprintLibrary::InitGlobal("IHCd_HmSiMcXOMC37xZ8", 1013329, "");
+        UCafeSdkBlueprintLibrary::InitGlobal("IHCd_HmSiMcXOMC37xZ8", 1013329);
         
         /*
          * 테마 설정.
@@ -28,7 +28,6 @@ void ACafeSDKSampleProjectGameMode::InitGame(const FString& MapName, const FStri
         UCafeSdkBlueprintLibrary::SetThemeColor("#00c73c", "#44484e");
         
         UCafeSdkBlueprintLibrary::SyncGameUserId("SyncGameUserId");
-        UCafeSdkBlueprintLibrary::SetXButtonType(EXButtonType::kXButtonTypeMinimize);
         
         //카페 SDK 시작
         FCafeSDKPluginModule::OnCafeSdkStarted.AddUObject(this,
@@ -134,7 +133,7 @@ void ACafeSDKSampleProjectGameMode::OnCafeSdkPostedComment(int32 ArticleId)
 
 void ACafeSDKSampleProjectGameMode::OnCafeSdkRecordFinish(const FString& FileUri)
 {
-    //    UCafeSdkBlueprintLibrary::StartVideoWrite(5, TEXT("subject"), TEXT("text"), FileUri);
+    //    UCafeSdkBlueprintLibrary::StartVideoWrite(FileUri);
 }
 
 void ACafeSDKSampleProjectGameMode::OnCafeSdkDidVote(int32 ArticleId)
@@ -172,7 +171,7 @@ void ACafeSDKSampleProjectGameMode::OnScreenshotCaptured(int32 Width, int32 Heig
     extern FString GFilePathBase;
     FString BasePath = GFilePathBase + TEXT("/UE4Game/") + FApp::GetGameName() + TEXT("/") + FApp::GetGameName() + TEXT("/Saved/Screenshots/");
     FString ScreenshotPath = FPaths::ConvertRelativePathToFull(BasePath, ScreenshotName);
-    UCafeSdkBlueprintLibrary::StartImageWrite(-1, "", "", TEXT("file://") + ScreenshotPath);
+    UCafeSdkBlueprintLibrary::StartImageWrite(TEXT("file://") + ScreenshotPath);
 #elif PLATFORM_IOS
     FString Result = ScreenshotName;
     Result.ReplaceInline(TEXT("../"), TEXT(""));
@@ -180,6 +179,6 @@ void ACafeSDKSampleProjectGameMode::OnScreenshotCaptured(int32 Width, int32 Heig
     Result.ReplaceInline(FPlatformProcess::BaseDir(), TEXT(""));
     
     FString WritePathBase = FString([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]) + TEXT("/");
-    UCafeSdkBlueprintLibrary::StartImageWrite(-1, "", "", WritePathBase + Result);
+    UCafeSdkBlueprintLibrary::StartImageWrite(WritePathBase + Result);
 #endif
 }

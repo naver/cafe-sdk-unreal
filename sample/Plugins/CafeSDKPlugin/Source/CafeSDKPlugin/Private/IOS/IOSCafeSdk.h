@@ -4,9 +4,9 @@
 
 #import <NaverCafeSDK/NCSDKManager.h>
 #import <NaverCafeSDK/NCSDKLoginManager.h>
-#include "CafeSDKInterface.h"
+#include "CafeSdk.h"
 
-class FIOSCafeSdk public ICafeSdkInterface
+class FIOSCafeSdk public ICafeSdk
 {
 public:
     FIOSCafeSdk();

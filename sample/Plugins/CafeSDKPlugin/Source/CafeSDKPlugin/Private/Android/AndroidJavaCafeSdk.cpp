@@ -9,7 +9,7 @@
 FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     : FJavaClassObject(GetClassName(), "()V")
     , InitMethod(GetClassMethod("init", "(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;I)V"))
-    , InitGlobalMethod(GetClassMethod("initGlobal", "(Landroid/app/Activity;Ljava/lang/String;ILjava/lang/String;)V"))
+    , InitGlobalMethod(GetClassMethod("initGlobal", "(Landroid/app/Activity;Ljava/lang/String;I)V"))
     , StartMoreMethod(GetClassMethod("startMore", "(Landroid/app/Activity;)V"))
 {
     GlinkClass = FAndroidApplication::FindJavaClass(GetGlinkClassName().GetPlainANSIString());
@@ -17,18 +17,18 @@ FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     StartNoticeMethod = GetGlinkClassStaticMethod("startNotice", "(Landroid/app/Activity;)V");
     StartEventMethod = GetGlinkClassStaticMethod("startEvent", "(Landroid/app/Activity;)V");
     StartMenuMethod = GetGlinkClassStaticMethod("startMenu", "(Landroid/app/Activity;)V");
-    StartMenuByIdMethod = GetGlinkClassStaticMethod("startMenu", "(Landroid/app/Activity;I)V");
     StartProfileMethod = GetGlinkClassStaticMethod("startProfile", "(Landroid/app/Activity;)V");
-    StartWriteMethod = GetGlinkClassStaticMethod("startWrite", "(Landroid/app/Activity;ILjava/lang/String;Ljava/lang/String;)V");
-    StartImageWriteMethod = GetGlinkClassStaticMethod("startImageWrite", "(Landroid/app/Activity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
-    StartVideoWriteMethod = GetGlinkClassStaticMethod("startVideoWrite", "(Landroid/app/Activity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    StartWriteMethod = GetGlinkClassStaticMethod("startWrite", "(Landroid/app/Activity;)V");
+    StartImageWriteMethod = GetGlinkClassStaticMethod("startImageWrite", "(Landroid/app/Activity;Ljava/lang/String;)V");
+    StartVideoWriteMethod = GetGlinkClassStaticMethod("startVideoWrite", "(Landroid/app/Activity;Ljava/lang/String;)V");
     IsShowMethod = GetGlinkClassStaticMethod("isShowGlink", "(Landroid/app/Activity;)Z");
     SyncGameUserIdMethod = GetGlinkClassStaticMethod("syncGameUserId", "(Landroid/app/Activity;Ljava/lang/String;)V");
-    ShowWidgetWhenUnloadSdkMethod = GetGlinkClassStaticMethod("showWidgetWhenUnloadSdk", "(Landroid/app/Activity;Z)V");
+    StartWidgetMethod = GetGlinkClassStaticMethod("startWidget", "(Landroid/app/Activity;)V");
     StopWidgetMethod = GetGlinkClassStaticMethod("stopWidget", "(Landroid/app/Activity;)V");
+    ShowWidgetWhenUnloadSdkMethod = GetGlinkClassStaticMethod("showWidgetWhenUnloadSdk", "(Landroid/app/Activity;Z)V");
+    SetWidgetStartPositionMethod = GetGlinkClassStaticMethod("setWidgetStartPosition", "(Landroid/app/Activity;ZI)V");
     SetUseVideoRecordMethod = GetGlinkClassStaticMethod("setUseVideoRecord", "(Landroid/app/Activity;Z)V");
     SetThemeColorMethod = GetGlinkClassStaticMethod("setThemeColor", "(Ljava/lang/String;Ljava/lang/String;)V");
-    SetXButtonTypeCloseMethod = GetGlinkClassStaticMethod("setXButtonTypeClose", "(Landroid/app/Activity;Z)V");
     GetAndroidVersionMethod = GetGlinkClassStaticMethod("getAndroidVersion", "()I");
     
     StatisticsClass = FAndroidApplication::FindJavaClass(GetStatisticsClassName().GetPlainANSIString());
@@ -46,13 +46,12 @@ void FAndroidJavaCafeSdk::Init(FString ClientId, FString ClientSecret, int32 Caf
         );
 }
 
-void FAndroidJavaCafeSdk::InitGlobal(FString ClientId, int32 CafeId, FString DefaultChannelCode)
+void FAndroidJavaCafeSdk::InitGlobal(FString ClientId, int32 CafeId)
 {
     CallMethod<void>(InitGlobalMethod,
         FJavaWrapper::GameActivityThis,
         FJavaClassObject::GetJString(ClientId),
-        CafeId,
-        FJavaClassObject::GetJString(DefaultChannelCode)
+        CafeId
         );
 }
 
@@ -95,12 +94,6 @@ void FAndroidJavaCafeSdk::StartMenu() const
     StartTab(StartMenuMethod);
 }
 
-void FAndroidJavaCafeSdk::StartMenuById(int32 MenuId) const
-{
-    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
-    JEnv->CallStaticVoidMethod(GlinkClass, StartMenuByIdMethod.Method, FJavaWrapper::GameActivityThis, MenuId);
-}
-
 void FAndroidJavaCafeSdk::StartProfile() const
 {
     StartTab(StartProfileMethod);
@@ -112,43 +105,34 @@ void FAndroidJavaCafeSdk::StartTab(const FJavaClassMethod& JavaClassMethod) cons
     JEnv->CallStaticVoidMethod(GlinkClass, JavaClassMethod.Method, FJavaWrapper::GameActivityThis);
 }
 
-void FAndroidJavaCafeSdk::StartWrite(int32 MenuId, FString Subject, FString Text) const
+void FAndroidJavaCafeSdk::StartWrite() const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     
     JEnv->CallStaticVoidMethod(GlinkClass,
                                StartWriteMethod.Method,
-                               FJavaWrapper::GameActivityThis,
-                               MenuId,
-                               FJavaClassObject::GetJString(Subject),
-                               FJavaClassObject::GetJString(Text)
+                               FJavaWrapper::GameActivityThis
                                );
 }
 
-void FAndroidJavaCafeSdk::StartImageWrite(int32 MenuId, FString Subject, FString Text, FString ImageUri) const
+void FAndroidJavaCafeSdk::StartImageWrite(FString ImageUri) const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     
     JEnv->CallStaticVoidMethod(GlinkClass,
                                StartImageWriteMethod.Method,
                                FJavaWrapper::GameActivityThis,
-                               MenuId,
-                               FJavaClassObject::GetJString(Subject),
-                               FJavaClassObject::GetJString(Text),
                                FJavaClassObject::GetJString(ImageUri)
                                );
 }
 
-void FAndroidJavaCafeSdk::StartVideoWrite(int32 MenuId, FString Subject, FString Text, FString VideoUri) const
+void FAndroidJavaCafeSdk::StartVideoWrite(FString VideoUri) const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     
     JEnv->CallStaticVoidMethod(GlinkClass,
                                StartVideoWriteMethod.Method,
                                FJavaWrapper::GameActivityThis,
-                               MenuId,
-                               FJavaClassObject::GetJString(Subject),
-                               FJavaClassObject::GetJString(Text),
                                FJavaClassObject::GetJString(VideoUri)
                                );
 }
@@ -164,12 +148,6 @@ void FAndroidJavaCafeSdk::SetThemeColor(FString ThemeColorCSSString, FString Tab
                                );
 }
 
-void FAndroidJavaCafeSdk::SetXButtonTypeClose(bool bUse) const
-{
-    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
-    JEnv->CallStaticVoidMethod(GlinkClass, SetXButtonTypeCloseMethod.Method, FJavaWrapper::GameActivityThis, bUse);
-}
-
 bool FAndroidJavaCafeSdk::IsShow() const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
@@ -182,16 +160,34 @@ void FAndroidJavaCafeSdk::SyncGameUserId(FString GameUserId) const
     JEnv->CallStaticVoidMethod(GlinkClass, SyncGameUserIdMethod.Method, FJavaWrapper::GameActivityThis, FJavaClassObject::GetJString(GameUserId));
 }
 
-void FAndroidJavaCafeSdk::ShowWidgetWhenUnloadSdk(bool bUse) const
+void FAndroidJavaCafeSdk::StartWidget() const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
-    JEnv->CallStaticVoidMethod(GlinkClass, ShowWidgetWhenUnloadSdkMethod.Method, FJavaWrapper::GameActivityThis, bUse);
+    JEnv->CallStaticVoidMethod(GlinkClass, StartWidgetMethod.Method, FJavaWrapper::GameActivityThis);
 }
 
 void FAndroidJavaCafeSdk::StopWidget() const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     JEnv->CallStaticVoidMethod(GlinkClass, StopWidgetMethod.Method, FJavaWrapper::GameActivityThis);
+}
+
+void FAndroidJavaCafeSdk::ShowWidgetWhenUnloadSdk(bool bUse) const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    JEnv->CallStaticVoidMethod(GlinkClass,
+                               ShowWidgetWhenUnloadSdkMethod.Method,
+                               FJavaWrapper::GameActivityThis, bUse);
+}
+
+void FAndroidJavaCafeSdk::SetWidgetStartPosition(bool bIsLeft, int32 HeightPercentage) const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    JEnv->CallStaticVoidMethod(GlinkClass,
+                               SetWidgetStartPositionMethod.Method,
+                               FJavaWrapper::GameActivityThis,
+                               bIsLeft,
+                               HeightPercentage);
 }
 
 void FAndroidJavaCafeSdk::SetUseVideoRecord(bool bUse) const
@@ -282,6 +278,32 @@ FName FAndroidJavaCafeSdk::GetStatisticsClassName()
     }
 }
 
+void FAndroidJavaCafeSdk::Init(FString ClientId, FString ClientSecret) const
+{
+    Init(ClientId, ClientSecret, -1);
+}
+
+void FAndroidJavaCafeSdk::Login() const
+{
+    // TODO:
+}
+
+void FAndroidJavaCafeSdk::Logout() const
+{
+    // TODO:
+}
+
+bool FAndroidJavaCafeSdk::IsLogin() const
+{
+    // TODO:
+    return false;
+}
+
+void FAndroidJavaCafeSdk::GetProfile() const
+{
+    // TODO:
+}
+
 extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnSdkStarted(JNIEnv* jenv, jobject thiz)
 {
     FCafeSDKPluginModule::OnCafeSdkStarted.Broadcast();
@@ -335,4 +357,14 @@ extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnRecordFinished(JNIEnv* jenv,
     FCafeSDKPluginModule::OnCafeSdkRecordFinish.Broadcast(fileUrl);
     
     jenv->ReleaseStringUTFChars(FileUrl, FileUrlChars);
+}
+
+extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnLoggedIn(JNIEnv* jenv, jobject thiz, jboolean bSuccss)
+{
+    // TODO:
+}
+
+extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnGetProfile(JNIEnv* jenv, jobject thiz, jstring JsonString)
+{
+    // TODO:
 }

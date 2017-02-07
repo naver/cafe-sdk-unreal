@@ -2,7 +2,7 @@
 
 #include "CafeSDKPluginPrivatePCH.h"
 #include "CafeSdkStatisticsBlueprintLibrary.h"
-#include "CafeSdkInterface.h"
+#include "CafeSdk.h"
 
 
 const FString UCafeSdkStatisticsBlueprintLibrary::kCurrencyNone("NONE");

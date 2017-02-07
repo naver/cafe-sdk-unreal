@@ -4,42 +4,50 @@
 
 #include "Core.h"
 #include "AndroidJava.h"
-#include "CafeSDKInterface.h"
+#include "CafeSdk.h"
 
-class FAndroidJavaCafeSdk : public FJavaClassObject, public ICafeSdkInterface
+class FAndroidJavaCafeSdk : public FJavaClassObject, public ICafeSdk, public INaverIdLogin
 {
 public:
     FAndroidJavaCafeSdk();
     
     void Init(FString ClientId, FString ClientSecret, int32 CafeId);
-    void InitGlobal(FString ClientId, int32 CafeId, FString DefaultChannelCode);
+    void InitGlobal(FString ClientId, int32 CafeId);
     
     void StartHome() const;
     void StartNotice() const;
     void StartEvent() const;
     void StartMenu() const;
-    void StartMenuById(int32 MenuId) const;
     void StartProfile() const;
-    void StartWrite(int32 MenuId, FString Subject, FString Text) const;
-    void StartImageWrite(int32 MenuId, FString Subject, FString Text, FString ImageUri) const;
-    void StartVideoWrite(int32 MenuId, FString Subject, FString Text, FString VideoUri) const;
+    void StartWrite() const;
+    void StartImageWrite(FString ImageUri) const;
+    void StartVideoWrite(FString VideoUri) const;
     
     void StartMore();
     
     bool IsShow() const;
     void SyncGameUserId(FString GameUserId) const;
     
-    void ShowWidgetWhenUnloadSdk(bool bUse) const;
+    void StartWidget() const;
     void StopWidget() const;
+    void ShowWidgetWhenUnloadSdk(bool bUse) const;
+    void SetWidgetStartPosition(bool bIsLeft, int32 HeightPercentage) const;
+    
     void SetUseVideoRecord(bool bUse) const;
     void SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const;
-    void SetXButtonTypeClose(bool bUse) const;
     
     bool IsSupportedAndroidVersion() const;
     
     // statistics.
     void SendNewUser(FString GameUserId, FString Market);
     void SendPayUser(FString GameUserId, double Pay, FString ProductCode, FString Currency, FString Market);
+    
+    // login.
+    void Init(FString ClientId, FString ClientSecret) const;
+    void Login() const;
+    void Logout() const;
+    bool IsLogin() const;
+    void GetProfile() const;
     
 private:
     static FName GetClassName();
@@ -59,17 +67,17 @@ private:
     FJavaClassMethod StartNoticeMethod;
     FJavaClassMethod StartEventMethod;
     FJavaClassMethod StartMenuMethod;
-    FJavaClassMethod StartMenuByIdMethod;
     FJavaClassMethod StartProfileMethod;
     FJavaClassMethod StartWriteMethod;
     FJavaClassMethod StartImageWriteMethod;
     FJavaClassMethod StartVideoWriteMethod;
     FJavaClassMethod SetThemeColorMethod;
-    FJavaClassMethod SetXButtonTypeCloseMethod;
     FJavaClassMethod IsShowMethod;
     FJavaClassMethod SyncGameUserIdMethod;
-    FJavaClassMethod ShowWidgetWhenUnloadSdkMethod;
+    FJavaClassMethod StartWidgetMethod;
     FJavaClassMethod StopWidgetMethod;
+    FJavaClassMethod ShowWidgetWhenUnloadSdkMethod;
+    FJavaClassMethod SetWidgetStartPositionMethod;
     FJavaClassMethod SetUseVideoRecordMethod;
     FJavaClassMethod GetAndroidVersionMethod;
     
