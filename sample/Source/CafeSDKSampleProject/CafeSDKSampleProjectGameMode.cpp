@@ -5,6 +5,7 @@
 #include "CafeSDKPlugin.h"
 #include "CafeSdkBlueprintLibrary.h"
 #include "CafeSdkStatisticsBlueprintLibrary.h"
+#include "NaverIdLoginBlueprintLibrary.h"
 
 DEFINE_LOG_CATEGORY(LogCafeSdk);
 
@@ -29,41 +30,49 @@ void ACafeSDKSampleProjectGameMode::InitGame(const FString& MapName, const FStri
         
         UCafeSdkBlueprintLibrary::SyncGameUserId("SyncGameUserId");
         
-        //카페 SDK 시작
+        // 카페 SDK 시작
         FCafeSDKPluginModule::OnCafeSdkStarted.AddUObject(this,
             &ACafeSDKSampleProjectGameMode::OnCafeSdkStarted);
         
-        //카페 SDK 종료
+        // 카페 SDK 종료
         FCafeSDKPluginModule::OnCafeSdkStopped.AddUObject(this,
             &ACafeSDKSampleProjectGameMode::OnCafeSdkStopped);
         
-        //앱스킴
+        // 앱스킴
         FCafeSDKPluginModule::OnCafeSdkClickAppSchemeBanner.AddUObject(this,
             &ACafeSDKSampleProjectGameMode::OnCafeSdkClickAppSchemeBanner);
         
-        //카페 가입
+        // 카페 가입
         FCafeSDKPluginModule::OnCafeSdkJoined.AddUObject(this,
             &ACafeSDKSampleProjectGameMode::OnCafeSdkJoined);
         
-        //게시글 등록
+        // 게시글 등록
         FCafeSDKPluginModule::OnCafeSdkPostedArticle.AddUObject(this,
             &ACafeSDKSampleProjectGameMode::OnCafeSdkPostedArticle);
         
-        //댓글 등록
+        // 댓글 등록
         FCafeSDKPluginModule::OnCafeSdkPostedComment.AddUObject(this,
             &ACafeSDKSampleProjectGameMode::OnCafeSdkPostedComment);
         
-        //게시글 내 투표
+        // 게시글 내 투표
         FCafeSDKPluginModule::OnCafeSdkDidVote.AddUObject(this,
             &ACafeSDKSampleProjectGameMode::OnCafeSdkDidVote);
         
-        //위젯 동영상 녹화 완료
+        // 위젯 동영상 녹화 완료
         FCafeSDKPluginModule::OnCafeSdkRecordFinish.AddUObject(this,
             &ACafeSDKSampleProjectGameMode::OnCafeSdkRecordFinish);
         
-        //스크린샷
+        // 스크린샷
         GEngine->GameViewport->OnScreenshotCaptured().AddUObject(this,
             &ACafeSDKSampleProjectGameMode::OnScreenshotCaptured);
+        
+        // 네이버 아이디 로그인.
+        FCafeSDKPluginModule::OnLoggedIn.AddUObject(this,
+            &ACafeSDKSampleProjectGameMode::OnCafeSdkLoggedIn);
+        
+        // 네이버 아이디 프로필 조회.
+        FCafeSDKPluginModule::OnGetProfile.AddUObject(this,
+            &ACafeSDKSampleProjectGameMode::OnCafeSdkGetProfile);
     }
 }
 
@@ -133,7 +142,7 @@ void ACafeSDKSampleProjectGameMode::OnCafeSdkPostedComment(int32 ArticleId)
 
 void ACafeSDKSampleProjectGameMode::OnCafeSdkRecordFinish(const FString& FileUri)
 {
-    //    UCafeSdkBlueprintLibrary::StartVideoWrite(FileUri);
+    // UCafeSdkBlueprintLibrary::StartVideoWrite(FileUri);
 }
 
 void ACafeSDKSampleProjectGameMode::OnCafeSdkDidVote(int32 ArticleId)
@@ -181,4 +190,14 @@ void ACafeSDKSampleProjectGameMode::OnScreenshotCaptured(int32 Width, int32 Heig
     FString WritePathBase = FString([NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]) + TEXT("/");
     UCafeSdkBlueprintLibrary::StartImageWrite(WritePathBase + Result);
 #endif
+}
+
+void ACafeSDKSampleProjectGameMode::OnCafeSdkLoggedIn(bool bSuccess)
+{
+    ShowMessage("OnCafeSdkLoggedIn");
+}
+
+void ACafeSDKSampleProjectGameMode::OnCafeSdkGetProfile(const FString& JsonString)
+{
+    ShowMessage(JsonString);
 }

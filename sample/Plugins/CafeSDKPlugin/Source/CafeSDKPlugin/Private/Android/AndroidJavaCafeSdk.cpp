@@ -11,6 +11,10 @@ FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     , InitMethod(GetClassMethod("init", "(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;I)V"))
     , InitGlobalMethod(GetClassMethod("initGlobal", "(Landroid/app/Activity;Ljava/lang/String;I)V"))
     , StartMoreMethod(GetClassMethod("startMore", "(Landroid/app/Activity;)V"))
+    , LoginMethod(GetClassMethod("login", "(Landroid/app/Activity;)V"))
+    , LogoutMethod(GetClassMethod("logout", "(Landroid/app/Activity;)V"))
+    , IsLoginMethod(GetClassMethod("isLogin", "(Landroid/app/Activity;)Z"))
+    , GetProfileMethod(GetClassMethod("getProfile", "(Landroid/app/Activity;)V"))
 {
     GlinkClass = FAndroidApplication::FindJavaClass(GetGlinkClassName().GetPlainANSIString());
     StartHomeMethod = GetGlinkClassStaticMethod("startHome", "(Landroid/app/Activity;)V");
@@ -163,7 +167,9 @@ void FAndroidJavaCafeSdk::SyncGameUserId(FString GameUserId) const
 void FAndroidJavaCafeSdk::StartWidget() const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
-    JEnv->CallStaticVoidMethod(GlinkClass, StartWidgetMethod.Method, FJavaWrapper::GameActivityThis);
+    JEnv->CallStaticVoidMethod(GlinkClass,
+                               StartWidgetMethod.Method,
+                               FJavaWrapper::GameActivityThis);
 }
 
 void FAndroidJavaCafeSdk::StopWidget() const
@@ -278,30 +284,29 @@ FName FAndroidJavaCafeSdk::GetStatisticsClassName()
     }
 }
 
-void FAndroidJavaCafeSdk::Init(FString ClientId, FString ClientSecret) const
+void FAndroidJavaCafeSdk::Init(FString ClientId, FString ClientSecret)
 {
     Init(ClientId, ClientSecret, -1);
 }
 
-void FAndroidJavaCafeSdk::Login() const
+void FAndroidJavaCafeSdk::Login()
 {
-    // TODO:
+    CallMethod<void>(LoginMethod, FJavaWrapper::GameActivityThis);
 }
 
-void FAndroidJavaCafeSdk::Logout() const
+void FAndroidJavaCafeSdk::Logout()
 {
-    // TODO:
+    CallMethod<void>(LogoutMethod, FJavaWrapper::GameActivityThis);
 }
 
-bool FAndroidJavaCafeSdk::IsLogin() const
+bool FAndroidJavaCafeSdk::IsLogin()
 {
-    // TODO:
-    return false;
+    return CallMethod<bool>(IsLoginMethod, FJavaWrapper::GameActivityThis);
 }
 
-void FAndroidJavaCafeSdk::GetProfile() const
+void FAndroidJavaCafeSdk::GetProfile()
 {
-    // TODO:
+    CallMethod<void>(GetProfileMethod, FJavaWrapper::GameActivityThis);
 }
 
 extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnSdkStarted(JNIEnv* jenv, jobject thiz)
@@ -361,10 +366,15 @@ extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnRecordFinished(JNIEnv* jenv,
 
 extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnLoggedIn(JNIEnv* jenv, jobject thiz, jboolean bSuccss)
 {
-    // TODO:
+    FCafeSDKPluginModule::OnLoggedIn.Broadcast(bSuccss);
 }
 
 extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnGetProfile(JNIEnv* jenv, jobject thiz, jstring JsonString)
 {
-    // TODO:
+    const char* JsonStringChars = jenv->GetStringUTFChars(JsonString, 0);
+    
+    FString jsonString = UTF8_TO_TCHAR(JsonStringChars);
+    FCafeSDKPluginModule::OnGetProfile.Broadcast(jsonString);
+    
+    jenv->ReleaseStringUTFChars(JsonString, JsonStringChars);
 }

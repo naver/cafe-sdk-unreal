@@ -148,7 +148,7 @@ public class CafeSdk {
   public void getProfile(Activity activity) {
     NaverIdLogin.getProfile(activity, new NaverIdLogin.OnGetProfileListener() {
       @Override public void onResult(String jsonString) {
-        nativeOnGetProfile(jsonString);
+        nativeOnGetProfile(jsonString == null ? "" : jsonString);
       }
     });
   }

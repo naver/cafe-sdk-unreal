@@ -40,13 +40,13 @@ public:
 
 class INaverIdLogin {
 public:
-    virtual void Init(FString ClientId, FString ClientSecret) const = 0;
-    virtual void Login() const = 0;
-    virtual void Logout() const = 0;
-    virtual bool IsLogin() const = 0;
+    virtual void Init(FString ClientId, FString ClientSecret) = 0;
+    virtual void Login() = 0;
+    virtual void Logout() = 0;
+    virtual bool IsLogin() = 0;
     
     /* docs: https://developers.naver.com/docs/login/profile */
-    virtual void GetProfile() const = 0;
+    virtual void GetProfile() = 0;
 };
 
 ICafeSdk* GetSharedCafeSdk();

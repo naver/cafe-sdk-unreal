@@ -24,4 +24,7 @@ class CAFESDKSAMPLEPROJECT_API ACafeSDKSampleProjectGameMode : public AGameMode
     void OnCafeSdkDidVote(int32 ArticleId);
     
     void OnScreenshotCaptured(int32 Width, int32 Height, const TArray<FColor>& Colors);
+    
+    void OnCafeSdkLoggedIn(bool bSuccess);
+    void OnCafeSdkGetProfile(const FString& JsonString);
 };

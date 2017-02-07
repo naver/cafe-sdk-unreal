@@ -43,11 +43,11 @@ public:
     void SendPayUser(FString GameUserId, double Pay, FString ProductCode, FString Currency, FString Market);
     
     // login.
-    void Init(FString ClientId, FString ClientSecret) const;
-    void Login() const;
-    void Logout() const;
-    bool IsLogin() const;
-    void GetProfile() const;
+    void Init(FString ClientId, FString ClientSecret);
+    void Login();
+    void Logout();
+    bool IsLogin();
+    void GetProfile();
     
 private:
     static FName GetClassName();
@@ -55,6 +55,11 @@ private:
     FJavaClassMethod InitMethod;
     FJavaClassMethod InitGlobalMethod;
     FJavaClassMethod StartMoreMethod;
+    
+    FJavaClassMethod LoginMethod;
+    FJavaClassMethod LogoutMethod;
+    FJavaClassMethod IsLoginMethod;
+    FJavaClassMethod GetProfileMethod;
     
     // Glink class.
     static FName GetGlinkClassName();
