@@ -4,8 +4,9 @@
 
 #import <NaverCafeSDK/NCSDKManager.h>
 #import <NaverCafeSDK/NCSDKLoginManager.h>
+#include "CafeSDKInterface.h"
 
-class FIOSCafeSdk
+class FIOSCafeSdk public ICafeSdkInterface
 {
 public:
     FIOSCafeSdk();
@@ -39,8 +40,6 @@ public:
 private:
     void SetParentViewController() const;
 };
-
-FIOSCafeSdk* GetSharedCafeSdk();
 
 @interface CafeCallbackObject : NSObject <NCSDKManagerDelegate>
 + (CafeCallbackObject*)getSharedInstance;

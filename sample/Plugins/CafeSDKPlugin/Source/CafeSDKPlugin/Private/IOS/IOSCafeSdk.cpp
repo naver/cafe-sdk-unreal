@@ -6,15 +6,6 @@
 #include "IOSView.h"
 #include "IOSPlatformString.h"
 
-FIOSCafeSdk* GetSharedCafeSdk()
-{
-    static FIOSCafeSdk* CafeSdk = nullptr;
-    if (CafeSdk == nullptr)
-    {
-        CafeSdk = new FIOSCafeSdk();
-    }
-    return CafeSdk;
-}
 
 static void ListenNCSDKOpenURL(UIApplication* application, NSURL* url, NSString* sourceApplication, id annotation)
 {
