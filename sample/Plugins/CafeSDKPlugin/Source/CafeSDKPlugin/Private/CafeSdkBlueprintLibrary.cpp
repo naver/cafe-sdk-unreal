@@ -127,5 +127,5 @@ void UCafeSdkBlueprintLibrary::SetThemeColor(FString ThemeColorCSSString, FStrin
 
 bool UCafeSdkBlueprintLibrary::IsSupportedOSVersion()
 {
-    return GetSharedCafeSdk()->IsSupportedAndroidVersion();
+    return GetSharedCafeSdk()->IsSupportedOSVersion();
 }

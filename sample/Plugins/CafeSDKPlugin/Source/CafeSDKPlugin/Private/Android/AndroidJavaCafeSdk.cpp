@@ -202,7 +202,7 @@ void FAndroidJavaCafeSdk::SetUseVideoRecord(bool bUse) const
     JEnv->CallStaticVoidMethod(GlinkClass, SetUseVideoRecordMethod.Method, FJavaWrapper::GameActivityThis, bUse);
 }
 
-bool FAndroidJavaCafeSdk::IsSupportedAndroidVersion() const
+bool FAndroidJavaCafeSdk::IsSupportedOSVersion() const
 {
     static const int kSupportedMinVersion = 17; // kitkat.
     

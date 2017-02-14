@@ -36,7 +36,7 @@ public:
     void SetUseVideoRecord(bool bUse) const;
     void SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const;
     
-    bool IsSupportedAndroidVersion() const;
+    bool IsSupportedOSVersion() const;
     
     // statistics.
     void SendNewUser(FString GameUserId, FString Market);

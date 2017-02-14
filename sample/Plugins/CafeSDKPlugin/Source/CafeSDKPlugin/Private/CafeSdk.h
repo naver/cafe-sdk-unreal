@@ -32,7 +32,7 @@ public:
     virtual void SetUseVideoRecord(bool bUse) const = 0;
     virtual void SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const = 0;
     
-    virtual bool IsSupportedAndroidVersion() const = 0;
+    virtual bool IsSupportedOSVersion() const = 0;
     
     virtual void SendNewUser(FString GameUserId, FString Market) = 0;
     virtual void SendPayUser(FString GameUserId, double Pay, FString ProductCode, FString Currency, FString Market) = 0;
