@@ -13,67 +13,64 @@ void ACafeSDKSampleProjectGameMode::InitGame(const FString& MapName, const FStri
 {
     AGameMode::InitGame(MapName, Options, ErrorMessage);
     
-    if (FCafeSDKPluginModule::IsAvailable())
-    {
-        // 국내 카페 초기화.
-        UCafeSdkBlueprintLibrary::Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
-        
-        // 글로벌 카페 초기화. 국내 카페만 사용할 경우 initGlobal을 하지 않아도 됩니다.
-        UCafeSdkBlueprintLibrary::InitGlobal("IHCd_HmSiMcXOMC37xZ8", 1013329);
-        
-        /*
-         * 테마 설정.
-         * - theme color는 css color 포맷으로 설정하시면 됩니다.
-         * - 다만, theme color에 alpha값이 없어야 합니다.
-         */
-        UCafeSdkBlueprintLibrary::SetThemeColor("#00c73c", "#44484e");
-        
-        UCafeSdkBlueprintLibrary::SyncGameUserId("SyncGameUserId");
-        
-        // 카페 SDK 시작
-        FCafeSDKPluginModule::OnCafeSdkStarted.AddUObject(this,
-            &ACafeSDKSampleProjectGameMode::OnCafeSdkStarted);
-        
-        // 카페 SDK 종료
-        FCafeSDKPluginModule::OnCafeSdkStopped.AddUObject(this,
-            &ACafeSDKSampleProjectGameMode::OnCafeSdkStopped);
-        
-        // 앱스킴
-        FCafeSDKPluginModule::OnCafeSdkClickAppSchemeBanner.AddUObject(this,
-            &ACafeSDKSampleProjectGameMode::OnCafeSdkClickAppSchemeBanner);
-        
-        // 카페 가입
-        FCafeSDKPluginModule::OnCafeSdkJoined.AddUObject(this,
-            &ACafeSDKSampleProjectGameMode::OnCafeSdkJoined);
-        
-        // 게시글 등록
-        FCafeSDKPluginModule::OnCafeSdkPostedArticle.AddUObject(this,
-            &ACafeSDKSampleProjectGameMode::OnCafeSdkPostedArticle);
-        
-        // 댓글 등록
-        FCafeSDKPluginModule::OnCafeSdkPostedComment.AddUObject(this,
-            &ACafeSDKSampleProjectGameMode::OnCafeSdkPostedComment);
-        
-        // 게시글 내 투표
-        FCafeSDKPluginModule::OnCafeSdkDidVote.AddUObject(this,
-            &ACafeSDKSampleProjectGameMode::OnCafeSdkDidVote);
-        
-        // 위젯 동영상 녹화 완료
-        FCafeSDKPluginModule::OnCafeSdkRecordFinish.AddUObject(this,
-            &ACafeSDKSampleProjectGameMode::OnCafeSdkRecordFinish);
-        
-        // 스크린샷
-        GEngine->GameViewport->OnScreenshotCaptured().AddUObject(this,
-            &ACafeSDKSampleProjectGameMode::OnScreenshotCaptured);
-        
-        // 네이버 아이디 로그인.
-        FCafeSDKPluginModule::OnLoggedIn.AddUObject(this,
-            &ACafeSDKSampleProjectGameMode::OnCafeSdkLoggedIn);
-        
-        // 네이버 아이디 프로필 조회.
-        FCafeSDKPluginModule::OnGetProfile.AddUObject(this,
-            &ACafeSDKSampleProjectGameMode::OnCafeSdkGetProfile);
-    }
+    // 국내 카페 초기화.
+    UCafeSdkBlueprintLibrary::Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
+    
+    // 글로벌 카페 초기화. 국내 카페만 사용할 경우 initGlobal을 하지 않아도 됩니다.
+    UCafeSdkBlueprintLibrary::InitGlobal("IHCd_HmSiMcXOMC37xZ8", 1013329);
+    
+    /*
+     * 테마 설정.
+     * - theme color는 css color 포맷으로 설정하시면 됩니다.
+     * - 다만, theme color에 alpha값이 없어야 합니다.
+     */
+    UCafeSdkBlueprintLibrary::SetThemeColor("#00c73c", "#44484e");
+    
+    UCafeSdkBlueprintLibrary::SyncGameUserId("SyncGameUserId");
+    
+    // 카페 SDK 시작
+    FCafeSDKPluginModule::OnCafeSdkStarted.AddUObject(this,
+        &ACafeSDKSampleProjectGameMode::OnCafeSdkStarted);
+    
+    // 카페 SDK 종료
+    FCafeSDKPluginModule::OnCafeSdkStopped.AddUObject(this,
+        &ACafeSDKSampleProjectGameMode::OnCafeSdkStopped);
+    
+    // 앱스킴
+    FCafeSDKPluginModule::OnCafeSdkClickAppSchemeBanner.AddUObject(this,
+        &ACafeSDKSampleProjectGameMode::OnCafeSdkClickAppSchemeBanner);
+    
+    // 카페 가입
+    FCafeSDKPluginModule::OnCafeSdkJoined.AddUObject(this,
+        &ACafeSDKSampleProjectGameMode::OnCafeSdkJoined);
+    
+    // 게시글 등록
+    FCafeSDKPluginModule::OnCafeSdkPostedArticle.AddUObject(this,
+        &ACafeSDKSampleProjectGameMode::OnCafeSdkPostedArticle);
+    
+    // 댓글 등록
+    FCafeSDKPluginModule::OnCafeSdkPostedComment.AddUObject(this,
+        &ACafeSDKSampleProjectGameMode::OnCafeSdkPostedComment);
+    
+    // 게시글 내 투표
+    FCafeSDKPluginModule::OnCafeSdkDidVote.AddUObject(this,
+        &ACafeSDKSampleProjectGameMode::OnCafeSdkDidVote);
+    
+    // 위젯 동영상 녹화 완료
+    FCafeSDKPluginModule::OnCafeSdkRecordFinish.AddUObject(this,
+        &ACafeSDKSampleProjectGameMode::OnCafeSdkRecordFinish);
+    
+    // 스크린샷
+    GEngine->GameViewport->OnScreenshotCaptured().AddUObject(this,
+        &ACafeSDKSampleProjectGameMode::OnScreenshotCaptured);
+    
+    // 네이버 아이디 로그인.
+    FCafeSDKPluginModule::OnLoggedIn.AddUObject(this,
+        &ACafeSDKSampleProjectGameMode::OnCafeSdkLoggedIn);
+    
+    // 네이버 아이디 프로필 조회.
+    FCafeSDKPluginModule::OnGetProfile.AddUObject(this,
+        &ACafeSDKSampleProjectGameMode::OnCafeSdkGetProfile);
 }
 
 #if PLATFORM_ANDROID
