@@ -196,10 +196,10 @@ README.md   | readme 파일
 
 1. [네이버 아이디 로그인-4.0.7](https://nid.naver.com/devcenter/docs.nhn?menu=IOS)
 2. [AFNetworking](https://github.com/AFNetworking/AFNetworking)
-<br>2.x 모두 사용 가능하며 2.6.3에서 테스트 진행했습니다.
+<br>2.x, 3.x 모두 사용 가능하며 3.1.0에서 테스트 진행했습니다.
 3. [SDWebImage-3.8.2](https://github.com/rs/SDWebImage)
 4. [FLAnimatedImage-1.0.12](https://github.com/Flipboard/FLAnimatedImage)
-
+5. ApiGateway-1.5.0
 
 의존 라이브러리 Android
 -------------
