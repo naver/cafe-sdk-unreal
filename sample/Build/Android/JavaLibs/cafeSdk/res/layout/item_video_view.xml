@@ -9,13 +9,8 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content">
 
-    <com.github.rtoshiro.view.video.FullscreenVideoLayout
+    <com.naver.glink.android.sdk.ui.widget.video.PlugVideoView
         android:id="@+id/video_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <com.naver.glink.android.sdk.ui.viewer.viewholder.ViewerVideoLayout
-        android:id="@+id/video_view_for_viewer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
   </RelativeLayout>
@@ -109,7 +104,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textSize="16dp"
-        android:text="@string/unable_load_videos"
         android:textColor="@color/white1"
         android:textStyle="bold"/>
   </LinearLayout>
@@ -124,7 +118,6 @@
       android:padding="8dp"
       android:visibility="gone"
       android:background="@color/black2">
-
 
     <ImageView
         android:layout_width="wrap_content"
