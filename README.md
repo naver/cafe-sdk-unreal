@@ -74,6 +74,12 @@ if (Target.Platform == UnrealTargetPlatform.IOS)
             "../../ThirdPartyFrameworks/iOS/FLAnimatedImage.embeddedframework.zip"
         )
     );
+    PublicAdditionalFrameworks.Add(
+        new UEBuildFramework(
+            "ApiGateway",
+            "../../ThirdPartyFrameworks/iOS/ApiGateway.embeddedframework.zip"
+        )
+    );
 
     PublicFrameworks.AddRange(
         new string[] {
