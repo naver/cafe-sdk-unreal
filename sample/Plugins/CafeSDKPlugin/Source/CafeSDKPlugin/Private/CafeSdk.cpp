@@ -30,7 +30,7 @@ INaverIdLogin* GetSharedNaverIdLogin()
 
 #include "IOS/IOSCafeSdk.h"
 
-ICafeSdk* GetSharedCafeSdk()
+FIOSCafeSdk* GetSharedIOSCafeSdk()
 {
     static FIOSCafeSdk* CafeSdk = nullptr;
     if (CafeSdk == nullptr)
@@ -39,10 +39,14 @@ ICafeSdk* GetSharedCafeSdk()
     }
     return CafeSdk;
 }
+ICafeSdk* GetSharedCafeSdk()
+{
+    return GetSharedIOSCafeSdk();
+}
 
 INaverIdLogin* GetSharedNaverIdLogin()
 {
-    return nullptr;
+    return GetSharedIOSCafeSdk();
 }
 
 #else
@@ -63,5 +67,5 @@ INaverIdLogin* GetSharedNaverIdLogin()
 
 bool IsCafeSdkAvailable()
 {
-    return GetSharedCafeSdk() != nullptr && GetSharedCafeSdk()->IsSupportedAndroidVersion();
+    return GetSharedCafeSdk() != nullptr && GetSharedCafeSdk()->IsSupportedOSVersion();
 }

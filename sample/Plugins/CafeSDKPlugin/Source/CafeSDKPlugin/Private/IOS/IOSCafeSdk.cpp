@@ -16,18 +16,17 @@ FIOSCafeSdk::FIOSCafeSdk()
 {
 }
 
-void FIOSCafeSdk::Init(FString ClientId, FString ClientSecret, int32 CafeId) const
+void FIOSCafeSdk::Init(FString ClientId, FString ClientSecret, int32 CafeId)
 {
     [[CafeCallbackObject getSharedInstance] setSDKInfoWithClientId:ClientId.GetNSString()
                                                       clientSecret:ClientSecret.GetNSString()
                                                             cafeId:CafeId];
-//    If you want to use Naver App Login
+//    If you want to use NaverAppLogin uncomment it
 //    FIOSCoreDelegates::OnOpenURL.AddStatic(&ListenNCSDKOpenURL);
 }
-void FIOSCafeSdk::InitGlobal(FString ClientId, int32 CommunityId, FString DefaultChannelCode) const {
+void FIOSCafeSdk::InitGlobal(FString ClientId, int32 CafeId) {
     [[CafeCallbackObject getSharedInstance] setGlobalSDKInfoWithClientId:ClientId.GetNSString()
-                                                             communityId:CommunityId
-                                                      defaultChannelCode:DefaultChannelCode.GetNSString()];
+                                                             communityId:CafeId];
 }
 
 void FIOSCafeSdk::StartHome() const
@@ -58,13 +57,6 @@ void FIOSCafeSdk::StartMenu() const
                                                           waitUntilDone:NO];
 }
 
-void FIOSCafeSdk::StartMenuById(int32 MenuId) const
-{
-    dispatch_block_t block = ^{
-        [[NCSDKManager getSharedInstance] presentArticleListViewControllerWithMenuId:MenuId];
-    };
-    [[CafeCallbackObject getSharedInstance] startMainThreadWithBlock:block];
-}
 
 void FIOSCafeSdk::StartProfile() const
 {
@@ -73,40 +65,38 @@ void FIOSCafeSdk::StartProfile() const
                                                           waitUntilDone:NO];
 }
 
-void FIOSCafeSdk::StartWrite(int32 MenuId, FString Subject, FString Text) const
+void FIOSCafeSdk::StartWrite() const
 {
     dispatch_block_t block = ^{
-        [[NCSDKManager getSharedInstance] presentArticlePostViewControllerWithMenuId:MenuId
-                                                                             subject:[NSString stringWithFString:Subject]
-                                                                             content:[NSString stringWithFString:Text]];
+        [[NCSDKManager getSharedInstance] presentArticlePostViewController];
     };
     [[CafeCallbackObject getSharedInstance] startMainThreadWithBlock:block];
 }
 
-void FIOSCafeSdk::StartImageWrite(int32 MenuId, FString Subject, FString Text, FString ImageUri) const
+void FIOSCafeSdk::StartImageWrite(FString ImageUri) const
 {
     dispatch_block_t block = ^{
         [[NCSDKManager getSharedInstance] presentArticlePostViewControllerWithType:kGLArticlePostTypeImage
-                                                                            menuId:MenuId
-                                                                           subject:[NSString stringWithFString:Subject]
-                                                                           content:[NSString stringWithFString:Text]
                                                                           filePath:[NSString stringWithFString:ImageUri]];
     };
     [[CafeCallbackObject getSharedInstance] startMainThreadWithBlock:block];
 }
 
-void FIOSCafeSdk::StartVideoWrite(int32 MenuId, FString Subject, FString Text, FString VideoUri) const
+void FIOSCafeSdk::StartVideoWrite(FString VideoUri) const
 {
     dispatch_block_t block = ^{
         [[NCSDKManager getSharedInstance] presentArticlePostViewControllerWithType:kGLArticlePostTypeVideo
-                                                                            menuId:MenuId
-                                                                           subject:[NSString stringWithFString:Subject]
-                                                                           content:[NSString stringWithFString:Text]
                                                                           filePath:[NSString stringWithFString:VideoUri]];
     };
     [[CafeCallbackObject getSharedInstance] startMainThreadWithBlock:block];
 }
 
+void FIOSCafeSdk::StartMore()
+{
+    [[CafeCallbackObject getSharedInstance] performSelectorOnMainThread:@selector(startMore)
+                                                             withObject:nil
+                                                          waitUntilDone:NO];
+}
 bool FIOSCafeSdk::IsShow() const
 {
     return false;
@@ -117,13 +107,21 @@ void FIOSCafeSdk::SyncGameUserId(FString GameUserId) const
     [[NCSDKManager getSharedInstance] syncGameUserId:[NSString stringWithFString:GameUserId]];
 }
 
-void FIOSCafeSdk::ShowWidgetWhenUnloadSdk(bool bUse) const
+void FIOSCafeSdk::StartWidget() const
 {
-    [[NCSDKManager getSharedInstance] setShowWidgetWhenUnloadSDK:bUse];
+    
 }
 void FIOSCafeSdk::StopWidget() const
 {
     [[NCSDKManager getSharedInstance] stopWidget];
+}
+void FIOSCafeSdk::ShowWidgetWhenUnloadSdk(bool bUse) const
+{
+    [[NCSDKManager getSharedInstance] setShowWidgetWhenUnloadSDK:bUse];
+}
+void FIOSCafeSdk::SetWidgetStartPosition(bool bIsLeft, int HeightPercentage) const
+{
+    
 }
 
 void FIOSCafeSdk::SetUseVideoRecord(bool bUse) const
@@ -134,18 +132,6 @@ void FIOSCafeSdk::SetUseVideoRecord(bool bUse) const
 void FIOSCafeSdk::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const
 {
     [[NCSDKManager getSharedInstance] setThemeColor:[NSString stringWithFString:ThemeColorCSSString]];
-}
-void FIOSCafeSdk::SetXButtonTypeClose(EXButtonType Type) const
-{
-    GLXButtonType xType = Type == EXButtonType::kXButtonTypeClose ? kGLXButtonTypeClose : kGLXButtonTypeMinimize;
-    [[NCSDKManager getSharedInstance] setXButtonType:xType];
-}
-
-void FIOSCafeSdk::StartMore() const
-{
-    [[CafeCallbackObject getSharedInstance] performSelectorOnMainThread:@selector(startMore)
-                                                             withObject:nil
-                                                          waitUntilDone:NO];
 }
 
 bool FIOSCafeSdk::IsSupportedOSVersion() const
@@ -158,6 +144,48 @@ bool FIOSCafeSdk::IsSupportedOSVersion() const
         isSupported = true;
     }
     return isSupported;
+}
+
+// statistics.
+void FIOSCafeSdk::SendNewUser(FString GameUserId, FString Market)
+{
+    [NCSDKStatistics sendNewUser:GameUserId.GetNSString()
+                       andMarket:Market.GetNSString()];
+    
+}
+void FIOSCafeSdk::SendPayUser(FString GameUserId, double Pay, FString ProductCode, FString Currency, FString Market)
+{
+    [NCSDKStatistics sendPayUser:GameUserId.GetNSString()
+                          andPay:Pay
+                  andProductCode:ProductCode.GetNSString()
+                     andCurrency:Currency.GetNSString()
+                       andMarket:Market.GetNSString()];
+}
+
+//Naver Login 
+void FIOSCafeSdk::Init(FString ClientId, FString ClientSecret)
+{
+    Init(ClientId, ClientSecret, -1);
+}
+
+void FIOSCafeSdk::Login()
+{
+    [[CafeCallbackObject getSharedInstance] requestNaverLogin];
+}
+
+void FIOSCafeSdk::Logout()
+{
+    [[NCNaverLoginManager getSharedInstance] naverIdLogout];
+}
+
+bool FIOSCafeSdk::IsLogin()
+{
+    return [[NCNaverLoginManager getSharedInstance] isNaverIdLogin];
+}
+
+void FIOSCafeSdk::GetProfile()
+{
+    [[NCNaverLoginManager getSharedInstance] getNaverIdProfile];
 }
 
 
@@ -174,13 +202,13 @@ bool FIOSCafeSdk::IsSupportedOSVersion() const
     return sharedInstance;
 }
 - (void)setSDKInfoWithClientId:(NSString *)clientId clientSecret:(NSString *)clientSecret cafeId:(NSInteger)cafeId {
+    
     [[NCSDKManager getSharedInstance] setNaverLoginClientId:clientId
                                      naverLoginClientSecret:clientSecret
                                                      cafeId:cafeId];
     [[NCSDKManager getSharedInstance] setOrientationIsLandscape:YES];
 }
-- (void)setGlobalSDKInfoWithClientId:(NSString *)clientId communityId:(NSInteger)communityId defaultChannelCode:(NSString *)channelCode {
-    [[NCSDKManager getSharedInstance] setChannelCode:channelCode];
+- (void)setGlobalSDKInfoWithClientId:(NSString *)clientId communityId:(NSInteger)communityId {
     [[NCSDKManager getSharedInstance] setNeoIdConsumerKey:clientId communityId:communityId];
     [[NCSDKManager getSharedInstance] setOrientationIsLandscape:YES];
 }
@@ -213,6 +241,10 @@ bool FIOSCafeSdk::IsSupportedOSVersion() const
         block();
     }
 }
+- (void)requestNaverLogin {
+    [[NCNaverLoginManager getSharedInstance] setNcNaverLoginManagerDelegate:self];
+    [[NCNaverLoginManager getSharedInstance] naverIdLogin];
+}
 #pragma mark NCSDKDelegate
 - (void)ncSDKViewDidLoad {
     FCafeSDKPluginModule::OnCafeSdkStarted.Broadcast();
@@ -240,10 +272,22 @@ bool FIOSCafeSdk::IsSupportedOSVersion() const
     FCafeSDKPluginModule::OnCafeSdkDidVote.Broadcast(articleId);
 }
 
+//widget
 - (void)ncSDKWidgetPostArticleWithImage {
     FScreenshotRequest::RequestScreenshot("CafeSdkScreenshot.png", false, false);
 }
 - (void)ncSDKWidgetSuccessVideoRecord {
     FCafeSDKPluginModule::OnCafeSdkRecordFinish.Broadcast("");
 }
+
+#pragma mark - NCNaverLoginManagerDelegate
+- (void)ncSDKLoginCallback {
+    FCafeSDKPluginModule::OnLoggedIn.Broadcast(true);
+}
+
+- (void)ncSDKGetProfile:(NSString *)result {
+    FString jsonString = UTF8_TO_TCHAR(result);
+    FCafeSDKPluginModule::OnGetProfile.Broadcast(jsonString);
+}
+
 @end
