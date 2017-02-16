@@ -115,7 +115,7 @@ if (FCafeSDKPluginModule::IsAvailable())
 ```cpp
 if (FCafeSDKPluginModule::IsAvailable())
 {
-    UCafeSdkBlueprintLibrary::InitGlobal("IHCd_HmSiMcXOMC37xZ8", 1013329, NULL);
+    UCafeSdkBlueprintLibrary::InitGlobal("IHCd_HmSiMcXOMC37xZ8", 1013329);
 }
 ```
 
@@ -132,7 +132,7 @@ static void StartHome();
 
 ### ShowWidgetWhenUnloadSdk
 
-PLUG X버튼을 클릭할 때 위젯이 화면에 노출되는 여부를 설정한다.
+PLUG 접기버튼을 클릭할 때 위젯이 화면에 노출되는 여부를 설정한다.
 
 ```cpp
 UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
