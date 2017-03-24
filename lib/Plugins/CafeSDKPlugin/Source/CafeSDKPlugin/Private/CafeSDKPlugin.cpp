@@ -12,6 +12,8 @@ FCafeSDKPluginModule::FOnCafeSdkPostedArticle FCafeSDKPluginModule::OnCafeSdkPos
 FCafeSDKPluginModule::FOnCafeSdkPostedComment FCafeSDKPluginModule::OnCafeSdkPostedComment;
 FCafeSDKPluginModule::FOnCafeSdkRecordFinish FCafeSDKPluginModule::OnCafeSdkRecordFinish;
 FCafeSDKPluginModule::FOnCafeSdkDidVote FCafeSDKPluginModule::OnCafeSdkDidVote;
+FCafeSDKPluginModule::FOnLoggedIn FCafeSDKPluginModule::OnLoggedIn;
+FCafeSDKPluginModule::FOnGetProfile FCafeSDKPluginModule::OnGetProfile;
 
 class CafeSDKPluginModule : public FCafeSDKPluginModule
 {

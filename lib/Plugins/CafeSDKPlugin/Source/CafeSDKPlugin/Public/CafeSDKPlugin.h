@@ -39,6 +39,8 @@ public:
     DECLARE_MULTICAST_DELEGATE_OneParam(FOnCafeSdkPostedComment, int32 /*ArticleId*/);
     DECLARE_MULTICAST_DELEGATE_OneParam(FOnCafeSdkRecordFinish, const FString& /*FileUri*/);
     DECLARE_MULTICAST_DELEGATE_OneParam(FOnCafeSdkDidVote, int32 /*ArticleId*/);
+    DECLARE_MULTICAST_DELEGATE_OneParam(FOnLoggedIn, bool /*success*/);
+    DECLARE_MULTICAST_DELEGATE_OneParam(FOnGetProfile, const FString& /*jsonString*/);
     
     static FOnCafeSdkStarted OnCafeSdkStarted;
     static FOnCafeSdkStopped OnCafeSdkStopped;
@@ -48,4 +50,6 @@ public:
     static FOnCafeSdkPostedComment OnCafeSdkPostedComment;
     static FOnCafeSdkRecordFinish OnCafeSdkRecordFinish;
     static FOnCafeSdkDidVote OnCafeSdkDidVote;
+    static FOnLoggedIn OnLoggedIn;
+    static FOnGetProfile OnGetProfile;
 };

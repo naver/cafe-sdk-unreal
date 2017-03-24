@@ -4,12 +4,6 @@
 
 #include "CafeSdkBlueprintLibrary.generated.h"
 
-UENUM()
-enum class EXButtonType : uint8
-{
-    kXButtonTypeMinimize = 0,
-    kXButtonTypeClose = 1
-};
 
 UCLASS()
 class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibrary
@@ -20,7 +14,7 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     static void Init(FString ClientId, FString ClientSecret, int32 CafeId);
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
-    static void InitGlobal(FString ClientId, int32 CommunityId, FString DefaultChannelCode);
+    static void InitGlobal(FString ClientId, int32 CommunityId);
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void StartHome();
@@ -35,31 +29,34 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     static void StartMenu();
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
-    static void StartMenuById(int32 MenuId);
-    
-    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void StartProfile();
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
-    static void StartWrite(int32 MenuId, FString Subject, FString Text);
+    static void StartWrite();
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
-    static void StartImageWrite(int32 MenuId, FString Subject, FString Text, FString ImageUri);
+    static void StartImageWrite(FString ImageUri);
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
-    static void StartVideoWrite(int32 MenuId, FString Subject, FString Text, FString VideoUri);
-    
-    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
-    static void StartMore();
+    static void StartVideoWrite(FString VideoUri);
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void StartWriteFromScreenshot();
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
-    static void ShowWidgetWhenUnloadSdk(bool bUse);
+    static void StartMore();
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void StartWidget();
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void StopWidget();
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void ShowWidgetWhenUnloadSdk(bool bUse);
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void SetWidgetStartPosition(bool bIsLeft, int32 HeightPercentage);
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void SetUseVideoRecord(bool bUse);
@@ -69,9 +66,6 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString);
-    
-    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
-    static void SetXButtonType(EXButtonType Type);
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static bool IsSupportedOSVersion();
