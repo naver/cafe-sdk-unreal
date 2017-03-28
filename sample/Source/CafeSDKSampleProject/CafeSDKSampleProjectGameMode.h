@@ -5,7 +5,7 @@
 #include "GameFramework/GameMode.h"
 #include "CafeSDKSampleProjectGameMode.generated.h"
 
-ENGINE_API DECLARE_LOG_CATEGORY_EXTERN(LogCafeSdk, Log, Warning);
+DECLARE_LOG_CATEGORY_EXTERN(LogCafeSdk, Log, Warning);
 
 UCLASS()
 class CAFESDKSAMPLEPROJECT_API ACafeSDKSampleProjectGameMode : public AGameMode
