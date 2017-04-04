@@ -26,6 +26,8 @@
 -keep class com.squareup.** { *; }
 -keep interface com.squareup.** { *; }
 
+-keep class com.github.clans.fab.** { *; }
+
 -dontwarn com.nhn.android.neoid.**
 -dontwarn com.navercorp.volleyextensions.volleyer.response.parser.**
 
