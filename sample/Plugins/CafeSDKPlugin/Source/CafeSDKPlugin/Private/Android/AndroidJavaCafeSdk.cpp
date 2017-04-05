@@ -8,30 +8,30 @@
 
 FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     : FJavaClassObject(GetClassName(), "()V")
-    , InitMethod(GetClassMethod("init", "(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;I)V"))
-    , InitGlobalMethod(GetClassMethod("initGlobal", "(Landroid/app/Activity;Ljava/lang/String;I)V"))
+    , InitMethod(GetClassMethod("init", "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)V"))
+    , InitGlobalMethod(GetClassMethod("initGlobal", "(Landroid/content/Context;Ljava/lang/String;I)V"))
     , StartMoreMethod(GetClassMethod("startMore", "(Landroid/app/Activity;)V"))
-    , LoginMethod(GetClassMethod("login", "(Landroid/app/Activity;)V"))
-    , LogoutMethod(GetClassMethod("logout", "(Landroid/app/Activity;)V"))
-    , IsLoginMethod(GetClassMethod("isLogin", "(Landroid/app/Activity;)Z"))
-    , GetProfileMethod(GetClassMethod("getProfile", "(Landroid/app/Activity;)V"))
+    , LoginMethod(GetClassMethod("login", "(Landroid/content/Context;)V"))
+    , LogoutMethod(GetClassMethod("logout", "(Landroid/content/Context;)V"))
+    , IsLoginMethod(GetClassMethod("isLogin", "(Landroid/content/Context;)Z"))
+    , GetProfileMethod(GetClassMethod("getProfile", "(Landroid/content/Context;)V"))
 {
     GlinkClass = FAndroidApplication::FindJavaClass(GetGlinkClassName().GetPlainANSIString());
-    StartHomeMethod = GetGlinkClassStaticMethod("startHome", "(Landroid/app/Activity;)V");
-    StartNoticeMethod = GetGlinkClassStaticMethod("startNotice", "(Landroid/app/Activity;)V");
-    StartEventMethod = GetGlinkClassStaticMethod("startEvent", "(Landroid/app/Activity;)V");
-    StartMenuMethod = GetGlinkClassStaticMethod("startMenu", "(Landroid/app/Activity;)V");
-    StartProfileMethod = GetGlinkClassStaticMethod("startProfile", "(Landroid/app/Activity;)V");
-    StartWriteMethod = GetGlinkClassStaticMethod("startWrite", "(Landroid/app/Activity;)V");
-    StartImageWriteMethod = GetGlinkClassStaticMethod("startImageWrite", "(Landroid/app/Activity;Ljava/lang/String;)V");
-    StartVideoWriteMethod = GetGlinkClassStaticMethod("startVideoWrite", "(Landroid/app/Activity;Ljava/lang/String;)V");
-    IsShowMethod = GetGlinkClassStaticMethod("isShowGlink", "(Landroid/app/Activity;)Z");
-    SyncGameUserIdMethod = GetGlinkClassStaticMethod("syncGameUserId", "(Landroid/app/Activity;Ljava/lang/String;)V");
-    StartWidgetMethod = GetGlinkClassStaticMethod("startWidget", "(Landroid/app/Activity;)V");
-    StopWidgetMethod = GetGlinkClassStaticMethod("stopWidget", "(Landroid/app/Activity;)V");
-    ShowWidgetWhenUnloadSdkMethod = GetGlinkClassStaticMethod("showWidgetWhenUnloadSdk", "(Landroid/app/Activity;Z)V");
-    SetWidgetStartPositionMethod = GetGlinkClassStaticMethod("setWidgetStartPosition", "(Landroid/app/Activity;ZI)V");
-    SetUseVideoRecordMethod = GetGlinkClassStaticMethod("setUseVideoRecord", "(Landroid/app/Activity;Z)V");
+    StartHomeMethod = GetGlinkClassStaticMethod("startHome", "(Landroid/content/Context;)V");
+    StartNoticeMethod = GetGlinkClassStaticMethod("startNotice", "(Landroid/content/Context;)V");
+    StartEventMethod = GetGlinkClassStaticMethod("startEvent", "(Landroid/content/Context;)V");
+    StartMenuMethod = GetGlinkClassStaticMethod("startMenu", "(Landroid/content/Context;)V");
+    StartProfileMethod = GetGlinkClassStaticMethod("startProfile", "(Landroid/content/Context;)V");
+    StartWriteMethod = GetGlinkClassStaticMethod("startWrite", "(Landroid/content/Context;)V");
+    StartImageWriteMethod = GetGlinkClassStaticMethod("startImageWrite", "(Landroid/content/Context;Ljava/lang/String;)V");
+    StartVideoWriteMethod = GetGlinkClassStaticMethod("startVideoWrite", "(Landroid/content/Context;Ljava/lang/String;)V");
+    IsShowMethod = GetGlinkClassStaticMethod("isShowGlink", "(Landroid/content/Context;)Z");
+    SyncGameUserIdMethod = GetGlinkClassStaticMethod("syncGameUserId", "(Landroid/content/Context;Ljava/lang/String;)V");
+    StartWidgetMethod = GetGlinkClassStaticMethod("startWidget", "(Landroid/content/Context;)V");
+    StopWidgetMethod = GetGlinkClassStaticMethod("stopWidget", "(Landroid/content/Context;)V");
+    ShowWidgetWhenUnloadSdkMethod = GetGlinkClassStaticMethod("showWidgetWhenUnloadSdk", "(Landroid/content/Context;Z)V");
+    SetWidgetStartPositionMethod = GetGlinkClassStaticMethod("setWidgetStartPosition", "(Landroid/content/Context;ZI)V");
+    SetUseVideoRecordMethod = GetGlinkClassStaticMethod("setUseVideoRecord", "(Landroid/content/Context;Z)V");
     SetThemeColorMethod = GetGlinkClassStaticMethod("setThemeColor", "(Ljava/lang/String;Ljava/lang/String;)V");
     GetAndroidVersionMethod = GetGlinkClassStaticMethod("getAndroidVersion", "()I");
     
