@@ -36,6 +36,7 @@ public:
     void SetWidgetStartPosition(bool bIsLeft, int32 HeightPercentage) const;
     
     void SetUseVideoRecord(bool bUse) const;
+    void SetUseScreenShot(bool bUse) const;
     void SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const;
     
     bool IsSupportedOSVersion() const;

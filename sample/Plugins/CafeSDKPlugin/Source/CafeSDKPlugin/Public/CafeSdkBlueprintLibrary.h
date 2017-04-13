@@ -60,7 +60,10 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void SetUseVideoRecord(bool bUse);
-    
+
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void SetUseScreenShot(bool bUse);
+
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void SyncGameUserId(FString GameUserId);
     

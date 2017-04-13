@@ -113,6 +113,12 @@ void UCafeSdkBlueprintLibrary::SetUseVideoRecord(bool bUse)
     GetSharedCafeSdk()->SetUseVideoRecord(bUse);
 }
 
+void UCafeSdkBlueprintLibrary::SetUseScreenShot(bool bUse)
+{
+    if (!IsCafeSdkAvailable()) return;
+    GetSharedCafeSdk()->SetUseScreenShot(bUse);
+}
+
 void UCafeSdkBlueprintLibrary::SyncGameUserId(FString GameUserId)
 {
     if (!IsCafeSdkAvailable()) return;

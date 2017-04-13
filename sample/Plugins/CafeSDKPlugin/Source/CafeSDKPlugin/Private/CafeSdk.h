@@ -30,6 +30,7 @@ public:
     virtual void SetWidgetStartPosition(bool bIsLeft, int32 HeightPercentage) const = 0;
     
     virtual void SetUseVideoRecord(bool bUse) const = 0;
+    virtual void SetUseScreenShot(bool bUse) const = 0;
     virtual void SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const = 0;
     
     virtual bool IsSupportedOSVersion() const = 0;
