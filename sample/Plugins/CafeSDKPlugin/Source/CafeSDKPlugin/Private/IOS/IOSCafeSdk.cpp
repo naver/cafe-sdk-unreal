@@ -131,7 +131,7 @@ void FIOSCafeSdk::SetUseVideoRecord(bool bUse) const
 }
 void FIOSCafeSdk::SetUseScreenShot(bool bUse) const
 {
-    [[NCSDKManager getSharedInstance] setWidgetUseScreenShot:bUse];
+    [[NCSDKManager getSharedInstance] setUseWidgetScreenShot:bUse];
 }
 void FIOSCafeSdk::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const
 {
