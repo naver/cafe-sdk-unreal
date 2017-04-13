@@ -98,6 +98,7 @@ namespace UnrealBuildTool.Rules
 						"MobileCoreServices",
 						"GameKit",
                         "AssetsLibrary",
+                        "WebKit"
                     }
                 );
                 PublicWeakFrameworks.Add("ReplayKit");
