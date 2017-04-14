@@ -9,6 +9,8 @@ public:
     virtual void Init(FString ClientId, FString ClientSecret, int32 CafeId) = 0;
     virtual void InitGlobal(FString ClientId, int32 CafeId) = 0;
     
+    virtual void SetChannelCode(FString ChannelCode) const = 0;
+    
     virtual void StartHome() const = 0;
     virtual void StartNotice() const = 0;
     virtual void StartEvent() const = 0;

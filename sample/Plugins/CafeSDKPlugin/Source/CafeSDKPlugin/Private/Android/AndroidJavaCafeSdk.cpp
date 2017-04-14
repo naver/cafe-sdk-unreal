@@ -17,6 +17,7 @@ FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     , GetProfileMethod(GetClassMethod("getProfile", "(Landroid/content/Context;)V"))
 {
     GlinkClass = FAndroidApplication::FindJavaClass(GetGlinkClassName().GetPlainANSIString());
+    SetChannelCodeMethod = GetGlinkClassStaticMethod("setChannelCode", "(Ljava/lang/String;)V");
     StartHomeMethod = GetGlinkClassStaticMethod("startHome", "(Landroid/content/Context;)V");
     StartNoticeMethod = GetGlinkClassStaticMethod("startNotice", "(Landroid/content/Context;)V");
     StartEventMethod = GetGlinkClassStaticMethod("startEvent", "(Landroid/content/Context;)V");
@@ -32,6 +33,7 @@ FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     ShowWidgetWhenUnloadSdkMethod = GetGlinkClassStaticMethod("showWidgetWhenUnloadSdk", "(Landroid/content/Context;Z)V");
     SetWidgetStartPositionMethod = GetGlinkClassStaticMethod("setWidgetStartPosition", "(Landroid/content/Context;ZI)V");
     SetUseVideoRecordMethod = GetGlinkClassStaticMethod("setUseVideoRecord", "(Landroid/content/Context;Z)V");
+    SetUseScreenshotMethod = GetGlinkClassStaticMethod("setUseScreenshot", "(Landroid/content/Context;Z)V");
     SetThemeColorMethod = GetGlinkClassStaticMethod("setThemeColor", "(Ljava/lang/String;Ljava/lang/String;)V");
     GetAndroidVersionMethod = GetGlinkClassStaticMethod("getAndroidVersion", "()I");
     
@@ -76,6 +78,12 @@ FName FAndroidJavaCafeSdk::GetClassName()
     {
         return FName("");
     }
+}
+
+void FAndroidJavaCafeSdk::SetChannelCode(FString ChannelCode) const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    JEnv->CallStaticVoidMethod(GlinkClass, SetChannelCodeMethod.Method, FJavaClassObject::GetJString(ChannelCode));
 }
 
 void FAndroidJavaCafeSdk::StartHome() const
@@ -200,6 +208,12 @@ void FAndroidJavaCafeSdk::SetUseVideoRecord(bool bUse) const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     JEnv->CallStaticVoidMethod(GlinkClass, SetUseVideoRecordMethod.Method, FJavaWrapper::GameActivityThis, bUse);
+}
+
+void FAndroidJavaCafeSdk::SetUseScreenShot(bool bUse) const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    JEnv->CallStaticVoidMethod(GlinkClass, SetUseScreenshotMethod.Method, FJavaWrapper::GameActivityThis, bUse);
 }
 
 bool FAndroidJavaCafeSdk::IsSupportedOSVersion() const

@@ -66,16 +66,6 @@
               android:textStyle="bold"
               android:maxLines="2"
               android:textColor="@color/white1"/>
-
-          <TextView
-              android:id="@+id/cafe_url"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:layout_marginTop="4dp"
-              android:layout_marginLeft="1dp"
-              android:layout_marginRight="22dp"
-              android:textSize="10dp"
-              android:textColor="@color/white1"/>
         </LinearLayout>
 
       </LinearLayout>
@@ -148,16 +138,42 @@
           android:layout_alignParentBottom="true"/>
 
 
-      <ImageView
-          android:id="@+id/copyright"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="4dp"
-          android:layout_marginLeft="22dp"
-          android:layout_marginRight="22dp"
-          android:layout_marginBottom="22dp"
-          android:layout_alignParentRight="true"
-          android:layout_alignParentBottom="true"/>
+      <RelativeLayout
+          android:id="@+id/menu_link_layout"
+          android:layout_width="match_parent"
+          android:layout_height="48dp"
+          android:layout_alignParentBottom="true">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:background="@color/black2_opacity_10"/>
+        <ImageView
+            android:id="@+id/menu_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="22dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/gl_ls_icon_link"/>
+
+        <TextView
+            android:id="@+id/menu_link_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="4dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/menu_link"
+            android:textColor="@color/black1"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="11dp"/>
+
+      </RelativeLayout>
     </RelativeLayout>
 
   </LinearLayout>

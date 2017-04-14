@@ -23,6 +23,12 @@ void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CommunityId)
     GetSharedCafeSdk()->InitGlobal(ClientId, CommunityId);
 }
 
+void UCafeSdkBlueprintLibrary::SetChannelCode(FString ChannelCode)
+{
+    if (!IsCafeSdkAvailable()) return;
+    GetSharedCafeSdk()->SetChannelCode(ChannelCode);
+}
+
 void UCafeSdkBlueprintLibrary::StartHome()
 {
     if (!IsCafeSdkAvailable()) return;

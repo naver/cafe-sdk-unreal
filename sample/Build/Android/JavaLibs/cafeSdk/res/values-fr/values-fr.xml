@@ -45,8 +45,8 @@
     <string name="error_no_article_like">Nous n\'avez aimé aucune publication.</string>
     <string name="error_no_article_wirte">Aucune publication n\'a été écrite.</string>
     <string name="exist_prohibit_word_nickname_message">Des mots prohibés sont présents.</string>
-    <string name="image_editor_crop">자르기</string>
-    <string name="image_editor_rotate">회전하기</string>
+    <string name="image_editor_crop">Crop</string>
+    <string name="image_editor_rotate">Rotation</string>
     <string name="image_permission_setting_message">Vous n\'avez pas la permission de joindre une image.\nVeuillez vérifier vos permissions de sauvegardes dans le jeu, elles peuvent être trouvées dans [Paramètres > App].</string>
     <string name="image_upload_fail_message">Échec du téléchargement de l\'image.</string>
     <string name="internet_not_connected_error">Non connecté à Internet.\nVeuillez vérifier l\'état de votre réseau sans fil.</string>
@@ -81,6 +81,16 @@
     <string name="not_configured_event_menu_id">Le menu d\'événements n\'a pas été défini.</string>
     <string name="not_configured_notice_menu_id">Le menu d\'avis n\'a pas été défini.</string>
     <string name="not_supported_os_version">Une communauté dans l\'app n\'est disponible que sur Android 4.1 ou ultérieur.</string>
+    <string name="permission_record">[Facultatif]\nL\'autorisation pour le microphone est requise pour
+    enregistrer de l\'audio externe. \nVeuillez autoriser le microphone dans [Paramètres>App].
+  </string>
+    <string name="permission_storage">La permissions de sauvegardes est requise pour attacher des
+    photos ou fichiers vidéos.
+  </string>
+    <string name="permission_storage_record">[Requis]\npermissions de sauvegardes : cela permet de
+    sauvegarder les vidéos enregistrées.\n[Facultatif]\nMicrophone : Cela permet d\'enregistrer
+    l\'audio avec le microphone pendant la prise de vidéos.
+  </string>
     <string name="photo_album">Albums photo</string>
     <string name="photo_upload_error">Échec du téléchargement de la photo.</string>
     <string name="plug_bottom_channel">Channel</string>
