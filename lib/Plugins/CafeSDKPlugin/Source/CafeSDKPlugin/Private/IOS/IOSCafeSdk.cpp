@@ -29,6 +29,11 @@ void FIOSCafeSdk::InitGlobal(FString ClientId, int32 CafeId) {
                                                              communityId:CafeId];
 }
 
+void FIOSCafeSdk::SetChannelCode(FString ChannelCode) const
+{
+    [[CafeCallbackObject getSharedInstance] setChannelCode:ChannelCode.GetNSString()];
+}
+
 void FIOSCafeSdk::StartHome() const
 {
     [[CafeCallbackObject getSharedInstance] performSelectorOnMainThread:@selector(startHome)
@@ -129,6 +134,10 @@ void FIOSCafeSdk::SetUseVideoRecord(bool bUse) const
     //Available Unreal Engine 4.13 (Support for the Apple Replay Kit Framework)
     [[NCSDKManager getSharedInstance] setUseWidgetVideoRecord:false];
 }
+void FIOSCafeSdk::SetUseScreenShot(bool bUse) const
+{
+    [[NCSDKManager getSharedInstance] setUseWidgetScreenShot:bUse];
+}
 void FIOSCafeSdk::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const
 {
     [[NCSDKManager getSharedInstance] setThemeColor:[NSString stringWithFString:ThemeColorCSSString]];
@@ -216,6 +225,9 @@ void FIOSCafeSdk::GetProfile()
     [[NCSDKManager getSharedInstance] setParentViewController:[IOSAppDelegate GetDelegate].IOSController];
     [[NCSDKManager getSharedInstance] setNcSDKDelegate:self];
 }
+- (void)setChannelCode:(NSString *)channelCode {
+    [[NCSDKManager getSharedInstance] setChannelCode:channelCode];
+}
 - (void)startHome {
     [[NCSDKManager getSharedInstance] presentMainViewController];
 }
@@ -280,6 +292,10 @@ void FIOSCafeSdk::GetProfile()
     FCafeSDKPluginModule::OnCafeSdkRecordFinish.Broadcast("");
 }
 
+- (void)ncSDKAppSchemeBanner:(NSString *)appScheme {
+    FString appSchemeString = UTF8_TO_TCHAR(appScheme);
+    FCafeSDKPluginModule::OnCafeSdkClickAppSchemeBanner.Broadcast(appSchemeString);
+}
 #pragma mark - NCNaverLoginManagerDelegate
 - (void)ncSDKLoginCallback {
     FCafeSDKPluginModule::OnLoggedIn.Broadcast(true);

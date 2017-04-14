@@ -6,7 +6,7 @@
 #include "Engine.h"
 #include "ModuleManager.h"
 
-class FCafeSDKPluginModule : public IModuleInterface
+class CAFESDKPLUGIN_API FCafeSDKPluginModule : public IModuleInterface
 {
 public:
     

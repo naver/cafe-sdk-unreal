@@ -23,6 +23,12 @@ void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CommunityId)
     GetSharedCafeSdk()->InitGlobal(ClientId, CommunityId);
 }
 
+void UCafeSdkBlueprintLibrary::SetChannelCode(FString ChannelCode)
+{
+    if (!IsCafeSdkAvailable()) return;
+    GetSharedCafeSdk()->SetChannelCode(ChannelCode);
+}
+
 void UCafeSdkBlueprintLibrary::StartHome()
 {
     if (!IsCafeSdkAvailable()) return;
@@ -111,6 +117,12 @@ void UCafeSdkBlueprintLibrary::SetUseVideoRecord(bool bUse)
 {
     if (!IsCafeSdkAvailable()) return;
     GetSharedCafeSdk()->SetUseVideoRecord(bUse);
+}
+
+void UCafeSdkBlueprintLibrary::SetUseScreenShot(bool bUse)
+{
+    if (!IsCafeSdkAvailable()) return;
+    GetSharedCafeSdk()->SetUseScreenShot(bUse);
 }
 
 void UCafeSdkBlueprintLibrary::SyncGameUserId(FString GameUserId)

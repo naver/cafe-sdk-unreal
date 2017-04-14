@@ -9,6 +9,8 @@ public:
     virtual void Init(FString ClientId, FString ClientSecret, int32 CafeId) = 0;
     virtual void InitGlobal(FString ClientId, int32 CafeId) = 0;
     
+    virtual void SetChannelCode(FString ChannelCode) const = 0;
+    
     virtual void StartHome() const = 0;
     virtual void StartNotice() const = 0;
     virtual void StartEvent() const = 0;
@@ -30,6 +32,7 @@ public:
     virtual void SetWidgetStartPosition(bool bIsLeft, int32 HeightPercentage) const = 0;
     
     virtual void SetUseVideoRecord(bool bUse) const = 0;
+    virtual void SetUseScreenShot(bool bUse) const = 0;
     virtual void SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const = 0;
     
     virtual bool IsSupportedOSVersion() const = 0;

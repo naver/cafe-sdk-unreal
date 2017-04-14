@@ -16,6 +16,8 @@ public:
     void Init(FString ClientId, FString ClientSecret, int32 CafeId);
     void InitGlobal(FString ClientId, int32 CafeId);
     
+    void SetChannelCode(FString ChannelCode) const;
+    
     void StartHome() const;
     void StartNotice() const;
     void StartEvent() const;
@@ -36,6 +38,7 @@ public:
     void SetWidgetStartPosition(bool bIsLeft, int32 HeightPercentage) const;
     
     void SetUseVideoRecord(bool bUse) const;
+    void SetUseScreenShot(bool bUse) const;
     void SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const;
     
     bool IsSupportedOSVersion() const;
@@ -59,6 +62,7 @@ private:
 + (CafeCallbackObject*)getSharedInstance;
 - (void)setSDKInfoWithClientId:(NSString *)clientId clientSecret:(NSString *)clientSecret cafeId:(NSInteger)cafeId;
 - (void)setGlobalSDKInfoWithClientId:(NSString *)clientId communityId:(NSInteger)communityId;
+- (void)setChannelCode:(NSString *)channelCode;
 - (void)startHome;
 - (void)startNotice;
 - (void)startEvent;
