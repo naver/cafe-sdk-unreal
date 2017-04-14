@@ -16,6 +16,8 @@ public:
     void Init(FString ClientId, FString ClientSecret, int32 CafeId);
     void InitGlobal(FString ClientId, int32 CafeId);
     
+    void SetChannelCode(FString ChannelCode) const;
+    
     void StartHome() const;
     void StartNotice() const;
     void StartEvent() const;
@@ -60,6 +62,7 @@ private:
 + (CafeCallbackObject*)getSharedInstance;
 - (void)setSDKInfoWithClientId:(NSString *)clientId clientSecret:(NSString *)clientSecret cafeId:(NSInteger)cafeId;
 - (void)setGlobalSDKInfoWithClientId:(NSString *)clientId communityId:(NSInteger)communityId;
+- (void)setChannelCode:(NSString *)channelCode;
 - (void)startHome;
 - (void)startNotice;
 - (void)startEvent;

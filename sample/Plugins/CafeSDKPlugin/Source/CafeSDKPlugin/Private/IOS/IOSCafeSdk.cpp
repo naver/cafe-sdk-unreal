@@ -29,6 +29,11 @@ void FIOSCafeSdk::InitGlobal(FString ClientId, int32 CafeId) {
                                                              communityId:CafeId];
 }
 
+void FIOSCafeSdk::SetChannelCode(FString ChannelCode) const
+{
+    [[CafeCallbackObject getSharedInstance] setChannelCode:ChannelCode.GetNSString()];
+}
+
 void FIOSCafeSdk::StartHome() const
 {
     [[CafeCallbackObject getSharedInstance] performSelectorOnMainThread:@selector(startHome)
@@ -219,6 +224,9 @@ void FIOSCafeSdk::GetProfile()
 - (void)setParentViewController {
     [[NCSDKManager getSharedInstance] setParentViewController:[IOSAppDelegate GetDelegate].IOSController];
     [[NCSDKManager getSharedInstance] setNcSDKDelegate:self];
+}
+- (void)setChannelCode:(NSString *)channelCode {
+    [[NCSDKManager getSharedInstance] setChannelCode:channelCode];
 }
 - (void)startHome {
     [[NCSDKManager getSharedInstance] presentMainViewController];
