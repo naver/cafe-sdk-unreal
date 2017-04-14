@@ -43,8 +43,8 @@
     <string name="error_no_article_like">Keine Post, denen Sie ein Like gegeben haben.</string>
     <string name="error_no_article_wirte">Keine Posts, die Sie geschrieben haben.</string>
     <string name="exist_prohibit_word_nickname_message">Enthält unerlaubte Wörter.</string>
-    <string name="image_editor_crop">자르기</string>
-    <string name="image_editor_rotate">회전하기</string>
+    <string name="image_editor_crop">Crop</string>
+    <string name="image_editor_rotate">Rotation</string>
     <string name="image_permission_setting_message">Ihnen fehlt die Erlaubnis, ein Bild anzuhängen.\nPrüfen Sie ihre Erlaubnis, in der App zu speichern, unter [Einstellungen > App].</string>
     <string name="image_upload_fail_message">Upload eines Bilds fehlgeschlagen.</string>
     <string name="internet_not_connected_error">Keine Internetverbindung vorhanden.\nBitte prüfen Sie den Status Ihres Drahtlosnetzwerks.</string>
@@ -79,6 +79,17 @@
     <string name="not_configured_event_menu_id">Das Event-Menü wurde nicht festgelegt.</string>
     <string name="not_configured_notice_menu_id">Das Mitteilungen-Menü wurde nicht festgelegt.</string>
     <string name="not_supported_os_version">Eine In-App Community ist nur auf Android 4.1 oder neueren Versionen verfügbar.</string>
+    <string name="permission_record">[Optional]\nZugriff auf das Mikrofon wird bei externen
+    Tonaufnahmen benötigt. \nBitte gebe der App Zugriffserlaubnis auf das Mikrofon unter
+    [Einstellungen>App].
+  </string>
+    <string name="permission_storage">Speichererlaubnis ist zum Anhängen von Foto- und Videodateien
+    erforderlich.
+  </string>
+    <string name="permission_storage_record">[Erforderlich]\nSpeichererlaubnis: erlaubt das Speichern
+    von aufgenommenen Videos.\n[Optional]\nMikrofon: erlaubt Tonaufnahme per Mikrofon beim Speichern
+    von Videos.
+  </string>
     <string name="photo_album">Fotoalben</string>
     <string name="photo_upload_error">Upload eines Fotos fehlgeschlagen.</string>
     <string name="plug_bottom_channel">Channel</string>

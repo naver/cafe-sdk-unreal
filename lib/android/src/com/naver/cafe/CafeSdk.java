@@ -2,6 +2,7 @@ package com.naver.cafe;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
@@ -41,21 +42,21 @@ public class CafeSdk {
 
   private static native void nativeOnGetProfile(String jsonString);
 
-  public void init(Activity activity, String clientId, String clientSecret, int cafeId) {
-    if (activity == null) return;
+  public void init(Context context, String clientId, String clientSecret, int cafeId) {
+    if (context == null) return;
 
-    Glink.init(activity, clientId, clientSecret, cafeId);
-    initListeners(activity);
+    Glink.init(context, clientId, clientSecret, cafeId);
+    initListeners(context);
   }
 
-  public void initGlobal(Activity activity, String clientId, int cafeId) {
-    if (activity == null) return;
+  public void initGlobal(Context context, String clientId, int cafeId) {
+    if (context == null) return;
 
-    Glink.initGlobal(activity, clientId, cafeId);
-    initListeners(activity);
+    Glink.initGlobal(context, clientId, cafeId);
+    initListeners(context);
   }
 
-  private void initListeners(final Activity activity) {
+  private void initListeners(final Context context) {
     if (sInitializedListeners) return;
     sInitializedListeners = true;
 
@@ -103,15 +104,15 @@ public class CafeSdk {
 
     Glink.setOnWidgetScreenshotClickListener(new Glink.OnWidgetScreenshotClickListener() {
       @Override public void onScreenshotClick() {
-        if (Glink.checkPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+        if (Glink.checkPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
           nativeOnWidgetScreenshotClick();
         } else {
           String message = "권한이 없어 사진 첨부를 할 수 없습니다. 설정 > 앱 > 해당 게임에서 저장 권한을 확인해 주세요.";
-          Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
+          Toast.makeText(context, message, Toast.LENGTH_LONG).show();
 
           sHandler.postAtTime(new Runnable() {
             @Override public void run() {
-              Glink.startWidget(activity);
+              Glink.startWidget(context);
             }
           }, 100);
         }
@@ -120,7 +121,7 @@ public class CafeSdk {
 
     Glink.setOnRecordFinishListener(new Glink.OnRecordFinishListener() {
       @Override public void onRecordFinished(String uri) {
-        Glink.startVideoWrite(activity, uri);
+        Glink.startVideoWrite(context, uri);
       }
     });
   }
@@ -129,24 +130,24 @@ public class CafeSdk {
     // do nothing.
   }
 
-  public void login(Activity activity) {
-    NaverIdLogin.login(activity, new Glink.OnLoggedInListener() {
+  public void login(Context context) {
+    NaverIdLogin.login(context, new Glink.OnLoggedInListener() {
       @Override public void onLoggedIn(boolean success) {
         nativeOnLoggedIn(success);
       }
     });
   }
 
-  public void logout(Activity activity) {
-    NaverIdLogin.logout(activity);
+  public void logout(Context context) {
+    NaverIdLogin.logout(context);
   }
 
-  public boolean isLogin(Activity activity) {
-    return NaverIdLogin.isLogin(activity);
+  public boolean isLogin(Context context) {
+    return NaverIdLogin.isLogin(context);
   }
 
-  public void getProfile(Activity activity) {
-    NaverIdLogin.getProfile(activity, new NaverIdLogin.OnGetProfileListener() {
+  public void getProfile(Context context) {
+    NaverIdLogin.getProfile(context, new NaverIdLogin.OnGetProfileListener() {
       @Override public void onResult(String jsonString) {
         nativeOnGetProfile(jsonString == null ? "" : jsonString);
       }

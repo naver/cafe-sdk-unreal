@@ -1,3 +1,15 @@
+v.2.4.0
+-------------
+### updated
+1. Pinned 공지사항 기능 추가
+1. 댓글 미리보기 추가
+1. WKWebView 적용 (iOS)
+1. GLReachability 클래스명 변경 (iOS)
+1. 구글 로그인 WebView에서 크롬으로 처리 (안드로이드)
+ * 관련 이슈: https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html?m=1
+1. '스마트폰 앱 접근권한에 대한 정보통신망법 시행령'에 따른 권한 획득시 사용처 고지 (안드로이드)
+1. 위젯 스크린샷 버튼 on/off 추가
+
 v.2.3.2
 -------------
 ### fixed

@@ -168,8 +168,8 @@
     <string name="hosts_playlog" translatable="false">http://global.apis.naver.com</string>
     <string name="hosts_plug" translatable="false">https://global.apis.naver.com</string>
     <string name="hosts_upphoto" translatable="false">https://g-public2.upphoto.naver.com</string>
-    <string name="image_editor_crop">자르기</string>
-    <string name="image_editor_rotate">회전하기</string>
+    <string name="image_editor_crop">Crop</string>
+    <string name="image_editor_rotate">Rotation</string>
     <string name="image_permission_setting_message">You do not have permission to attach an image.\nPlease check your permission to save in the game which can be accessed from [Settings > App].</string>
     <string name="image_upload_fail_message">Uploading a photo failed.</string>
     <string name="internet_not_connected_error">Not connected to Internet.\nPlease check your wireless network status.</string>
@@ -204,6 +204,15 @@
     <string name="not_configured_event_menu_id">The Events menu has not been set.</string>
     <string name="not_configured_notice_menu_id">The Notices menu has not been set.</string>
     <string name="not_supported_os_version">An in-app community is available only in Android 4.1 or later.</string>
+    <string name="permission_record">[Optional]\nPermission to microphone is needed to record external
+    audio. \nPlease allow permission to microphone of the game at [Settings>App].
+  </string>
+    <string name="permission_storage">Permission to save is needed to attach photos or video files.
+  </string>
+    <string name="permission_storage_record">[Required]\nPermission to save: it allows to save
+    recorded videos.\n[Optional]\nMicrophone: it allows to record audio with microphone when saving
+    videos.
+  </string>
     <string name="photo_album">Photo Albums</string>
     <string name="photo_upload_error">Uploading a photo failed.</string>
     <string name="plug_bottom_channel">Channel</string>

@@ -43,8 +43,8 @@
     <string name="error_no_article_like">没有点赞的文章。</string>
     <string name="error_no_article_wirte">没有编写的文章。</string>
     <string name="exist_prohibit_word_nickname_message">含禁用的字词。</string>
-    <string name="image_editor_crop">자르기</string>
-    <string name="image_editor_rotate">회전하기</string>
+    <string name="image_editor_crop">Crop</string>
+    <string name="image_editor_rotate">Rotation</string>
     <string name="image_permission_setting_message">没有权限，不能添加图片。\n请在【设置 > 应用程序】的相关游戏中确认保存权限。</string>
     <string name="image_upload_fail_message">不能上传图片。</string>
     <string name="internet_not_connected_error">尚未连接网络。\n请检查您的无线网络连接状态。</string>
@@ -79,6 +79,11 @@
     <string name="not_configured_event_menu_id">尚未设置活动菜单。</string>
     <string name="not_configured_notice_menu_id">尚未设置公告菜单。</string>
     <string name="not_supported_os_version">APP内社区只使用于Android 4.1以上的版本。</string>
+    <string name="permission_record">[选择权限]\n为了录制外部声音而需要麦克风权限。 \n在[设置> 应用程序]中请允许游戏使用麦克风。</string>
+    <string name="permission_storage">为了在附件中添加照片和视频文件需要允许保存权限。</string>
+    <string name="permission_storage_record">
+    [必须权限]\n保存权限：为了保存录制的视频的权限。\n[选择权限]\n麦克风：在保存视频时为了用麦克风录音的权限。
+  </string>
     <string name="photo_album">相册</string>
     <string name="photo_upload_error">无法上传照片。</string>
     <string name="plug_bottom_channel">Channel</string>
@@ -102,7 +107,7 @@
     <string name="record_size_360">360p</string>
     <string name="record_size_480">480p</string>
     <string name="record_size_720">720p</string>
-    <string name="replies_more_view">查看%1d个以前的回复</string>
+    <string name="replies_more_view">查看%1d个回复</string>
     <string name="reply">回复</string>
     <string name="require_join_message">请加入社区。</string>
     <string name="require_login_message">请登录。</string>
