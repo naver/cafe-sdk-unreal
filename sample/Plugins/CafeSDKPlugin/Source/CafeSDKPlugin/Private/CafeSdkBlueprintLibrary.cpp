@@ -89,6 +89,12 @@ void UCafeSdkBlueprintLibrary::StartMore()
     GetSharedCafeSdk()->StartMore();
 }
 
+void UCafeSdkBlueprintLibrary::Stop()
+{
+    if (!IsCafeSdkAvailable()) return;
+    GetSharedCafeSdk()->Stop();
+}
+
 void UCafeSdkBlueprintLibrary::StartWidget()
 {
     if (!IsCafeSdkAvailable()) return;

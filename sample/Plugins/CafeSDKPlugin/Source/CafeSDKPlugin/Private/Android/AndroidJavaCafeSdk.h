@@ -25,6 +25,8 @@ public:
     void StartImageWrite(FString ImageUri) const;
     void StartVideoWrite(FString VideoUri) const;
     
+    void Stop() const;
+    
     void StartMore();
     
     bool IsShow() const;
@@ -80,6 +82,7 @@ private:
     FJavaClassMethod StartWriteMethod;
     FJavaClassMethod StartImageWriteMethod;
     FJavaClassMethod StartVideoWriteMethod;
+    FJavaClassMethod StopMethod;
     FJavaClassMethod SetThemeColorMethod;
     FJavaClassMethod IsShowMethod;
     FJavaClassMethod SyncGameUserIdMethod;
