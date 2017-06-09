@@ -27,6 +27,8 @@ public:
     void StartImageWrite(FString ImageUri) const;
     void StartVideoWrite(FString VideoUri) const;
     
+    void Stop() const;
+    
     void StartMore();
     
     bool IsShow() const;

@@ -96,6 +96,13 @@ void FIOSCafeSdk::StartVideoWrite(FString VideoUri) const
     [[CafeCallbackObject getSharedInstance] startMainThreadWithBlock:block];
 }
 
+void FIOSCafeSdk::Stop() const
+{
+    [[CafeCallbackObject getSharedInstance] performSelectorOnMainThread:@selector(stopSDK)
+                                                             withObject:nil
+                                                          waitUntilDone:NO];
+}
+
 void FIOSCafeSdk::StartMore()
 {
     [[CafeCallbackObject getSharedInstance] performSelectorOnMainThread:@selector(startMore)
@@ -245,6 +252,9 @@ void FIOSCafeSdk::GetProfile()
 }
 - (void)startMore {
     [[NCSDKManager getSharedInstance] presentEtc];
+}
+- (void)stopSDK {
+    [[NCSDKManager getSharedInstance] dismissMainViewController];
 }
 - (void)startMainThreadWithBlock:(void (^)(void))block {
     if (![[NSThread currentThread] isMainThread]) {
