@@ -16,7 +16,11 @@ FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     , IsLoginMethod(GetClassMethod("isLogin", "(Landroid/content/Context;)Z"))
     , GetProfileMethod(GetClassMethod("getProfile", "(Landroid/content/Context;)V"))
 {
-    GlinkClass = FAndroidApplication::FindJavaClass(GetGlinkClassName().GetPlainANSIString());
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    jclass localGlinkClass = FAndroidApplication::FindJavaClass(GetGlinkClassName().GetPlainANSIString());
+    GlinkClass = (jclass)JEnv->NewGlobalRef(localGlinkClass);
+    JEnv->DeleteLocalRef(localGlinkClass);
+
     SetChannelCodeMethod = GetGlinkClassStaticMethod("setChannelCode", "(Ljava/lang/String;)V");
     StartHomeMethod = GetGlinkClassStaticMethod("startHome", "(Landroid/content/Context;)V");
     StartNoticeMethod = GetGlinkClassStaticMethod("startNotice", "(Landroid/content/Context;)V");
@@ -26,6 +30,7 @@ FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     StartWriteMethod = GetGlinkClassStaticMethod("startWrite", "(Landroid/content/Context;)V");
     StartImageWriteMethod = GetGlinkClassStaticMethod("startImageWrite", "(Landroid/content/Context;Ljava/lang/String;)V");
     StartVideoWriteMethod = GetGlinkClassStaticMethod("startVideoWrite", "(Landroid/content/Context;Ljava/lang/String;)V");
+    StopMethod = GetGlinkClassStaticMethod("stop", "(Landroid/content/Context;)V");
     IsShowMethod = GetGlinkClassStaticMethod("isShowGlink", "(Landroid/content/Context;)Z");
     SyncGameUserIdMethod = GetGlinkClassStaticMethod("syncGameUserId", "(Landroid/content/Context;Ljava/lang/String;)V");
     StartWidgetMethod = GetGlinkClassStaticMethod("startWidget", "(Landroid/content/Context;)V");
@@ -147,6 +152,12 @@ void FAndroidJavaCafeSdk::StartVideoWrite(FString VideoUri) const
                                FJavaWrapper::GameActivityThis,
                                FJavaClassObject::GetJString(VideoUri)
                                );
+}
+
+void FAndroidJavaCafeSdk::Stop() const
+{
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    JEnv->CallStaticVoidMethod(GlinkClass, StopMethod.Method, FJavaWrapper::GameActivityThis);
 }
 
 void FAndroidJavaCafeSdk::SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString) const

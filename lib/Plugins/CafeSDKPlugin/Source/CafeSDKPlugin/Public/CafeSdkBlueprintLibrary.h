@@ -50,6 +50,9 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     static void StartMore();
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void Stop();
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void StartWidget();
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")

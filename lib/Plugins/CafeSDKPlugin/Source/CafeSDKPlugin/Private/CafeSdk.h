@@ -23,6 +23,8 @@ public:
     
     virtual void StartMore() = 0;
     
+    virtual void Stop() const = 0;
+    
     virtual bool IsShow() const = 0;
     virtual void SyncGameUserId(FString GameUserId) const = 0;
     
