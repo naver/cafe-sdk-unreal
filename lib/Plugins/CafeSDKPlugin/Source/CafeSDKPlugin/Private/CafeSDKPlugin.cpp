@@ -14,6 +14,9 @@ FCafeSDKPluginModule::FOnCafeSdkRecordFinish FCafeSDKPluginModule::OnCafeSdkReco
 FCafeSDKPluginModule::FOnCafeSdkDidVote FCafeSDKPluginModule::OnCafeSdkDidVote;
 FCafeSDKPluginModule::FOnLoggedIn FCafeSDKPluginModule::OnLoggedIn;
 FCafeSDKPluginModule::FOnGetProfile FCafeSDKPluginModule::OnGetProfile;
+FCafeSDKPluginModule::FOnStartRecord FCafeSDKPluginModule::OnStartRecord;
+FCafeSDKPluginModule::FOnErrorRecord FCafeSDKPluginModule::OnErrorRecord;
+FCafeSDKPluginModule::FOnFinishRecord FCafeSDKPluginModule::OnFinishRecord;
 
 class CafeSDKPluginModule : public FCafeSDKPluginModule
 {

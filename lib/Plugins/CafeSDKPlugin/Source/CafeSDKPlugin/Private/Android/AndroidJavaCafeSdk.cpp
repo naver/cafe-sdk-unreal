@@ -15,6 +15,8 @@ FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     , LogoutMethod(GetClassMethod("logout", "(Landroid/content/Context;)V"))
     , IsLoginMethod(GetClassMethod("isLogin", "(Landroid/content/Context;)Z"))
     , GetProfileMethod(GetClassMethod("getProfile", "(Landroid/content/Context;)V"))
+    , StartRecordMethod(GetClassMethod("startRecord", "(Landroid/content/Context;)V"))
+    , StopRecordMethod(GetClassMethod("stopRecord", "()V"))
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     jclass localGlinkClass = FAndroidApplication::FindJavaClass(GetGlinkClassName().GetPlainANSIString());
@@ -334,6 +336,21 @@ void FAndroidJavaCafeSdk::GetProfile()
     CallMethod<void>(GetProfileMethod, FJavaWrapper::GameActivityThis);
 }
 
+void FAndroidJavaCafeSdk::InitRecord()
+{
+    // do nothing.
+}
+
+void FAndroidJavaCafeSdk::StartRecord()
+{
+    CallMethod<void>(StartRecordMethod, FJavaWrapper::GameActivityThis);
+}
+
+void FAndroidJavaCafeSdk::StopRecord()
+{
+    CallMethod<void>(StopRecordMethod);
+}
+
 extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnSdkStarted(JNIEnv* jenv, jobject thiz)
 {
     FCafeSDKPluginModule::OnCafeSdkStarted.Broadcast();
@@ -402,4 +419,24 @@ extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnGetProfile(JNIEnv* jenv, job
     FCafeSDKPluginModule::OnGetProfile.Broadcast(jsonString);
     
     jenv->ReleaseStringUTFChars(JsonString, JsonStringChars);
+}
+
+extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnStartRecord(JNIEnv* jenv, jobject thiz)
+{
+    FCafeSDKPluginModule::OnStartRecord.Broadcast();
+}
+
+extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnErrorRecord(JNIEnv* jenv, jobject thiz)
+{
+    FCafeSDKPluginModule::OnErrorRecord.Broadcast(UTF8_TO_TCHAR(""));
+}
+
+extern "C" void Java_com_naver_cafe_CafeSdk_nativeOnFinishRecord(JNIEnv* jenv, jobject thiz, jstring FileUrl)
+{
+    const char* FileUrlChars = jenv->GetStringUTFChars(FileUrl, 0);
+    
+    FString fileUrl = UTF8_TO_TCHAR(FileUrlChars);
+    FCafeSDKPluginModule::OnFinishRecord.Broadcast(fileUrl);
+    
+    jenv->ReleaseStringUTFChars(FileUrl, FileUrlChars);
 }

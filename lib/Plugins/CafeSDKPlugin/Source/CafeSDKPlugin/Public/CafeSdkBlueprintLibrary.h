@@ -77,5 +77,14 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     static void SetThemeColor(FString ThemeColorCSSString, FString TabBackgroundColorCSSString);
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void InitRecord();
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void StartRecord();
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void StopRecord();
+    
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static bool IsSupportedOSVersion();
 };

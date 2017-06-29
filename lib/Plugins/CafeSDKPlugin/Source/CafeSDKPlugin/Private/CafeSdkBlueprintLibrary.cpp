@@ -143,6 +143,24 @@ void UCafeSdkBlueprintLibrary::SetThemeColor(FString ThemeColorCSSString, FStrin
     GetSharedCafeSdk()->SetThemeColor(ThemeColorCSSString, TabBackgroundColorCSSString);
 }
 
+void UCafeSdkBlueprintLibrary::InitRecord()
+{
+    if (!IsCafeSdkAvailable()) return;
+    GetSharedCafeSdk()->InitRecord();
+}
+
+void UCafeSdkBlueprintLibrary::StartRecord()
+{
+    if (!IsCafeSdkAvailable()) return;
+    GetSharedCafeSdk()->StartRecord();
+}
+
+void UCafeSdkBlueprintLibrary::StopRecord()
+{
+    if (!IsCafeSdkAvailable()) return;
+    GetSharedCafeSdk()->StopRecord();
+}
+
 bool UCafeSdkBlueprintLibrary::IsSupportedOSVersion()
 {
     return GetSharedCafeSdk()->IsSupportedOSVersion();
