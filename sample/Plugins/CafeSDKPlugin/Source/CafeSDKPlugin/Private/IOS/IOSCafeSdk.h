@@ -6,6 +6,7 @@
 #import <NaverCafeSDK/NCSDKLoginManager.h>
 #import <NaverCafeSDK/NCSDKStatistics.h>
 #import <NaverCafeSDK/NCNaverLoginManager.h>
+#import <NaverCafeSDK/NCSDKRecordManager.h>
 #include "CafeSdk.h"
 
 class FIOSCafeSdk : public ICafeSdk, public INaverIdLogin
@@ -56,11 +57,15 @@ public:
     bool IsLogin();
     void GetProfile();
     
+    // recording.
+    void InitRecord();
+    void StartRecord();
+    void StopRecord();
 private:
     void SetParentViewController() const;
 };
 
-@interface CafeCallbackObject : NSObject <NCSDKManagerDelegate, NCNaverLoginManagerDelegate>
+@interface CafeCallbackObject : NSObject <NCSDKManagerDelegate, NCNaverLoginManagerDelegate, NCSDKRecordManagerDelegate>
 + (CafeCallbackObject*)getSharedInstance;
 - (void)setSDKInfoWithClientId:(NSString *)clientId clientSecret:(NSString *)clientSecret cafeId:(NSInteger)cafeId;
 - (void)setGlobalSDKInfoWithClientId:(NSString *)clientId communityId:(NSInteger)communityId;
@@ -70,8 +75,12 @@ private:
 - (void)startEvent;
 - (void)startMenu;
 - (void)startProfile;
+- (void)stopSDK;
 - (void)startMore;
 - (void)startMainThreadWithBlock:(void (^)(void))block;
 - (void)requestNaverLogin;
+- (void)initRecord;
+- (void)startRecord;
+- (void)stopRecord;
 @end
 

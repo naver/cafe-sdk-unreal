@@ -204,6 +204,20 @@ void FIOSCafeSdk::GetProfile()
     [[NCNaverLoginManager getSharedInstance] getNaverIdProfile];
 }
 
+//Record
+void FIOSCafeSdk::InitRecord()
+{
+    [[CafeCallbackObject getSharedInstance] initRecord];
+}
+void FIOSCafeSdk::StartRecord()
+{
+    [[CafeCallbackObject getSharedInstance] startRecord];
+}
+void FIOSCafeSdk::StopRecord()
+{
+    [[CafeCallbackObject getSharedInstance] stopRecord];
+}
+
 
 @implementation CafeCallbackObject
 #pragma mark - NCSDKDelegate
@@ -267,6 +281,17 @@ void FIOSCafeSdk::GetProfile()
     [[NCNaverLoginManager getSharedInstance] setNcNaverLoginManagerDelegate:self];
     [[NCNaverLoginManager getSharedInstance] naverIdLogin];
 }
+- (void)initRecord {
+    [[NCSDKRecordManager getSharedInstance] setBaseViewController:[IOSAppDelegate GetDelegate].IOSController];
+    [NCSDKRecordManager getSharedInstance].ncSDKRecordDelegate = self;
+}
+- (void)startRecord {
+    [[NCSDKRecordManager getSharedInstance] startRecord];
+}
+- (void)stopRecord {
+    [[NCSDKRecordManager getSharedInstance] stopRecord];
+}
+
 #pragma mark NCSDKDelegate
 - (void)ncSDKViewDidLoad {
     FCafeSDKPluginModule::OnCafeSdkStarted.Broadcast();
@@ -315,5 +340,17 @@ void FIOSCafeSdk::GetProfile()
     FString jsonString = UTF8_TO_TCHAR(result);
     FCafeSDKPluginModule::OnGetProfile.Broadcast(jsonString);
 }
-
+#pragma mark - NCSDKRecordManagerDelegate
+- (void)ncSDKRecordStart {
+    FCafeSDKPluginModule::OnStartRecord.Broadcast();
+}
+- (void)ncSDKRecordError:(NSString *)errorMsg {
+    FString errorMsgString = UTF8_TO_TCHAR(errorMsg);
+    FCafeSDKPluginModule::OnErrorRecord.Broadcast(errorMsgString);
+}
+- (void)ncSDKRecordFinish {
+    FCafeSDKPluginModule::OnFinishRecord.Broadcast("");
+}
+- (void)ncSDKRecordFinishWithPreview {
+}
 @end
