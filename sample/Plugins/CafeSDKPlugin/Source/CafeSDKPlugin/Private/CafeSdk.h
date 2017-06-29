@@ -41,6 +41,10 @@ public:
     
     virtual void SendNewUser(FString GameUserId, FString Market) = 0;
     virtual void SendPayUser(FString GameUserId, double Pay, FString ProductCode, FString Currency, FString Market) = 0;
+    
+    virtual void InitRecord() = 0;
+    virtual void StartRecord() = 0;
+    virtual void StopRecord() = 0;
 };
 
 class INaverIdLogin {

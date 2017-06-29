@@ -14,6 +14,7 @@ import com.naver.glink.android.sdk.Glink.OnPostedCommentListener;
 import com.naver.glink.android.sdk.Glink.OnSdkStartedListener;
 import com.naver.glink.android.sdk.Glink.OnSdkStoppedListener;
 import com.naver.glink.android.sdk.NaverIdLogin;
+import com.naver.glink.android.sdk.PlugRecordManager;
 
 public class CafeSdk {
 
@@ -41,6 +42,12 @@ public class CafeSdk {
   private static native void nativeOnLoggedIn(boolean success);
 
   private static native void nativeOnGetProfile(String jsonString);
+
+  private static native void nativeOnStartRecord();
+    
+  private static native void nativeOnErrorRecord();
+    
+  private static native void nativeOnFinishRecord(String uri);
 
   public void init(Context context, String clientId, String clientSecret, int cafeId) {
     if (context == null) return;
@@ -124,6 +131,21 @@ public class CafeSdk {
         Glink.startVideoWrite(context, uri);
       }
     });
+      
+      
+    PlugRecordManager.setOnRecordManagerListener(new PlugRecordManager.OnRecordManagerListener() {
+      @Override public void onStartRecord() {
+        nativeOnStartRecord();
+      }
+
+      @Override public void onFinishRecord(String uri) {
+        nativeOnFinishRecord(uri);
+      }
+
+      @Override public void onErrorRecord() {
+        nativeOnErrorRecord();
+      }
+    });
   }
 
   public void startMore(Activity activity) {
@@ -152,5 +174,13 @@ public class CafeSdk {
         nativeOnGetProfile(jsonString == null ? "" : jsonString);
       }
     });
+  }
+
+  public void startRecord(Context context) {
+    PlugRecordManager.startRecord((Activity) context);
+  }
+
+  public void stopRecord() {
+    PlugRecordManager.stopRecord();
   }
 }

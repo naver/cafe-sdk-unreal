@@ -27,4 +27,8 @@ class CAFESDKSAMPLEPROJECT_API ACafeSDKSampleProjectGameMode : public AGameMode
     
     void OnCafeSdkLoggedIn(bool bSuccess);
     void OnCafeSdkGetProfile(const FString& JsonString);
+    
+    void OnCafeSdkStartRecord();
+    void OnCafeSdkErrorRecord(const FString& Message);
+    void OnCafeSdkFinishRecord(const FString& FileUri);
 };

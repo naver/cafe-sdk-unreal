@@ -54,6 +54,11 @@ public:
     bool IsLogin();
     void GetProfile();
     
+    // recording.
+    void InitRecord();
+    void StartRecord();
+    void StopRecord();
+    
 private:
     static FName GetClassName();
     
@@ -65,6 +70,9 @@ private:
     FJavaClassMethod LogoutMethod;
     FJavaClassMethod IsLoginMethod;
     FJavaClassMethod GetProfileMethod;
+    
+    FJavaClassMethod StartRecordMethod;
+    FJavaClassMethod StopRecordMethod;
     
     // Glink class.
     static FName GetGlinkClassName();

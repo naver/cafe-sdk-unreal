@@ -71,6 +71,18 @@ void ACafeSDKSampleProjectGameMode::InitGame(const FString& MapName, const FStri
     // 네이버 아이디 프로필 조회.
     FCafeSDKPluginModule::OnGetProfile.AddUObject(this,
         &ACafeSDKSampleProjectGameMode::OnCafeSdkGetProfile);
+    
+    // 동영상 녹화 시작.
+    FCafeSDKPluginModule::OnStartRecord.AddUObject(this,
+        &ACafeSDKSampleProjectGameMode::OnCafeSdkStartRecord);
+    
+    // 동영상 녹화 에러.
+    FCafeSDKPluginModule::OnErrorRecord.AddUObject(this,
+        &ACafeSDKSampleProjectGameMode::OnCafeSdkErrorRecord);
+    
+    // 동영상 녹화 완료.
+    FCafeSDKPluginModule::OnFinishRecord.AddUObject(this,
+        &ACafeSDKSampleProjectGameMode::OnCafeSdkFinishRecord);
 }
 
 #if PLATFORM_ANDROID
@@ -197,4 +209,19 @@ void ACafeSDKSampleProjectGameMode::OnCafeSdkLoggedIn(bool bSuccess)
 void ACafeSDKSampleProjectGameMode::OnCafeSdkGetProfile(const FString& JsonString)
 {
     ShowMessage(JsonString);
+}
+
+void ACafeSDKSampleProjectGameMode::OnCafeSdkStartRecord()
+{
+    ShowMessage("OnCafeSdkStartRecord");
+}
+
+void ACafeSDKSampleProjectGameMode::OnCafeSdkErrorRecord(const FString& Message)
+{
+    ShowMessage("OnCafeSdkErrorRecord");
+}
+
+void ACafeSDKSampleProjectGameMode::OnCafeSdkFinishRecord(const FString& FileUri)
+{
+    UCafeSdkBlueprintLibrary::StartVideoWrite(FileUri);
 }
