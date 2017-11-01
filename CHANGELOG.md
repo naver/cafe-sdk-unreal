@@ -1,3 +1,11 @@
+v.2.5.4
+-------------
+### fixed
+1. Android 2.5.2 업데이트
+2. Android 7.1 이상일 때 접기 버그 수정
+3. Android customtab 구글 호환성 수정
+4. Android 닫기 텍스트 번역 누락 반영 
+
 v.2.5.2
 -------------
 ### updated
