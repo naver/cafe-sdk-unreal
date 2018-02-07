@@ -30,7 +30,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:layout_margin="60dp"
-      android:src="@drawable/gl_ls_icon_end_play_normal"/>
+      android:src="@drawable/cf_icon_play_l"/>
 
   <LinearLayout
       android:id="@+id/video_data_alert_layout"
@@ -96,7 +96,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/gl_ls_icon_warningbic"/>
+        android:src="@drawable/cf_icon_error_info"/>
 
     <TextView
         android:id="@+id/message"
@@ -122,7 +122,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/gl_ls_icon_warningbic"/>
+        android:src="@drawable/cf_icon_error_info"/>
 
     <TextView
         android:id="@+id/encoding_message"

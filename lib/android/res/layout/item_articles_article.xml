@@ -1,27 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/articles_article_background"
+    android:background="@drawable/bg_articles_article"
     android:orientation="vertical">
 
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:paddingLeft="@dimen/list_item_margin"
+      android:paddingLeft="16dp"
       android:paddingTop="12dp"
-      android:paddingRight="@dimen/list_item_margin"
+      android:paddingRight="10dp"
       android:paddingBottom="12dp"
       android:orientation="horizontal">
 
-    <ViewStub
-        android:id="@+id/left_thumbnail_view_stub"
-        android:inflatedId="@+id/thumbnail_layout"
+    <RelativeLayout
+        android:id="@+id/thumbnail_layout"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_marginRight="8dp"
-        android:layout="@layout/item_articles_article_thumbnail"/>
+        android:layout_marginRight="8dp">
+
+      <ImageView
+          android:id="@+id/thumbnail_image"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="@android:color/transparent"/>
+
+      <ImageView
+          android:id="@+id/movie_icon"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:src="@drawable/cf_icon_play_s"/>
+
+      <ImageView
+          android:id="@+id/gif_icon"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:src="@drawable/cf_icon_gif_s"/>
+    </RelativeLayout>
+
 
     <LinearLayout
         android:layout_width="0dp"
@@ -36,34 +57,32 @@
           android:maxLines="2"
           android:ellipsize="end"
           android:textColor="@color/black4"
+          tools:text="adfawef fw af wfaw f awf  awf aewf1"
           android:textSize="15dp"/>
 
-      <ViewStub
-          android:id="@+id/infos_view_stub"
+      <FrameLayout
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginTop="4dp"
-          android:layout="@layout/item_articles_article_infos"/>
-
-      <ViewStub
-          android:id="@+id/two_line_infos_view_stub"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="4dp"
-          android:layout="@layout/item_articles_article_two_line_infos"/>
+          android:layout_marginTop="4dp">
+        <include layout="@layout/item_articles_article_infos"/>
+      </FrameLayout>
     </LinearLayout>
 
-    <ViewStub
-        android:id="@+id/right_thumbnail_view_stub"
-        android:inflatedId="@+id/thumbnail_layout"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginLeft="16dp"
-        android:layout="@layout/item_articles_article_thumbnail"/>
+    <TextView
+        android:id="@+id/comment_count"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        tools:text="999+"
+        android:gravity="center"
+        android:drawableTop="@drawable/cf_icon_comment_s"
+        android:drawablePadding="3dp"
+        android:textSize="12dp"
+        android:textColor="@color/gray4"/>
   </LinearLayout>
 
   <View
       android:layout_width="match_parent"
       android:layout_height="1dp"
+      android:layout_marginLeft="16dp"
       android:background="#66ced4d4"/>
 </LinearLayout>

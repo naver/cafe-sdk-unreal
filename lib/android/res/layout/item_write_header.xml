@@ -10,7 +10,7 @@
       android:layout_height="40dp"
       android:layout_marginLeft="@dimen/list_item_margin"
       android:layout_marginRight="@dimen/list_item_margin"
-      android:drawableRight="@drawable/gl_btn_boardlistmenu"
+      android:drawableRight="@drawable/cf_blt_arrow_down"
       android:singleLine="true"
       android:gravity="center_vertical"
       android:textColor="@color/black2"

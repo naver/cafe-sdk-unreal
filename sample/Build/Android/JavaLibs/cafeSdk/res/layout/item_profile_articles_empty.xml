@@ -7,7 +7,7 @@
     android:paddingTop="28dp"
     android:paddingBottom="28dp"
     android:gravity="center"
-    android:drawableTop="@drawable/gl_ls_icon_warningbic"
+    android:drawableTop="@drawable/cf_icon_error_post"
     android:drawablePadding="22dp"
     android:textColor="@color/gray4"
     android:textSize="16dp"

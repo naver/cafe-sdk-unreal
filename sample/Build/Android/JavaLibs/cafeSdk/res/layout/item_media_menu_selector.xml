@@ -1,0 +1,54 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white1">
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginTop="47dp"
+      android:background="@color/gray12"
+      />
+
+  <RadioGroup
+      android:id="@+id/media_menu_radio_group"
+      android:layout_width="match_parent"
+      android:layout_height="48dp"
+      android:orientation="horizontal">
+
+    <com.naver.glink.android.sdk.ui.widget.MenuRadioButton
+        android:id="@+id/media_menu_image"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="3dp"
+        android:paddingLeft="@dimen/menu_selector_padding"
+        android:paddingRight="@dimen/menu_selector_padding"
+        android:gravity="center_vertical"
+        android:textColor="@color/black1"
+        android:background="@drawable/bg_articles_menu_selector"
+        android:text="@string/media_tab_image"
+        android:button="@null"
+        android:maxLines="1"
+        android:textStyle="bold"
+        android:textSize="16dp"/>
+
+    <com.naver.glink.android.sdk.ui.widget.MenuRadioButton
+        android:id="@+id/media_menu_video"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:paddingLeft="@dimen/menu_selector_padding"
+        android:paddingRight="@dimen/menu_selector_padding"
+        android:gravity="center_vertical"
+        android:textColor="@color/black1"
+        android:background="@drawable/bg_articles_menu_selector"
+        android:button="@null"
+        android:maxLines="1"
+        android:text="@string/media_tab_video"
+        android:textStyle="bold"
+        android:textSize="16dp"/>
+
+  </RadioGroup>
+</FrameLayout>

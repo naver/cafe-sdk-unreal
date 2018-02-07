@@ -1,0 +1,20 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    >
+
+  <TextView
+      android:id="@+id/live_empty_text"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:drawablePadding="22dp"
+      android:drawableTop="@drawable/cf_icon_empty_live"
+      android:gravity="center"
+      android:text="현재 라이브 방송이 없습니다."
+      android:textColor="@color/gray4"
+      android:textSize="16dp"
+      />
+</RelativeLayout>

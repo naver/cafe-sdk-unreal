@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+
+    android:animateLayoutChanges="false"
     android:orientation="vertical">
 
   <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
+      android:id="@+id/record_layout"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:animateLayoutChanges="false"
       android:orientation="vertical"
       android:layout_marginBottom="24dp"
       android:layout_marginLeft="24dp"
@@ -17,24 +21,66 @@
         android:id="@+id/record_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/gl_btn_wj_rec_play"/>
+        android:layout_gravity="center"
+        android:background="@drawable/cf_btn_flrecplay"/>
 
     <TextView
         android:id="@+id/record_view_stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/gl_btn_wj_rec_stop"
+        android:layout_gravity="center"
+        android:background="@drawable/cf_btn_flrecstop"
         android:visibility="gone"/>
 
-    <TextView
-        android:id="@+id/record_timer"
-        android:layout_width="38dp"
-        android:layout_height="15dp"
-        android:layout_gravity="center"
-        android:gravity="center"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:orientation="horizontal"
         android:layout_marginTop="1dp"
-        android:textSize="10dp"
-        android:textColor="@color/white1"
-        android:background="@drawable/widget_record_timer"/>
+        android:gravity="center"
+        android:background="@drawable/widget_record_timer"
+        >
+
+      <ImageView
+          android:id="@+id/record_timer_icon"
+          android:layout_width="8.5dp"
+          android:layout_height="10.2dp"
+          android:layout_marginLeft="4dp"
+          android:layout_gravity="center_vertical"
+          android:src="@drawable/pl_img_logo_ws"
+          />
+
+      <TextView
+          android:id="@+id/record_timer"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="4dp"
+          android:layout_marginRight="6dp"
+          android:layout_gravity="center_vertical"
+          android:gravity="center"
+          android:textSize="10dp"
+          android:text="00:00"
+          android:textColor="@color/white1"
+          />
+    </LinearLayout>
+
+
   </LinearLayout>
-</LinearLayout>
+
+  <FrameLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:focusable="false"
+      android:clickable="false"
+      android:layout_marginLeft="24dp"
+      android:layout_marginRight="24dp"
+      android:layout_marginBottom="24dp"
+      android:background="@android:color/transparent"
+      >
+    <include
+        android:id="@+id/record_ani_view"
+        layout="@layout/widget_record_ani_view"
+        android:visibility="gone"
+        />
+  </FrameLayout>
+</FrameLayout>

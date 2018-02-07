@@ -23,7 +23,7 @@
       android:id="@+id/shome_gradation"
       android:layout_width="match_parent"
       android:layout_height="65dp"
-      android:background="@drawable/shome_gradation_background"
+      android:background="@drawable/gradation_background"
       android:layout_alignParentBottom="true"/>
 
   <RelativeLayout

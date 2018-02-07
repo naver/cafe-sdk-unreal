@@ -22,6 +22,14 @@
         android:layout_centerInParent="true"
         android:background="#e9ecef"/>
 
+    <ImageView
+        android:id="@+id/gif_thumbnail1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:src="@drawable/cf_icon_gif"/>
+
     <TextView
         android:id="@+id/delete_attachment1"
         android:layout_width="wrap_content"
@@ -30,16 +38,17 @@
         android:paddingBottom="6dp"
         android:layout_alignParentRight="true"
         android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/gl_btn_imagethumbdelete"/>
+        android:drawableLeft="@drawable/cf_icon_attach_del"/>
 
     <ImageView
         android:id="@+id/video_icon1"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="6dp"
-        android:layout_marginLeft="6dp"
-        android:src="@drawable/gl_btn_imagethumbmov"/>
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/cf_icon_play_s"/>
 
     <ImageView
         android:id="@+id/video_gradient1"
@@ -64,6 +73,14 @@
         android:layout_centerInParent="true"
         android:background="#e9ecef"/>
 
+    <ImageView
+        android:id="@+id/gif_thumbnail2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:src="@drawable/cf_icon_gif"/>
+
     <TextView
         android:id="@+id/delete_attachment2"
         android:layout_width="wrap_content"
@@ -72,16 +89,17 @@
         android:paddingBottom="6dp"
         android:layout_alignParentRight="true"
         android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/gl_btn_imagethumbdelete"/>
+        android:drawableLeft="@drawable/cf_icon_attach_del"/>
 
     <ImageView
         android:id="@+id/video_icon2"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="6dp"
-        android:layout_marginLeft="6dp"
-        android:src="@drawable/gl_btn_imagethumbmov"/>
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/cf_icon_play_s"/>
 
     <ImageView
         android:id="@+id/video_gradient2"
@@ -106,6 +124,14 @@
         android:layout_centerInParent="true"
         android:background="#e9ecef"/>
 
+    <ImageView
+        android:id="@+id/gif_thumbnail3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:src="@drawable/cf_icon_gif"/>
+
     <TextView
         android:id="@+id/delete_attachment3"
         android:layout_width="wrap_content"
@@ -114,16 +140,17 @@
         android:paddingBottom="6dp"
         android:layout_alignParentRight="true"
         android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/gl_btn_imagethumbdelete"/>
+        android:drawableLeft="@drawable/cf_icon_attach_del"/>
 
     <ImageView
         android:id="@+id/video_icon3"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="6dp"
-        android:layout_marginLeft="6dp"
-        android:src="@drawable/gl_btn_imagethumbmov"/>
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/cf_icon_play_s"/>
 
     <ImageView
         android:id="@+id/video_gradient3"
@@ -148,6 +175,14 @@
         android:layout_centerInParent="true"
         android:background="#e9ecef"/>
 
+    <ImageView
+        android:id="@+id/gif_thumbnail4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:src="@drawable/cf_icon_gif"/>
+
     <TextView
         android:id="@+id/delete_attachment4"
         android:layout_width="wrap_content"
@@ -156,16 +191,17 @@
         android:paddingBottom="6dp"
         android:layout_alignParentRight="true"
         android:background="@android:color/transparent"
-        android:drawableLeft="@drawable/gl_btn_imagethumbdelete"/>
+        android:drawableLeft="@drawable/cf_icon_attach_del"/>
 
     <ImageView
         android:id="@+id/video_icon4"
         android:layout_width="28dp"
         android:layout_height="28dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="6dp"
-        android:layout_marginLeft="6dp"
-        android:src="@drawable/gl_btn_imagethumbmov"/>
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/cf_icon_play_s"/>
 
     <ImageView
         android:id="@+id/video_gradient4"

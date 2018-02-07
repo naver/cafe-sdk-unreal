@@ -14,8 +14,9 @@
       android:layout_height="match_parent"
       android:layout_weight="1"
       android:ellipsize="end"
-      android:textColor="@color/black2"
-      android:textSize="11dp"
+      android:textColor="@color/gray10"
+      android:textSize="12dp"
+      tools:text="nickname"
       android:maxLines="1"
       tools:ignore="InefficientWeight"/>
 
@@ -25,28 +26,19 @@
       android:layout_height="wrap_content"
       android:layout_marginLeft="6dp"
       android:drawableLeft="@drawable/oval_gray"
-      android:drawableRight="@drawable/oval_gray"
       android:drawablePadding="6dp"
-      android:textColor="@color/gray4"
-      android:textSize="11dp"/>
+      android:textColor="@color/gray10"
+      tools:text="yesterday 12:21"
+      android:textSize="12dp"/>
 
   <TextView
-      android:id="@+id/like_count"
+      android:id="@+id/view_count"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginLeft="6dp"
-      android:layout_marginRight="6dp"
-      android:drawablePadding="3dp"
-      android:textColor="@color/gray4"
-      android:textSize="11dp"/>
-
-  <TextView
-      android:id="@+id/comment_count"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginLeft="6dp"
-      android:drawableLeft="@drawable/gl_icon_comment_small"
-      android:drawablePadding="3dp"
-      android:textColor="@color/gray4"
-      android:textSize="11dp"/>
+      android:layout_marginLeft="12dp"
+      android:drawableLeft="@drawable/cf_icon_read_s"
+      android:gravity="center"
+      android:drawablePadding="4dp"
+      android:textColor="@color/gray10"
+      android:textSize="12dp"/>
 </LinearLayout>

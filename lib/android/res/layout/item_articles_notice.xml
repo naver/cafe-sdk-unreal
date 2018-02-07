@@ -43,7 +43,7 @@
         android:layout_alignParentRight="true"
         android:paddingLeft="12dp"
         android:paddingBottom="12dp"
-        android:src="@drawable/gl_btn_popuplistclose_normal"/>
+        android:src="@drawable/cf_icon_listdel"/>
 
     <TextView
         android:id="@+id/notice_subject"

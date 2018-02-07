@@ -21,5 +21,5 @@
       android:layout_alignParentBottom="true"
       android:layout_alignParentRight="true"
       android:visibility="gone"
-      android:src="@drawable/gl_icon_mainmov"/>
+      android:src="@drawable/cf_icon_play_l"/>
 </merge>

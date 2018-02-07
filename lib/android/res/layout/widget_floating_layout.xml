@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.naver.glink.android.sdk.ui.floating.WidgetFloatingLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
@@ -8,4 +8,13 @@
       android:id="@+id/floating_button"
       android:layout_width="54dp"
       android:layout_height="54dp"/>
-</com.naver.glink.android.sdk.ui.floating.WidgetFloatingLayout>
+
+  <ImageView
+      android:id="@+id/floating_live_icon"
+      android:layout_width="24dp"
+      android:layout_height="14dp"
+      android:layout_marginLeft="30dp"
+      android:src="@drawable/cf_blt_tag_live"
+      android:visibility="gone"
+      />
+</FrameLayout>

@@ -19,7 +19,7 @@
       android:layout_width="40dp"
       android:layout_height="40dp"
       android:layout_alignParentLeft="true"
-      android:src="@drawable/gl_thumb_personal_profile_stroke"/>
+      android:src="@drawable/cf_img_pfstroke"/>
 
   <ImageView
       android:id="@+id/staff_image"
@@ -27,7 +27,7 @@
       android:layout_height="wrap_content"
       android:layout_alignRight="@+id/writer_profile_image"
       android:layout_alignBottom="@+id/writer_profile_image"
-      android:src="@drawable/gl_ls_icon_master_small"/>
+      android:src="@drawable/pl_icon_pfmaster"/>
 
   <TextView
       android:id="@+id/writer_nickname"
@@ -76,7 +76,7 @@
       android:layout_height="wrap_content"
       android:layout_below="@+id/divider"
       android:layout_marginTop="15.5dp"
-      android:drawableLeft="@drawable/gl_ls_icon_detail_views"
+      android:drawableLeft="@drawable/cf_icon_read_s"
       android:drawablePadding="4dp"
       android:textColor="#a3a9a9"
       android:textSize="13dp"/>
@@ -100,7 +100,7 @@
       android:layout_alignParentRight="true"
       android:layout_below="@+id/divider"
       android:layout_marginTop="13.5dp"
-      android:drawableLeft="@drawable/gl_ls_icon_detail_comment"
+      android:drawableLeft="@drawable/cf_icon_comment"
       android:drawablePadding="7dp"
       android:textColor="#363838"
       android:textSize="15dp"/>

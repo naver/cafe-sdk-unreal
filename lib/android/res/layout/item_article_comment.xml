@@ -23,14 +23,14 @@
           android:layout_width="40dp"
           android:layout_height="40dp"
           android:layout_alignParentRight="true"
-          android:src="@drawable/gl_icon_profile"/>
+          android:src="@drawable/cf_img_pfdefault"/>
 
       <ImageView
           android:id="@+id/writer_profile_image_stroke"
           android:layout_width="40dp"
           android:layout_height="40dp"
           android:layout_alignParentRight="true"
-          android:src="@drawable/gl_thumb_personal_profile_stroke"/>
+          android:src="@drawable/cf_img_pfstroke"/>
 
       <ImageView
           android:id="@+id/staff_image"
@@ -38,7 +38,7 @@
           android:layout_height="wrap_content"
           android:layout_alignBottom="@+id/writer_profile_image"
           android:layout_alignRight="@+id/writer_profile_image"
-          android:src="@drawable/gl_ls_icon_master_small"/>
+          android:src="@drawable/pl_icon_pfmaster"/>
     </RelativeLayout>
 
     <ViewStub
@@ -110,7 +110,7 @@
           android:layout_width="match_parent"
           android:layout_height="40dp"
           android:gravity="center_vertical"
-          android:drawableLeft="@drawable/gl_ls_icon_replyviews"
+          android:drawableLeft="@drawable/cf_icon_reply_s"
           android:drawablePadding="9dp"
           android:textColor="@color/black2"
           android:textStyle="bold"
@@ -130,7 +130,7 @@
         android:paddingLeft="22dp"
         android:paddingRight="@dimen/list_item_margin"
         android:paddingBottom="10dp"
-        android:src="@drawable/gl_icon_more_s"/>
+        android:src="@drawable/cf_icon_more_bg"/>
   </RelativeLayout>
 
   <View

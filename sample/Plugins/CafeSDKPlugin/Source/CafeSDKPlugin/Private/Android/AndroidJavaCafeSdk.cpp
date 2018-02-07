@@ -25,10 +25,10 @@ FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
 
     SetChannelCodeMethod = GetGlinkClassStaticMethod("setChannelCode", "(Ljava/lang/String;)V");
     StartHomeMethod = GetGlinkClassStaticMethod("startHome", "(Landroid/content/Context;)V");
-    StartNoticeMethod = GetGlinkClassStaticMethod("startNotice", "(Landroid/content/Context;)V");
-    StartEventMethod = GetGlinkClassStaticMethod("startEvent", "(Landroid/content/Context;)V");
-    StartMenuMethod = GetGlinkClassStaticMethod("startMenu", "(Landroid/content/Context;)V");
-    StartProfileMethod = GetGlinkClassStaticMethod("startProfile", "(Landroid/content/Context;)V");
+    //StartNoticeMethod = GetGlinkClassStaticMethod("startNotice", "(Landroid/content/Context;)V");
+    //StartEventMethod = GetGlinkClassStaticMethod("startEvent", "(Landroid/content/Context;)V");
+    //StartMenuMethod = GetGlinkClassStaticMethod("startMenu", "(Landroid/content/Context;)V");
+    //StartProfileMethod = GetGlinkClassStaticMethod("startProfile", "(Landroid/content/Context;)V");
     StartWriteMethod = GetGlinkClassStaticMethod("startWrite", "(Landroid/content/Context;)V");
     StartImageWriteMethod = GetGlinkClassStaticMethod("startImageWrite", "(Landroid/content/Context;Ljava/lang/String;)V");
     StartVideoWriteMethod = GetGlinkClassStaticMethod("startVideoWrite", "(Landroid/content/Context;Ljava/lang/String;)V");
@@ -100,22 +100,22 @@ void FAndroidJavaCafeSdk::StartHome() const
 
 void FAndroidJavaCafeSdk::StartNotice() const
 {
-    StartTab(StartNoticeMethod);
+  //StartTab(StartNoticeMethod);
 }
 
 void FAndroidJavaCafeSdk::StartEvent() const
 {
-    StartTab(StartEventMethod);
+  //StartTab(StartEventMethod);
 }
 
 void FAndroidJavaCafeSdk::StartMenu() const
 {
-    StartTab(StartMenuMethod);
+  //StartTab(StartMenuMethod);
 }
 
 void FAndroidJavaCafeSdk::StartProfile() const
 {
-    StartTab(StartProfileMethod);
+  //StartTab(StartProfileMethod);
 }
 
 void FAndroidJavaCafeSdk::StartTab(const FJavaClassMethod& JavaClassMethod) const

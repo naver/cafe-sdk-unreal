@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99000000"
+    android:paddingBottom="48dp"
+    android:paddingTop="48dp"
+    >
+
+  <LinearLayout
+      android:layout_width="352dp"
+      android:layout_height="match_parent"
+      android:layout_centerInParent="true"
+      android:background="@color/white1"
+      android:orientation="vertical"
+      >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="center_vertical"
+            android:textColor="#a3a9a9"
+            android:textSize="13dp"
+            tools:text="@string/live_chat_report_message"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#66ced4d4"
+            />
+
+        <LinearLayout
+            android:id="@+id/chatting_message_detail_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible"
+            >
+
+          <TextView
+              android:id="@+id/target_user"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="16dp"
+              android:layout_marginTop="24dp"
+              android:textColor="#363838"
+              android:textSize="15dp"
+              tools:text="작성자 : 프리지아 (sdf***)"
+              />
+
+          <TextView
+              android:id="@+id/target_message"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="16dp"
+              android:layout_marginRight="42dp"
+              android:textColor="#363838"
+              android:textSize="15dp"
+              tools:text="내용 : ***판매합니다. 010 - 0000 - 0000 판매 문의해 주세요."
+              />
+
+          <View
+              android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginRight="16dp"
+              android:layout_marginTop="16dp"
+              android:background="#66ced4d4"
+              />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/report_types"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            />
+
+        <EditText
+            android:id="@+id/report_reason"
+            android:layout_width="match_parent"
+            android:layout_height="84dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/streaming_report_reason_background"
+            android:enabled="false"
+            android:gravity="left|top"
+            android:hint="@string/report_reason_hint"
+            android:imeOptions="actionNone|flagNoExtractUi"
+            android:padding="8dp"
+            android:textColorHint="#a3a9a9"
+            android:textSize="15dp"
+            />
+      </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:background="#f2f2f2"
+        android:orientation="horizontal"
+        >
+
+      <Button
+          android:id="@+id/cancel"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@android:color/transparent"
+          android:text="@string/cancel"
+          android:textColor="#a3a9a9"
+          android:textSize="15dp"
+          android:textStyle="bold"
+          />
+
+      <Button
+          android:id="@+id/report"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@android:color/transparent"
+          android:text="@string/article_report_menu"
+          android:textColor="#363838"
+          android:textSize="15dp"
+          android:textStyle="bold"
+          />
+    </LinearLayout>
+  </LinearLayout>
+</RelativeLayout>

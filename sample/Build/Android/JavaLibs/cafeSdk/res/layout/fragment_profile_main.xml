@@ -2,6 +2,11 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/white1"
+      />
 
   <android.support.v4.widget.SwipeRefreshLayout
       android:id="@+id/swipe_refresh_layout"
@@ -17,8 +22,26 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:background="@color/white1"
-          android:layout_weight="3">
-        <include layout="@layout/item_profile_myinfo"/>
+          android:layout_weight="1">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:layout_alignParentBottom="true">
+
+          <include
+              layout="@layout/item_profile_myinfo"/>
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/copyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"/>
       </RelativeLayout>
 
 
@@ -29,11 +52,11 @@
           android:orientation="vertical"
           android:background="@color/white1"
           android:paddingLeft="1dp"
-          android:layout_weight="2">
+          android:layout_weight="1">
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="6dp"
+            android:layout_height="1dp"
             android:background="@color/gray5"
             android:layout_alignParentTop="true"/>
 
@@ -41,26 +64,17 @@
             android:id="@+id/profile_articles_post_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:paddingLeft="24dp"
             android:background="@color/white1"
             android:focusable="true"
             android:clickable="true"
             android:layout_weight="1">
-
-          <TextView
-              android:id="@+id/icon_post_profile"
-              android:layout_width="16dp"
-              android:layout_height="16dp"
-              android:layout_marginLeft="20dp"
-              android:layout_marginRight="5dp"
-              android:background="@drawable/icon_posts"
-              android:layout_centerVertical="true"/>
           <TextView
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:textSize="15dp"
               android:textColor="@color/black3"
               android:text="@string/article_count_txt"
-              android:layout_toRightOf="@+id/icon_post_profile"
               android:layout_centerVertical="true"/>
 
           <TextView
@@ -93,26 +107,19 @@
             android:id="@+id/profile_articles_comment_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:paddingLeft="24dp"
             android:background="@color/white1"
             android:focusable="true"
             android:clickable="true"
             android:layout_weight="1">
 
-          <TextView
-              android:id="@+id/icon_comment_profile"
-              android:layout_width="16dp"
-              android:layout_height="16dp"
-              android:layout_marginLeft="20dp"
-              android:layout_marginRight="5dp"
-              android:background="@drawable/icon_comments"
-              android:layout_centerVertical="true"/>
+
           <TextView
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:textSize="15dp"
               android:textColor="@color/black3"
               android:text="@string/written_comment_count_txt"
-              android:layout_toRightOf="@+id/icon_comment_profile"
               android:layout_centerVertical="true"/>
 
           <TextView
@@ -145,26 +152,18 @@
             android:id="@+id/profile_articles_like_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:paddingLeft="24dp"
             android:background="@color/white1"
             android:focusable="true"
             android:clickable="true"
             android:layout_weight="1">
 
           <TextView
-              android:id="@+id/icon_like_profile"
-              android:layout_width="16dp"
-              android:layout_height="16dp"
-              android:layout_marginLeft="20dp"
-              android:layout_marginRight="5dp"
-              android:background="@drawable/icon_likes"
-              android:layout_centerVertical="true"/>
-          <TextView
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:textSize="15dp"
               android:textColor="@color/black3"
               android:text="@string/like_article_count_txt"
-              android:layout_toRightOf="@+id/icon_like_profile"
               android:layout_centerVertical="true"/>
 
           <TextView
@@ -174,8 +173,7 @@
               android:textSize="24dp"
               android:textColor="@color/black3"
               android:layout_toLeftOf="@+id/icon_like_go"
-              android:layout_centerVertical="true"
-              android:visibility="gone"/>
+              android:layout_centerVertical="true"/>
 
           <TextView
               android:id="@+id/icon_like_go"
@@ -192,28 +190,73 @@
               android:background="@color/gray5"
               android:layout_alignParentBottom="true"/>
 
-          <View
-              android:id="@+id/profile_articles_like_blank"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:visibility="gone"
-              android:background="@color/white2"/>
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/copyright_layout"
+            android:id="@+id/profile_articles_live_layout"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@android:color/transparent">
-          <ImageView
-              android:id="@+id/copyright"
+            android:layout_height="0dp"
+            android:paddingLeft="24dp"
+            android:background="@color/white1"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_weight="1">
+
+          <TextView
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginRight="22dp"
-              android:layout_marginBottom="12dp"
-              android:layout_alignParentBottom="true"
-              android:layout_alignParentRight="true"/>
+              android:textSize="15dp"
+              android:textColor="@color/black3"
+              android:text="@string/widget_button_liveview"
+              android:layout_centerVertical="true"/>
+
+          <TextView
+              android:id="@+id/live_article_count"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="24dp"
+              android:textColor="@color/black3"
+              android:layout_toLeftOf="@+id/icon_live_go"
+              android:layout_centerVertical="true"/>
+
+          <TextView
+              android:id="@+id/icon_live_go"
+              android:layout_width="6dp"
+              android:layout_height="10dp"
+              android:layout_marginLeft="5dp"
+              android:layout_marginRight="20dp"
+              android:layout_alignParentRight="true"
+              android:layout_centerVertical="true"/>
+
+          <View
+              android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:background="@color/gray5"
+              android:layout_alignParentBottom="true"/>
+
+          <View
+              android:id="@+id/profile_articles_live_blank"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:visibility="gone"
+              android:background="@color/white1"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/profile_articles_blank"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingLeft="24dp"
+            android:background="@color/white1"
+            android:focusable="true"
+            android:clickable="true"
+            android:visibility="gone"
+            android:layout_weight="1">
+
+
         </RelativeLayout>
 
 
@@ -234,7 +277,7 @@
       android:layout_marginBottom="8dp"
       android:layout_marginLeft="12dp"
       android:layout_gravity="bottom|left"
-      android:background="@drawable/gl_btn_back"/>
+      android:background="@drawable/cf_btn_flback"/>
 
   <include layout="@layout/view_fragment_error"/>
 

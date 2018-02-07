@@ -36,7 +36,7 @@
           android:clickable="true"
           android:padding="13.5dp"
           android:scaleType="center"
-          android:src="@drawable/gl_btn_photo_cancel"/>
+          android:src="@drawable/cf_icon_close_w"/>
 
       <ImageView
           android:id="@+id/tvSave"
@@ -106,7 +106,7 @@
           android:clickable="true"
           android:padding="13.5dp"
           android:scaleType="center"
-          android:src="@drawable/gl_btn_photo_cancel"/>
+          android:src="@drawable/cf_icon_close_w"/>
 
       <ImageView
           android:id="@+id/tvDoCrop"

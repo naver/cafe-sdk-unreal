@@ -19,15 +19,6 @@
         android:paddingRight="16dp"
         android:orientation="horizontal">
 
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          android:gravity="center"
-          android:text="@string/edit"
-          android:textSize="15dp"
-          android:textStyle="bold"
-          android:textColor="@color/black2"/>
-
 
       <LinearLayout
           android:id="@+id/btn_logout"
@@ -38,28 +29,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginRight="3dp"
-            android:drawableLeft="@drawable/gl_ls_blt_popup_logout"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
             android:text="@string/profile_logout"
-            android:textSize="12dp"
+            android:drawablePadding="4dp"
+            android:drawableLeft="@drawable/cf_icon_logout_s"
+            android:textSize="13dp"
             android:gravity="center"
             android:textColor="@color/black2"/>
 
       </LinearLayout>
     </RelativeLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/gray11"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="32dp"
@@ -74,13 +58,13 @@
             android:id="@+id/profile_image_stroke"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/gl_thumb_personal_profile_stroke"/>
+            android:src="@drawable/cf_img_pfstroke"/>
 
         <ImageView
             android:id="@+id/profile_image"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/gl_thumb_personal_profile_stroke"/>
+            android:src="@drawable/cf_img_pfstroke"/>
 
         <ImageView
             android:id="@+id/profile_setting_img"
@@ -88,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:src="@drawable/gl_btn_personal_profile_setting_camera"/>
+            android:src="@drawable/cf_icon_pfedit_s"/>
 
       </RelativeLayout>
 
@@ -125,13 +109,13 @@
               android:layout_marginRight="8dp"
               android:layout_marginLeft="8dp"
               android:background="@color/white1"
-              android:drawableLeft="@drawable/gl_btn_cancel"/>
+              android:drawableLeft="@drawable/cf_icon_inputdel"/>
 
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="2dp"
             android:background="@color/black4"/>
 
         <TextView
@@ -161,7 +145,7 @@
         android:layout_weight="1"
         android:textSize="14dp"
         android:gravity="center"
-        android:background="@drawable/gl_green_selector"/>
+        android:background="@drawable/gl_profile_modify_cancel_selector"/>
     <View
         android:layout_width="1dp"
         android:layout_height="match_parent"
@@ -175,7 +159,7 @@
         android:layout_weight="1"
         android:textSize="14dp"
         android:gravity="center"
-        android:background="@drawable/gl_green_selector"/>
+        android:background="@drawable/gl_profile_modify_cancel_selector"/>
 
 
   </LinearLayout>

@@ -39,5 +39,6 @@
       android:id="@+id/divider"
       android:layout_width="match_parent"
       android:layout_height="1dp"
+      android:layout_marginLeft="16dp"
       android:background="@color/black2_opacity_5"/>
 </LinearLayout>

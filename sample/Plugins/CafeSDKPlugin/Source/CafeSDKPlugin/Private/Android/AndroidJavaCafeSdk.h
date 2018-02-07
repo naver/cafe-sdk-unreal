@@ -83,10 +83,10 @@ private:
     jclass GlinkClass;
     FJavaClassMethod SetChannelCodeMethod;
     FJavaClassMethod StartHomeMethod;
-    FJavaClassMethod StartNoticeMethod;
-    FJavaClassMethod StartEventMethod;
-    FJavaClassMethod StartMenuMethod;
-    FJavaClassMethod StartProfileMethod;
+    //FJavaClassMethod StartNoticeMethod;
+    //FJavaClassMethod StartEventMethod;
+    //FJavaClassMethod StartMenuMethod;
+    //FJavaClassMethod StartProfileMethod;
     FJavaClassMethod StartWriteMethod;
     FJavaClassMethod StartImageWriteMethod;
     FJavaClassMethod StartVideoWriteMethod;

@@ -33,7 +33,7 @@
         android:id="@+id/float_item_trash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/gl_icon_trash"
+        android:src="@drawable/cf_btn_wddel_normal"
         fab:fab_is_trash="true"
         fab:fab_label="@string/delete"/>
 
@@ -44,22 +44,24 @@
         fab:fab_label="@string/widget_button_cafe"/>
 
     <com.github.clans.fab.FloatingActionButton
-        android:id="@+id/float_item_capture"
+        android:id="@+id/float_item_live"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        fab:fab_label="@string/widget_button_capture"/>
+        android:visibility="gone"
+        fab:fab_label="@string/widget_button_liveview"/>
 
     <com.github.clans.fab.FloatingActionButton
         android:id="@+id/float_item_video"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         fab:fab_label="@string/widget_button_record"/>
 
     <com.github.clans.fab.FloatingActionButton
-        android:id="@+id/float_item_write"
+        android:id="@+id/float_item_capture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        fab:fab_label="@string/widget_button_write"/>
+        fab:fab_label="@string/widget_button_capture"/>
 
   </com.github.clans.fab.FloatingActionMenuLR>
 </RelativeLayout>

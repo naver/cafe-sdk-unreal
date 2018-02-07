@@ -2,14 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:background="@color/white1"
+    android:orientation="vertical"
+    >
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginLeft="44dp"
+      android:background="#66ced4d4"
+      />
 
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="43dp"
+      android:layout_marginLeft="44dp"
+      android:layout_marginRight="16dp"
       android:orientation="horizontal"
-      android:paddingLeft="16dp"
-      android:paddingRight="16dp">
+      >
 
     <TextView
         android:id="@+id/name"
@@ -17,28 +26,23 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center_vertical"
+        android:singleLine="true"
         android:textSize="14dp"
-        android:singleLine="true"/>
+        />
 
     <FrameLayout
         android:id="@+id/check_icon"
         android:layout_width="18dp"
         android:layout_height="18dp"
-        android:layout_gravity="center_vertical">
+        android:layout_gravity="center_vertical"
+        >
 
       <ImageView
-          android:layout_width="11dp"
-          android:layout_height="6dp"
+          android:layout_width="10dp"
+          android:layout_height="8dp"
           android:layout_gravity="center"
-          android:src="@drawable/menu_item_check_icon"/>
+          android:src="@drawable/menu_item_check_icon"
+          />
     </FrameLayout>
   </LinearLayout>
-
-  <View
-      android:id="@+id/divider"
-      android:layout_width="match_parent"
-      android:layout_height="1dp"
-      android:layout_marginLeft="16dp"
-      android:layout_marginRight="16dp"
-      android:background="#66ced4d4"/>
 </LinearLayout>

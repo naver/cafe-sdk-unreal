@@ -10,9 +10,9 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:orientation="horizontal"
-      android:layout_marginTop="23dp"
+      android:layout_marginTop="16dp"
       android:layout_marginLeft="21dp"
-      android:layout_marginBottom="8dp"
+      android:layout_marginBottom="6dp"
       android:gravity="center">
 
     <LinearLayout
@@ -20,10 +20,10 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-      <TextView
+      <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:background="@drawable/gl_icon_option_quality"
+          android:background="@drawable/cf_icon_option_quality"
           android:gravity="center"
       />
 
@@ -137,16 +137,17 @@
       android:layout_height="match_parent"
       android:orientation="horizontal"
       android:layout_marginLeft="21dp"
+      android:layout_marginBottom="6dp"
       android:gravity="center">
 
     <LinearLayout
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-      <TextView
+      <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:background="@drawable/gl_icon_option_size"
+          android:background="@drawable/cf_icon_option_size"
           android:gravity="center"
       />
 
@@ -256,6 +257,70 @@
 
   </LinearLayout>
 
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:orientation="horizontal"
+      android:layout_marginLeft="21dp"
+      android:layout_marginBottom="10dp"
+      android:gravity="center"
+      >
+
+    <LinearLayout
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@drawable/cf_icon_option_mic_s"
+          android:scaleType="matrix"
+          />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/record_mic"
+          android:layout_marginLeft="9dp"
+          android:textSize="14dp"
+          android:textStyle="bold"
+          android:textColor="@color/black1"
+          android:gravity="center"
+          />
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/record_setting_mic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+      <RadioButton
+          android:id="@+id/record_setting_mic_on"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="24dp"
+          android:paddingLeft="3dp"
+          android:text="@string/record_mic_on"
+          android:textColor="#363838"
+          android:textSize="13dp"
+          />
+      <RadioButton
+          android:id="@+id/record_setting_mic_off"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:paddingLeft="3dp"
+          android:text="@string/record_mic_off"
+          android:textSize="13dp"
+          android:textColor="#363838"
+          />
+
+    </RadioGroup>
+
+  </LinearLayout>
+
 
   <RelativeLayout
       android:layout_width="match_parent"
@@ -289,7 +354,8 @@
           android:textColor="@color/white1"
           android:gravity="center"
           android:layout_centerInParent="true"
-          android:background="@drawable/widget_record_setting_button_cancel"/>
+          android:background="@drawable/widget_record_setting_button"
+          />
 
     </LinearLayout>
 

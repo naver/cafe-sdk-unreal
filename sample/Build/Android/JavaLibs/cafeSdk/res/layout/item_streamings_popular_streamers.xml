@@ -1,0 +1,10 @@
+<com.naver.glink.android.sdk.ui.widget.HorizontalListView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popular_streamers"
+    android:layout_width="match_parent"
+    android:layout_height="89dp"
+    android:cacheColorHint="@android:color/transparent"
+    android:divider="@null"
+    android:dividerHeight="22dp"
+    android:theme="@android:style/Theme.Holo.Light"
+    />

@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="0dp">
+    android:layout_height="wrap_content">
 
   <ImageView
       android:id="@+id/image_view"
@@ -15,5 +15,5 @@
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:visibility="gone"
-      android:src="@drawable/gl_icon_menu_new"/>
+      android:src="@drawable/cf_blt_tag_new"/>
 </RelativeLayout>
