@@ -253,16 +253,16 @@ void FIOSCafeSdk::StopRecord()
     [[NCSDKManager getSharedInstance] presentMainViewController];
 }
 - (void)startNotice {
-    [[NCSDKManager getSharedInstance] presentMainViewControllerWithTabIndex:kGLTabTypeNotice];
+    [[NCSDKManager getSharedInstance] presentMainViewControllerWithTabIndex:kGLTabTypeArticles];
 }
 - (void)startEvent {
-    [[NCSDKManager getSharedInstance] presentMainViewControllerWithTabIndex:kGLTabTypeEvent];
+    [[NCSDKManager getSharedInstance] presentMainViewControllerWithTabIndex:kGLTabTypeArticles];
 }
 - (void)startMenu {
-    [[NCSDKManager getSharedInstance] presentMainViewControllerWithTabIndex:kGLTabTypeMenuList];
+    [[NCSDKManager getSharedInstance] presentMainViewControllerWithTabIndex:kGLTabTypeArticles];
 }
 - (void)startProfile {
-    [[NCSDKManager getSharedInstance] presentMainViewControllerWithTabIndex:kGLTabTypeProfile];
+    [[NCSDKManager getSharedInstance] presentMainViewControllerWithTabIndex:kGLTabTypeSerach];
 }
 - (void)startMore {
     [[NCSDKManager getSharedInstance] presentEtc];
