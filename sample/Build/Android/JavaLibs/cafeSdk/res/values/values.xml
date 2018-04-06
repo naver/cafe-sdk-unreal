@@ -294,7 +294,7 @@
     <string name="pin_to_top">Pin to Top</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">Info</string>
-    <string name="plug_sdk_version" translatable="false">3.2.0</string>
+    <string name="plug_sdk_version" translatable="false">3.2.3</string>
     <string name="popular_article">See\npopular posts</string>
     <string name="profile_articles_total">Total</string>
     <string name="profile_become_member">By logging in, you become a member of this Cafe.</string>
