@@ -1,0 +1,53 @@
+-ignorewarnings
+-keepattributes SourceFile, LineNumberTable, *Annotation*, Signature, EnclosingMethod, InnerClasses, EnclosingMethod
+
+-keep class com.naver.cafe.** { *; }
+-keep interface com.naver.cafe.** { *; }
+-keepclassmembers class com.naver.cafe.** {
+    <fields>;
+    <methods>;
+}
+
+-keep class com.naver.glink.** { *; }
+-keep interface com.naver.glink.** { *; }
+
+-keep class com.nhn.** { *; }
+-keep interface com.nhn.** { *; }
+
+-keep class com.bumptech.glide.** { *; }
+-keep interface com.bumptech.glide.** { *; }
+
+-keep class com.android.volley.** { *; }
+-keep interface com.android.volley.** {*;}
+
+-keep class com.navercorp.volleyextensions.** { *; }
+-keep interface com.navercorp.volleyextensions.** { *; }
+
+-keep class com.squareup.** { *; }
+-keep interface com.squareup.** { *; }
+
+-keep class com.github.clans.fab.** { *; }
+
+-dontwarn com.nhn.android.neoid.**
+-dontwarn com.navercorp.volleyextensions.volleyer.response.parser.**
+
+##---------------Begin: proguard configuration for Gson  ----------
+# Gson uses generic type information stored in a class file when working with fields. Proguard
+# removes such information by default, so configure it to keep all of it.
+-keepattributes Signature
+
+# For using GSON @Expose annotation
+-keepattributes *Annotation*
+
+# Gson specific classes
+-keep class sun.misc.Unsafe { *; }
+#-keep class com.google.gson.stream.** { *; }
+
+# Prevent proguard from stripping interface information from TypeAdapterFactory,
+# JsonSerializer, JsonDeserializer instances (so they can be used in @JsonAdapter)
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
+
+-keep class com.google.gson.Gson
+##---------------End: proguard configuration for Gson  ----------

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="@android:color/white"
+    tools:context=".ui.articles.SearchArticlesFragmentView">
+
+  <ListView
+      android:id="@android:id/list"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:theme="@android:style/Theme.Holo.Light"
+      android:background="@color/white1"
+      android:cacheColorHint="@android:color/transparent"
+      android:scrollbarThumbVertical="@color/black2_opacity_20"
+      android:scrollbarSize="4dp"
+      android:divider="@null"
+      android:dividerHeight="0dp"
+      android:listSelector="@drawable/gl_list_selector"
+      android:choiceMode="singleChoice"/>
+
+  <LinearLayout
+      android:id="@android:id/empty"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@android:color/white"
+      android:orientation="vertical">
+
+    <include layout="@layout/item_articles_search_header"/>
+    <include layout="@layout/item_empty"/>
+  </LinearLayout>
+
+  <include layout="@layout/view_fragment_error"/>
+</FrameLayout>

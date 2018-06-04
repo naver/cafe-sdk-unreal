@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/green1"
+        android:layout_weight="8">
+
+      <ImageView
+          android:id="@+id/cafe_background_img"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:scaleType="centerCrop"/>
+
+      <ImageView
+          android:id="@+id/cafe_icon_img"
+          android:layout_width="72dp"
+          android:layout_height="72dp"
+          android:layout_marginTop="18dp"
+          android:layout_marginLeft="22dp"
+          android:layout_centerHorizontal="true"
+          android:layout_gravity="center"/>
+
+      <LinearLayout
+          android:id="@+id/cafe_info_layout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/cafe_icon_img"
+          android:layout_marginTop="16dp"
+          android:layout_marginRight="20dp"
+          android:layout_marginLeft="20dp"
+          android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/cafe_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/thumbnail_image"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:textColor="@color/white1"/>
+
+        <TextView
+            android:id="@+id/cafe_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/cafe_name"
+            android:layout_toLeftOf="@+id/thumbnail_image"
+            android:textSize="13dp"
+            android:textColor="@color/white1"
+            android:ellipsize="end"
+            android:maxLines="3"/>
+      </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white1"
+        android:layout_weight="6">
+
+      <LinearLayout
+          android:id="@+id/join_edit_layout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="24dp"
+          android:baselineAligned="false"
+          android:orientation="vertical"
+          android:paddingLeft="16dp"
+          android:paddingRight="16dp"
+          android:background="@color/white1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="7dp"
+              android:gravity="center"
+              android:baselineAligned="false"
+              android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:orientation="horizontal"
+                android:background="@color/white1">
+
+              <EditText
+                  android:id="@+id/nickname"
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="1"
+                  android:background="@android:color/transparent"
+                  android:gravity="center_vertical"
+                  android:textColor="@color/black2"
+                  android:hint="@string/nick_name_header"
+                  android:textColorHint="#a3a9a9"
+
+                  android:singleLine="true"
+                  android:textSize="16dp"
+                  android:imeOptions="flagNoExtractUi"/>
+
+              <TextView
+                  android:id="@+id/nickname_deletion"
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:layout_marginRight="8dp"
+                  android:layout_marginLeft="8dp"
+                  android:background="@android:color/transparent"
+                  android:drawableLeft="@drawable/cf_icon_inputdel"/>
+            </LinearLayout>
+          </LinearLayout>
+
+          <View
+              android:layout_width="match_parent"
+              android:layout_height="2dp"
+              android:background="@color/black4"/>
+
+
+          <TextView
+              android:id="@+id/valid_check_text"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="12dp"
+              android:text="@string/nickname_rule_message"
+              android:textColor="#a3a9a9"
+              android:textSize="12dp"/>
+
+          <RelativeLayout
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:layout_marginTop="18dp"
+              android:gravity="bottom">
+
+            <RelativeLayout
+                android:id="@+id/agree_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true">
+
+              <CheckBox
+                  android:id="@+id/agree_check"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerVertical="true"
+                  android:layout_alignParentLeft="true"
+                  android:layout_marginRight="3dp"
+                  android:button="@drawable/cf_blt_check2cafe"/>
+
+              <TextView
+                  android:id="@+id/agree_text"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_toRightOf="@+id/agree_check"
+                  android:layout_centerVertical="true"
+                  android:textSize="13dp"
+                  android:textColor="@color/gray4"
+                  android:text="@string/nick_name_join_agree"/>
+            </RelativeLayout>
+          </RelativeLayout>
+
+          <Button
+              android:id="@+id/join"
+              android:layout_width="match_parent"
+              android:layout_height="36dp"
+              android:gravity="center"
+              android:layout_marginTop="24dp"
+              android:paddingLeft="18dp"
+              android:paddingRight="18dp"
+              android:textColor="@color/white1"
+              android:textSize="15dp"
+              android:text="@string/nick_name_join"/>
+
+
+        </LinearLayout>
+
+      </LinearLayout>
+
+
+
+      <TextView
+          android:id="@+id/btn_logout"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="20dp"
+          android:layout_marginRight="20dp"
+          android:minWidth="88dp"
+          android:drawableLeft="@drawable/cf_icon_logout_s"
+          android:drawablePadding="0dp"
+          android:gravity="center"
+          android:textColor="@color/black4"
+          android:textSize="13dp"
+          android:singleLine="true"
+          android:layout_alignParentRight="true"
+          android:layout_alignParentBottom="true"
+          android:paddingLeft="5dp"
+          android:paddingRight="5dp"
+          android:text="@string/profile_logout"/>
+
+      <!--<ImageView
+          android:id="@+id/copyright"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="4dp"
+          android:layout_marginLeft="22dp"
+          android:layout_marginRight="22dp"
+          android:layout_marginBottom="22dp"
+          android:layout_alignParentRight="true"
+          android:layout_alignParentBottom="true"/> -->
+    </RelativeLayout>
+
+
+  </LinearLayout>
+
+</FrameLayout>
