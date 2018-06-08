@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical"
+    >
+
+  <View
+      android:id="@+id/chatting_message_detail_outside"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:background="#99000000"
+      />
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@android:color/white"
+      >
+
+    <ImageView
+        android:id="@+id/chatting_message_detail_profile"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        tools:src="@drawable/cf_img_pfdefault"
+        />
+
+    <TextView
+        android:id="@+id/chatting_message_detail_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignTop="@+id/chatting_message_detail_profile"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/chatting_message_detail_profile"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/black"
+        android:textSize="15dp"
+        tools:text="디자인바이헤이즈"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/chatting_message_detail_profile"
+        android:layout_marginTop="15dp"
+        android:background="#66ced4d4"
+        />
+  </RelativeLayout>
+
+  <LinearLayout
+      android:id="@+id/chatting_message_detail_report_layout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@android:color/white"
+      android:orientation="vertical"
+      android:paddingLeft="16dp"
+      android:paddingRight="16dp"
+      >
+
+    <Button
+        android:id="@+id/chatting_message_detail_report"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/cf_icon_report_b_s"
+        android:drawablePadding="24dp"
+        android:gravity="left|center_vertical"
+        android:text="@string/live_report_message"
+        android:textColor="#363838"
+        android:textSize="13dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#66ced4d4"
+        />
+  </LinearLayout>
+
+  <LinearLayout
+      android:id="@+id/chatting_message_detail_delete_layout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@android:color/white"
+      android:orientation="vertical"
+      android:paddingLeft="16dp"
+      android:paddingRight="16dp"
+      >
+
+    <Button
+        android:id="@+id/chatting_message_detail_delete"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/cf_icon_del_b_s"
+        android:drawablePadding="24dp"
+        android:gravity="left|center_vertical"
+        android:text="@string/delete"
+        android:textColor="#363838"
+        android:textSize="13dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#66ced4d4"
+        />
+  </LinearLayout>
+
+  <Button
+      android:id="@+id/chatting_message_detail_cancel"
+      android:layout_width="match_parent"
+      android:layout_height="47dp"
+      android:background="@android:color/white"
+      android:drawableLeft="@drawable/icon_listdel_s"
+      android:drawablePadding="24dp"
+      android:gravity="left|center_vertical"
+      android:paddingLeft="16dp"
+      android:paddingRight="16dp"
+      android:text="@string/cancel"
+      android:textColor="#363838"
+      android:textSize="13dp"
+      />
+</LinearLayout>
