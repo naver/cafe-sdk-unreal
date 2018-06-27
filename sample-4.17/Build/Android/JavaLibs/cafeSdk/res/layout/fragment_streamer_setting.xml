@@ -15,6 +15,7 @@
       />
 
   <LinearLayout
+      android:id="@+id/streming_body_layout"
       android:layout_width="match_parent"
       android:layout_height="312dp"
       android:background="#e6000000"

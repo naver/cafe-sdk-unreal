@@ -12,14 +12,18 @@
       android:layout_height="match_parent"
       android:orientation="horizontal"
       >
+      <FrameLayout
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1">
 
-    <VideoView
-        android:id="@+id/video_view"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        />
+        <VideoView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            />
+      </FrameLayout>
 
     <View
         android:id="@+id/empty_view_for_chatting1"
