@@ -223,6 +223,7 @@ PLUG SDK를 사용하려면 다음 라이브러리를 프로젝트에 추가해 
 
 - Android Support Library v4
 - Android Support Custom Tabs
+- Android Support RecyclerView
 - [네이버 아이디 로그인](https://nid.naver.com/devcenter/docs.nhn?menu=Android)
 - [NAVER Volleyer](http://mvnrepository.com/artifact/com.navercorp.volleyextensions/volleyer)(2.0.1 버전 사용 중)
 - [Volley](http://mvnrepository.com/artifact/com.mcxiaoke.volley/library/)(1.0.2 버전 사용 중)
