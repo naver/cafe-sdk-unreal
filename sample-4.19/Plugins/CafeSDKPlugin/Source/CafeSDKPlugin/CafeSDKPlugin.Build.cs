@@ -87,6 +87,19 @@ namespace UnrealBuildTool.Rules
                         "../../ThirdPartyFrameworks/iOS/ApiGateway.embeddedframework.zip"
                     )
                 );
+                PublicAdditionalFrameworks.Add(
+                    new UEBuildFramework(
+                        "KaleidoCore",
+                        "../../ThirdPartyFrameworks/iOS/KaleidoCore.embeddedframework.zip",
+                        "Resources/KaleidoCore.framework"
+                    )
+                );
+                PublicAdditionalFrameworks.Add(
+                    new UEBuildFramework(
+                        "NaverCafeSDKLive",
+                        "../../ThirdPartyFrameworks/iOS/NaverCafeSDKLive.embeddedframework.zip"
+                    )
+                );
 		bEnableObjCExceptions = false;
                 PublicFrameworks.AddRange(
                     new string[] {
@@ -98,7 +111,8 @@ namespace UnrealBuildTool.Rules
 						"MobileCoreServices",
 						"GameKit",
                         "AssetsLibrary",
-                        "WebKit"
+                        "WebKit",
+                        "ReplayKit"
                     }
                 );
                 PublicWeakFrameworks.Add("ReplayKit");
