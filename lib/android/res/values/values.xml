@@ -195,6 +195,7 @@
     <string name="flavor_name" translatable="false">real</string>
     <string name="hosts_article" translatable="false">https://apis.naver.com</string>
     <string name="hosts_attach" translatable="false">https://up.cafe.naver.com</string>
+    <string name="hosts_ba" translatable="false">https://scv.band.us</string>
     <string name="hosts_glink" translatable="false">https://apis.naver.com</string>
     <string name="hosts_phinf" translatable="false">https://g-plug.pstatic.net</string>
     <string name="hosts_playlog" translatable="false">http://global.apis.naver.com</string>
@@ -294,7 +295,7 @@
     <string name="pin_to_top">Pin to Top</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">Info</string>
-    <string name="plug_sdk_version" translatable="false">3.2.3</string>
+    <string name="plug_sdk_version" translatable="false">3.3.2</string>
     <string name="popular_article">See\npopular posts</string>
     <string name="profile_articles_total">Total</string>
     <string name="profile_become_member">By logging in, you become a member of this Cafe.</string>
