@@ -7,6 +7,7 @@
     <string name="all_media_no_permissions">ไม่ได้รับอนุญาต</string>
     <string name="already_exist_nickname_message">ชื่อเล่นนี้มีผู้ใช้งานแล้ว</string>
     <string name="article_comments_count">ความคิดเห็น</string>
+    <string name="article_count_comment">There are %,d comments.</string>
     <string name="article_count_message">มี %,d โพสต์</string>
     <string name="article_count_txt">โพสต์แล้ว</string>
     <string name="article_empty">ไม่มีโพสต์</string>
@@ -39,6 +40,10 @@
     <string name="cancel_article_write_confirm_message">ต้องการยกเลิกโพสต์หรือไม่?</string>
     <string name="chat_initialize_fail">ไม่สามารถเริ่มต้นแชตได้</string>
     <string name="close_title">ปิด</string>
+    <string name="comment_count">Commented Count</string>
+    <string name="comment_deletion_by_admin">ความคิดเห็นนี้ถูกลบโดยแอดมิน</string>
+    <string name="comment_deletion_by_admin_for">ความคิดเห็นนี้ถูกลบโดยแอดมิน เนื่องจาก %1$s</string>
+    <string name="comment_deletion_by_user">ความคิดเห็นนี้ถูกลบ</string>
     <string name="comment_empty">ไม่มีความคิดเห็น</string>
     <string name="comment_hint">กรุณาใส่ข้อความ</string>
     <string name="comment_not_exist">ไม่มีความคิดเห็น</string>
@@ -49,6 +54,8 @@
     <string name="date_format_hrs">%d ชั่วโมง</string>
     <string name="date_format_just_now">เมื่อกี้</string>
     <string name="date_format_mins">%d นาที</string>
+    <string name="date_format_remain_datetime_from_current_day">เหลือ %1$s วัน </string>
+    <string name="date_format_remain_datetime_from_current_hour">เหลือ %1$s ชั่วโมง </string>
     <string name="date_format_yesterday">เมื่อวาน</string>
     <string name="delete">ลบ</string>
     <string name="delete_chat_message">ลบ</string>
@@ -127,6 +134,8 @@
     <string name="member_count_format">สมาชิก %1$,d คน</string>
     <string name="menu_change_channel">ต้องการเปลี่ยนภาษาหรือไม่?\nการเปลี่ยนภาษาจะทำให้คอนเท้นท์ภายในเปลี่ยนแปลงด้วย</string>
     <string name="modify_complete_message">ได้รับการปรับปรุงแล้ว</string>
+    <string name="moot_not_support_modify">ฟีเจอร์ดังกล่าวใช้ได้บนแอป Moot เท่านั้น</string>
+    <string name="moot_not_support_show">ไม่สามารถรับชมเนื้อหาดังกล่าวได้ในเวอร์ชั่นปัจจุบัน</string>
     <string name="more_actions">ดูเพิ่มเติม</string>
     <string name="movie_over_limit_size_message">วิดีโอที่เลือกมีขนาดใหญ่\nเกินข้อจำกัด</string>
     <string name="movie_permission_setting_message">คุณไม่ได้รับอนุญาตให้แนบไฟล์วิดีโอ\nกรุณาตรวจสอบสิทธิ์การบันทึกในเกมซึ่งสามารถเข้าถึงได้จาก [ตั้งค่า > แอพ]</string>
@@ -161,6 +170,8 @@
     <string name="pin_to_top">ปักหมุด</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">ข้อมูล </string>
+    <string name="poll_closed">ปิดโหวต</string>
+    <string name="poll_opened">เปิดโหวต</string>
     <string name="popular_article">ดู\nโพสต์ยอดนิยม</string>
     <string name="profile_articles_total">Total</string>
     <string name="profile_become_member">เมื่อเข้าสู่ระบบ คุณจะเป็นสมาชิกของคาเฟ่นี้โดยอัตโนมัติ</string>
@@ -225,6 +236,8 @@
     <string name="video_already_delete_error">วิดีโอนี้ถูกลบแล้ว</string>
     <string name="video_like_count_message">라이브 중 %,d개의 &lt;img src=\"cf_icon_doubleheart_cs\"> 를 받았습니다.</string>
     <string name="view_original">ต้นฉบับ</string>
+    <string name="vote_count">%1$s โหวต</string>
+    <string name="vote_multi_select_allowed">เลือกได้หลายข้อ</string>
     <string name="waiting_join_apply_message">กำลังเข้าร่วมคาเฟ่...</string>
     <string name="want_cafe_member">ต้องการเข้าร่วมคาเฟ่หรือไม่?</string>
     <string name="widget_button_cafe">คอมมิวนิตี้</string>

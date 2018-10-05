@@ -17,10 +17,10 @@ void UCafeSdkBlueprintLibrary::Init(FString ClientId, FString ClientSecret, int3
     GetSharedCafeSdk()->Init(ClientId, ClientSecret, CafeId);
 }
 
-void UCafeSdkBlueprintLibrary::InitGlobal(FString ClientId, int32 CommunityId)
+void UCafeSdkBlueprintLibrary::InitGlobal(FString ConsumerKey, FString ConsumerSecret, int32 CommunityId)
 {
     if (!IsCafeSdkAvailable()) return;
-    GetSharedCafeSdk()->InitGlobal(ClientId, CommunityId);
+    GetSharedCafeSdk()->InitGlobal(ConsumerKey, ConsumerSecret, CommunityId);
 }
 
 void UCafeSdkBlueprintLibrary::SetChannelCode(FString ChannelCode)

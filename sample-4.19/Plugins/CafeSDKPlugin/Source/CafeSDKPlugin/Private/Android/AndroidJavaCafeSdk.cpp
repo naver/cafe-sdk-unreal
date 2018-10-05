@@ -9,7 +9,7 @@
 FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     : FJavaClassObject(GetClassName(), "()V")
     , InitMethod(GetClassMethod("init", "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)V"))
-    , InitGlobalMethod(GetClassMethod("initGlobal", "(Landroid/content/Context;Ljava/lang/String;I)V"))
+    , InitGlobalMethod(GetClassMethod("initGlobal", "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)V"))
     , StartMoreMethod(GetClassMethod("startMore", "(Landroid/app/Activity;)V"))
     , LoginMethod(GetClassMethod("login", "(Landroid/content/Context;)V"))
     , LogoutMethod(GetClassMethod("logout", "(Landroid/content/Context;)V"))
@@ -59,12 +59,13 @@ void FAndroidJavaCafeSdk::Init(FString ClientId, FString ClientSecret, int32 Caf
         );
 }
 
-void FAndroidJavaCafeSdk::InitGlobal(FString ClientId, int32 CafeId)
+void FAndroidJavaCafeSdk::InitGlobal(FString ConsumerKey, FString ConsumerSecret, int32 CommunityId)
 {
     CallMethod<void>(InitGlobalMethod,
         FJavaWrapper::GameActivityThis,
-        FJavaClassObject::GetJString(ClientId),
-        CafeId
+        FJavaClassObject::GetJString(ConsumerKey),
+        FJavaClassObject::GetJString(ConsumerSecret),
+        CommunityId
         );
 }
 

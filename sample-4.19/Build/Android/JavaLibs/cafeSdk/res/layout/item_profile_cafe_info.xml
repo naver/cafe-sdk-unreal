@@ -3,146 +3,147 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:orientation="vertical">
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/green1"
-        android:layout_weight="8">
+        android:orientation="vertical">
 
-      <ImageView
-          android:id="@+id/cafe_background_img"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:scaleType="centerCrop"/>
-
-      <ImageView
-          android:id="@+id/cafe_icon_img"
-          android:layout_width="72dp"
-          android:layout_height="72dp"
-          android:layout_marginTop="18dp"
-          android:layout_marginLeft="22dp"
-          android:layout_centerHorizontal="true"
-          android:layout_gravity="center"/>
-
-      <LinearLayout
-          android:id="@+id/cafe_info_layout"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_below="@+id/cafe_icon_img"
-          android:layout_marginTop="16dp"
-          android:layout_marginRight="20dp"
-          android:layout_marginLeft="20dp"
-          android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/cafe_name"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="10dp"
-            android:layout_toLeftOf="@+id/thumbnail_image"
-            android:textSize="14dp"
-            android:textStyle="bold"
-            android:maxLines="2"
-            android:textColor="@color/white1"/>
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:background="@color/green1">
 
-        <TextView
-            android:id="@+id/cafe_info"
+            <ImageView
+                android:id="@+id/cafe_background_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/cafe_icon_img"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="18dp" />
+
+            <LinearLayout
+                android:id="@+id/cafe_info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cafe_icon_img"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cafe_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/thumbnail_image"
+                    android:maxLines="2"
+                    android:textColor="@color/white1"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/cafe_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cafe_name"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toLeftOf="@+id/thumbnail_image"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:textColor="@color/white1"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="10dp"
-            android:layout_below="@+id/cafe_name"
-            android:layout_toLeftOf="@+id/thumbnail_image"
-            android:textSize="13dp"
-            android:textColor="@color/white1"
-            android:ellipsize="end"
-            android:maxLines="3"/>
-      </LinearLayout>
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:background="@color/white1">
 
+            <TextView
+                android:id="@+id/join_cafe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="23dp"
+                android:layout_marginRight="20dp"
+                android:text="@string/join_cafe"
+                android:textColor="@color/black1"
+                android:textSize="26dp"
+                android:textStyle="bold" />
 
-    </RelativeLayout>
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_below="@+id/join_cafe"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="23dp"
+                android:gravity="center"
+                android:text="@string/profile_login"
+                android:textColor="@color/white1"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-    <RelativeLayout
-        android:background="@color/white1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="6">
+            <RelativeLayout
+                android:id="@+id/menu_link_layout"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true">
 
-      <TextView
-          android:id="@+id/join_cafe"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="23dp"
-          android:layout_marginLeft="22dp"
-          android:layout_marginRight="20dp"
-          android:text="@string/join_cafe"
-          android:textStyle="bold"
-          android:textColor="@color/black1"
-          android:textSize="26dp"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="22dp"
+                    android:background="@color/gray11" />
 
-      <Button
-          android:id="@+id/btn_login"
-          android:layout_width="match_parent"
-          android:layout_height="38dp"
-          android:layout_marginTop="24dp"
-          android:layout_marginLeft="23dp"
-          android:layout_marginRight="23dp"
-          android:layout_below="@+id/join_cafe"
-          android:text="@string/profile_login"
-          android:textStyle="bold"
-          android:textColor="@color/white1"
-          android:textSize="15dp"
-          android:gravity="center"/>
+                <ImageView
+                    android:id="@+id/menu_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="22dp"
+                    android:background="@drawable/cf_icon_golink_s" />
 
-      <RelativeLayout
-          android:id="@+id/menu_link_layout"
-          android:layout_width="match_parent"
-          android:layout_height="48dp"
-          android:layout_alignParentBottom="true">
+                <TextView
+                    android:id="@+id/menu_link_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_toLeftOf="@id/menu_link"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textColor="@color/gray11"
+                    android:textSize="13dp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="22dp"
-            android:layout_marginRight="22dp"
-            android:background="@color/gray11"/>
-        <ImageView
-            android:id="@+id/menu_link"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="22dp"
-            android:layout_centerInParent="true"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/cf_icon_golink_s"/>
+            </RelativeLayout>
 
-        <TextView
-            android:id="@+id/menu_link_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="22dp"
-            android:layout_marginRight="4dp"
-            android:layout_centerInParent="true"
-            android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@id/menu_link"
-            android:textColor="@color/gray11"
-            android:maxLines="2"
-            android:ellipsize="end"
-            android:textSize="13dp"/>
+        </RelativeLayout>
 
-      </RelativeLayout>
+    </LinearLayout>
 
-    </RelativeLayout>
-
-  </LinearLayout>
-
-  <include layout="@layout/view_fragment_error"/>
+    <include layout="@layout/view_fragment_error" />
 
 </FrameLayout>

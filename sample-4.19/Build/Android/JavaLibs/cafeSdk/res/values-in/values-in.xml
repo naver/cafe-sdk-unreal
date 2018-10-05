@@ -7,6 +7,7 @@
     <string name="all_media_no_permissions">Tidak memiliki izin</string>
     <string name="already_exist_nickname_message">Nickname telah digunakan.</string>
     <string name="article_comments_count">Komen</string>
+    <string name="article_count_comment">There are %,d comments.</string>
     <string name="article_count_message">Ada %,d post.</string>
     <string name="article_count_txt">Post yang ada</string>
     <string name="article_empty">Tidak ada post</string>
@@ -39,6 +40,10 @@
     <string name="cancel_article_write_confirm_message">Apa Anda ingin membatalkan post?</string>
     <string name="chat_initialize_fail">Gagal menginisialisasi obrolan</string>
     <string name="close_title">Tutup</string>
+    <string name="comment_count">Commented Count</string>
+    <string name="comment_deletion_by_admin">Komentar ini telah dihapus oleh admin.</string>
+    <string name="comment_deletion_by_admin_for">Komentar ini telah dihapus oleh admin untuk %1$s.</string>
+    <string name="comment_deletion_by_user">Komentar ini telah dihapus.</string>
     <string name="comment_empty">Tak ada komentar.</string>
     <string name="comment_hint">Silahkan masukan text.</string>
     <string name="comment_not_exist">Tidak ada komen</string>
@@ -49,6 +54,8 @@
     <string name="date_format_hrs">%d jam</string>
     <string name="date_format_just_now">Baru saja</string>
     <string name="date_format_mins">%d menit</string>
+    <string name="date_format_remain_datetime_from_current_day">%1$s hari tersisa </string>
+    <string name="date_format_remain_datetime_from_current_hour">%1$s jam tersisa </string>
     <string name="date_format_yesterday">Kemarin</string>
     <string name="delete">Hapus</string>
     <string name="delete_chat_message">Hapus</string>
@@ -127,6 +134,8 @@
     <string name="member_count_format">Member %1$,d</string>
     <string name="menu_change_channel">Apa Anda ingin mengganti bahasa?\nMengganti bahasa akan juga mengganti konten yang terdapat di dalam.</string>
     <string name="modify_complete_message">Telah diubah.</string>
+    <string name="moot_not_support_modify">Fitur ini hanya tersedia untuk Aplikasi Moot.</string>
+    <string name="moot_not_support_show">Konten ini tak dapat dilihat dengan versi saat ini.</string>
     <string name="more_actions">Lihat lanjut</string>
     <string name="movie_over_limit_size_message">Batas ukuran untuk video terpilih\berlebih.</string>
     <string name="movie_permission_setting_message">Anda tidak memiliki ijin untuk melampirkan video. \nSilahkan cek ijin penyimpan dalam game yang dapat diakses dari [Pengaturan > App].</string>
@@ -161,6 +170,8 @@
     <string name="pin_to_top">Sematkan ke Atas</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">Informasi</string>
+    <string name="poll_closed">Poling Ditutup</string>
+    <string name="poll_opened">Poling Dibuka</string>
     <string name="popular_article">Lihat\npost populer</string>
     <string name="profile_articles_total">Total</string>
     <string name="profile_become_member">Dengan log in, Anda akan menjadi member dari Café ini.</string>
@@ -225,6 +236,8 @@
     <string name="video_already_delete_error">Video ini telah dihapus.</string>
     <string name="video_like_count_message">라이브 중 %,d개의 &lt;img src=\"cf_icon_doubleheart_cs\"> 를 받았습니다.</string>
     <string name="view_original">Asli</string>
+    <string name="vote_count">%1$s suara</string>
+    <string name="vote_multi_select_allowed">Dapat pilih banyak</string>
     <string name="waiting_join_apply_message">Menunggu bergabung dalam Café…</string>
     <string name="want_cafe_member">Apakah Anda ingin bergabung dalam Café?</string>
     <string name="widget_button_cafe">Komunitas</string>
