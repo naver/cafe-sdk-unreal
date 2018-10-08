@@ -12,7 +12,7 @@ public:
     FAndroidJavaCafeSdk();
     
     void Init(FString ClientId, FString ClientSecret, int32 CafeId);
-    void InitGlobal(FString ClientId, int32 CafeId);
+    void InitGlobal(FString ConsumerKey, FString ConsumerSecret, int32 CommunityId, int32 LoungeNo);
     
     void SetChannelCode(FString ChannelCode) const;
     
@@ -83,10 +83,10 @@ private:
     jclass GlinkClass;
     FJavaClassMethod SetChannelCodeMethod;
     FJavaClassMethod StartHomeMethod;
-    FJavaClassMethod StartNoticeMethod;
-    FJavaClassMethod StartEventMethod;
-    FJavaClassMethod StartMenuMethod;
-    FJavaClassMethod StartProfileMethod;
+    //FJavaClassMethod StartNoticeMethod;
+    //FJavaClassMethod StartEventMethod;
+    //FJavaClassMethod StartMenuMethod;
+    //FJavaClassMethod StartProfileMethod;
     FJavaClassMethod StartWriteMethod;
     FJavaClassMethod StartImageWriteMethod;
     FJavaClassMethod StartVideoWriteMethod;

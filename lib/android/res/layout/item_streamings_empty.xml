@@ -1,28 +1,24 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clickable="true"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
-  <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_horizontal"
-      android:layout_marginTop="24dp"
-      android:drawableLeft="@drawable/cf_icon_error_info_2"
-      android:drawablePadding="12dp"
-      android:gravity="center"
-      android:text="@string/live_empty_view"
-      android:textColor="#a3a9a9"
-      android:textSize="13dp"
-      />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:drawableLeft="@drawable/cf_icon_error_info_2"
+        android:drawablePadding="12dp"
+        android:gravity="center"
+        android:text="@string/live_empty_view"
+        android:textColor="#a3a9a9"
+        android:textSize="13dp" />
 
-  <View
-      android:layout_width="match_parent"
-      android:layout_height="1dp"
-      android:layout_marginTop="24dp"
-      android:background="#66ced4d4"
-      />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:background="#66ced4d4" />
 </LinearLayout>

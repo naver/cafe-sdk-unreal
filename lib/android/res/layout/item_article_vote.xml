@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white1"
+    android:paddingTop="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/moot_article_media_item_margin"
+        android:layout_marginRight="@dimen/moot_article_media_item_margin"
+        android:background="@color/board_content_bg">
+
+        <ImageView
+            android:id="@+id/attach_icon_image_view"
+            android:layout_width="23dp"
+            android:layout_height="22dp"
+            android:layout_gravity="top"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ico_poll_a" />
+
+        <TextView
+            android:id="@+id/attach_type_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="14dp"
+            android:layout_toRightOf="@id/attach_icon_image_view"
+            android:textColor="@color/black1"
+            android:textSize="10dp"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:id="@+id/vote_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/attach_type_text_view"
+            android:layout_marginEnd="8dp"
+            android:layout_toRightOf="@id/attach_type_text_view"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/board_comment_divider"
+            android:textSize="10dp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/vote_end_at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/attach_type_text_view"
+            android:layout_marginEnd="5dp"
+            android:layout_toRightOf="@id/vote_count"
+            android:drawableLeft="@drawable/oval_3"
+            android:drawablePadding="5dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/board_comment_divider"
+
+            android:textSize="10dp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/attach_title_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/attach_type_text_view"
+            android:layout_marginRight="16dp"
+            android:layout_toRightOf="@id/attach_icon_image_view"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black1"
+            android:textSize="13dp"
+            android:textStyle="normal" />
+
+        <View
+            android:id="@+id/poll_divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/attach_title_text_view"
+            android:layout_marginTop="16dp"
+            android:background="@color/black2_opacity_5"
+
+            />
+
+        <TextView
+            android:id="@+id/poll_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/poll_divider"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/vote_multi_select_allowed"
+
+            android:textColor="@color/board_poll_option"
+            android:textSize="12dp"
+
+            android:textStyle="normal"
+            android:visibility="visible"
+
+            />
+
+        <LinearLayout
+            android:id="@+id/attach_body_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/poll_option"
+            android:layout_marginTop="14dp"
+            android:orientation="vertical"
+            android:visibility="visible" />
+
+<!--        <TextView
+            android:id="@+id/done_button"
+            android:layout_width="100dp"
+
+            android:layout_height="34dp"
+            android:layout_below="@id/attach_body_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20.5dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="@string/vote_close"
+            android:textColor="@color/white1"
+            android:textSize="14dp"
+
+            android:textStyle="normal"
+            android:visibility="visible"
+            />-->
+
+        <View
+            android:layout_below="@id/attach_body_layout"
+            android:layout_width="0dp"
+            android:layout_height="16dp" />
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>
