@@ -9,7 +9,7 @@
 FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     : FJavaClassObject(GetClassName(), "()V")
     , InitMethod(GetClassMethod("init", "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)V"))
-    , InitGlobalMethod(GetClassMethod("initGlobal", "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)V"))
+    , InitGlobalMethod(GetClassMethod("initGlobal", "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I;I)V"))
     , StartMoreMethod(GetClassMethod("startMore", "(Landroid/app/Activity;)V"))
     , LoginMethod(GetClassMethod("login", "(Landroid/content/Context;)V"))
     , LogoutMethod(GetClassMethod("logout", "(Landroid/content/Context;)V"))
