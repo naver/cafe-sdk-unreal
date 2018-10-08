@@ -147,6 +147,11 @@ Configure the initialization information below to initialize the PLUG SDK that s
 - Consumer key, Consumer secret key you received through the process of [Become a Partner](https://github.com/naver/cafe-sdk-ios/wiki/%5B%ED%95%9C%5D%20%EA%B8%80%EB%A1%9C%EB%B2%8C%20%EB%84%A4%EC%9D%B4%EB%B2%84%20%EC%B9%B4%ED%8E%98%20%EC%82%AC%EC%9A%A9)
 - Community No and Lounge No you received through the process of [Become a Partner](https://github.com/naver/cafe-sdk-ios/wiki/%5B%ED%95%9C%5D%20%EA%B8%80%EB%A1%9C%EB%B2%8C%20%EB%84%A4%EC%9D%B4%EB%B2%84%20%EC%B9%B4%ED%8E%98%20%EC%82%AC%EC%9A%A9)
 
+- consumerKey: Community Key you received after creating your community
+- consumerSecretKey: Community Scret Key you received after creating your community
+- cummunityNo: Community No received after creating your community
+- loungeNo: Lounge No received after creating your lounge
+
 ```cpp
 if (FCafeSDKPluginModule::IsAvailable())
 {
