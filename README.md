@@ -265,4 +265,4 @@ Unauthorized use, modification and redistribution of this software are strongly 
 ```
 
 
-## PLUG SDK 3.x 버전은 더 이상 지원되지 않습니다.
+## PLUG SDK 2.x, 3.x 버전은 더 이상 지원되지 않습니다.
