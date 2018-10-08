@@ -144,13 +144,19 @@ if (FCafeSDKPluginModule::IsAvailable())
 
 Configure the initialization information below to initialize the PLUG SDK that supports languages other than Korean.
 
-- Consumer key you received through the process of [Become a Partner](https://github.com/naver/cafe-sdk-ios/wiki/%5B%ED%95%9C%5D%20%EA%B8%80%EB%A1%9C%EB%B2%8C%20%EB%84%A4%EC%9D%B4%EB%B2%84%20%EC%B9%B4%ED%8E%98%20%EC%82%AC%EC%9A%A9)
-- Community ID you received through the process of [Become a Partner](https://github.com/naver/cafe-sdk-ios/wiki/%5B%ED%95%9C%5D%20%EA%B8%80%EB%A1%9C%EB%B2%8C%20%EB%84%A4%EC%9D%B4%EB%B2%84%20%EC%B9%B4%ED%8E%98%20%EC%82%AC%EC%9A%A9)
+- Consumer key, Consumer secret key you received through the process of [Become a Partner](https://github.com/naver/cafe-sdk-ios/wiki/%5B%ED%95%9C%5D%20%EA%B8%80%EB%A1%9C%EB%B2%8C%20%EB%84%A4%EC%9D%B4%EB%B2%84%20%EC%B9%B4%ED%8E%98%20%EC%82%AC%EC%9A%A9)
+- Community No and Lounge No you received through the process of [Become a Partner](https://github.com/naver/cafe-sdk-ios/wiki/%5B%ED%95%9C%5D%20%EA%B8%80%EB%A1%9C%EB%B2%8C%20%EB%84%A4%EC%9D%B4%EB%B2%84%20%EC%B9%B4%ED%8E%98%20%EC%82%AC%EC%9A%A9)
 
 ```cpp
 if (FCafeSDKPluginModule::IsAvailable())
 {
-    UCafeSdkBlueprintLibrary::InitGlobal("IHCd_HmSiMcXOMC37xZ8", 1013329);
+    /**
+     * @param consumerKey       
+     * @param consumerSecretKey
+     * @param communityNo       
+     * @param loungeNo                       
+     */
+     UCafeSdkBlueprintLibrary::InitGlobal("PLUGKEY", "PLUGSECRET", 1, 58);
 }
 ```
 
@@ -252,3 +258,5 @@ All rights reserved.
 
 Unauthorized use, modification and redistribution of this software are strongly prohibited.
 ```
+
+## PLUG SDK 2.x, 3.x versions are no longer supported
