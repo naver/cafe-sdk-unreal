@@ -12,7 +12,7 @@ public:
     FAndroidJavaCafeSdk();
     
     void Init(FString ClientId, FString ClientSecret, int32 CafeId);
-    void InitGlobal(FString ConsumerKey, FString ConsumerSecret, int32 CommunityId);
+    void InitGlobal(FString ConsumerKey, FString ConsumerSecret, int32 CommunityId, int32 LoungeNo);
     
     void SetChannelCode(FString ChannelCode) const;
     

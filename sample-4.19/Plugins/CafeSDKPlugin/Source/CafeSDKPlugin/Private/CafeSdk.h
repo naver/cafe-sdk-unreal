@@ -7,7 +7,7 @@ class ICafeSdk
 {
 public:
     virtual void Init(FString ClientId, FString ClientSecret, int32 CafeId) = 0;
-    virtual void InitGlobal(FString ConsumerKey, FString ConsumerSecret, int32 CommunityId) = 0;
+    virtual void InitGlobal(FString ConsumerKey, FString ConsumerSecret, int32 CommunityId, int32 LoungeNo) = 0;
     
     virtual void SetChannelCode(FString ChannelCode) const = 0;
     

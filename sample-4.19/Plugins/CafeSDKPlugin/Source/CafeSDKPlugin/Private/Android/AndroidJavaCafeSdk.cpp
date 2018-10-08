@@ -59,13 +59,14 @@ void FAndroidJavaCafeSdk::Init(FString ClientId, FString ClientSecret, int32 Caf
         );
 }
 
-void FAndroidJavaCafeSdk::InitGlobal(FString ConsumerKey, FString ConsumerSecret, int32 CommunityId)
+void FAndroidJavaCafeSdk::InitGlobal(FString ConsumerKey, FString ConsumerSecret, int32 CommunityId, int32 LoungeNo)
 {
     CallMethod<void>(InitGlobalMethod,
         FJavaWrapper::GameActivityThis,
         FJavaClassObject::GetJString(ConsumerKey),
         FJavaClassObject::GetJString(ConsumerSecret),
-        CommunityId
+        CommunityId,
+        LoungeNo
         );
 }
 
