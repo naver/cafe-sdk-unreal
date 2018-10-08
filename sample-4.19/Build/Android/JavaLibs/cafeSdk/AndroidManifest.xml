@@ -19,10 +19,8 @@
             android:name="com.nhn.android.naverlogin.ui.OAuthLoginInAppBrowserActivity"
             android:label="OAuth2.0 In-app" />
         <activity
-            android:name="com.naver.glink.android.sdk.login.neoid.NeoIdInAppBrowserActivity"
-            android:configChanges="keyboardHidden|screenSize|orientation"
-            android:label="NeoId In-app"
-            android:screenOrientation="sensor" />
+            android:name="com.naver.plug.moot.login.MootInAppBrowserActivity"
+            android:label="Moot In-app" />     
         <activity
             android:name="com.naver.glink.android.sdk.ui.parent.plugfragment.activityresult.RequestActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"
