@@ -7,6 +7,7 @@
     <string name="all_media_no_permissions">Keine Erlaubnisse</string>
     <string name="already_exist_nickname_message">Dieser Nickname wird bereits verwendet.</string>
     <string name="article_comments_count">Kommentare</string>
+    <string name="article_count_comment">There are %,d comments.</string>
     <string name="article_count_message">Es gibt %,d Posts.</string>
     <string name="article_count_txt">Gepostet</string>
     <string name="article_empty">Keine Posts</string>
@@ -39,6 +40,10 @@
     <string name="cancel_article_write_confirm_message">Möchten Sie den Post abbrechen?</string>
     <string name="chat_initialize_fail">Chat konnte nicht initialisiert werden</string>
     <string name="close_title">Schließen</string>
+    <string name="comment_count">Commented Count</string>
+    <string name="comment_deletion_by_admin">This comment has been removed by admin.</string>
+    <string name="comment_deletion_by_admin_for">This comment has been removed by admin for %1$s</string>
+    <string name="comment_deletion_by_user">This comment has been deleted.</string>
     <string name="comment_empty">Keine Kommentare</string>
     <string name="comment_hint">Bitte Text eingeben.</string>
     <string name="comment_not_exist">Keine Kommentare</string>
@@ -49,6 +54,8 @@
     <string name="date_format_hrs">%d Std.</string>
     <string name="date_format_just_now">Gerade eben</string>
     <string name="date_format_mins">%d Min.</string>
+    <string name="date_format_remain_datetime_from_current_day">%1$s days left </string>
+    <string name="date_format_remain_datetime_from_current_hour">%1$s hours left </string>
     <string name="date_format_yesterday">Gestern</string>
     <string name="delete">Löschen</string>
     <string name="delete_chat_message">Löschen</string>
@@ -127,6 +134,8 @@
     <string name="member_count_format">Mitglieder %1$,d</string>
     <string name="menu_change_channel">Möchtest du die Sprache ändern?\nDurch Ändern der Sprache werden auch Spielinhalte geändert.</string>
     <string name="modify_complete_message">Es wurde verändert.</string>
+    <string name="moot_not_support_modify">This feature is only available on Moot App.</string>
+    <string name="moot_not_support_show">This contents can\'t be viewed in your current version.</string>
     <string name="more_actions">Mehr</string>
     <string name="movie_over_limit_size_message">Das ausgewählte Video überschreitet\ndas Dateigrößenlimit.</string>
     <string name="movie_permission_setting_message">Ihnen fehlt die Erlaubnis, ein Video anzuhängen.\nPrüfen Sie ihre Erlaubnis, in der App zu speichern, unter [Einstellungen > App].</string>
@@ -161,6 +170,8 @@
     <string name="pin_to_top">Oben anheften</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">Info</string>
+    <string name="poll_closed">Poll closed</string>
+    <string name="poll_opened">Poll opened</string>
     <string name="popular_article">Beliebte Posts\neinsehen</string>
     <string name="profile_articles_total">Total</string>
     <string name="profile_become_member">Durch die Anmeldung wirst du zu einem Mitglied dieses Cafes.</string>
@@ -225,6 +236,8 @@
     <string name="video_already_delete_error">Dieses Video wurde gelöscht.</string>
     <string name="video_like_count_message">라이브 중 %,d개의 &lt;img src=\"cf_icon_doubleheart_cs\"> 를 받았습니다.</string>
     <string name="view_original">Original</string>
+    <string name="vote_count">%1$s voted</string>
+    <string name="vote_multi_select_allowed">Multi-selection allowed</string>
     <string name="waiting_join_apply_message">Verbindung zum Café wird hergestellt…</string>
     <string name="want_cafe_member">Möchtest du dem Cafe beitreten?</string>
     <string name="widget_button_cafe">Community</string>

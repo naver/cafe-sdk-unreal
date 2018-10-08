@@ -4,86 +4,89 @@
     android:layout_height="match_parent"
     android:background="@android:color/transparent">
 
-  <LinearLayout
-      android:id="@+id/dialog_layout"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:orientation="vertical">
-    <RelativeLayout
-        android:id="@+id/dialog_title_layout"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/white1">
-      <TextView
-          android:id="@+id/dialog_title_text"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="15dp"
-          android:layout_centerVertical="true"
-          android:textSize="13dp"
-          android:textColor="@color/gray10"/>
-
-      <View
-          android:layout_width="match_parent"
-          android:layout_height="1dp"
-          android:layout_alignParentBottom="true"
-          android:background="@color/gray11"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-
+    <LinearLayout
+        android:id="@+id/dialog_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white1"
-        android:layout_centerInParent="true">
-      <ScrollView
-          android:id="@+id/dialog_message_scroll"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:background="@color/white1"
-          android:layout_marginBottom="15dp">
-        <LinearLayout
-            android:id="@+id/dialog_message_layout"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/dialog_title_layout"
             android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/white1">
+
+            <TextView
+                android:id="@+id/dialog_title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/gray10"
+                android:textSize="13dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/gray11" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white1"
-            android:orientation="vertical">
+            android:layout_centerInParent="true"
+            android:background="@color/white1">
 
-        </LinearLayout>
+            <ScrollView
+                android:id="@+id/dialog_message_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@color/white1">
 
-      </ScrollView>
+                <LinearLayout
+                    android:id="@+id/dialog_message_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white1"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+            </ScrollView>
 
 
+            <LinearLayout
+                android:id="@+id/dialog_confirm_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/dialog_message_scroll"
+                android:layout_centerHorizontal="true"
+                android:background="@color/black2_opacity_5"
+                android:orientation="horizontal"
+                android:paddingTop="1dp">
 
-      <LinearLayout
-          android:id="@+id/dialog_confirm_layout"
-          android:layout_width="match_parent"
-          android:layout_height="50dp"
-          android:layout_centerHorizontal="true"
-          android:layout_below="@+id/dialog_message_scroll"
-          android:paddingTop="1dp"
-          android:background="@color/black2_opacity_5"
-          android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/dialog_confirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/alert_dialog_button_background"
+                    android:gravity="center"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/confirm"
+                    android:textColor="@color/black1"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/dialog_confirm"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:textSize="15dp"
-            android:gravity="center"
-            android:textColor="@color/black1"
-            android:textStyle="bold"
-            android:text="@string/confirm"
-            android:background="@drawable/alert_dialog_button_background"
-            android:layout_weight="1"/>
+            </LinearLayout>
+        </RelativeLayout>
 
-      </LinearLayout>
-    </RelativeLayout>
-
-  </LinearLayout>
+    </LinearLayout>
 
 
 </RelativeLayout>

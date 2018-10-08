@@ -3,90 +3,80 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".ui.streaming.streamings.StreamingsFragmentView"
-    >
+    tools:context="com.naver.plug.cafe.ui.streaming.streamings.StreamingsFragmentView">
 
-  <RelativeLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      >
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_height="match_parent">
 
-      <android.support.v4.widget.SwipeRefreshLayout
-          android:id="@+id/swipe_refresh_layout"
-          android:layout_width="match_parent"
-          android:layout_height="0dp"
-          android:layout_weight="1"
-          android:clipChildren="false"
-          >
-
-        <ListView
-            android:id="@android:id/list"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:cacheColorHint="@android:color/transparent"
-            android:divider="@null"
-            android:dividerHeight="0dp"
-            android:listSelector="@drawable/gl_list_selector"
-            android:scrollbarSize="4dp"
-            android:scrollbarThumbVertical="@color/black2_opacity_20"
-            android:theme="@android:style/Theme.Holo.Light"
-            tools:listitem="@layout/item_streamings_streaming"
-            />
-      </android.support.v4.widget.SwipeRefreshLayout>
-    </LinearLayout>
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="12dp"
-        android:background="@drawable/cf_btn_flback"
-        android:visibility="gone"
-        tools:visibility="visible"
-        />
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipChildren="false">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="8dp"
-        android:layout_marginRight="12dp"
-        >
+                <ListView
+                    android:id="@android:id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:cacheColorHint="@android:color/transparent"
+                    android:divider="@null"
+                    android:dividerHeight="0dp"
+                    android:listSelector="@drawable/gl_list_selector"
+                    android:scrollbarSize="4dp"
+                    android:scrollbarThumbVertical="@color/black2_opacity_20"
+                    android:theme="@android:style/Theme.Holo.Light"
+                    tools:listitem="@layout/item_streamings_streaming" />
+            </android.support.v4.widget.SwipeRefreshLayout>
+        </LinearLayout>
 
-      <include
-          layout="@layout/view_floating_button"
-          android:id="@+id/create_streaming"
-          android:visibility="gone"
-          tools:visibility="visible"
-          />
-    </LinearLayout>
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/cf_btn_flback"
+            android:visibility="gone"
+            tools:visibility="visible" />
 
-    <LinearLayout
-        android:id="@android:id/empty"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true"
-        android:orientation="vertical"
-        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="8dp">
 
-      <include
-          layout="@layout/item_empty"
-          android:layout_width="match_parent"
-          android:layout_height="0dp"
-          android:layout_weight="1"
-          />
-    </LinearLayout>
-  </RelativeLayout>
+            <include
+                android:id="@+id/create_streaming"
+                layout="@layout/view_floating_button"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </LinearLayout>
 
-  <include layout="@layout/view_fragment_error"/>
+        <LinearLayout
+            android:id="@android:id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/item_empty"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <include layout="@layout/view_fragment_error" />
 </FrameLayout>

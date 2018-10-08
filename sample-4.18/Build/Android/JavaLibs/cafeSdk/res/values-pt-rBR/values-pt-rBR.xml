@@ -7,6 +7,7 @@
     <string name="all_media_no_permissions">Nenhuma permissão</string>
     <string name="already_exist_nickname_message">O apelido já está em uso.</string>
     <string name="article_comments_count">Comentários</string>
+    <string name="article_count_comment">There are %,d comments.</string>
     <string name="article_count_message">Existem postagens de %,d.</string>
     <string name="article_count_txt">Postado</string>
     <string name="article_empty">Nenhuma postagens</string>
@@ -39,6 +40,10 @@
     <string name="cancel_article_write_confirm_message">Deseja cancelar a postagem?</string>
     <string name="chat_initialize_fail">Falha ao inicializar o bate-papo</string>
     <string name="close_title">Fechar</string>
+    <string name="comment_count">Commented Count</string>
+    <string name="comment_deletion_by_admin">Este comentário foi excluido pelo administrador.</string>
+    <string name="comment_deletion_by_admin_for">Este comentário foi excluido pelo administrador por %1$s.</string>
+    <string name="comment_deletion_by_user">Este comentário foi excluido.</string>
     <string name="comment_empty">Nenhum comentários</string>
     <string name="comment_hint">Por favor, digite o texto.</string>
     <string name="comment_not_exist">Nenhum comentários</string>
@@ -49,6 +54,8 @@
     <string name="date_format_hrs">%d hr</string>
     <string name="date_format_just_now">Agora mesmo</string>
     <string name="date_format_mins">%d min</string>
+    <string name="date_format_remain_datetime_from_current_day">%1$s dias restantes </string>
+    <string name="date_format_remain_datetime_from_current_hour">%1$s horas restantes </string>
     <string name="date_format_yesterday">Ontem</string>
     <string name="delete">Excluir</string>
     <string name="delete_chat_message">Excluir</string>
@@ -127,6 +134,8 @@
     <string name="member_count_format">Membros %1$,d</string>
     <string name="menu_change_channel">Deseja alterar a idioma?\nAlterando a idioma também irá alterar o conteúdo dentro.</string>
     <string name="modify_complete_message">Foi modificado.</string>
+    <string name="moot_not_support_modify">Este recurso está disponível apenas no App. Moot.</string>
+    <string name="moot_not_support_show">Este conteúdo não pode ser visualizado em sua versão atual.</string>
     <string name="more_actions">Mais</string>
     <string name="movie_over_limit_size_message">O limite de tamanho do vídeo selecionado\nfoi excedido.</string>
     <string name="movie_permission_setting_message">Você não tem permissão para anexar o vídeo.\nPor favor, verifique a sua permissão para salvar no jogo, que pode ser acessado no [Configurações > App].</string>
@@ -161,6 +170,8 @@
     <string name="pin_to_top">Pin para cima</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">Info</string>
+    <string name="poll_closed">Votação encerrado</string>
+    <string name="poll_opened">Votação aberto</string>
     <string name="popular_article">Ver\npostagens populares</string>
     <string name="profile_articles_total">Total</string>
     <string name="profile_become_member">Ao efetuar login, você se torna um membro deste PLUG.</string>
@@ -225,6 +236,8 @@
     <string name="video_already_delete_error">Este vídeo foi excluído.</string>
     <string name="video_like_count_message">라이브 중 %,d개의 &lt;img src=\"cf_icon_doubleheart_cs\"> 를 받았습니다.</string>
     <string name="view_original">Original</string>
+    <string name="vote_count">%1$s votado</string>
+    <string name="vote_multi_select_allowed">Multi-seleção permitido</string>
     <string name="waiting_join_apply_message">Esperando por entrar no Cafe...</string>
     <string name="want_cafe_member">Deseja cadastrar no Cafe?</string>
     <string name="widget_button_cafe">Comunidade</string>
