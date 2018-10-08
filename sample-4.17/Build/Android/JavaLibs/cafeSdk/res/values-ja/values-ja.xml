@@ -7,6 +7,7 @@
     <string name="all_media_no_permissions">権限がありません。</string>
     <string name="already_exist_nickname_message">すでに使用中のニックネームです。</string>
     <string name="article_comments_count">コメント</string>
+    <string name="article_count_comment">There are %,d comments.</string>
     <string name="article_count_message">%,d件の投稿があります。</string>
     <string name="article_count_txt">投稿</string>
     <string name="article_empty">投稿がありません。</string>
@@ -39,6 +40,10 @@
     <string name="cancel_article_write_confirm_message">投稿を取り消しますか？</string>
     <string name="chat_initialize_fail">チャット初期化失敗</string>
     <string name="close_title">閉じる</string>
+    <string name="comment_count">Commented Count</string>
+    <string name="comment_deletion_by_admin">このコメントは管理者により削除されました。</string>
+    <string name="comment_deletion_by_admin_for">このコメントは以下の理由で管理者により削除されました。理由：%1$s</string>
+    <string name="comment_deletion_by_user">このコメントは作成者により削除されました。</string>
     <string name="comment_empty">作成されたコメントがありません。</string>
     <string name="comment_hint">内容を入力してください。</string>
     <string name="comment_not_exist">コメントがありません。</string>
@@ -49,6 +54,8 @@
     <string name="date_format_hrs">%d時間</string>
     <string name="date_format_just_now">只今</string>
     <string name="date_format_mins">%d分</string>
+    <string name="date_format_remain_datetime_from_current_day">残り%1$s日 </string>
+    <string name="date_format_remain_datetime_from_current_hour">残り%1$s時間 </string>
     <string name="date_format_yesterday">昨日</string>
     <string name="delete">削除</string>
     <string name="delete_chat_message">削除</string>
@@ -127,6 +134,8 @@
     <string name="member_count_format">会員数%1$,d名</string>
     <string name="menu_change_channel">選択したチャンネルに変更しますか？\nチャンネルを変更するとコンテンツも同時に変更されます。</string>
     <string name="modify_complete_message">修正しました。</string>
+    <string name="moot_not_support_modify">この機能はMootアプリでご利用いただけます。</string>
+    <string name="moot_not_support_show">このコンテンツは現在のバージョンではご利用いただけません。</string>
     <string name="more_actions">もっと見る</string>
     <string name="movie_over_limit_size_message">選択した動画のサイズが\nアップロードサイズの上限を越えています。</string>
     <string name="movie_permission_setting_message">権限がないため動画を添付できません。\n[設定＞アプリ]にてゲームの保存権限を確認してください</string>
@@ -161,6 +170,8 @@
     <string name="pin_to_top">お知らせを上段に固定</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">info</string>
+    <string name="poll_closed">終了した投票</string>
+    <string name="poll_opened">投票中</string>
     <string name="popular_article">人気投稿を\n見る</string>
     <string name="profile_articles_total">Total</string>
     <string name="profile_become_member">ログインすると自動的にこのCafeのメンバーになります。</string>
@@ -225,6 +236,8 @@
     <string name="video_already_delete_error">この動画は削除されました。</string>
     <string name="video_like_count_message">라이브 중 %,d개의 &lt;img src=\"cf_icon_doubleheart_cs\"> 를 받았습니다.</string>
     <string name="view_original">原文</string>
+    <string name="vote_count">%1$s 人が投票</string>
+    <string name="vote_multi_select_allowed">複数選択可</string>
     <string name="waiting_join_apply_message">入会申請中です。</string>
     <string name="want_cafe_member">会員登録しますか？</string>
     <string name="widget_button_cafe">ゲームコミュニティ</string>

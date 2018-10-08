@@ -3,59 +3,58 @@
     android:layout_height="wrap_content"
     android:background="@color/white1">
 
-  <RelativeLayout
-      android:id="@+id/menu_list_button"
-      android:layout_alignParentRight="true"
-      android:layout_width="48dp"
-      android:layout_height="48dp">
+    <RelativeLayout
+        android:id="@+id/menu_list_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentRight="true">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray12" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/cf_icon_open_board" />
+
+    </RelativeLayout>
 
     <View
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="@color/gray12"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="47dp"
+        android:background="@color/gray12" />
 
-    <ImageView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:layout_centerInParent="true"
-        android:src="@drawable/cf_icon_open_board"/>
+        android:layout_margin="0dp"
+        android:layout_toLeftOf="@+id/menu_list_button"
+        android:padding="0dp"
+        android:scrollbars="horizontal"
+        android:theme="@android:style/Theme.Holo.Light">
 
-  </RelativeLayout>
-  <View
-      android:layout_width="match_parent"
-      android:layout_height="1dp"
-      android:layout_marginTop="47dp"
-      android:background="@color/gray12"
-      />
+        <TextView
+            android:id="@+id/menu_name"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/bg_articles_menu_selector"
+            android:button="@null"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textColor="@color/black1"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
-  <RelativeLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_toLeftOf="@+id/menu_list_button"
-      android:layout_margin="0dp"
-      android:padding="0dp"
-      android:theme="@android:style/Theme.Holo.Light"
-      android:scrollbars="horizontal">
-
-    <TextView
-        android:id="@+id/menu_name"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="3dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:layout_gravity="center_vertical"
-        android:gravity="center_vertical"
-        android:textColor="@color/black1"
-        android:background="@drawable/bg_articles_menu_selector"
-        android:button="@null"
-        android:maxLines="1"
-        android:textStyle="bold"
-        android:textSize="16dp"/>
-
-  </RelativeLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

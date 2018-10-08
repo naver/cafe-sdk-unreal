@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp">
+
+    <FrameLayout
+        android:id="@+id/check_image_view"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="14dp">
+        <ImageView
+            android:id="@+id/poll_check_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="@drawable/ico_poll_check_w"
+            />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/subject_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/check_image_view"
+        android:clipToPadding="false"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/subject_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/progress_text"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="2dp"
+            android:textColor="@color/black1"
+            android:textSize="14dp"
+
+            />
+
+        <TextView
+            android:id="@+id/progress_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:paddingLeft="8dp"
+            android:text="progressCount"
+            android:textColor="@color/gray13"
+            android:textSize="11dp" />
+        <!--
+                <com.campmobile.android.moot.customview.CustomStyleTextView
+                    android:id="@+id/progress_text"
+                    app:customFontFamily="ROBOTO_MEDIUM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:paddingLeft="8dp"
+                    android:text="@{binder.progressCount}"
+
+                    android:textColor="@color/board_detail_poll_option"
+                    android:textSize="11dp" />-->
+
+
+    </RelativeLayout>
+</RelativeLayout>

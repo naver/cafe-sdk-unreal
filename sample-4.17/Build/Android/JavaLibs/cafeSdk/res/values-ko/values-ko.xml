@@ -7,6 +7,7 @@
     <string name="all_media_no_permissions">권한이 없습니다.</string>
     <string name="already_exist_nickname_message">이미 사용 중인 별명입니다.</string>
     <string name="article_comments_count">댓글</string>
+    <string name="article_count_comment">%,d개의 댓글이 있습니다.</string>
     <string name="article_count_message">%,d개의 글이 있습니다.</string>
     <string name="article_count_txt">작성한 글</string>
     <string name="article_empty">등록된 게시글이 없습니다.</string>
@@ -39,6 +40,10 @@
     <string name="cancel_article_write_confirm_message">게시글 등록을 취소하시겠습니까?</string>
     <string name="chat_initialize_fail">채팅 초기화 실패</string>
     <string name="close_title">닫기</string>
+    <string name="comment_count">댓글 수</string>
+    <string name="comment_deletion_by_admin">이 댓글은 관리자에 의해 삭제되었습니다.</string>
+    <string name="comment_deletion_by_admin_for">이 댓글은 %1$s 사유로 관리자에 의해 삭제되었습니다.</string>
+    <string name="comment_deletion_by_user">이 댓글은 작성자에 의해 삭제되었습니다.</string>
     <string name="comment_empty">등록된 댓글이 없습니다.</string>
     <string name="comment_hint">내용을 입력하세요.</string>
     <string name="comment_not_exist">댓글이 없습니다.</string>
@@ -49,6 +54,8 @@
     <string name="date_format_hrs">%d 시간</string>
     <string name="date_format_just_now">지금 막</string>
     <string name="date_format_mins">%d 분</string>
+    <string name="date_format_remain_datetime_from_current_day">%1$s일 남음 </string>
+    <string name="date_format_remain_datetime_from_current_hour">%1$s시간 남음 </string>
     <string name="date_format_yesterday">어제</string>
     <string name="delete">삭제</string>
     <string name="delete_chat_message">삭제하기</string>
@@ -127,6 +134,8 @@
     <string name="member_count_format">회원수 %1$,d명</string>
     <string name="menu_change_channel">선택한 채널로 변경하시겠습니까?\n채널을 변경하면 콘텐츠도 함께 변경됩니다.</string>
     <string name="modify_complete_message">수정되었습니다.</string>
+    <string name="moot_not_support_modify">해당 기능은 Moot 앱에서 사용할 수 있습니다.</string>
+    <string name="moot_not_support_show"> 현재 버전에서는 볼 수 없는 콘텐츠입니다.</string>
     <string name="more_actions">더보기</string>
     <string name="movie_over_limit_size_message">선택한 동영상의 용량이\n최대 업로드 용량을 초과했습니다.</string>
     <string name="movie_permission_setting_message">권한이 없어 동영상을 첨부할 수 없습니다.\n[설정 > 앱]의 해당 게임에서 저장 권한을 확인해 주세요.</string>
@@ -161,6 +170,8 @@
     <string name="pin_to_top">필독 공지</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">info</string>
+    <string name="poll_closed">투표 완료</string>
+    <string name="poll_opened">투표 중</string>
     <string name="popular_article">인기글\n보기</string>
     <string name="profile_articles_total">Total</string>
     <string name="profile_become_member">로그인하면 자동으로 이 카페의 멤버가 됩니다.</string>
@@ -225,6 +236,8 @@
     <string name="video_already_delete_error">삭제된 영상입니다.</string>
     <string name="video_like_count_message">라이브 중 %,d개의 &lt;img src=\"cf_icon_doubleheart_cs\"> 를 받았습니다.</string>
     <string name="view_original">원문보기 </string>
+    <string name="vote_count">%1$s명 참여</string>
+    <string name="vote_multi_select_allowed">복수 선택 허용</string>
     <string name="waiting_join_apply_message">가입 신청 중입니다.</string>
     <string name="want_cafe_member">회원으로 가입하시겠습니까?</string>
     <string name="widget_button_cafe">커뮤니티</string>
