@@ -87,6 +87,8 @@
 -keep interface com.naver.glink.android.sdk.samsung.SPlug$* {*;}
 
 -keep class com.naver.plug.moot.api.response.** {*;}
+-keep class com.naver.plug.moot.sos.** {*;}
+-keep class com.campmobile.core.sos.** {*;}
 -keep class com.naver.plug.moot.model.** {*;}
 -keep class com.naver.plug.moot.ui.write.model.** {*;}
 -keep class com.nhncorp.nelo2.android.** {*;}

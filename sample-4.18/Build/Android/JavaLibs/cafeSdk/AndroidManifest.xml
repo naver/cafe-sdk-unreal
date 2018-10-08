@@ -36,6 +36,9 @@
             </intent-filter>
         </activity>
 
+        <service
+            android:name="com.naver.plug.moot.sos.MootStepwiseTaskService"
+            android:exported="false" />
         <!-- samsung 갤럭시 S8 대응 -->
         <!-- <meta-data android:name="android.max_aspect" android:value="2.1"/> -->
     </application>

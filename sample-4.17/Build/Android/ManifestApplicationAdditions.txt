@@ -21,3 +21,6 @@
                 <data android:scheme="naverplug" />
             </intent-filter>
         </activity>
+        <service
+            android:name="com.naver.plug.moot.sos.MootStepwiseTaskService"
+            android:exported="false" />
