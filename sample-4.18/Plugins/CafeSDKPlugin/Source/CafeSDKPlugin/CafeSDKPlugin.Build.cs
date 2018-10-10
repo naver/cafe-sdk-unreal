@@ -1,11 +1,16 @@
 // Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
-
+using System.IO;
+using UnrealBuildTool;
 
 namespace UnrealBuildTool.Rules
 {
 	public class CafeSDKPlugin : ModuleRules
 	{
-		
+		private string ThirdPartyPath
+        {
+            get { return Path.GetFullPath(Path.Combine(ModuleDirectory, "../../ThirdPartyFrameworks/")); }
+        }
+
 		public CafeSDKPlugin (ReadOnlyTargetRules Target) : base (Target)
 		{
 			
@@ -116,6 +121,13 @@ namespace UnrealBuildTool.Rules
                     }
                 );
                 PublicWeakFrameworks.Add("ReplayKit");
+            }
+
+            if (Target.Platform == UnrealTargetPlatform.Android)
+            {
+
+                string PluginPath = Utils.MakePathRelativeTo(ModuleDirectory, Target.RelativeEnginePath);
+                AdditionalPropertiesForReceipt.Add("AndroidPlugin", Path.Combine(PluginPath, "CafeSDKPlugin_APL.xml"));
             }
 
 		}

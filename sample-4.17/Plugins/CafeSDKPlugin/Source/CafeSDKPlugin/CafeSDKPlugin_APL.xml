@@ -1,0 +1,62 @@
+
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<init>
+		<log text="Android so files copy procedure"/>
+	</init>
+
+	<!-- optional files or directories to copy to Intermediate/Android/APK -->
+	<resourceCopies>
+    <log text="start copy"/>
+    <isArch arch="armeabi-v7a">
+    	<copyFile 	src="$S(PluginDir)/../../ThirdPartyFrameworks/Android/armeabi-v7a/libnative-lib.so"
+			    	dst="$S(BuildDir)/libs/armeabi-v7a/libnative-lib.so" />
+		<copyFile 	src="$S(PluginDir)/../../ThirdPartyFrameworks/Android/armeabi-v7a/libstlport_shared.so"
+			    	dst="$S(BuildDir)/libs/armeabi-v7a/libstlport_shared.so" />			    	
+      	<log text="end So files copied"/>
+    </isArch>
+    
+
+	</resourceCopies>
+
+	<!-- Manifest Updates -->
+	<androidManifestUpdates>
+	</androidManifestUpdates>
+
+		<!-- Files to copy before the build so they can be used in the build -->
+		<prebuildCopies>
+		</prebuildCopies>
+
+		<!-- optional additions to proguard -->
+		<proguardAdditions>
+		</proguardAdditions>
+
+		<gameActivityImportAdditions>
+		<!-- import com.leapmotion.*; -->
+		<insert>
+		</insert>
+		</gameActivityImportAdditions>
+
+		<gameActivityClassAdditions>
+		</gameActivityClassAdditions>
+  
+	<gameActivityOnPauseAdditions>
+	</gameActivityOnPauseAdditions>
+
+	<gameActivityOnResumeAdditions>
+	</gameActivityOnResumeAdditions>
+
+	<gameActivityOnCreateAdditions>
+	</gameActivityOnCreateAdditions>
+
+	<gameActivityOnStartAdditions>
+		</gameActivityOnStartAdditions>
+
+
+	<!-- optional libraries to load in GameActivity.java before libUE4.a -->
+	<!-- we're not loading a .so, it should all statically link...
+	<soLoadLibrary>
+    	<loadLibrary name="libsioclient" failmsg="LeapMotion library not loaded and required!" />
+	</soLoadLibrary>-->
+
+</root>
