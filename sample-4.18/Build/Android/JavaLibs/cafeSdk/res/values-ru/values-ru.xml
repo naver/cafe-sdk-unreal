@@ -7,6 +7,7 @@
     <string name="all_media_no_permissions">Нет прав</string>
     <string name="already_exist_nickname_message">Этот ник уже используется.</string>
     <string name="article_comments_count">Комментарии</string>
+    <string name="article_count_comment">There are %,d comments.</string>
     <string name="article_count_message">%,d постов.</string>
     <string name="article_count_txt">Опубликовано</string>
     <string name="article_empty">Нет постов</string>
@@ -39,6 +40,10 @@
     <string name="cancel_article_write_confirm_message">Отменить публикацию поста?</string>
     <string name="chat_initialize_fail">Не удалось сбросить чат</string>
     <string name="close_title">Закрыть</string>
+    <string name="comment_count">Commented Count</string>
+    <string name="comment_deletion_by_admin">Этот комментарий удален админом.</string>
+    <string name="comment_deletion_by_admin_for">Этот комментарий удален админом за %1$s.</string>
+    <string name="comment_deletion_by_user">Этот комментарий удален.</string>
     <string name="comment_empty">Нет комментариев.</string>
     <string name="comment_hint">Введите текст.</string>
     <string name="comment_not_exist">Нет комментариев</string>
@@ -49,6 +54,8 @@
     <string name="date_format_hrs">%d час.</string>
     <string name="date_format_just_now">Только что</string>
     <string name="date_format_mins">%d мин.</string>
+    <string name="date_format_remain_datetime_from_current_day">Осталось %1$s дня </string>
+    <string name="date_format_remain_datetime_from_current_hour">Осталось %1$s часов </string>
     <string name="date_format_yesterday">Вчера</string>
     <string name="delete">Удалить</string>
     <string name="delete_chat_message">Удалить</string>
@@ -127,6 +134,8 @@
     <string name="member_count_format">Членов %1$,d</string>
     <string name="menu_change_channel">Хотите сменить язык?\nСмена языка изменит содержимое внутри.</string>
     <string name="modify_complete_message">Изменено.</string>
+    <string name="moot_not_support_modify">Эта функция доступна только в приложении Moot.</string>
+    <string name="moot_not_support_show">Этот контент невозможно просмотреть в данной версии.</string>
     <string name="more_actions">Еще</string>
     <string name="movie_over_limit_size_message">Лимит размера выбранного видео\nпревышен.</string>
     <string name="movie_permission_setting_message">У вас нет прав для прикрепления видео.\nПроверьте свои права сохранения в игре [Настройки>Приложение].</string>
@@ -161,6 +170,8 @@
     <string name="pin_to_top">Прикрепить сверху</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">Инфо</string>
+    <string name="poll_closed">Голосование закрыто</string>
+    <string name="poll_opened">Голосование открыто</string>
     <string name="popular_article">Посмотреть\nпопулярные посты</string>
     <string name="profile_articles_total">Total</string>
     <string name="profile_become_member">Войдя, вы становитесь членом этого PLUG.</string>
@@ -225,6 +236,8 @@
     <string name="video_already_delete_error">Это видео было удалено.</string>
     <string name="video_like_count_message">라이브 중 %,d개의 &lt;img src=\"cf_icon_doubleheart_cs\"> 를 받았습니다.</string>
     <string name="view_original">Оригинал</string>
+    <string name="vote_count">%1$s проголосовало</string>
+    <string name="vote_multi_select_allowed">Можно выбрать несколько</string>
     <string name="waiting_join_apply_message">Идет вступление…</string>
     <string name="want_cafe_member">Хотите вступить в кафе?</string>
     <string name="widget_button_cafe">Сообщество</string>

@@ -17,8 +17,9 @@ void ACafeSDKSampleProjectGameMode::InitGame(const FString& MapName, const FStri
     UCafeSdkBlueprintLibrary::Init("197CymaStozo7X5r2qR5", "evCgKH1kJL", 28290504);
     
     // 글로벌 카페 초기화. 국내 카페만 사용할 경우 initGlobal을 하지 않아도 됩니다.
-    UCafeSdkBlueprintLibrary::InitGlobal("IHCd_HmSiMcXOMC37xZ8", 1013329);
+    UCafeSdkBlueprintLibrary::InitGlobal("PLUGTESTKEY", "PLUGTESTSECRET", 1, 58);
     
+    UCafeSdkBlueprintLibrary::SetChannelCode("KOREAN");
     /*
      * 테마 설정.
      * - theme color는 css color 포맷으로 설정하시면 됩니다.

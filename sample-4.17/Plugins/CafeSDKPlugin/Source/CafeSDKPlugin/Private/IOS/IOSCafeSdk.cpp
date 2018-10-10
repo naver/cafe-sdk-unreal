@@ -4,7 +4,7 @@
 #include "IOSCafeSdk.h"
 #include "IOSAppDelegate.h"
 #include "IOSView.h"
-#include "IOSPlatformString.h"
+//#include "IOSPlatformString.h"
 
 
 static void ListenNCSDKOpenURL(UIApplication* application, NSURL* url, NSString* sourceApplication, id annotation)
@@ -24,9 +24,11 @@ void FIOSCafeSdk::Init(FString ClientId, FString ClientSecret, int32 CafeId)
 //    If you want to use NaverAppLogin uncomment it
 //    FIOSCoreDelegates::OnOpenURL.AddStatic(&ListenNCSDKOpenURL);
 }
-void FIOSCafeSdk::InitGlobal(FString ClientId, int32 CafeId) {
-    [[CafeCallbackObject getSharedInstance] setGlobalSDKInfoWithClientId:ClientId.GetNSString()
-                                                             communityId:CafeId];
+void FIOSCafeSdk::InitGlobal(FString ConsumerKey, FString ConsumerSecret, int32 CommunityId, int32 LoungeNo) {
+    [[CafeCallbackObject getSharedInstance] setGlobalConsumerKey:ConsumerKey.GetNSString()
+                                            globalConsumerSecret:ConsumerSecret.GetNSString()
+                                               globalCommunityNo:CommunityId
+                                                  globalLoungeNo:LoungeNo];
 }
 
 void FIOSCafeSdk::SetChannelCode(FString ChannelCode) const
@@ -238,8 +240,8 @@ void FIOSCafeSdk::StopRecord()
                                                      cafeId:cafeId];
     [[NCSDKManager getSharedInstance] setOrientationIsLandscape:YES];
 }
-- (void)setGlobalSDKInfoWithClientId:(NSString *)clientId communityId:(NSInteger)communityId {
-    [[NCSDKManager getSharedInstance] setNeoIdConsumerKey:clientId communityId:communityId];
+- (void)setGlobalConsumerKey:(NSString *)globalConsumerKey globalConsumerSecret:(NSString *)globalConsumerSecret globalCommunityNo:(NSInteger)globalCommunityNo globalLoungeNo:(NSInteger)globalLoungeNo {
+    [[NCSDKManager getSharedInstance] setGlobalConsumerKey:globalConsumerKey globalConsumerSecret:globalConsumerSecret globalCommunityNo:globalCommunityNo globalLoungeNo:globalLoungeNo];
     [[NCSDKManager getSharedInstance] setOrientationIsLandscape:YES];
 }
 - (void)setParentViewController {

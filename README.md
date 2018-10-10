@@ -4,7 +4,7 @@ PLUG SDK는 모바일 게임 사용자가 게임 도중 게임을 벗어나지 �
 
 이미 많은 게임에 적용돼 검증된 PLUG SDK를 사용하면 손쉽게 커뮤니케이션 기능을 게임 안에 넣을 수 있습니다.
  
-![PLUG SDK](http://static.naver.net/m/cafe/glink/promotion/cafe_sdk_open/img_intro1_20151111.png)
+![PLUG](http://static.naver.net/m/cafe/glink/promotion/cafe_sdk_open/img_intro1_20151111.png)
 
 ## How To Get Started 
 
@@ -147,13 +147,24 @@ if (FCafeSDKPluginModule::IsAvailable())
 
 외국어만 지원하는 PLUG SDK를 초기화할 때는 다음과 같은 초기화 정보를 설정합니다.
 
-- [PLUG SDK 제휴 신청](https://github.com/naver/cafe-sdk-ios/wiki/%5B%ED%95%9C%5D%20%EA%B8%80%EB%A1%9C%EB%B2%8C%20%EB%84%A4%EC%9D%B4%EB%B2%84%20%EC%B9%B4%ED%8E%98%20%EC%82%AC%EC%9A%A9)을 통해 받은 컨슈머 키(Consumer Key)
-- [PLUG SDK 제휴 신청](https://github.com/naver/cafe-sdk-ios/wiki/%5B%ED%95%9C%5D%20%EA%B8%80%EB%A1%9C%EB%B2%8C%20%EB%84%A4%EC%9D%B4%EB%B2%84%20%EC%B9%B4%ED%8E%98%20%EC%82%AC%EC%9A%A9)을 통해 받은 커뮤니티 ID(Community ID)
+- [PLUG SDK 제휴 신청](https://github.com/naver/cafe-sdk-ios/wiki/%5B%ED%95%9C%5D%20%EA%B8%80%EB%A1%9C%EB%B2%8C%20%EB%84%A4%EC%9D%B4%EB%B2%84%20%EC%B9%B4%ED%8E%98%20%EC%82%AC%EC%9A%A9)을 통해 받은 컨슈머 키(Consumer Key) 와 컨슈머 시크릿(Consumer Secret)
+- [PLUG SDK 제휴 신청](https://github.com/naver/cafe-sdk-ios/wiki/%5B%ED%95%9C%5D%20%EA%B8%80%EB%A1%9C%EB%B2%8C%20%EB%84%A4%EC%9D%B4%EB%B2%84%20%EC%B9%B4%ED%8E%98%20%EC%82%AC%EC%9A%A9)을 통해 받은 Community No 와 Lounge No 
+
+- consumerKey: 커뮤니티를 개설하고 받은 컨슈머 키(Consumer Key)
+- consumerSecretKey: 커뮤니티를 개설하고 받은 컨슈머 시크릿(Consumer Secret Key)
+- cummunityNo: 커뮤니티를 개설하고 받은 커뮤니티 No(cummunityNo)
+- loungeNo: 라운지를 개설하고 받은 라운지 No(cummunityNo)
 
 ```cpp
 if (FCafeSDKPluginModule::IsAvailable())
 {
-    UCafeSdkBlueprintLibrary::InitGlobal("IHCd_HmSiMcXOMC37xZ8", 1013329);
+    /**
+     * @param consumerKey       컨슈머 키
+     * @param consumerSecretKey 컨슈머 시크릿 키 
+     * @param communityNo       커뮤니티 번호
+     * @param loungeNo          라운지 번호                      
+     */
+     UCafeSdkBlueprintLibrary::InitGlobal("PLUGKEY", "PLUGSECRET", 1, 58);
 }
 ```
 
@@ -255,3 +266,6 @@ All rights reserved.
 
 Unauthorized use, modification and redistribution of this software are strongly prohibited.
 ```
+
+
+## PLUG SDK 2.x, 3.x 버전은 더 이상 지원되지 않습니다.

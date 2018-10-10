@@ -11,7 +11,6 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_weight="1"
-      android:paddingRight="6dp"
       android:drawableRight="@drawable/oval_gray"
       android:drawablePadding="6dp"
       android:singleLine="true"
@@ -20,7 +19,16 @@
       android:textSize="15dp"/>
 
   <TextView
+      android:id="@+id/writer_level"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textColor="#a3a9a9"
+      android:textSize="12dp" />
+
+
+  <TextView
       android:id="@+id/write_date"
+      android:layout_marginStart="10dp"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:textColor="@color/gray4"

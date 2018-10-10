@@ -19,7 +19,7 @@
       android:orientation="horizontal"
       >
 
-    <com.naver.glink.android.sdk.ui.streaming.animation.LikeSurfaceView
+    <com.naver.plug.cafe.ui.streaming.animation.LikeSurfaceView
         android:id="@+id/streaming_like_animation_layout"
         android:layout_width="150dp"
         android:layout_height="match_parent"

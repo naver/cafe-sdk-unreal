@@ -1,51 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-  <LinearLayout
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal">
-
-    <!-- 주의: width를 0dp로 세팅하면, 텍스트가 변경 되었을 때 width가 잘못 계산된다. -->
-    <TextView
-        android:id="@+id/viewer_nickname"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:singleLine="true"
+        android:orientation="horizontal">
+
+        <!-- 주의: width를 0dp로 세팅하면, 텍스트가 변경 되었을 때 width가 잘못 계산된다. -->
+        <TextView
+            android:id="@+id/viewer_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:textColor="@color/white1"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/viewer_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:textColor="#a3a9a9"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/viewer_view_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/empty_rectangle_corner_trans_background"
+        android:drawableRight="@drawable/cf_blt_go_w"
+        android:drawablePadding="3dp"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingTop="7dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="7dp"
+        android:text="@string/media_viewer_move_post"
         android:textColor="@color/white1"
-        android:maxLength="20"
-        android:ellipsize="end"
-        android:textStyle="bold"
-        android:textSize="15dp"/>
-
-    <TextView
-        android:id="@+id/viewer_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:textColor="#a3a9a9"
-        android:textSize="15dp"/>
-  </LinearLayout>
-
-  <TextView
-      android:id="@+id/viewer_view_post"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="8dp"
-      android:paddingLeft="10dp"
-      android:paddingTop="7dp"
-      android:paddingRight="10dp"
-      android:paddingBottom="7dp"
-      android:drawablePadding="3dp"
-      android:drawableRight="@drawable/cf_blt_go_w"
-      android:background="@drawable/empty_rectangle_corner_trans_background"
-      android:gravity="center"
-      android:textColor="@color/white1"
-      android:textSize="12dp"
-      android:text="@string/media_viewer_move_post"/>
+        android:textSize="12dp" />
 </LinearLayout>

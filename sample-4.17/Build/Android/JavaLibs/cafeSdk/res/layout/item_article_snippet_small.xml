@@ -1,0 +1,93 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white1"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="20dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_marginLeft="@dimen/moot_article_media_item_margin"
+        android:layout_marginRight="@dimen/moot_article_media_item_margin"
+        android:background="@color/board_content_bg2">
+
+        <com.naver.plug.moot.customview.imageview.AspectRatioImageView
+            android:id="@+id/snippet_image_view"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:background="@color/gray2"
+            android:scaleType="centerCrop"
+            app:aspect="aspectY"
+            app:horizontalRatio="1"
+            app:verticalRatio="1"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_toRightOf="@id/snippet_image_view">
+
+            <TextView
+                android:id="@+id/snippet_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:lineSpacingExtra="4.5dp"
+                android:singleLine="true"
+                android:text="title"
+                android:textColor="@color/black1"
+
+                android:textSize="15dp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:id="@+id/snippet_sub_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@id/snippet_title"
+                android:layout_marginTop="1.5dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:lineSpacingExtra="3.5sp"
+
+                android:maxLines="1"
+                android:text="subTitle"
+
+                android:textColor="@color/black1"
+                android:textSize="12dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/snippet_domain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/snippet_sub_title"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="3dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:lineSpacingExtra="3.5sp"
+                android:maxLines="1"
+                android:text="https://www.naver.com"
+                android:textColor="@color/gray13"
+                android:textSize="12dp"
+                android:textStyle="normal" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>

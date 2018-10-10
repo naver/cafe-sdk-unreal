@@ -9,7 +9,7 @@
 FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     : FJavaClassObject(GetClassName(), "()V")
     , InitMethod(GetClassMethod("init", "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;I)V"))
-    , InitGlobalMethod(GetClassMethod("initGlobal", "(Landroid/content/Context;Ljava/lang/String;I)V"))
+    , InitGlobalMethod(GetClassMethod("initGlobal", "(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;II)V"))
     , StartMoreMethod(GetClassMethod("startMore", "(Landroid/app/Activity;)V"))
     , LoginMethod(GetClassMethod("login", "(Landroid/content/Context;)V"))
     , LogoutMethod(GetClassMethod("logout", "(Landroid/content/Context;)V"))
@@ -25,10 +25,10 @@ FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
 
     SetChannelCodeMethod = GetGlinkClassStaticMethod("setChannelCode", "(Ljava/lang/String;)V");
     StartHomeMethod = GetGlinkClassStaticMethod("startHome", "(Landroid/content/Context;)V");
-    StartNoticeMethod = GetGlinkClassStaticMethod("startNotice", "(Landroid/content/Context;)V");
-    StartEventMethod = GetGlinkClassStaticMethod("startEvent", "(Landroid/content/Context;)V");
-    StartMenuMethod = GetGlinkClassStaticMethod("startMenu", "(Landroid/content/Context;)V");
-    StartProfileMethod = GetGlinkClassStaticMethod("startProfile", "(Landroid/content/Context;)V");
+    //StartNoticeMethod = GetGlinkClassStaticMethod("startNotice", "(Landroid/content/Context;)V");
+    //StartEventMethod = GetGlinkClassStaticMethod("startEvent", "(Landroid/content/Context;)V");
+    //StartMenuMethod = GetGlinkClassStaticMethod("startMenu", "(Landroid/content/Context;)V");
+    //StartProfileMethod = GetGlinkClassStaticMethod("startProfile", "(Landroid/content/Context;)V");
     StartWriteMethod = GetGlinkClassStaticMethod("startWrite", "(Landroid/content/Context;)V");
     StartImageWriteMethod = GetGlinkClassStaticMethod("startImageWrite", "(Landroid/content/Context;Ljava/lang/String;)V");
     StartVideoWriteMethod = GetGlinkClassStaticMethod("startVideoWrite", "(Landroid/content/Context;Ljava/lang/String;)V");
@@ -59,12 +59,14 @@ void FAndroidJavaCafeSdk::Init(FString ClientId, FString ClientSecret, int32 Caf
         );
 }
 
-void FAndroidJavaCafeSdk::InitGlobal(FString ClientId, int32 CafeId)
+void FAndroidJavaCafeSdk::InitGlobal(FString ConsumerKey, FString ConsumerSecret, int32 CommunityId, int32 LoungeNo)
 {
     CallMethod<void>(InitGlobalMethod,
         FJavaWrapper::GameActivityThis,
-        FJavaClassObject::GetJString(ClientId),
-        CafeId
+        FJavaClassObject::GetJString(ConsumerKey),
+        FJavaClassObject::GetJString(ConsumerSecret),
+        CommunityId,
+        LoungeNo
         );
 }
 
@@ -100,22 +102,22 @@ void FAndroidJavaCafeSdk::StartHome() const
 
 void FAndroidJavaCafeSdk::StartNotice() const
 {
-    StartTab(StartNoticeMethod);
+  //StartTab(StartNoticeMethod);
 }
 
 void FAndroidJavaCafeSdk::StartEvent() const
 {
-    StartTab(StartEventMethod);
+  //StartTab(StartEventMethod);
 }
 
 void FAndroidJavaCafeSdk::StartMenu() const
 {
-    StartTab(StartMenuMethod);
+  //StartTab(StartMenuMethod);
 }
 
 void FAndroidJavaCafeSdk::StartProfile() const
 {
-    StartTab(StartProfileMethod);
+  //StartTab(StartProfileMethod);
 }
 
 void FAndroidJavaCafeSdk::StartTab(const FJavaClassMethod& JavaClassMethod) const

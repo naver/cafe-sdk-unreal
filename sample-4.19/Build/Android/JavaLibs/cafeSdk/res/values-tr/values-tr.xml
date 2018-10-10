@@ -7,6 +7,7 @@
     <string name="all_media_no_permissions">İzinler yok</string>
     <string name="already_exist_nickname_message">Bu takma adı zaten kullanılıyor.</string>
     <string name="article_comments_count">Yorumlar</string>
+    <string name="article_count_comment">There are %,d comments.</string>
     <string name="article_count_message">%,d gönderi var.</string>
     <string name="article_count_txt">Gönderildi</string>
     <string name="article_empty">Gönderi yok</string>
@@ -39,6 +40,10 @@
     <string name="cancel_article_write_confirm_message">Bir gönderi silmek ister misin?</string>
     <string name="chat_initialize_fail">Sohbeti sıfırlama başarısız oldu</string>
     <string name="close_title">Kapat</string>
+    <string name="comment_count">Commented Count</string>
+    <string name="comment_deletion_by_admin">Bu yorum yönetici tarafından silindi.</string>
+    <string name="comment_deletion_by_admin_for">Bu yorum %1$s sebebi ile yönetici tarafından silindi.</string>
+    <string name="comment_deletion_by_user">Bu yorum silindi.</string>
     <string name="comment_empty">Yorum yok</string>
     <string name="comment_hint">Lütfen mesajı giriniz.</string>
     <string name="comment_not_exist">Yorum yok</string>
@@ -49,6 +54,8 @@
     <string name="date_format_hrs">%d saat</string>
     <string name="date_format_just_now">Şimdi</string>
     <string name="date_format_mins">%d dk</string>
+    <string name="date_format_remain_datetime_from_current_day">%1$s gün kaldı </string>
+    <string name="date_format_remain_datetime_from_current_hour">%1$s saat kaldı </string>
     <string name="date_format_yesterday">Dün</string>
     <string name="delete">Sil </string>
     <string name="delete_chat_message">Sil </string>
@@ -127,6 +134,8 @@
     <string name="member_count_format">Üyeler  %1$,d</string>
     <string name="menu_change_channel">Dili değiştirmek ister misiniz?\nDili değiştirmek içeriği de değiştirecektir.</string>
     <string name="modify_complete_message">Modifiye edildi.</string>
+    <string name="moot_not_support_modify">Bu özellik Moot uygulamasında kullanılabilir.</string>
+    <string name="moot_not_support_show">Bu içerik mevcut sürümde bulunmamaktadır.</string>
     <string name="more_actions">Daha fazla</string>
     <string name="movie_over_limit_size_message">Seçilen video\nis boyutunun limiti fazla.</string>
     <string name="movie_permission_setting_message">Video yüklemeye izniniz yok. \nLütfen [Ayarlar > Uygulama ] ekranından oyun ile ilgili yükleme izinlerinizi kontrol ediniz. </string>
@@ -161,6 +170,8 @@
     <string name="pin_to_top">Üste iğneleyin</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">Bilgi</string>
+    <string name="poll_closed">Anket kapalı</string>
+    <string name="poll_opened">Anket açık</string>
     <string name="popular_article">Popüler gönderileri\ngör</string>
     <string name="profile_articles_total">Total</string>
     <string name="profile_become_member">Giriş yapmanız ile birlikte, PLUG üyesi olursunuz.</string>
@@ -225,6 +236,8 @@
     <string name="video_already_delete_error">Bu video silindi.</string>
     <string name="video_like_count_message">라이브 중 %,d개의 &lt;img src=\"cf_icon_doubleheart_cs\"> 를 받았습니다.</string>
     <string name="view_original">Orjinal</string>
+    <string name="vote_count">%1$s gün kaldı</string>
+    <string name="vote_multi_select_allowed">Çoklu seçime izin ver</string>
     <string name="waiting_join_apply_message">Cafe\' ye bağlanmak için bekleniyor...</string>
     <string name="want_cafe_member">Cafe\' ye katılmak ister misin?</string>
     <string name="widget_button_cafe">Topluluk</string>

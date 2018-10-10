@@ -56,10 +56,10 @@ public class CafeSdk {
     initListeners(context);
   }
 
-  public void initGlobal(Context context, String clientId, int cafeId) {
+  public void initGlobal(Context context, String consumerKey, String consumerSecretKey, int communityId, int loungeNo) {
     if (context == null) return;
 
-    Glink.initGlobal(context, clientId, cafeId);
+    Glink.initGlobal(context, consumerKey, consumerSecretKey, communityId, loungeNo);
     initListeners(context);
   }
 

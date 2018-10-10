@@ -9,6 +9,7 @@
     <bool name="default_line_indicator_centered">true</bool>
     <bool name="default_title_indicator_selected_bold">true</bool>
     <bool name="default_underline_indicator_fades">true</bool>
+    <color name="TR">#00ffffff</color>
     <color name="black1">#44484e</color>
     <color name="black1_opacity_5">#0d44484e</color>
     <color name="black2">#000000</color>
@@ -19,6 +20,11 @@
     <color name="black3">#6f6f6f</color>
     <color name="black4">#363838</color>
     <color name="blue2">#2e65d9</color>
+    <color name="board_comment_divider">#959595</color>
+    <color name="board_comment_reply_bar">#d3d3d3</color>
+    <color name="board_content_bg">#f1f1f1</color>
+    <color name="board_content_bg2">#f4f4f4</color>
+    <color name="board_poll_option">#5b5e6f</color>
     <color name="default_circle_indicator_fill_color">#FFFFFFFF</color>
     <color name="default_circle_indicator_page_color">#00000000</color>
     <color name="default_circle_indicator_stroke_color">#FFDDDDDD</color>
@@ -32,6 +38,7 @@
     <color name="gray10">#a3a9a9</color>
     <color name="gray11">#ced4d4</color>
     <color name="gray12">#ebeeee</color>
+    <color name="gray13">#888888</color>
     <color name="gray2">#c1c1c1</color>
     <color name="gray3">#c7c8ca</color>
     <color name="gray4">#999999</color>
@@ -53,6 +60,13 @@
     <color name="white1_30p">#4dffffff</color>
     <color name="white2">#f8f8f8</color>
     <color name="white3">#f2f2f2</color>
+    <declare-styleable name="AspectRatioImageView"><attr format="integer" name="horizontalRatio"/><attr format="integer" name="verticalRatio"/><attr format="enum" name="aspect">
+            <enum name="aspectX" value="0"/>
+            <enum name="aspectY" value="1"/>
+            <enum name="aspectXY" value="2"/>
+            <enum name="aspectX_Square" value="3"/>
+            <enum name="aspectY_Square" value="4"/>
+        </attr><attr format="dimension" name="imageMaxWidth"/><attr format="dimension" name="imageMaxHeight"/></declare-styleable>
     <declare-styleable name="CirclePageIndicator"><attr name="centered"/><attr format="color" name="fillColor"/><attr format="color" name="pageColor"/><attr name="android:orientation"/><attr format="dimension" name="radius"/><attr format="boolean" name="snap"/><attr format="color" name="strokeColor"/><attr name="strokeWidth"/><attr name="android:background"/></declare-styleable>
     <declare-styleable name="FloatingActionButton"><attr format="color" name="fab_colorNormal"/><attr format="color" name="fab_colorPressed"/><attr format="color" name="fab_colorDisabled"/><attr format="color" name="fab_colorRipple"/><attr format="boolean" name="fab_showShadow"/><attr format="color" name="fab_shadowColor"/><attr format="dimension" name="fab_shadowRadius"/><attr format="dimension" name="fab_shadowXOffset"/><attr format="dimension" name="fab_shadowYOffset"/><attr format="enum" name="fab_size">
       <enum name="normal" value="0"/>
@@ -113,8 +127,11 @@
     <dimen name="labels_text_size">14sp</dimen>
     <dimen name="list_item_margin">16dp</dimen>
     <dimen name="menu_selector_padding">8dp</dimen>
+    <dimen name="moot_article_media_item_margin">4dp</dimen>
     <dimen name="streaming_chatting_height">240dp</dimen>
     <dimen name="streaming_chatting_width">200dp</dimen>
+    <dimen name="video_thumbnail_height">200dp</dimen>
+    <dimen name="video_thumbnail_width">356dp</dimen>
     <dimen name="viewer_animation_speed">2dp</dimen>
     <dimen name="widget_speed">3dp</dimen>
     <item name="fab_label" type="id"/>
@@ -130,8 +147,8 @@
     <string name="all_board">All</string>
     <string name="all_media_no_permissions">No permissions</string>
     <string name="already_exist_nickname_message">The nickname is already in use.</string>
-    <string name="app_name">plug-core-library</string>
     <string name="article_comments_count">Comments</string>
+    <string name="article_count_comment">There are %,d comments.</string>
     <string name="article_count_message">There are %,d posts.</string>
     <string name="article_count_txt">Posted</string>
     <string name="article_empty">No posts</string>
@@ -164,6 +181,10 @@
     <string name="cancel_article_write_confirm_message">Do you want to cancel a post?</string>
     <string name="chat_initialize_fail">Failed to initialize chat</string>
     <string name="close_title">Close</string>
+    <string name="comment_count">Commented Count</string>
+    <string name="comment_deletion_by_admin">This comment has been removed by admin.</string>
+    <string name="comment_deletion_by_admin_for">This comment has been removed by admin for %1$s</string>
+    <string name="comment_deletion_by_user">This comment has been deleted.</string>
     <string name="comment_empty">No comments</string>
     <string name="comment_hint">Please enter text.</string>
     <string name="comment_not_exist">No comments</string>
@@ -174,6 +195,8 @@
     <string name="date_format_hrs">%d hr</string>
     <string name="date_format_just_now">Just now</string>
     <string name="date_format_mins">%d min</string>
+    <string name="date_format_remain_datetime_from_current_day">%1$s days left </string>
+    <string name="date_format_remain_datetime_from_current_hour">%1$s hours left </string>
     <string name="date_format_yesterday">Yesterday</string>
     <string name="delete">Delete</string>
     <string name="delete_chat_message">Delete</string>
@@ -193,10 +216,14 @@
     <string name="essential_permission">필수적 권한</string>
     <string name="exist_prohibit_word_nickname_message">Prohibited words are included.</string>
     <string name="flavor_name" translatable="false">real</string>
+    <string name="host_moot_photo_infra" translatable="false">https://beta.ssl.phinf.net/moot</string>
+    <string name="host_video_infra" translatable="false">http://apis.naver.com/rmcnmv/rmcnmv</string>
     <string name="hosts_article" translatable="false">https://apis.naver.com</string>
     <string name="hosts_attach" translatable="false">https://up.cafe.naver.com</string>
     <string name="hosts_ba" translatable="false">https://scv.band.us</string>
     <string name="hosts_glink" translatable="false">https://apis.naver.com</string>
+    <string name="hosts_moot" translatable="false">https://api.moot.us</string>
+    <string name="hosts_moot_login" translatable="false">https://moot.us/plug/login?</string>
     <string name="hosts_phinf" translatable="false">https://g-plug.pstatic.net</string>
     <string name="hosts_playlog" translatable="false">http://global.apis.naver.com</string>
     <string name="hosts_plug" translatable="false">https://global.apis.naver.com</string>
@@ -261,6 +288,8 @@
     <string name="member_count_format">Members %1$,d</string>
     <string name="menu_change_channel">Do you want to change the language?\nChanging the language will also change the content inside.</string>
     <string name="modify_complete_message">It has been modified.</string>
+    <string name="moot_not_support_modify">This feature is only available on Moot App.</string>
+    <string name="moot_not_support_show">This contents can\'t be viewed in your current version.</string>
     <string name="more_actions">More</string>
     <string name="movie_over_limit_size_message">The size limit of selected video\nis exceeded.</string>
     <string name="movie_permission_setting_message">You do not have permission to attach a video.\nPlease check your permission to save in the game which can be accessed from [Settings > App]. </string>
@@ -295,7 +324,9 @@
     <string name="pin_to_top">Pin to Top</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">Info</string>
-    <string name="plug_sdk_version" translatable="false">3.3.2</string>
+    <string name="plug_sdk_version" translatable="false">4.0.0</string>
+    <string name="poll_closed">Poll closed</string>
+    <string name="poll_opened">Poll opened</string>
     <string name="popular_article">See\npopular posts</string>
     <string name="profile_articles_total">Total</string>
     <string name="profile_become_member">By logging in, you become a member of this Cafe.</string>
@@ -360,6 +391,8 @@
     <string name="video_already_delete_error">This video has been deleted.</string>
     <string name="video_like_count_message">라이브 중 %,d개의 &lt;img src=\"cf_icon_doubleheart_cs\"> 를 받았습니다.</string>
     <string name="view_original">Original</string>
+    <string name="vote_count">%1$s voted</string>
+    <string name="vote_multi_select_allowed">Multi-selection allowed</string>
     <string name="waiting_join_apply_message">Waiting for joining the Cafe…</string>
     <string name="want_cafe_member">Do you want to join the Cafe?</string>
     <string name="widget_button_cafe">Community</string>

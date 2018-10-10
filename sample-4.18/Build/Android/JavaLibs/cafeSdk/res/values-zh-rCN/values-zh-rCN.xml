@@ -7,6 +7,7 @@
     <string name="all_media_no_permissions">您没有权限。</string>
     <string name="already_exist_nickname_message">已在使用的昵称。</string>
     <string name="article_comments_count">评论</string>
+    <string name="article_count_comment">There are %,d comments.</string>
     <string name="article_count_message">有%,d个文章。</string>
     <string name="article_count_txt">编写的文章</string>
     <string name="article_empty">没有已上传的文章。</string>
@@ -39,6 +40,10 @@
     <string name="cancel_article_write_confirm_message">确定取消上传帖子？</string>
     <string name="chat_initialize_fail">网上聊天初始化失败</string>
     <string name="close_title">关闭</string>
+    <string name="comment_count">Commented Count</string>
+    <string name="comment_deletion_by_admin">此评论已被管理员删除。</string>
+    <string name="comment_deletion_by_admin_for">此评论因~已被管理员删除。 %1$s</string>
+    <string name="comment_deletion_by_user">此评论已被作者删除。</string>
     <string name="comment_empty">没有评论。</string>
     <string name="comment_hint">请输入内容。</string>
     <string name="comment_not_exist">没有评论</string>
@@ -49,6 +54,8 @@
     <string name="date_format_hrs">%d 时间</string>
     <string name="date_format_just_now">刚才</string>
     <string name="date_format_mins">%d 分</string>
+    <string name="date_format_remain_datetime_from_current_day">余%1$s天 </string>
+    <string name="date_format_remain_datetime_from_current_hour">剩余%1$s小时 </string>
     <string name="date_format_yesterday">昨天</string>
     <string name="delete">删除</string>
     <string name="delete_chat_message">删除</string>
@@ -127,6 +134,8 @@
     <string name="member_count_format">会员数%1$,d名</string>
     <string name="menu_change_channel">是否更改为选定的频道？\n更改频道后，内容也会一起更改。</string>
     <string name="modify_complete_message">已修改。</string>
+    <string name="moot_not_support_modify">该功能可在Moot APP中使用。(确认/取消)</string>
+    <string name="moot_not_support_show">该内容无法在当前版本中查看。</string>
     <string name="more_actions">查看更多</string>
     <string name="movie_over_limit_size_message">所选的视频容量超过了\n最大上传容量范围。</string>
     <string name="movie_permission_setting_message">没有权限，不能添加视频。\n请在【设置 > 应用程序】的相关游戏中确认保存权限。</string>
@@ -161,6 +170,8 @@
     <string name="pin_to_top">上方固定公告</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">info</string>
+    <string name="poll_closed">投票结束</string>
+    <string name="poll_opened">投票进行中</string>
     <string name="popular_article">查看\n人气文章</string>
     <string name="profile_articles_total">Total</string>
     <string name="profile_become_member">登录后将自动成为此CAFE的成员。</string>
@@ -225,6 +236,8 @@
     <string name="video_already_delete_error">已删除的视频。</string>
     <string name="video_like_count_message">라이브 중 %,d개의 &lt;img src=\"cf_icon_doubleheart_cs\"> 를 받았습니다.</string>
     <string name="view_original">原文</string>
+    <string name="vote_count">共%1$s3投票</string>
+    <string name="vote_multi_select_allowed">允许多选</string>
     <string name="waiting_join_apply_message">正在申请注册。</string>
     <string name="want_cafe_member">想要加入会员吗？</string>
     <string name="widget_button_cafe">游戏社区</string>

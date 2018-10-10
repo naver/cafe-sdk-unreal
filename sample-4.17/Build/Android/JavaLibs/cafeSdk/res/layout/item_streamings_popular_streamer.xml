@@ -1,53 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:paddingLeft="11dp"
-    android:paddingRight="11dp"
-    >
+    android:paddingRight="11dp">
 
-  <ImageView
-      android:id="@+id/live_on_circle"
-      android:layout_width="64dp"
-      android:layout_height="64dp"
-      android:layout_centerHorizontal="true"
-      android:src="@drawable/popular_streamer_on_live_circle"
-      />
+    <ImageView
+        android:id="@+id/live_on_circle"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/popular_streamer_on_live_circle" />
 
-  <ImageView
-      android:id="@+id/streamer_profile"
-      android:layout_width="56dp"
-      android:layout_height="56dp"
-      android:layout_centerHorizontal="true"
-      android:layout_marginTop="4dp"
-      tools:src="@drawable/cf_img_pfdefault"
-      />
+    <ImageView
+        android:id="@+id/streamer_profile"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        tools:src="@drawable/cf_img_pfdefault" />
 
-  <ImageView
-      android:id="@+id/live_on"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_alignLeft="@+id/streamer_profile"
-      android:layout_below="@+id/streamer_profile"
-      android:layout_centerHorizontal="true"
-      android:layout_marginTop="-12dp"
-      android:src="@drawable/blt_tag_live_3"
-      />
+    <ImageView
+        android:id="@+id/live_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/streamer_profile"
+        android:layout_alignLeft="@+id/streamer_profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-12dp"
+        android:src="@drawable/blt_tag_live_3" />
 
-  <TextView
-      android:id="@+id/streamer_nickname"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@+id/streamer_profile"
-      android:layout_centerHorizontal="true"
-      android:layout_marginTop="12dp"
-      android:ellipsize="end"
-      android:maxLines="1"
-      android:maxWidth="84dp"
-      android:textColor="#363838"
-      android:textSize="13dp"
-      tools:text="yoon"
-      />
+    <TextView
+        android:id="@+id/streamer_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/streamer_profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:ellipsize="end"
+        android:maxWidth="84dp"
+        android:maxLines="1"
+        android:textColor="#363838"
+        android:textSize="13dp"
+        tools:text="yoon" />
 </RelativeLayout>

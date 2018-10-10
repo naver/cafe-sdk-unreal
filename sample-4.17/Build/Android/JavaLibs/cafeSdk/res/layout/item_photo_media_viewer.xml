@@ -1,60 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.naver.glink.android.sdk.ui.widget.dragviewer.DragView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.naver.plug.cafe.ui.widget.dragviewer.DragView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-  <RelativeLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent">
-
-    <com.naver.glink.android.sdk.ui.widget.progress.PlugProgressbar
-        android:id="@+id/full_image_progress"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_centerInParent="true"/>
-
-    <com.naver.glink.android.sdk.ui.widget.photoview.PhotoView
-        android:id="@+id/full_image"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"/>
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/viewer_error_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:background="@color/viewer_bg"
-        android:visibility="gone"
-        android:clickable="true"
-        android:orientation="vertical">
+        <com.naver.plug.cafe.ui.widget.progress.PlugProgressbar
+            android:id="@+id/full_image_progress"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true" />
 
-      <ImageView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:src="@drawable/cf_icon_error_info"/>
+        <com.naver.plug.cafe.ui.widget.photoview.PhotoView
+            android:id="@+id/full_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
 
-      <TextView
-          android:id="@+id/message"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="16dp"
-          android:textSize="16dp"
-          android:textColor="@color/white1"
-          android:textStyle="bold"/>
+        <LinearLayout
+            android:id="@+id/viewer_error_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/viewer_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-      <Button
-          android:id="@+id/retry"
-          android:layout_width="wrap_content"
-          android:layout_height="36dp"
-          android:layout_marginTop="16dp"
-          android:gravity="center"
-          android:paddingLeft="18dp"
-          android:paddingRight="18dp"
-          android:textColor="@color/white1"
-          android:textSize="16dp"
-          android:text="@string/retry_error"/>
-    </LinearLayout>
-  </RelativeLayout>
-</com.naver.glink.android.sdk.ui.widget.dragviewer.DragView>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cf_icon_error_info" />
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/white1"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/retry"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp"
+                android:text="@string/retry_error"
+                android:textColor="@color/white1"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</com.naver.plug.cafe.ui.widget.dragviewer.DragView>

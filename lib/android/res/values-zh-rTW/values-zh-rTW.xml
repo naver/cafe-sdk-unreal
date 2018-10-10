@@ -7,6 +7,7 @@
     <string name="all_media_no_permissions">沒有權限。</string>
     <string name="already_exist_nickname_message">已使用的暱稱。</string>
     <string name="article_comments_count">留言</string>
+    <string name="article_count_comment">There are %,d comments.</string>
     <string name="article_count_message">有%,d個文章。</string>
     <string name="article_count_txt">撰寫的文章</string>
     <string name="article_empty">沒有已張貼的文章。</string>
@@ -39,6 +40,10 @@
     <string name="cancel_article_write_confirm_message">要取消貼文嗎？</string>
     <string name="chat_initialize_fail">重置聊天失敗</string>
     <string name="close_title">關閉</string>
+    <string name="comment_count">Commented Count</string>
+    <string name="comment_deletion_by_admin">管理員已刪除此留言。</string>
+    <string name="comment_deletion_by_admin_for">因%1$s原因已刪除此留言。 </string>
+    <string name="comment_deletion_by_user">作者已刪除此留言。</string>
     <string name="comment_empty">沒有登錄的留言。</string>
     <string name="comment_hint">請輸入內容。</string>
     <string name="comment_not_exist">沒有留言。</string>
@@ -49,6 +54,8 @@
     <string name="date_format_hrs">%d小時</string>
     <string name="date_format_just_now">剛剛</string>
     <string name="date_format_mins">%d分</string>
+    <string name="date_format_remain_datetime_from_current_day">剩餘%1$s日 </string>
+    <string name="date_format_remain_datetime_from_current_hour">剩餘%1$s小時 </string>
     <string name="date_format_yesterday">昨天</string>
     <string name="delete">刪除</string>
     <string name="delete_chat_message">삭제하기</string>
@@ -127,6 +134,8 @@
     <string name="member_count_format">會員人數 %1$,d名</string>
     <string name="menu_change_channel">要變更為所選頻道嗎？\n變更頻道時內容將一同變更。</string>
     <string name="modify_complete_message">已修改。</string>
+    <string name="moot_not_support_modify">僅可於Moot應用程式使用該功能。</string>
+    <string name="moot_not_support_show">目前版本無法查看的內容</string>
     <string name="more_actions">更多</string>
     <string name="movie_over_limit_size_message">所選影片\n超過上傳容量上限。</string>
     <string name="movie_permission_setting_message">沒有權限，無法夾帶影片。\n請於[設定 > APP]確認該儲存權限。</string>
@@ -161,6 +170,8 @@
     <string name="pin_to_top">上端固定公告</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">info</string>
+    <string name="poll_closed">已截止的投票</string>
+    <string name="poll_opened">投票中</string>
     <string name="popular_article">查看\n熱門文章</string>
     <string name="profile_articles_total">Total</string>
     <string name="profile_become_member">若登入將自動成為本Cafe成員。</string>
@@ -225,6 +236,8 @@
     <string name="video_already_delete_error">已刪除的影片。</string>
     <string name="video_like_count_message">라이브 중 %,d개의 &lt;img src=\"cf_icon_doubleheart_cs\"> 를 받았습니다.</string>
     <string name="view_original">原文</string>
+    <string name="vote_count">%1$s 已投票</string>
+    <string name="vote_multi_select_allowed">可多選</string>
     <string name="waiting_join_apply_message">申請加入中。</string>
     <string name="want_cafe_member">要加入會員嗎？</string>
     <string name="widget_button_cafe">遊戲社群</string>

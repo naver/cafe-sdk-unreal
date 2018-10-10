@@ -1,46 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white1"
     android:paddingLeft="@dimen/article_media_item_margin"
-    android:paddingRight="@dimen/article_media_item_margin"
-    >
+    android:paddingRight="@dimen/article_media_item_margin">
 
-  <ImageView
-      android:id="@+id/image_view"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_centerInParent="true"
-      android:layout_marginTop="20dp"
-      />
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp" />
 
-  <ImageView
-      android:id="@+id/gif_image_view"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_centerInParent="true"
-      android:layout_marginTop="20dp"
-      />
+    <ImageView
+        android:id="@+id/gif_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp" />
 
-  <ImageView
-      android:id="@+id/gif_play"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_centerInParent="true"
-      android:layout_marginTop="20dp"
-      android:padding="15dp"
-      android:src="@drawable/cf_icon_gif"
-      />
+    <ImageView
+        android:id="@+id/gif_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:padding="15dp"
+        android:src="@drawable/cf_icon_gif"
+        android:visibility="gone" />
 
-  <ProgressBar
-      android:id="@+id/gif_progress_bar"
-      android:layout_width="21dp"
-      android:layout_height="21dp"
-      android:layout_centerInParent="true"
-      android:layout_marginTop="20dp"
-      android:theme="@style/notitle_transparent_defaultdialog"
-      style="?android:attr/progressBarStyleSmall"
-      />
+    <ProgressBar
+        android:id="@+id/gif_progress_bar"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:theme="@style/notitle_transparent_defaultdialog" />
 </RelativeLayout>
