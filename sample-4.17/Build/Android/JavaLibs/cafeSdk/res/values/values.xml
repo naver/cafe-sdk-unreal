@@ -216,7 +216,7 @@
     <string name="essential_permission">필수적 권한</string>
     <string name="exist_prohibit_word_nickname_message">Prohibited words are included.</string>
     <string name="flavor_name" translatable="false">real</string>
-    <string name="host_moot_photo_infra" translatable="false">https://beta.ssl.phinf.net/moot</string>
+    <string name="host_moot_photo_infra" translatable="false">https://g-moot.pstatic.net</string>
     <string name="host_video_infra" translatable="false">http://apis.naver.com/rmcnmv/rmcnmv</string>
     <string name="hosts_article" translatable="false">https://apis.naver.com</string>
     <string name="hosts_attach" translatable="false">https://up.cafe.naver.com</string>
@@ -324,7 +324,7 @@
     <string name="pin_to_top">Pin to Top</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">Info</string>
-    <string name="plug_sdk_version" translatable="false">4.0.0</string>
+    <string name="plug_sdk_version" translatable="false">4.0.1</string>
     <string name="poll_closed">Poll closed</string>
     <string name="poll_opened">Poll opened</string>
     <string name="popular_article">See\npopular posts</string>

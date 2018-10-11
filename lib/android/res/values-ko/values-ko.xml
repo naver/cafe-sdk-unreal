@@ -163,7 +163,7 @@
     <string name="not_supported_rtmp_abi">죄송합니다. 현재 일부 기기에서 라이브 송출이 불가합니다.\n문제를 해결 중이니, 조금만 기다려 주시기 바랍니다.</string>
     <string name="on_live_message">현재 &lt;font color="#00ca30">라이브&lt;/font> 방송 중입니다.</string>
     <string name="permission_record">[선택적 권한]\n외부 소리를 녹음하기 위해서는 마이크 권한이 필요합니다. \n[설정>앱]에서 게임의 마이크 권한을 허용해주세요.</string>
-    <string name="permission_storage">사진 또는 동영상 파일을 첨부하기 위한 저장 권한 허용이 필요합니다.</string>
+    <string name="permission_storage">[선택적 권한]\n사진 또는 동영상 파일을 첨부하기 위한 저장 권한 허용이 필요합니다.</string>
     <string name="permission_storage_record">[필수적 권한]\n저장 권한 : 녹화된 동영상을 저장하기 위한 권한입니다.\n[선택적 권한]\n마이크 : 동영상 저장 시 마이크로 소리를 녹음하기 위한 권한입니다.</string>
     <string name="photo_album">사진 앨범</string>
     <string name="photo_upload_error">사진을 등록할 수 없습니다.</string>
