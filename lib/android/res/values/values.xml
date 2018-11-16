@@ -324,7 +324,7 @@
     <string name="pin_to_top">Pin to Top</string>
     <string name="plug_bottom_channel">Channel</string>
     <string name="plug_info">Info</string>
-    <string name="plug_sdk_version" translatable="false">4.0.3</string>
+    <string name="plug_sdk_version" translatable="false">4.0.4</string>
     <string name="poll_closed">Poll closed</string>
     <string name="poll_opened">Poll opened</string>
     <string name="popular_article">See\npopular posts</string>
