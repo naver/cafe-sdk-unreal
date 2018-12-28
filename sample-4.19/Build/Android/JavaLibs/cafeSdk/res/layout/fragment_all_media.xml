@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="com.naver.plug.cafe.ui.media.AllMediaFragmentView">
+    tools:context="com.naver.plug.ui.media.AllMediaFragmentView">
 
     <RelativeLayout
         android:layout_width="match_parent"
