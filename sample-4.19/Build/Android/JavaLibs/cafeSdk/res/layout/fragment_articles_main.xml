@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="com.naver.plug.cafe.ui.articles.ArticlesMainFragmentView">
+    tools:context="com.naver.plug.ui.list.ArticlesMainFragmentView">
 
     <com.naver.plug.cafe.ui.widget.ScrollListenerLayout
         android:id="@+id/article_list_scroll_view"
