@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="com.naver.plug.cafe.ui.banner.BannersFragmentView">
+    tools:context="com.naver.plug.ui.banner.BannersFragmentView">
 
     <RelativeLayout
         android:id="@+id/full_banners_layout"

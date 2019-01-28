@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:clickable="true"
-    tools:context="com.naver.plug.cafe.ui.articles.SearchArticlesFragmentView">
+    tools:context="com.naver.plug.ui.search.cafe.CafeSearchArticlesFragmentView">
 
     <ListView
         android:id="@android:id/list"

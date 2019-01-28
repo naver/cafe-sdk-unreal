@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    tools:context="com.naver.plug.cafe.ui.write.WriteFragmentView">
+    tools:context="com.naver.plug.ui.article.write.OldWriteFragmentView">
 
     <LinearLayout
         android:layout_width="match_parent"
