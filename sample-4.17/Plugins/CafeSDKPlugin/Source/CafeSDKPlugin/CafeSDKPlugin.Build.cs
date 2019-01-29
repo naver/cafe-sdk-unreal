@@ -117,13 +117,6 @@ namespace UnrealBuildTool.Rules
                 PublicWeakFrameworks.Add("ReplayKit");
             }
 
-            if (Target.Platform == UnrealTargetPlatform.Android)
-            {
-
-                string PluginPath = Utils.MakePathRelativeTo(ModuleDirectory, Target.RelativeEnginePath);
-                AdditionalPropertiesForReceipt.Add("AndroidPlugin", Path.Combine(PluginPath, "CafeSDKPlugin_APL.xml"));
-            }
-
 		}
 	}
 }
