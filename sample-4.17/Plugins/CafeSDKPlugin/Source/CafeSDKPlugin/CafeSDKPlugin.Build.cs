@@ -92,19 +92,13 @@ namespace UnrealBuildTool.Rules
                         "../../ThirdPartyFrameworks/iOS/ApiGateway.embeddedframework.zip"
                     )
                 );
-                PublicAdditionalFrameworks.Add(
-                    new UEBuildFramework(
-                        "KaleidoCore",
-                        "../../ThirdPartyFrameworks/iOS/KaleidoCore.embeddedframework.zip",
-                        "Resources/KaleidoCore.framework"
-                    )
-                );
-                PublicAdditionalFrameworks.Add(
-                    new UEBuildFramework(
-                        "NaverCafeSDKLive",
-                        "../../ThirdPartyFrameworks/iOS/NaverCafeSDKLive.embeddedframework.zip"
-                    )
-                );
+				PublicAdditionalFrameworks.Add(
+					new UEBuildFramework(
+					"openssl",
+					"../../ThirdPartyFrameworks/iOS/openssl.embeddedframework.zip"
+					)
+				);
+
 		bEnableObjCExceptions = false;
                 PublicFrameworks.AddRange(
                     new string[] {
