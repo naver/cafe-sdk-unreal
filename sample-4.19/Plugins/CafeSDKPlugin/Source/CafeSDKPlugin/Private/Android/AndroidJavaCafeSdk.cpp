@@ -27,7 +27,7 @@ FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     StartHomeMethod = GetGlinkClassStaticMethod("startHome", "(Landroid/content/Context;)V");
     //StartNoticeMethod = GetGlinkClassStaticMethod("startNotice", "(Landroid/content/Context;)V");
     //StartEventMethod = GetGlinkClassStaticMethod("startEvent", "(Landroid/content/Context;)V");
-    //StartMenuMethod = GetGlinkClassStaticMethod("startMenu", "(Landroid/content/Context;)V");
+    StartMenuMethod = GetGlinkClassStaticMethod("startMenu", "(Landroid/content/Context;I)V");
     //StartProfileMethod = GetGlinkClassStaticMethod("startProfile", "(Landroid/content/Context;)V");
     StartWriteMethod = GetGlinkClassStaticMethod("startWrite", "(Landroid/content/Context;)V");
     StartImageWriteMethod = GetGlinkClassStaticMethod("startImageWrite", "(Landroid/content/Context;Ljava/lang/String;)V");
@@ -110,9 +110,13 @@ void FAndroidJavaCafeSdk::StartEvent() const
   //StartTab(StartEventMethod);
 }
 
-void FAndroidJavaCafeSdk::StartMenu() const
+void FAndroidJavaCafeSdk::StartMenu(int32 MenuNumber) const
 {
-  //StartTab(StartMenuMethod);
+    JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
+    JEnv->CallStaticVoidMethod(GlinkClass,
+                               StartMenuMethod.Method,
+                               FJavaWrapper::GameActivityThis,
+                               MenuNumber);
 }
 
 void FAndroidJavaCafeSdk::StartProfile() const
