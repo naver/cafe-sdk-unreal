@@ -57,10 +57,11 @@ void FIOSCafeSdk::StartEvent() const
                                                           waitUntilDone:NO];
 }
 
-void FIOSCafeSdk::StartMenu() const
+void FIOSCafeSdk::StartMenu(int32 MenuNumber) const
 {
-    [[CafeCallbackObject getSharedInstance] performSelectorOnMainThread:@selector(startMenu)
-                                                             withObject:nil
+    NSNumber *menuId = [NSNumber numberWithInt:MenuNumber];
+    [[CafeCallbackObject getSharedInstance] performSelectorOnMainThread:@selector(startMenuWithMenuId:)
+                                                             withObject:menuId
                                                           waitUntilDone:NO];
 }
 
@@ -123,7 +124,7 @@ void FIOSCafeSdk::SyncGameUserId(FString GameUserId) const
 
 void FIOSCafeSdk::StartWidget() const
 {
-    
+
 }
 void FIOSCafeSdk::StopWidget() const
 {
@@ -135,7 +136,7 @@ void FIOSCafeSdk::ShowWidgetWhenUnloadSdk(bool bUse) const
 }
 void FIOSCafeSdk::SetWidgetStartPosition(bool bIsLeft, int HeightPercentage) const
 {
-    
+
 }
 
 void FIOSCafeSdk::SetUseVideoRecord(bool bUse) const
@@ -169,7 +170,7 @@ void FIOSCafeSdk::SendNewUser(FString GameUserId, FString Market)
 {
     [NCSDKStatistics sendNewUser:GameUserId.GetNSString()
                        andMarket:Market.GetNSString()];
-    
+
 }
 void FIOSCafeSdk::SendPayUser(FString GameUserId, double Pay, FString ProductCode, FString Currency, FString Market)
 {
@@ -180,7 +181,7 @@ void FIOSCafeSdk::SendPayUser(FString GameUserId, double Pay, FString ProductCod
                        andMarket:Market.GetNSString()];
 }
 
-//Naver Login 
+//Naver Login
 void FIOSCafeSdk::Init(FString ClientId, FString ClientSecret)
 {
     Init(ClientId, ClientSecret, -1);
@@ -234,7 +235,7 @@ void FIOSCafeSdk::StopRecord()
     return sharedInstance;
 }
 - (void)setSDKInfoWithClientId:(NSString *)clientId clientSecret:(NSString *)clientSecret cafeId:(NSInteger)cafeId {
-    
+
     [[NCSDKManager getSharedInstance] setNaverLoginClientId:clientId
                                      naverLoginClientSecret:clientSecret
                                                      cafeId:cafeId];
@@ -262,6 +263,9 @@ void FIOSCafeSdk::StopRecord()
 }
 - (void)startMenu {
     [[NCSDKManager getSharedInstance] presentMainViewControllerWithTabIndex:kGLTabTypeArticles];
+}
+- (void)startMenuWithMenuId:(NSNumber *)menuId {
+    [[NCSDKManager getSharedInstance] presentArticleListViewControllerWithMenuId:[menuId integerValue]];
 }
 - (void)startProfile {
     [[NCSDKManager getSharedInstance] presentMainViewControllerWithTabIndex:kGLTabTypeSerach];
