@@ -19,7 +19,7 @@ public:
     void StartHome() const;
     void StartNotice() const;
     void StartEvent() const;
-    void StartMenu() const;
+    void StartMenu(int32 MenuNumber) const;
     void StartProfile() const;
     void StartWrite() const;
     void StartImageWrite(FString ImageUri) const;
@@ -85,7 +85,7 @@ private:
     FJavaClassMethod StartHomeMethod;
     //FJavaClassMethod StartNoticeMethod;
     //FJavaClassMethod StartEventMethod;
-    //FJavaClassMethod StartMenuMethod;
+    FJavaClassMethod StartMenuMethod;
     //FJavaClassMethod StartProfileMethod;
     FJavaClassMethod StartWriteMethod;
     FJavaClassMethod StartImageWriteMethod;

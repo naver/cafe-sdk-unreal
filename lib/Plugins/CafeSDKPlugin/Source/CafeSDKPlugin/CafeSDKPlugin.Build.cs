@@ -1,12 +1,17 @@
 // Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
-
+using System.IO;
+using UnrealBuildTool;
 
 namespace UnrealBuildTool.Rules
 {
 	public class CafeSDKPlugin : ModuleRules
 	{
-		
-		public CafeSDKPlugin (TargetInfo Target)
+		private string ThirdPartyPath
+        {
+            get { return Path.GetFullPath(Path.Combine(ModuleDirectory, "../../ThirdPartyFrameworks/")); }
+        }
+
+		public CafeSDKPlugin (ReadOnlyTargetRules Target) : base (Target)
 		{
 			
 			PublicIncludePaths.AddRange(
@@ -87,7 +92,14 @@ namespace UnrealBuildTool.Rules
                         "../../ThirdPartyFrameworks/iOS/ApiGateway.embeddedframework.zip"
                     )
                 );
+				PublicAdditionalFrameworks.Add(
+					new UEBuildFramework(
+					"openssl",
+					"../../ThirdPartyFrameworks/iOS/openssl.embeddedframework.zip"
+					)
+				);
 
+		bEnableObjCExceptions = false;
                 PublicFrameworks.AddRange(
                     new string[] {
 						"UIKit",
@@ -98,12 +110,12 @@ namespace UnrealBuildTool.Rules
 						"MobileCoreServices",
 						"GameKit",
                         "AssetsLibrary",
-                        "WebKit"
+                        "WebKit",
+                        "ReplayKit"
                     }
                 );
                 PublicWeakFrameworks.Add("ReplayKit");
             }
-
 		}
 	}
 }

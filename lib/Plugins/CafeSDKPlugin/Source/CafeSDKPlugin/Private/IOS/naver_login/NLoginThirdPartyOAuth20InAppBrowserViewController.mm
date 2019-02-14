@@ -5,6 +5,7 @@
 //  Created by TY Kim on 2014. 8. 20..
 //  Copyright 2014 Naver Corp. All rights reserved.
 //
+
 #if PLATFORM_IOS
 #import "NLoginThirdPartyOAuth20InAppBrowserViewController.h"
 #import "NaverThirdPartyConstantsForApp.h"
@@ -77,7 +78,10 @@
 }
 
 - (void)makeBottomBar   {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     _bottomBar = [[UIView alloc] initWithFrame:CGRectMake(0, kThirdPartyMainWindowHeight - kBottomBarHeight, kThirdPartyMainWindowWidth, kThirdPartyMainWindowHeight)];
+#pragma clang diagnostic pop
     UIImage *loginBackground = [UIImage imageNamed:@"NaverAuth.bundle/login_bg_2.png"];
     _bottomBar.backgroundColor = [UIColor colorWithPatternImage:loginBackground];
     [_mainView addSubview:_bottomBar];
@@ -119,7 +123,11 @@
     } else {
         _topMargin = 0;
     }
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     _mainView = [[UIView alloc] initWithFrame:CGRectMake(0, _topMargin, kThirdPartyMainWindowWidth, kThirdPartyMainWindowHeight - _topMargin)];
+#pragma clang diagnostic pop
+    
     _mainView.backgroundColor = [UIColor colorWithRed:0x00/255.0 green:0x00/255.0 blue:0x00/255.0 alpha:0.5];
     [self.view addSubview:_mainView];
     
@@ -137,7 +145,10 @@
         bannerHeight = kThirdPartyBannerHeight;
         _bannerView.hidden = NO;
     }
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     _bannerView = [[UIView alloc] initWithFrame:CGRectMake(0, pointY, kThirdPartyMainWindowWidth, bannerHeight)];
+#pragma clang diagnostic pop
     _bannerView.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:251.0/255.0 blue:229.0/255.0 alpha:1];
     
     UIImageView *naverAppIconView = [[UIImageView alloc] init];
@@ -194,7 +205,10 @@
     UIImageView *closeImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NaverAuth.bundle/login_banner_btn_close.png"]];
     _bannerCloseButton = [UIButton buttonWithType:UIButtonTypeCustom];
     closeImageView.frame = CGRectMake(kThirdPartyBannerHeight - 10 - 11, 10, 11, 11);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     _bannerCloseButton.frame = CGRectMake(kThirdPartyMainWindowWidth - kThirdPartyBannerHeight, 0, kThirdPartyBannerHeight, kThirdPartyBannerHeight);
+#pragma clang diagnostic push
     [_bannerCloseButton addSubview:closeImageView];
     
     [_bannerCloseButton addTarget:self action:@selector(closeBannerView) forControlEvents:UIControlEventTouchUpInside];
@@ -206,10 +220,14 @@
 - (void)makeWebView
 {
     CGFloat webViewHeight = kThirdPartyMainWindowHeight - kBottomBarHeight - CGRectGetHeight(_bannerView.frame);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0,
                                                            CGRectGetMaxY(_bannerView.frame),
                                                            kThirdPartyMainWindowWidth,
                                                            webViewHeight)];
+#pragma clang diagnostic pop
+    
     _webView.delegate = self;
     _webView.scalesPageToFit = YES;
     [_mainView addSubview:_webView];

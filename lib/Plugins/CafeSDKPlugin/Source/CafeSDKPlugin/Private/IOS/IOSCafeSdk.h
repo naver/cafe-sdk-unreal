@@ -15,14 +15,14 @@ public:
     FIOSCafeSdk();
     
     void Init(FString ClientId, FString ClientSecret, int32 CafeId);
-    void InitGlobal(FString ClientId, int32 CafeId);
+    void InitGlobal(FString ConsumerKey, FString ConsumerSecret, int32 CommunityId, int32 LoungeNo);
     
     void SetChannelCode(FString ChannelCode) const;
     
     void StartHome() const;
     void StartNotice() const;
     void StartEvent() const;
-    void StartMenu() const;
+    void StartMenu(int32 MenuNumber) const;
     void StartProfile() const;
     void StartWrite() const;
     void StartImageWrite(FString ImageUri) const;
@@ -68,7 +68,7 @@ private:
 @interface CafeCallbackObject : NSObject <NCSDKManagerDelegate, NCNaverLoginManagerDelegate, NCSDKRecordManagerDelegate>
 + (CafeCallbackObject*)getSharedInstance;
 - (void)setSDKInfoWithClientId:(NSString *)clientId clientSecret:(NSString *)clientSecret cafeId:(NSInteger)cafeId;
-- (void)setGlobalSDKInfoWithClientId:(NSString *)clientId communityId:(NSInteger)communityId;
+- (void)setGlobalConsumerKey:(NSString *)globalConsumerKey globalConsumerSecret:(NSString *)globalConsumerSecret globalCommunityNo:(NSInteger)globalCommunityNo globalLoungeNo:(NSInteger)globalLoungeNo;
 - (void)setChannelCode:(NSString *)channelCode;
 - (void)startHome;
 - (void)startNotice;

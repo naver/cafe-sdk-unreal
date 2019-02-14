@@ -47,10 +47,10 @@ void UCafeSdkBlueprintLibrary::StartEvent()
     GetSharedCafeSdk()->StartEvent();
 }
 
-void UCafeSdkBlueprintLibrary::StartMenu()
+void UCafeSdkBlueprintLibrary::StartMenu(int32 MenuNumber)
 {
     if (!IsSupportedOSVersion()) return;
-    GetSharedCafeSdk()->StartMenu();
+    GetSharedCafeSdk()->StartMenu(MenuNumber);
 }
 
 void UCafeSdkBlueprintLibrary::StartProfile()

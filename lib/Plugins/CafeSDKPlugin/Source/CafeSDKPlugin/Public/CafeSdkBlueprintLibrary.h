@@ -29,7 +29,7 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     static void StartEvent();
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
-    static void StartMenu();
+    static void StartMenu(int32 MenuNumber);
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void StartProfile();
