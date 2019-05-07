@@ -32,8 +32,8 @@
     <string name="cancel">Annulla</string>
     <string name="cancel_article_write_confirm_message">Vuoi annullare un post?</string>
     <string name="close_title">Chiudi</string>
-    <string name="comment_deletion_by_admin">Questo commento è stato rimosso dall\'amministratore</string>
-    <string name="comment_deletion_by_user">Questo commento è stato eliminato</string>
+    <string name="comment_deletion_by_admin"><![CDATA[Questo commento è stato rimosso dall\'amministratore]]></string>
+    <string name="comment_deletion_by_user"><![CDATA[Questo commento è stato eliminato]]></string>
     <string name="comment_hint">Per favore inserire il testo.</string>
     <string name="comment_not_exist">Nessun commenti</string>
     <string name="comment_write_permission_error">Non hai il permesso di aggiungere un commento.</string>
@@ -43,8 +43,8 @@
     <string name="date_format_hrs">%d hr</string>
     <string name="date_format_just_now">Ora</string>
     <string name="date_format_mins">%d min</string>
-    <string name="date_format_remain_datetime_from_current_day">%1$s giorni rimasti </string>
-    <string name="date_format_remain_datetime_from_current_hour">%1$s ore rimaste </string>
+    <string name="date_format_remain_datetime_from_current_day"><![CDATA[%1$s giorni rimasti ]]></string>
+    <string name="date_format_remain_datetime_from_current_hour"><![CDATA[%1$s ore rimaste ]]></string>
     <string name="date_format_yesterday">Ieri</string>
     <string name="delete">Elimina</string>
     <string name="delete_confirm_message">Vuoi eliminarlo?</string>
@@ -101,8 +101,8 @@
     <string name="photo_upload_error">Caricamento foto fallita.</string>
     <string name="pin_to_top">Pin to Top</string>
     <string name="plug_info">Informazioni</string>
-    <string name="poll_closed">Votazione Chiusa</string>
-    <string name="poll_opened">Votazione Aperta</string>
+    <string name="poll_closed"><![CDATA[Votazione Chiusa]]></string>
+    <string name="poll_opened"><![CDATA[Votazione Aperta]]></string>
     <string name="popular_article">Vedi\npost popolari</string>
     <string name="profile_login">로그인</string>
     <string name="profile_logout">Log out</string>
@@ -142,8 +142,8 @@
     <string name="translation">Traduzioni</string>
     <string name="unable_load_videos">Impossibile caricare video.</string>
     <string name="view_original">Originale</string>
-    <string name="vote_count">Hanno votato in %1$s</string>
-    <string name="vote_multi_select_allowed">Multi-selezione permessa</string>
+    <string name="vote_count"><![CDATA[Hanno votato in %1$s]]></string>
+    <string name="vote_multi_select_allowed"><![CDATA[Multi-selezione permessa]]></string>
     <string name="waiting_join_apply_message">In attesa di entrare nel Cafe ...</string>
     <string name="widget_button_cafe">Community</string>
     <string name="widget_button_capture">Screenshot</string>

@@ -32,8 +32,8 @@
     <string name="cancel">Abbrechen</string>
     <string name="cancel_article_write_confirm_message">Möchten Sie den Post abbrechen?</string>
     <string name="close_title">Schließen</string>
-    <string name="comment_deletion_by_admin">This comment has been removed by admin.</string>
-    <string name="comment_deletion_by_user">This comment has been deleted.</string>
+    <string name="comment_deletion_by_admin"><![CDATA[This comment has been removed by admin.]]></string>
+    <string name="comment_deletion_by_user"><![CDATA[This comment has been deleted.]]></string>
     <string name="comment_hint">Bitte Text eingeben.</string>
     <string name="comment_not_exist">Keine Kommentare</string>
     <string name="comment_write_permission_error">Ihnen fehlt die Erlaubnis, ein Kommentar beizufügen.</string>
@@ -43,8 +43,8 @@
     <string name="date_format_hrs">%d Std.</string>
     <string name="date_format_just_now">Gerade eben</string>
     <string name="date_format_mins">%d Min.</string>
-    <string name="date_format_remain_datetime_from_current_day">%1$s days left </string>
-    <string name="date_format_remain_datetime_from_current_hour">%1$s hours left </string>
+    <string name="date_format_remain_datetime_from_current_day"><![CDATA[%1$s days left ]]></string>
+    <string name="date_format_remain_datetime_from_current_hour"><![CDATA[%1$s hours left ]]></string>
     <string name="date_format_yesterday">Gestern</string>
     <string name="delete">Löschen</string>
     <string name="delete_confirm_message">Möchten Sie dies löschen?</string>
@@ -101,8 +101,8 @@
     <string name="photo_upload_error">Upload eines Fotos fehlgeschlagen.</string>
     <string name="pin_to_top">Oben anheften</string>
     <string name="plug_info">Info</string>
-    <string name="poll_closed">Poll closed</string>
-    <string name="poll_opened">Poll opened</string>
+    <string name="poll_closed"><![CDATA[Poll closed]]></string>
+    <string name="poll_opened"><![CDATA[Poll opened]]></string>
     <string name="popular_article">Beliebte Posts\neinsehen</string>
     <string name="profile_login">로그인</string>
     <string name="profile_logout">Abmelden</string>
@@ -142,8 +142,8 @@
     <string name="translation">Übersetzung</string>
     <string name="unable_load_videos">Videos können nicht geladen werden.</string>
     <string name="view_original">Original</string>
-    <string name="vote_count">%1$s voted</string>
-    <string name="vote_multi_select_allowed">Multi-selection allowed</string>
+    <string name="vote_count"><![CDATA[%1$s voted]]></string>
+    <string name="vote_multi_select_allowed"><![CDATA[Multi-selection allowed]]></string>
     <string name="waiting_join_apply_message">Verbindung zum Café wird hergestellt…</string>
     <string name="widget_button_cafe">Community</string>
     <string name="widget_button_capture">Bildschirm Photographien</string>

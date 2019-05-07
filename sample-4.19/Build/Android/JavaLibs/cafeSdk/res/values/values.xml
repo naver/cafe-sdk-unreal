@@ -46,47 +46,6 @@
     <color name="white1_30p">#4dffffff</color>
     <color name="white2">#f8f8f8</color>
     <color name="white3">#f2f2f2</color>
-    <declare-styleable name="AspectRatioImageView"><attr format="integer" name="horizontalRatio"/><attr format="integer" name="verticalRatio"/><attr format="enum" name="aspect">
-            <enum name="aspectX" value="0"/>
-            <enum name="aspectY" value="1"/>
-            <enum name="aspectXY" value="2"/>
-            <enum name="aspectX_Square" value="3"/>
-            <enum name="aspectY_Square" value="4"/>
-        </attr><attr format="dimension" name="imageMaxWidth"/><attr format="dimension" name="imageMaxHeight"/></declare-styleable>
-    <declare-styleable name="CirclePageIndicator"><attr name="centered"/><attr format="color" name="fillColor"/><attr format="color" name="pageColor"/><attr name="android:orientation"/><attr format="dimension" name="radius"/><attr format="boolean" name="snap"/><attr format="color" name="strokeColor"/><attr name="strokeWidth"/><attr name="android:background"/></declare-styleable>
-    <declare-styleable name="FloatingActionButton"><attr format="color" name="fab_colorNormal"/><attr format="color" name="fab_colorPressed"/><attr format="color" name="fab_colorDisabled"/><attr format="color" name="fab_colorRipple"/><attr format="boolean" name="fab_showShadow"/><attr format="color" name="fab_shadowColor"/><attr format="dimension" name="fab_shadowRadius"/><attr format="dimension" name="fab_shadowXOffset"/><attr format="dimension" name="fab_shadowYOffset"/><attr format="enum" name="fab_size">
-      <enum name="normal" value="0"/>
-      <enum name="mini" value="1"/>
-    </attr><attr format="reference" name="fab_showAnimation"/><attr format="reference" name="fab_hideAnimation"/><attr format="string" name="fab_label"/><attr format="dimension" name="fab_elevationCompat"/><attr format="color" name="fab_progress_color"/><attr format="color" name="fab_progress_backgroundColor"/><attr format="boolean" name="fab_progress_indeterminate"/><attr format="integer" name="fab_progress_max"/><attr format="integer" name="fab_progress"/><attr format="boolean" name="fab_progress_showBackground"/><attr format="boolean" name="fab_is_trash"/></declare-styleable>
-    <declare-styleable name="FloatingActionMenu"><attr format="boolean" name="menu_showShadow"/><attr format="dimension" name="menu_buttonSpacing"/><attr format="dimension" name="menu_labels_margin"/><attr format="reference" name="menu_labels_showAnimation"/><attr format="reference" name="menu_labels_hideAnimation"/><attr format="dimension" name="menu_labels_paddingTop"/><attr format="dimension" name="menu_labels_paddingLeft"/><attr format="dimension" name="menu_labels_paddingRight"/><attr format="dimension" name="menu_labels_paddingBottom"/><attr format="dimension" name="menu_labels_padding"/><attr format="reference|color" name="menu_labels_textColor"/><attr format="dimension" name="menu_labels_textSize"/><attr format="dimension" name="menu_labels_cornerRadius"/><attr format="boolean" name="menu_labels_showShadow"/><attr format="color" name="menu_labels_colorNormal"/><attr format="color" name="menu_labels_colorPressed"/><attr format="color" name="menu_labels_colorRipple"/><attr format="enum" name="menu_labels_position">
-      <enum name="left" value="0"/>
-      <enum name="right" value="1"/>
-    </attr><attr format="reference" name="menu_icon"/><attr format="integer" name="menu_animationDelayPerItem"/><attr format="reference" name="menu_buttonToggleAnimation"/><attr format="boolean" name="menu_labels_singleLine"/><attr format="enum" name="menu_labels_ellipsize">
-      <enum name="none" value="0"/>
-      <enum name="start" value="1"/>
-      <enum name="middle" value="2"/>
-      <enum name="end" value="3"/>
-      <enum name="marquee" value="4"/>
-    </attr><attr format="integer" name="menu_labels_maxLines"/><attr format="enum" name="menu_fab_size">
-      <enum name="normal" value="0"/>
-      <enum name="mini" value="1"/>
-    </attr><attr format="reference" name="menu_labels_style"/><attr format="color" name="menu_shadowColor"/><attr format="dimension" name="menu_shadowRadius"/><attr format="dimension" name="menu_shadowXOffset"/><attr format="dimension" name="menu_shadowYOffset"/><attr format="color" name="menu_colorNormal"/><attr format="color" name="menu_colorPressed"/><attr format="color" name="menu_colorRipple"/><attr format="enum" name="menu_openDirection">
-      <enum name="up" value="0"/>
-      <enum name="down" value="1"/>
-      <enum name="left" value="2"/>
-      <enum name="right" value="3"/>
-    </attr><attr format="color" name="menu_backgroundColor"/><attr format="string" name="menu_fab_label"/><attr format="reference" name="menu_fab_show_animation"/><attr format="reference" name="menu_fab_hide_animation"/></declare-styleable>
-    <declare-styleable name="LinePageIndicator"><attr name="centered"/><attr name="unselectedColor"/><attr name="selectedColor"/><attr format="dimension" name="lineWidth"/><attr name="strokeWidth"/><attr format="dimension" name="gapWidth"/><attr name="android:background"/></declare-styleable>
-    <declare-styleable name="TitlePageIndicator"><attr format="dimension" name="clipPadding"/><attr format="color" name="footerColor"/><attr format="dimension" name="footerLineHeight"/><attr name="footerIndicatorStyle">
-      <enum name="none" value="0"/>
-      <enum name="triangle" value="1"/>
-      <enum name="underline" value="2"/>
-    </attr><attr format="dimension" name="footerIndicatorHeight"/><attr format="dimension" name="footerIndicatorUnderlinePadding"/><attr format="dimension" name="footerPadding"/><attr name="linePosition">
-      <enum name="bottom" value="0"/>
-      <enum name="top" value="1"/>
-    </attr><attr name="selectedColor"/><attr format="boolean" name="selectedBold"/><attr name="android:textColor"/><attr name="android:textSize"/><attr format="dimension" name="titlePadding"/><attr format="dimension" name="topPadding"/><attr name="android:background"/></declare-styleable>
-    <declare-styleable name="UnderlinePageIndicator"><attr format="boolean" name="fades"/><attr format="integer" name="fadeDelay"/><attr format="integer" name="fadeLength"/><attr name="selectedColor"/><attr name="android:background"/></declare-styleable>
-    <declare-styleable name="ViewPagerIndicator"><attr format="reference" name="vpiCirclePageIndicatorStyle"/><attr format="reference" name="vpiIconPageIndicatorStyle"/><attr format="reference" name="vpiLinePageIndicatorStyle"/><attr format="reference" name="vpiTitlePageIndicatorStyle"/><attr format="reference" name="vpiTabPageIndicatorStyle"/><attr format="reference" name="vpiUnderlinePageIndicatorStyle"/></declare-styleable>
     <dimen name="article_media_item_margin">0dp</dimen>
     <dimen name="comment_writer_nickname_margin_right">56dp</dimen>
     <dimen name="default_circle_indicator_radius">3dp</dimen>
@@ -96,6 +55,7 @@
     <dimen name="glink_trash_top_margine">6dp</dimen>
     <dimen name="glink_widget_padding">9dp</dimen>
     <dimen name="glink_widget_size_normal">54dp</dimen>
+    <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="labels_text_size">14sp</dimen>
     <dimen name="list_item_margin">16dp</dimen>
     <dimen name="menu_selector_padding">8dp</dimen>
@@ -104,6 +64,7 @@
     <dimen name="widget_speed">3dp</dimen>
     <item name="fab_label" type="id"/>
     <item name="glide_image_url_tag" type="id"/>
+    <item name="item_touch_helper_previous_elevation" type="id"/>
     <integer name="default_circle_indicator_orientation">0</integer>
     <string name="all_article">All</string>
     <string name="all_board">All</string>
@@ -137,8 +98,8 @@
     <string name="cancel">Cancel</string>
     <string name="cancel_article_write_confirm_message">Do you want to cancel a post?</string>
     <string name="close_title">Close</string>
-    <string name="comment_deletion_by_admin">This comment has been removed by admin.</string>
-    <string name="comment_deletion_by_user">This comment has been deleted.</string>
+    <string name="comment_deletion_by_admin"><![CDATA[This comment has been removed by admin.]]></string>
+    <string name="comment_deletion_by_user"><![CDATA[This comment has been deleted.]]></string>
     <string name="comment_hint">Please enter text.</string>
     <string name="comment_not_exist">No comments</string>
     <string name="comment_write_permission_error">You do not have permission to add a comment.</string>
@@ -148,8 +109,8 @@
     <string name="date_format_hrs">%d hr</string>
     <string name="date_format_just_now">Just now</string>
     <string name="date_format_mins">%d min</string>
-    <string name="date_format_remain_datetime_from_current_day">%1$s days left </string>
-    <string name="date_format_remain_datetime_from_current_hour">%1$s hours left </string>
+    <string name="date_format_remain_datetime_from_current_day"><![CDATA[%1$s days left ]]></string>
+    <string name="date_format_remain_datetime_from_current_hour"><![CDATA[%1$s hours left ]]></string>
     <string name="date_format_yesterday">Yesterday</string>
     <string name="delete">Delete</string>
     <string name="delete_confirm_message">Do you want to delete it?</string>
@@ -219,9 +180,9 @@
     <string name="photo_upload_error">Uploading a photo failed.</string>
     <string name="pin_to_top">Pin to Top</string>
     <string name="plug_info">Info</string>
-    <string name="plug_sdk_version" translatable="false">4.2.1</string>
-    <string name="poll_closed">Poll closed</string>
-    <string name="poll_opened">Poll opened</string>
+    <string name="plug_sdk_version" translatable="false">4.2.2</string>
+    <string name="poll_closed"><![CDATA[Poll closed]]></string>
+    <string name="poll_opened"><![CDATA[Poll opened]]></string>
     <string name="popular_article">See\npopular posts</string>
     <string name="profile_login">로그인</string>
     <string name="profile_logout">Log Out</string>
@@ -261,8 +222,8 @@
     <string name="translation">Translation</string>
     <string name="unable_load_videos">Unable to load videos.</string>
     <string name="view_original">Original</string>
-    <string name="vote_count">%1$s voted</string>
-    <string name="vote_multi_select_allowed">Multi-selection allowed</string>
+    <string name="vote_count"><![CDATA[%1$s voted]]></string>
+    <string name="vote_multi_select_allowed"><![CDATA[Multi-selection allowed]]></string>
     <string name="waiting_join_apply_message">Waiting for joining the Cafe…</string>
     <string name="widget_button_cafe">Community</string>
     <string name="widget_button_capture">Capture Screen</string>
@@ -271,6 +232,10 @@
     <string name="widget_trash">Tapping the community icon will restore it.</string>
     <string name="write_permission_error">You do not have permission to publish a post in this forum.</string>
     <string name="written_comment_count_txt">Commented</string>
+    <style name="GamePopupAnimation.Window" parent="@android:style/Animation.Activity">
+    <item name="android:windowEnterAnimation">@anim/slide_in_right</item>
+    <item name="android:windowExitAnimation">@anim/slide_out_right</item>
+  </style>
     <style name="Glink.SeekBar" parent="android:Widget.SeekBar">
     <item name="android:paddingLeft">0dip</item>
     <item name="android:paddingRight">16dip</item>
@@ -318,4 +283,203 @@
     <item name="android:windowExitAnimation">@anim/widget_exit</item>
   </style>
     <style name="widget_show_animation"/>
+    <declare-styleable name="AspectRatioImageView">
+        <attr format="integer" name="horizontalRatio"/>
+        <attr format="integer" name="verticalRatio"/>
+        <attr format="enum" name="aspect">
+            <enum name="aspectX" value="0"/>
+            <enum name="aspectY" value="1"/>
+            <enum name="aspectXY" value="2"/>
+            <enum name="aspectX_Square" value="3"/>
+            <enum name="aspectY_Square" value="4"/>
+        </attr>
+        <attr format="dimension" name="imageMaxWidth"/>
+        <attr format="dimension" name="imageMaxHeight"/>
+    </declare-styleable>
+    <declare-styleable name="CirclePageIndicator">
+    <!-- Whether or not the indicators should be centered. -->
+    <attr name="centered"/>
+    <!-- Color of the filled circle that represents the current page. -->
+    <attr format="color" name="fillColor"/>
+    <!-- Color of the filled circles that represents pages. -->
+    <attr format="color" name="pageColor"/>
+    <!-- Orientation of the indicator. -->
+    <attr name="android:orientation"/>
+    <!-- Radius of the circles. This is also the spacing between circles. -->
+    <attr format="dimension" name="radius"/>
+    <!-- Whether or not the selected indicator snaps to the circles. -->
+    <attr format="boolean" name="snap"/>
+    <!-- Color of the open circles. -->
+    <attr format="color" name="strokeColor"/>
+    <!-- Width of the stroke used to draw the circles. -->
+    <attr name="strokeWidth"/>
+    <!-- View background -->
+    <attr name="android:background"/>
+  </declare-styleable>
+    <declare-styleable name="FloatingActionButton">
+    <attr format="color" name="fab_colorNormal"/>
+    <attr format="color" name="fab_colorPressed"/>
+    <attr format="color" name="fab_colorDisabled"/>
+    <attr format="color" name="fab_colorRipple"/>
+    <attr format="boolean" name="fab_showShadow"/>
+    <attr format="color" name="fab_shadowColor"/>
+    <attr format="dimension" name="fab_shadowRadius"/>
+    <attr format="dimension" name="fab_shadowXOffset"/>
+    <attr format="dimension" name="fab_shadowYOffset"/>
+    <attr format="enum" name="fab_size">
+      <enum name="normal" value="0"/>
+      <enum name="mini" value="1"/>
+    </attr>
+    <attr format="reference" name="fab_showAnimation"/>
+    <attr format="reference" name="fab_hideAnimation"/>
+    <attr format="string" name="fab_label"/>
+    <attr format="dimension" name="fab_elevationCompat"/>
+    <attr format="color" name="fab_progress_color"/>
+    <attr format="color" name="fab_progress_backgroundColor"/>
+    <attr format="boolean" name="fab_progress_indeterminate"/>
+    <attr format="integer" name="fab_progress_max"/>
+    <attr format="integer" name="fab_progress"/>
+    <attr format="boolean" name="fab_progress_showBackground"/>
+
+    <attr format="boolean" name="fab_is_trash"/>
+  </declare-styleable>
+    <declare-styleable name="FloatingActionMenu">
+    <attr format="boolean" name="menu_showShadow"/>
+    <attr format="dimension" name="menu_buttonSpacing"/>
+    <attr format="dimension" name="menu_labels_margin"/>
+    <attr format="reference" name="menu_labels_showAnimation"/>
+    <attr format="reference" name="menu_labels_hideAnimation"/>
+    <attr format="dimension" name="menu_labels_paddingTop"/>
+    <attr format="dimension" name="menu_labels_paddingLeft"/>
+    <attr format="dimension" name="menu_labels_paddingRight"/>
+    <attr format="dimension" name="menu_labels_paddingBottom"/>
+    <attr format="dimension" name="menu_labels_padding"/>
+    <attr format="reference|color" name="menu_labels_textColor"/>
+    <attr format="dimension" name="menu_labels_textSize"/>
+    <attr format="dimension" name="menu_labels_cornerRadius"/>
+    <attr format="boolean" name="menu_labels_showShadow"/>
+    <attr format="color" name="menu_labels_colorNormal"/>
+    <attr format="color" name="menu_labels_colorPressed"/>
+    <attr format="color" name="menu_labels_colorRipple"/>
+    <attr format="enum" name="menu_labels_position">
+      <enum name="left" value="0"/>
+      <enum name="right" value="1"/>
+    </attr>
+    <attr format="reference" name="menu_icon"/>
+    <attr format="integer" name="menu_animationDelayPerItem"/>
+    <attr format="reference" name="menu_buttonToggleAnimation"/>
+    <attr format="boolean" name="menu_labels_singleLine"/>
+    <attr format="enum" name="menu_labels_ellipsize">
+      <enum name="none" value="0"/>
+      <enum name="start" value="1"/>
+      <enum name="middle" value="2"/>
+      <enum name="end" value="3"/>
+      <enum name="marquee" value="4"/>
+    </attr>
+    <attr format="integer" name="menu_labels_maxLines"/>
+    <attr format="enum" name="menu_fab_size">
+      <enum name="normal" value="0"/>
+      <enum name="mini" value="1"/>
+    </attr>
+    <attr format="reference" name="menu_labels_style"/>
+    <attr format="color" name="menu_shadowColor"/>
+    <attr format="dimension" name="menu_shadowRadius"/>
+    <attr format="dimension" name="menu_shadowXOffset"/>
+    <attr format="dimension" name="menu_shadowYOffset"/>
+    <attr format="color" name="menu_colorNormal"/>
+    <attr format="color" name="menu_colorPressed"/>
+    <attr format="color" name="menu_colorRipple"/>
+    <attr format="enum" name="menu_openDirection">
+      <enum name="up" value="0"/>
+      <enum name="down" value="1"/>
+      <enum name="left" value="2"/>
+      <enum name="right" value="3"/>
+    </attr>
+    <attr format="color" name="menu_backgroundColor"/>
+    <attr format="string" name="menu_fab_label"/>
+    <attr format="reference" name="menu_fab_show_animation"/>
+    <attr format="reference" name="menu_fab_hide_animation"/>
+  </declare-styleable>
+    <declare-styleable name="LinePageIndicator">
+    <!-- Whether or not the indicators should be centered. -->
+    <attr name="centered"/>
+    <!-- Color of the unselected lines that represent the pages. -->
+    <attr name="unselectedColor"/>
+    <!-- Color of the selected line that represents the current page. -->
+    <attr name="selectedColor"/>
+    <!-- Width of each indicator line. -->
+    <attr format="dimension" name="lineWidth"/>
+    <!-- Width of each indicator line's stroke. -->
+    <attr name="strokeWidth"/>
+    <!-- Width of the gap between each indicator line. -->
+    <attr format="dimension" name="gapWidth"/>
+    <!-- View background -->
+    <attr name="android:background"/>
+  </declare-styleable>
+    <declare-styleable name="RecyclerView"><attr format="string" name="layoutManager"/><attr name="android:orientation"/><attr format="integer" name="spanCount"/><attr format="boolean" name="reverseLayout"/><attr format="boolean" name="stackFromEnd"/></declare-styleable>
+    <declare-styleable name="TitlePageIndicator">
+    <!-- Screen edge padding. -->
+    <attr format="dimension" name="clipPadding"/>
+    <!-- Color of the footer line and indicator. -->
+    <attr format="color" name="footerColor"/>
+    <!-- Height of the footer line. -->
+    <attr format="dimension" name="footerLineHeight"/>
+    <!-- Style of the indicator. Default is triangle. -->
+    <attr name="footerIndicatorStyle">
+      <enum name="none" value="0"/>
+      <enum name="triangle" value="1"/>
+      <enum name="underline" value="2"/>
+    </attr>
+    <!-- Height of the indicator above the footer line. -->
+    <attr format="dimension" name="footerIndicatorHeight"/>
+    <!-- Left and right padding of the underline indicator. -->
+    <attr format="dimension" name="footerIndicatorUnderlinePadding"/>
+    <!-- Padding between the bottom of the title and the footer. -->
+    <attr format="dimension" name="footerPadding"/>
+    <!-- Position of the line. -->
+    <attr name="linePosition">
+      <enum name="bottom" value="0"/>
+      <enum name="top" value="1"/>
+    </attr>
+    <!-- Color of the selected title. -->
+    <attr name="selectedColor"/>
+    <!-- Whether or not the selected item is displayed as bold. -->
+    <attr format="boolean" name="selectedBold"/>
+    <!-- Color of regular titles. -->
+    <attr name="android:textColor"/>
+    <!-- Size of title text. -->
+    <attr name="android:textSize"/>
+    <!-- Padding between titles when bumping into each other. -->
+    <attr format="dimension" name="titlePadding"/>
+    <!-- Padding between titles and the top of the View. -->
+    <attr format="dimension" name="topPadding"/>
+    <!-- View background -->
+    <attr name="android:background"/>
+  </declare-styleable>
+    <declare-styleable name="UnderlinePageIndicator">
+    <!-- Whether or not the selected indicator fades. -->
+    <attr format="boolean" name="fades"/>
+    <!-- Length of the delay to fade the indicator. -->
+    <attr format="integer" name="fadeDelay"/>
+    <!-- Length of the indicator fade to transparent. -->
+    <attr format="integer" name="fadeLength"/>
+    <!-- Color of the selected line that represents the current page. -->
+    <attr name="selectedColor"/>
+    <!-- View background -->
+    <attr name="android:background"/>
+  </declare-styleable>
+    <declare-styleable name="ViewPagerIndicator">
+    <!-- Style of the circle indicator. -->
+    <attr format="reference" name="vpiCirclePageIndicatorStyle"/>
+    <!-- Style of the icon indicator's views. -->
+    <attr format="reference" name="vpiIconPageIndicatorStyle"/>
+    <!-- Style of the line indicator. -->
+    <attr format="reference" name="vpiLinePageIndicatorStyle"/>
+    <!-- Style of the title indicator. -->
+    <attr format="reference" name="vpiTitlePageIndicatorStyle"/>
+    <!-- Style of the tab indicator's tabs. -->
+    <attr format="reference" name="vpiTabPageIndicatorStyle"/>
+    <!-- Style of the underline indicator. -->
+    <attr format="reference" name="vpiUnderlinePageIndicatorStyle"/>
+  </declare-styleable>
 </resources>

@@ -32,8 +32,8 @@
     <string name="cancel">Batal</string>
     <string name="cancel_article_write_confirm_message">Apa Anda ingin membatalkan post?</string>
     <string name="close_title">Tutup</string>
-    <string name="comment_deletion_by_admin">Komentar ini telah dihapus oleh admin.</string>
-    <string name="comment_deletion_by_user">Komentar ini telah dihapus.</string>
+    <string name="comment_deletion_by_admin"><![CDATA[Komentar ini telah dihapus oleh admin.]]></string>
+    <string name="comment_deletion_by_user"><![CDATA[Komentar ini telah dihapus.]]></string>
     <string name="comment_hint">Silahkan masukan text.</string>
     <string name="comment_not_exist">Tidak ada komen</string>
     <string name="comment_write_permission_error">Anda tidak memiliki ijin untuk menambahkan komen.</string>
@@ -43,8 +43,8 @@
     <string name="date_format_hrs">%d jam</string>
     <string name="date_format_just_now">Baru saja</string>
     <string name="date_format_mins">%d menit</string>
-    <string name="date_format_remain_datetime_from_current_day">%1$s hari tersisa </string>
-    <string name="date_format_remain_datetime_from_current_hour">%1$s jam tersisa </string>
+    <string name="date_format_remain_datetime_from_current_day"><![CDATA[%1$s hari tersisa ]]></string>
+    <string name="date_format_remain_datetime_from_current_hour"><![CDATA[%1$s jam tersisa ]]></string>
     <string name="date_format_yesterday">Kemarin</string>
     <string name="delete">Hapus</string>
     <string name="delete_confirm_message">Apa Anda ingin menghapus?</string>
@@ -101,8 +101,8 @@
     <string name="photo_upload_error">Gagal mengupload foto.</string>
     <string name="pin_to_top">Sematkan ke Atas</string>
     <string name="plug_info">Informasi</string>
-    <string name="poll_closed">Poling Ditutup</string>
-    <string name="poll_opened">Poling Dibuka</string>
+    <string name="poll_closed"><![CDATA[Poling Ditutup]]></string>
+    <string name="poll_opened"><![CDATA[Poling Dibuka]]></string>
     <string name="popular_article">Lihat\npost populer</string>
     <string name="profile_login">로그인</string>
     <string name="profile_logout">Log Out</string>
@@ -142,8 +142,8 @@
     <string name="translation">Terjemahan</string>
     <string name="unable_load_videos">Tidak dapat membuka video.</string>
     <string name="view_original">Asli</string>
-    <string name="vote_count">%1$s suara</string>
-    <string name="vote_multi_select_allowed">Dapat pilih banyak</string>
+    <string name="vote_count"><![CDATA[%1$s suara]]></string>
+    <string name="vote_multi_select_allowed"><![CDATA[Dapat pilih banyak]]></string>
     <string name="waiting_join_apply_message">Menunggu bergabung dalam Café…</string>
     <string name="widget_button_cafe">Komunitas</string>
     <string name="widget_button_capture">Screen Capture</string>

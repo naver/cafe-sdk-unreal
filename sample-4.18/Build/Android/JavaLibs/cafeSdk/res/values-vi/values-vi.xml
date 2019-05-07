@@ -32,8 +32,8 @@
     <string name="cancel">Hủy</string>
     <string name="cancel_article_write_confirm_message">Bạn muốn hủy bài viết đăng phải không?</string>
     <string name="close_title">Đóng</string>
-    <string name="comment_deletion_by_admin">Bình luận này đã bị quản trị xóa.</string>
-    <string name="comment_deletion_by_user">Bình luận này đã bị xóa.</string>
+    <string name="comment_deletion_by_admin"><![CDATA[Bình luận này đã bị quản trị xóa.]]></string>
+    <string name="comment_deletion_by_user"><![CDATA[Bình luận này đã bị xóa.]]></string>
     <string name="comment_hint">Vui lòng nhập nội dung.</string>
     <string name="comment_not_exist">Không có bình luận</string>
     <string name="comment_write_permission_error">Bạn không có quyền viết bình luận.</string>
@@ -43,8 +43,8 @@
     <string name="date_format_hrs">%d giờ</string>
     <string name="date_format_just_now">Vừa xong</string>
     <string name="date_format_mins">%d phút</string>
-    <string name="date_format_remain_datetime_from_current_day">Còn lại %1$s ngày </string>
-    <string name="date_format_remain_datetime_from_current_hour">Còn lại %1$s giờ </string>
+    <string name="date_format_remain_datetime_from_current_day"><![CDATA[Còn lại %1$s ngày ]]></string>
+    <string name="date_format_remain_datetime_from_current_hour"><![CDATA[Còn lại %1$s giờ ]]></string>
     <string name="date_format_yesterday">Hôm qua</string>
     <string name="delete">Xóa</string>
     <string name="delete_confirm_message">Bạn muốn xóa phải không?</string>
@@ -101,8 +101,8 @@
     <string name="photo_upload_error">Không thể tải ảnh lên.</string>
     <string name="pin_to_top">Ghim đầu trang</string>
     <string name="plug_info">Thông tin</string>
-    <string name="poll_closed">Bình chọn đã đóng</string>
-    <string name="poll_opened">Bình chọn đã mở</string>
+    <string name="poll_closed"><![CDATA[Bình chọn đã đóng]]></string>
+    <string name="poll_opened"><![CDATA[Bình chọn đã mở]]></string>
     <string name="popular_article">Xem\nbài viết phổ biến</string>
     <string name="profile_login">로그인</string>
     <string name="profile_logout">Thoát</string>
@@ -142,8 +142,8 @@
     <string name="translation">Dịch</string>
     <string name="unable_load_videos">Không thể tải video về.</string>
     <string name="view_original">Nguyên văn</string>
-    <string name="vote_count">%1$s phiếu</string>
-    <string name="vote_multi_select_allowed">Cho phép lựa chọn nhiều lần</string>
+    <string name="vote_count"><![CDATA[%1$s phiếu]]></string>
+    <string name="vote_multi_select_allowed"><![CDATA[Cho phép lựa chọn nhiều lần]]></string>
     <string name="waiting_join_apply_message">Đang đăng ký tham gia.</string>
     <string name="widget_button_cafe">Cộng đồng</string>
     <string name="widget_button_capture">Chụp màn hình</string>

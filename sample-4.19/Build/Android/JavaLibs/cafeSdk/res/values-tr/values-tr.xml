@@ -32,8 +32,8 @@
     <string name="cancel">Iptal</string>
     <string name="cancel_article_write_confirm_message">Bir gönderi silmek ister misin?</string>
     <string name="close_title">Kapat</string>
-    <string name="comment_deletion_by_admin">Bu yorum yönetici tarafından silindi.</string>
-    <string name="comment_deletion_by_user">Bu yorum silindi.</string>
+    <string name="comment_deletion_by_admin"><![CDATA[Bu yorum yönetici tarafından silindi.]]></string>
+    <string name="comment_deletion_by_user"><![CDATA[Bu yorum silindi.]]></string>
     <string name="comment_hint">Lütfen mesajı giriniz.</string>
     <string name="comment_not_exist">Yorum yok</string>
     <string name="comment_write_permission_error">Yorum yapma izniniz yok.</string>
@@ -43,8 +43,8 @@
     <string name="date_format_hrs">%d saat</string>
     <string name="date_format_just_now">Şimdi</string>
     <string name="date_format_mins">%d dk</string>
-    <string name="date_format_remain_datetime_from_current_day">%1$s gün kaldı </string>
-    <string name="date_format_remain_datetime_from_current_hour">%1$s saat kaldı </string>
+    <string name="date_format_remain_datetime_from_current_day"><![CDATA[%1$s gün kaldı ]]></string>
+    <string name="date_format_remain_datetime_from_current_hour"><![CDATA[%1$s saat kaldı ]]></string>
     <string name="date_format_yesterday">Dün</string>
     <string name="delete">Sil </string>
     <string name="delete_confirm_message">Silmek ister misin?</string>
@@ -101,8 +101,8 @@
     <string name="photo_upload_error">Fotoğraf yükleme başarısız oldu.</string>
     <string name="pin_to_top">Üste iğneleyin</string>
     <string name="plug_info">Bilgi</string>
-    <string name="poll_closed">Anket kapalı</string>
-    <string name="poll_opened">Anket açık</string>
+    <string name="poll_closed"><![CDATA[]]>Anket kapalı</string>
+    <string name="poll_opened"><![CDATA[]]>Anket açık</string>
     <string name="popular_article">Popüler gönderileri\ngör</string>
     <string name="profile_login">로그인</string>
     <string name="profile_logout">Çıkış Yap</string>
@@ -142,8 +142,8 @@
     <string name="translation">Çeviri</string>
     <string name="unable_load_videos">Video yüklenemedi.</string>
     <string name="view_original">Orjinal</string>
-    <string name="vote_count">%1$s gün kaldı</string>
-    <string name="vote_multi_select_allowed">Çoklu seçime izin ver</string>
+    <string name="vote_count"><![CDATA[]]>%1$s gün kaldı</string>
+    <string name="vote_multi_select_allowed"><![CDATA[Çoklu seçime izin ver]]></string>
     <string name="waiting_join_apply_message">Cafe\' ye bağlanmak için bekleniyor...</string>
     <string name="widget_button_cafe">Topluluk</string>
     <string name="widget_button_capture">Ekran görüntüsü al</string>

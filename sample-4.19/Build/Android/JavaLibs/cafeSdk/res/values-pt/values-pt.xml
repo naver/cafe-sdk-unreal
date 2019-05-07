@@ -32,8 +32,8 @@
     <string name="cancel">Cancelar</string>
     <string name="cancel_article_write_confirm_message">Deseja cancelar uma publicação??</string>
     <string name="close_title">Fechar</string>
-    <string name="comment_deletion_by_admin">Este comentário foi removido pelo administrador.</string>
-    <string name="comment_deletion_by_user">Este comentário foi eliminado.</string>
+    <string name="comment_deletion_by_admin"><![CDATA[Este comentário foi removido pelo administrador.]]></string>
+    <string name="comment_deletion_by_user"><![CDATA[Este comentário foi eliminado.]]></string>
     <string name="comment_hint">Por favor digite texto.</string>
     <string name="comment_not_exist">Sem comentários</string>
     <string name="comment_write_permission_error">Não tem permissão para adicionar um comentário.</string>
@@ -43,8 +43,8 @@
     <string name="date_format_hrs">%d hr</string>
     <string name="date_format_just_now">Agora mesmo</string>
     <string name="date_format_mins">%d min</string>
-    <string name="date_format_remain_datetime_from_current_day">Faltam %1$s dias </string>
-    <string name="date_format_remain_datetime_from_current_hour">Faltam %1$s horas </string>
+    <string name="date_format_remain_datetime_from_current_day"><![CDATA[Faltam %1$s dias ]]></string>
+    <string name="date_format_remain_datetime_from_current_hour"><![CDATA[Faltam %1$s horas ]]></string>
     <string name="date_format_yesterday">Ontem</string>
     <string name="delete">Eliminar</string>
     <string name="delete_confirm_message">Deseja eliminar?</string>
@@ -101,8 +101,8 @@
     <string name="photo_upload_error">Falha ao carregar uma Fotografia.</string>
     <string name="pin_to_top">Afixar em Cima</string>
     <string name="plug_info">Informação </string>
-    <string name="poll_closed">Votação Encerrada</string>
-    <string name="poll_opened">Votação Aberta</string>
+    <string name="poll_closed"><![CDATA[]]>Votação Encerrada</string>
+    <string name="poll_opened"><![CDATA[]]>Votação Aberta</string>
     <string name="popular_article">Ver\npublicações populares</string>
     <string name="profile_login">로그인</string>
     <string name="profile_logout">Sair</string>
@@ -142,8 +142,8 @@
     <string name="translation">Tradução</string>
     <string name="unable_load_videos">Não é possível carregar vídeos.</string>
     <string name="view_original">Original</string>
-    <string name="vote_count">Votaram %1$s</string>
-    <string name="vote_multi_select_allowed">É permitido selecionar mais do que um</string>
+    <string name="vote_count"><![CDATA[]]>Votaram %1$s</string>
+    <string name="vote_multi_select_allowed"><![CDATA[É permitido selecionar mais do que um]]></string>
     <string name="waiting_join_apply_message">Esperando para entrar no Cafe ...</string>
     <string name="widget_button_cafe">Comunidade</string>
     <string name="widget_button_capture">Captura de ecrã.</string>

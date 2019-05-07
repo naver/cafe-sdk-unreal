@@ -32,8 +32,8 @@
     <string name="cancel">取消</string>
     <string name="cancel_article_write_confirm_message">确定取消上传帖子？</string>
     <string name="close_title">关闭</string>
-    <string name="comment_deletion_by_admin">此评论已被管理员删除。</string>
-    <string name="comment_deletion_by_user">此评论已被作者删除。</string>
+    <string name="comment_deletion_by_admin"><![CDATA[此评论已被管理员删除。]]></string>
+    <string name="comment_deletion_by_user"><![CDATA[此评论已被作者删除。]]></string>
     <string name="comment_hint">请输入内容。</string>
     <string name="comment_not_exist">没有评论</string>
     <string name="comment_write_permission_error">您没有评论的权限。</string>
@@ -43,8 +43,8 @@
     <string name="date_format_hrs">%d 时间</string>
     <string name="date_format_just_now">刚才</string>
     <string name="date_format_mins">%d 分</string>
-    <string name="date_format_remain_datetime_from_current_day">余%1$s天 </string>
-    <string name="date_format_remain_datetime_from_current_hour">剩余%1$s小时 </string>
+    <string name="date_format_remain_datetime_from_current_day"><![CDATA[余%1$s天 ]]></string>
+    <string name="date_format_remain_datetime_from_current_hour"><![CDATA[剩余%1$s小时 ]]></string>
     <string name="date_format_yesterday">昨天</string>
     <string name="delete">删除</string>
     <string name="delete_confirm_message">确定删除？</string>
@@ -101,8 +101,8 @@
     <string name="photo_upload_error">无法上传照片。</string>
     <string name="pin_to_top">上方固定公告</string>
     <string name="plug_info">info</string>
-    <string name="poll_closed">投票结束</string>
-    <string name="poll_opened">投票进行中</string>
+    <string name="poll_closed"><![CDATA[投票结束]]></string>
+    <string name="poll_opened"><![CDATA[投票进行中]]></string>
     <string name="popular_article">查看\n人气文章</string>
     <string name="profile_login">로그인</string>
     <string name="profile_logout">注销</string>
@@ -142,8 +142,8 @@
     <string name="translation">翻译</string>
     <string name="unable_load_videos">无法加载视频。</string>
     <string name="view_original">原文</string>
-    <string name="vote_count">共%1$s3投票</string>
-    <string name="vote_multi_select_allowed">允许多选</string>
+    <string name="vote_count"><![CDATA[共%1$s3投票]]></string>
+    <string name="vote_multi_select_allowed"><![CDATA[允许多选]]></string>
     <string name="waiting_join_apply_message">正在申请注册。</string>
     <string name="widget_button_cafe">游戏社区</string>
     <string name="widget_button_capture">屏幕截图</string>

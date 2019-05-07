@@ -32,8 +32,8 @@
     <string name="cancel">ยกเลิก</string>
     <string name="cancel_article_write_confirm_message">ต้องการยกเลิกโพสต์หรือไม่?</string>
     <string name="close_title">ปิด</string>
-    <string name="comment_deletion_by_admin">ความคิดเห็นนี้ถูกลบโดยแอดมิน</string>
-    <string name="comment_deletion_by_user">ความคิดเห็นนี้ถูกลบ</string>
+    <string name="comment_deletion_by_admin"><![CDATA[ความคิดเห็นนี้ถูกลบโดยแอดมิน]]></string>
+    <string name="comment_deletion_by_user"><![CDATA[ความคิดเห็นนี้ถูกลบ]]></string>
     <string name="comment_hint">กรุณาใส่ข้อความ</string>
     <string name="comment_not_exist">ไม่มีความคิดเห็น</string>
     <string name="comment_write_permission_error">คุณไม่ได้รับอนุญาตให้เพิ่มความคิดเห็น</string>
@@ -43,8 +43,8 @@
     <string name="date_format_hrs">%d ชั่วโมง</string>
     <string name="date_format_just_now">เมื่อกี้</string>
     <string name="date_format_mins">%d นาที</string>
-    <string name="date_format_remain_datetime_from_current_day">เหลือ %1$s วัน </string>
-    <string name="date_format_remain_datetime_from_current_hour">เหลือ %1$s ชั่วโมง </string>
+    <string name="date_format_remain_datetime_from_current_day"><![CDATA[เหลือ %1$s วัน ]]></string>
+    <string name="date_format_remain_datetime_from_current_hour"><![CDATA[เหลือ %1$s ชั่วโมง ]]></string>
     <string name="date_format_yesterday">เมื่อวาน</string>
     <string name="delete">ลบ</string>
     <string name="delete_confirm_message">ต้องการลบหรือไม่?</string>
@@ -101,8 +101,8 @@
     <string name="photo_upload_error">การอัพโหลดรูปภาพล้มเหลว</string>
     <string name="pin_to_top">ปักหมุด</string>
     <string name="plug_info">ข้อมูล </string>
-    <string name="poll_closed">ปิดโหวต</string>
-    <string name="poll_opened">เปิดโหวต</string>
+    <string name="poll_closed"><![CDATA[ปิดโหวต]]></string>
+    <string name="poll_opened"><![CDATA[เปิดโหวต]]></string>
     <string name="popular_article">ดู\nโพสต์ยอดนิยม</string>
     <string name="profile_login">로그인</string>
     <string name="profile_logout">ออกจากระบบ</string>
@@ -142,8 +142,8 @@
     <string name="translation">แปล</string>
     <string name="unable_load_videos">ไม่สามารถโหลดวิดีโอได้</string>
     <string name="view_original">ต้นฉบับ</string>
-    <string name="vote_count">%1$s โหวต</string>
-    <string name="vote_multi_select_allowed">เลือกได้หลายข้อ</string>
+    <string name="vote_count"><![CDATA[%1$s โหวต]]></string>
+    <string name="vote_multi_select_allowed"><![CDATA[เลือกได้หลายข้อ]]></string>
     <string name="waiting_join_apply_message">กำลังเข้าร่วมคาเฟ่...</string>
     <string name="widget_button_cafe">คอมมิวนิตี้</string>
     <string name="widget_button_capture">แคปเจอร์หน้าจอ</string>

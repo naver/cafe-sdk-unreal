@@ -32,8 +32,8 @@
     <string name="cancel">キャンセル</string>
     <string name="cancel_article_write_confirm_message">投稿を取り消しますか？</string>
     <string name="close_title">閉じる</string>
-    <string name="comment_deletion_by_admin">このコメントは管理者により削除されました。</string>
-    <string name="comment_deletion_by_user">このコメントは作成者により削除されました。</string>
+    <string name="comment_deletion_by_admin"><![CDATA[このコメントは管理者により削除されました。]]></string>
+    <string name="comment_deletion_by_user"><![CDATA[このコメントは作成者により削除されました。]]></string>
     <string name="comment_hint">内容を入力してください。</string>
     <string name="comment_not_exist">コメントがありません。</string>
     <string name="comment_write_permission_error">コメントの書き込み権限がありません。</string>
@@ -43,8 +43,8 @@
     <string name="date_format_hrs">%d時間</string>
     <string name="date_format_just_now">只今</string>
     <string name="date_format_mins">%d分</string>
-    <string name="date_format_remain_datetime_from_current_day">残り%1$s日 </string>
-    <string name="date_format_remain_datetime_from_current_hour">残り%1$s時間 </string>
+    <string name="date_format_remain_datetime_from_current_day"><![CDATA[残り%1$s日 ]]></string>
+    <string name="date_format_remain_datetime_from_current_hour"><![CDATA[残り%1$s時間 ]]></string>
     <string name="date_format_yesterday">昨日</string>
     <string name="delete">削除</string>
     <string name="delete_confirm_message">削除しますか？</string>
@@ -101,8 +101,8 @@
     <string name="photo_upload_error">写真を登録できません。</string>
     <string name="pin_to_top">お知らせを上段に固定</string>
     <string name="plug_info">info</string>
-    <string name="poll_closed">終了した投票</string>
-    <string name="poll_opened">投票中</string>
+    <string name="poll_closed"><![CDATA[終了した投票]]></string>
+    <string name="poll_opened"><![CDATA[投票中]]></string>
     <string name="popular_article">人気投稿を\n見る</string>
     <string name="profile_login">로그인</string>
     <string name="profile_logout">ログアウト</string>
@@ -142,8 +142,8 @@
     <string name="translation">翻訳</string>
     <string name="unable_load_videos">動画の読み込みに失敗しました。</string>
     <string name="view_original">原文</string>
-    <string name="vote_count">%1$s 人が投票</string>
-    <string name="vote_multi_select_allowed">複数選択可</string>
+    <string name="vote_count"><![CDATA[%1$s 人が投票]]></string>
+    <string name="vote_multi_select_allowed"><![CDATA[複数選択可]]></string>
     <string name="waiting_join_apply_message">入会申請中です。</string>
     <string name="widget_button_cafe">ゲームコミュニティ</string>
     <string name="widget_button_capture">スクリーンキャプチャ</string>

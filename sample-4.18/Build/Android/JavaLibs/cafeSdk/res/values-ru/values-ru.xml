@@ -32,8 +32,8 @@
     <string name="cancel">Отмена</string>
     <string name="cancel_article_write_confirm_message">Отменить публикацию поста?</string>
     <string name="close_title">Закрыть</string>
-    <string name="comment_deletion_by_admin">Этот комментарий удален админом.</string>
-    <string name="comment_deletion_by_user">Этот комментарий удален.</string>
+    <string name="comment_deletion_by_admin"><![CDATA[Этот комментарий удален админом.]]></string>
+    <string name="comment_deletion_by_user"><![CDATA[Этот комментарий удален.]]></string>
     <string name="comment_hint">Введите текст.</string>
     <string name="comment_not_exist">Нет комментариев</string>
     <string name="comment_write_permission_error">У вас нет прав для добавления комментария.</string>
@@ -43,8 +43,8 @@
     <string name="date_format_hrs">%d час.</string>
     <string name="date_format_just_now">Только что</string>
     <string name="date_format_mins">%d мин.</string>
-    <string name="date_format_remain_datetime_from_current_day">Осталось %1$s дня </string>
-    <string name="date_format_remain_datetime_from_current_hour">Осталось %1$s часов </string>
+    <string name="date_format_remain_datetime_from_current_day"><![CDATA[Осталось %1$s дня ]]></string>
+    <string name="date_format_remain_datetime_from_current_hour"><![CDATA[Осталось %1$s часов ]]></string>
     <string name="date_format_yesterday">Вчера</string>
     <string name="delete">Удалить</string>
     <string name="delete_confirm_message">Удалить?</string>
@@ -101,8 +101,8 @@
     <string name="photo_upload_error">Не удалось загрузить фото.</string>
     <string name="pin_to_top">Прикрепить сверху</string>
     <string name="plug_info">Инфо</string>
-    <string name="poll_closed">Голосование закрыто</string>
-    <string name="poll_opened">Голосование открыто</string>
+    <string name="poll_closed"><![CDATA[Голосование закрыто]]></string>
+    <string name="poll_opened"><![CDATA[Голосование открыто]]></string>
     <string name="popular_article">Посмотреть\nпопулярные посты</string>
     <string name="profile_login">로그인</string>
     <string name="profile_logout">Выйти</string>
@@ -142,8 +142,8 @@
     <string name="translation">Перевод</string>
     <string name="unable_load_videos">Не удалось загрузить видео.</string>
     <string name="view_original">Оригинал</string>
-    <string name="vote_count">%1$s проголосовало</string>
-    <string name="vote_multi_select_allowed">Можно выбрать несколько</string>
+    <string name="vote_count"><![CDATA[%1$s проголосовало]]></string>
+    <string name="vote_multi_select_allowed"><![CDATA[Можно выбрать несколько]]></string>
     <string name="waiting_join_apply_message">Идет вступление…</string>
     <string name="widget_button_cafe">Сообщество</string>
     <string name="widget_button_capture">Снимок экрана</string>
