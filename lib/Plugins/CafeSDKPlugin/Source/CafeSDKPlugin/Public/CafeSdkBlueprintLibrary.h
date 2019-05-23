@@ -23,6 +23,12 @@ class CAFESDKPLUGIN_API UCafeSdkBlueprintLibrary : public UBlueprintFunctionLibr
     static void StartHome();
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void StartPopup();
+
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
+    static void StartPopup(int32 PopupId);
+
+    UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")
     static void StartNotice();
     
     UFUNCTION(BlueprintCallable, Category = "Naver CafeSdk")

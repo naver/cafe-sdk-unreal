@@ -17,6 +17,9 @@ public:
     void SetChannelCode(FString ChannelCode) const;
     
     void StartHome() const;
+    void StartPopup() const;
+    void StartPopup(int32 PopupId) const;
+
     void StartNotice() const;
     void StartEvent() const;
     void StartMenu(int32 MenuNumber) const;
@@ -83,6 +86,7 @@ private:
     jclass GlinkClass;
     FJavaClassMethod SetChannelCodeMethod;
     FJavaClassMethod StartHomeMethod;
+    FJavaClassMethod StartPopupMethod;
     //FJavaClassMethod StartNoticeMethod;
     //FJavaClassMethod StartEventMethod;
     FJavaClassMethod StartMenuMethod;

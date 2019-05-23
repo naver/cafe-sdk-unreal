@@ -35,6 +35,18 @@ void UCafeSdkBlueprintLibrary::StartHome()
     GetSharedCafeSdk()->StartHome();
 }
 
+void UCafeSdkBlueprintLibrary::StartPopup()
+{
+    if (!IsCafeSdkAvailable()) return;
+    GetSharedCafeSdk()->StartPopup();
+}
+
+void UCafeSdkBlueprintLibrary::StartPopup(int32 PopupId)
+{
+    if (!IsSupportedOSVersion()) return;
+    GetSharedCafeSdk()->StartPopup(PopupId);
+}
+
 void UCafeSdkBlueprintLibrary::StartNotice()
 {
     if (!IsCafeSdkAvailable()) return;
