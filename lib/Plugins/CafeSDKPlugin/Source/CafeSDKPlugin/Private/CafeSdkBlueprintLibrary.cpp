@@ -41,10 +41,10 @@ void UCafeSdkBlueprintLibrary::StartPopup()
     GetSharedCafeSdk()->StartPopup();
 }
 
-void UCafeSdkBlueprintLibrary::StartPopup(int32 PopupId)
+void UCafeSdkBlueprintLibrary::StartPopupWithId(int32 PopupId)
 {
     if (!IsSupportedOSVersion()) return;
-    GetSharedCafeSdk()->StartPopup(PopupId);
+    GetSharedCafeSdk()->StartPopupWithId(PopupId);
 }
 
 

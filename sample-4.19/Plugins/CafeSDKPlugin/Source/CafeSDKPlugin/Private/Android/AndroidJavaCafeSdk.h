@@ -18,7 +18,7 @@ public:
     
     void StartHome() const;
     void StartPopup() const;
-    void StartPopup(int32 PopupId) const;
+    void StartPopupWithId(int32 PopupId) const;
     void StartNotice() const;
     void StartEvent() const;
     void StartMenu(int32 MenuNumber) const;
@@ -87,6 +87,7 @@ private:
     FJavaClassMethod SetChannelCodeMethod;
     FJavaClassMethod StartHomeMethod;
     FJavaClassMethod StartPopupMethod;
+    FJavaClassMethod StartPopupWithIdMethod;
     //FJavaClassMethod StartNoticeMethod;
     //FJavaClassMethod StartEventMethod;
     FJavaClassMethod StartMenuMethod;

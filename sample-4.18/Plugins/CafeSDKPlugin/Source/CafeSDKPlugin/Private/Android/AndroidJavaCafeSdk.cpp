@@ -26,7 +26,7 @@ FAndroidJavaCafeSdk::FAndroidJavaCafeSdk()
     SetChannelCodeMethod = GetGlinkClassStaticMethod("setChannelCode", "(Ljava/lang/String;)V");
     StartHomeMethod = GetGlinkClassStaticMethod("startHome", "(Landroid/content/Context;)V");
     StartPopupMethod = GetGlinkClassStaticMethod("startPopup", "(Landroid/content/Context;)V");
-    StartPopupMethod = GetGlinkClassStaticMethod("startPopup", "(Landroid/content/Context;I)V");
+    StartPopupWithIdMethod = GetGlinkClassStaticMethod("startPopup", "(Landroid/content/Context;I)V");
     //StartNoticeMethod = GetGlinkClassStaticMethod("startNotice", "(Landroid/content/Context;)V");
     //StartEventMethod = GetGlinkClassStaticMethod("startEvent", "(Landroid/content/Context;)V");
     StartMenuMethod = GetGlinkClassStaticMethod("startMenu", "(Landroid/content/Context;I)V");
@@ -110,11 +110,11 @@ void FAndroidJavaCafeSdk::StartPopup() const
                                FJavaWrapper::GameActivityThis);
 }
 
-void FAndroidJavaCafeSdk::StartPopup(int32 PopupId) const
+void FAndroidJavaCafeSdk::StartPopupWithId(int32 PopupId) const
 {
     JNIEnv* JEnv = FAndroidApplication::GetJavaEnv();
     JEnv->CallStaticVoidMethod(GlinkClass,
-                               StartPopupMethod.Method,
+                               StartPopupWithIdMethod.Method,
                                FJavaWrapper::GameActivityThis,
                                PopupId);
 }
