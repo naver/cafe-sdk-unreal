@@ -12,8 +12,6 @@ public:
     virtual void SetChannelCode(FString ChannelCode) const = 0;
     
     virtual void StartHome() const = 0;
-    virtual void StartPopup() const = 0;
-    virtual void StartPopup(int32 PopupId) const = 0;
     virtual void StartNotice() const = 0;
     virtual void StartEvent() const = 0;
     virtual void StartMenu(int32 MenuNumber) const = 0;
