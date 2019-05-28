@@ -180,7 +180,7 @@
     <string name="photo_upload_error">Uploading a photo failed.</string>
     <string name="pin_to_top">Pin to Top</string>
     <string name="plug_info">Info</string>
-    <string name="plug_sdk_version" translatable="false">4.2.2</string>
+    <string name="plug_sdk_version" translatable="false">4.3.0</string>
     <string name="poll_closed"><![CDATA[Poll closed]]></string>
     <string name="poll_opened"><![CDATA[Poll opened]]></string>
     <string name="popular_article">See\npopular posts</string>
