@@ -92,12 +92,6 @@ namespace UnrealBuildTool.Rules
                         "../../ThirdPartyFrameworks/iOS/ApiGateway.embeddedframework.zip"
                     )
                 );
-				PublicAdditionalFrameworks.Add(
-					new UEBuildFramework(
-					"openssl",
-					"../../ThirdPartyFrameworks/iOS/openssl.embeddedframework.zip"
-					)
-				);
 
 		bEnableObjCExceptions = false;
                 PublicFrameworks.AddRange(
