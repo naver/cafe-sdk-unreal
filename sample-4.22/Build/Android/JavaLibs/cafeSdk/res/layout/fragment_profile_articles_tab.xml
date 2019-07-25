@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white1">
+
+    <com.naver.plug.cafe.ui.widget.ScrollListenerLayout
+        android:id="@+id/profile_list_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/profile_article_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white1"></FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/menu_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/white1">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="47dp"
+                android:background="@color/gray12" />
+
+            <RadioGroup
+                android:id="@+id/profile_menu_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/profile_write_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_articles_menu_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="@string/article_count_txt"
+                    android:textColor="@color/black1"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/profile_comment_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_articles_menu_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="@string/written_comment_count_txt"
+                    android:textColor="@color/black1"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/profile_like_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_articles_menu_selector"
+                    android:button="@null"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="@string/like_article_count_txt"
+                    android:textColor="@color/black1"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/profile_streaming_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_articles_menu_selector"
+                    android:button="@null"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="@string/widget_button_liveview"
+                    android:textColor="@color/black1"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </RadioGroup>
+
+        </FrameLayout>
+
+    </com.naver.plug.cafe.ui.widget.ScrollListenerLayout>
+
+
+    <include layout="@layout/view_fragment_error" />
+</FrameLayout>
