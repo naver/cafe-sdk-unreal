@@ -70,12 +70,6 @@ namespace UnrealBuildTool.Rules
                 );
                 PublicAdditionalFrameworks.Add(
                     new Framework(
-						"AFNetworking",
-						"../../ThirdPartyFrameworks/iOS/AFNetworking.embeddedframework.zip"
-                    )
-                );
-                PublicAdditionalFrameworks.Add(
-                    new Framework(
                         "SDWebImage",
                         "../../ThirdPartyFrameworks/iOS/SDWebImage.embeddedframework.zip"
                     )
@@ -86,14 +80,8 @@ namespace UnrealBuildTool.Rules
                         "../../ThirdPartyFrameworks/iOS/FLAnimatedImage.embeddedframework.zip"
                     )
                 );
-                PublicAdditionalFrameworks.Add(
-                    new Framework(
-                        "ApiGateway",
-                        "../../ThirdPartyFrameworks/iOS/ApiGateway.embeddedframework.zip"
-                    )
-                );
 
-		bEnableObjCExceptions = false;
+		        bEnableObjCExceptions = false;
                 PublicFrameworks.AddRange(
                     new string[] {
 						"UIKit",
