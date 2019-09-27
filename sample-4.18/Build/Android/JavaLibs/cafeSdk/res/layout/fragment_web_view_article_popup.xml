@@ -2,49 +2,45 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.naver.plug.cafe.ui.article.WebViewArticleFragmentView">
+    android:layout_height="match_parent">
 
-    <FrameLayout
+    <RelativeLayout
+        android:id="@+id/relative_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="35dp">
 
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/swipe_refresh_layout"
+        <WebView
+            android:id="@+id/web_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clipChildren="false"
-            android:theme="@android:style/Theme.Holo.Light">
+            android:scrollbarSize="4dp"
+            android:scrollbarThumbVertical="@color/black2_opacity_20"
+            android:theme="@android:style/Theme.Holo.Light" />
+    </RelativeLayout>
 
-            <WebView
-                android:id="@+id/web_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbarSize="4dp"
-                android:scrollbarThumbVertical="@color/black2_opacity_20"
-                android:theme="@android:style/Theme.Holo.Light" />
-        </android.support.v4.widget.SwipeRefreshLayout>
-    </FrameLayout>
+    <ImageView
+        android:id="@+id/iv_game_popup_close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="2dp"
+        android:src="@drawable/cf_icon_win_close" />
 
     <CheckBox
         android:id="@+id/iv_game_popup_not_again"
         android:layout_width="wrap_content"
-        android:layout_height="55dp"
+        android:layout_height="30dp"
         android:layout_alignParentBottom="true"
-        android:layout_margin="12dp"
+        android:layout_gravity="bottom|start"
         android:button="@drawable/cf_blt_check2cafe"
         android:paddingStart="8dp"
+        android:layout_marginStart="2dp"
         android:text="오늘은 그만 보기"
-        android:textSize="15dp"
-        android:textColor="@color/black1"
+        android:textColor="@color/white1"
+        android:textSize="12dp"
+        android:visibility="gone"
+        android:layout_marginBottom="4dp"
         tools:ignore="RtlSymmetry" />
-
-    <ImageView
-        android:id="@+id/iv_game_popup_close"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="13dp"
-        android:src="@drawable/cf_icon_win_close" />
 </RelativeLayout>

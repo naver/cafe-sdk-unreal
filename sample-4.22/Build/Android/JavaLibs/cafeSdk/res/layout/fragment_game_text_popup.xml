@@ -3,65 +3,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvTitle"
+    <RelativeLayout
+        android:id="@+id/relative_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:maxLines="1"
-        android:layout_margin="10dp"
-        android:textSize="40dp"
-        android:fontFamily="sans-serif-black"
-        android:gravity="center"
-        android:text="공지입니다"/>
+        android:layout_height="match_parent"
+        android:layout_marginBottom="35dp"
+        android:background="@color/black1">
 
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d1d4d4"
+            android:fontFamily="sans-serif-black"
+            android:maxLines="1"
+            android:paddingStart="24dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="12dp"
+            android:textIsSelectable="true"
+            android:textColor="#363838"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:id="@+id/sv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tv_title"
+            android:background="#ffffff">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="24dp"
+                    android:textIsSelectable="true"
+                    android:textColor="#000000"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_game_popup_close"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="2dp"
+        android:src="@drawable/cf_icon_win_close" />
 
     <CheckBox
         android:id="@+id/iv_game_popup_not_again"
         android:layout_width="wrap_content"
-        android:layout_height="55dp"
+        android:layout_height="30dp"
         android:layout_alignParentBottom="true"
-        android:layout_margin="12dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="2dp"
         android:button="@drawable/cf_blt_check2cafe"
         android:paddingStart="8dp"
         android:text="오늘은 그만 보기"
-        android:textSize="15dp"
         android:textColor="@color/white1"
+        android:textSize="12dp"
+        android:visibility="gone"
+        android:layout_marginBottom="4dp"
         tools:ignore="RtlSymmetry" />
-
-    <ImageView
-        android:id="@+id/iv_game_popup_close"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="13dp"
-        android:src="@drawable/cf_icon_win_close" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:layout_above="@id/iv_game_popup_close"
-        android:layout_below="@id/tvTitle">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:text="반가워요 헬로 에브리 바디 콜라 콜라 하하하하하 반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하 반가워요 헬로 에브리 바디 콜라 콜라 하하하하하 반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하 반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하 반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하반가워요 헬로 에브리 바디 콜라 콜라 하하하하하"
-                android:textSize="18dp" />
-
-        </LinearLayout>
-
-
-
-    </ScrollView>
-
 
 </RelativeLayout>

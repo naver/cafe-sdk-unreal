@@ -55,7 +55,6 @@
     <dimen name="glink_trash_top_margine">6dp</dimen>
     <dimen name="glink_widget_padding">9dp</dimen>
     <dimen name="glink_widget_size_normal">54dp</dimen>
-    <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="labels_text_size">14sp</dimen>
     <dimen name="list_item_margin">16dp</dimen>
     <dimen name="menu_selector_padding">8dp</dimen>
@@ -64,7 +63,6 @@
     <dimen name="widget_speed">3dp</dimen>
     <item name="fab_label" type="id"/>
     <item name="glide_image_url_tag" type="id"/>
-    <item name="item_touch_helper_previous_elevation" type="id"/>
     <integer name="default_circle_indicator_orientation">0</integer>
     <string name="all_article">All</string>
     <string name="all_board">All</string>
@@ -125,6 +123,7 @@
     <string name="exist_prohibit_word_nickname_message">Prohibited words are included.</string>
     <string name="flavor_name" translatable="false">real</string>
     <string name="host_moot_photo_infra" translatable="false">https://g-moot.pstatic.net</string>
+    <string name="host_popup" translatable="false">http://dev2-plug-api.ppd1.io.navercorp.com:13000</string>
     <string name="host_video_infra" translatable="false">http://apis.naver.com/rmcnmv/rmcnmv</string>
     <string name="hosts_article" translatable="false">https://apis.naver.com</string>
     <string name="hosts_attach" translatable="false">https://up.cafe.naver.com</string>
@@ -180,7 +179,7 @@
     <string name="photo_upload_error">Uploading a photo failed.</string>
     <string name="pin_to_top">Pin to Top</string>
     <string name="plug_info">Info</string>
-    <string name="plug_sdk_version" translatable="false">4.3.0</string>
+    <string name="plug_sdk_version" translatable="false">4.4.1</string>
     <string name="poll_closed"><![CDATA[Poll closed]]></string>
     <string name="poll_opened"><![CDATA[Poll opened]]></string>
     <string name="popular_article">See\npopular posts</string>
@@ -416,7 +415,6 @@
     <!-- View background -->
     <attr name="android:background"/>
   </declare-styleable>
-    <declare-styleable name="RecyclerView"><attr format="string" name="layoutManager"/><attr name="android:orientation"/><attr format="integer" name="spanCount"/><attr format="boolean" name="reverseLayout"/><attr format="boolean" name="stackFromEnd"/></declare-styleable>
     <declare-styleable name="TitlePageIndicator">
     <!-- Screen edge padding. -->
     <attr format="dimension" name="clipPadding"/>
