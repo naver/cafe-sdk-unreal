@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rel_videocontrols"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black2_opacity_10">
+
+    <ImageView
+        android:id="@+id/video_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:src="@drawable/cf_icon_close_w" />
+
+    <ImageButton
+        android:id="@+id/vcv_img_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/cf_icon_play_l" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="10dp">
+
+        <SeekBar
+            android:id="@+id/vcv_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:indeterminateDrawable="@null"
+            android:maxHeight="13dp"
+            android:minHeight="13dp"
+            android:progressDrawable="@drawable/seekbar_video_background"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:thumb="@null"
+            android:thumbOffset="10dp" />
+
+        <TextView
+            android:id="@+id/vcv_txt_elapsed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/green1"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/vcv_txt_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white1"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/vcv_txt_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white1"
+            android:textSize="14dp" />
+
+        <ImageButton
+            android:id="@+id/vcv_img_fullscreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/gl_ls_icon_fullplay_normal" />
+    </LinearLayout>
+</RelativeLayout>

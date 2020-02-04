@@ -93,6 +93,7 @@ namespace UnrealBuildTool.Rules
 						"GameKit",
                         "AssetsLibrary",
                         "WebKit",
+                        "SafariServices",
                         "ReplayKit"
                     }
                 );

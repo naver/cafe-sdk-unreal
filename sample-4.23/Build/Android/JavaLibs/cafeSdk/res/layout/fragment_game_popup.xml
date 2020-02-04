@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?android:attr/selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_marginBottom="35dp"
+        android:id="@+id/relative_layout"
+        android:background="@color/black2_opacity_50"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_game_popup_landscape"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_game_popup_portrait"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/iv_game_popup_close"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="2dp"
+        android:src="@drawable/cf_icon_win_close" />
+
+    <CheckBox
+        android:id="@+id/iv_game_popup_not_again"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|start"
+        android:button="@drawable/cf_blt_check2cafe"
+        android:paddingStart="8dp"
+        android:text="오늘은 그만 보기"
+        android:textColor="@color/white1"
+        android:textSize="12dp"
+        android:visibility="gone"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="4dp"
+        tools:ignore="RtlSymmetry" />
+
+</RelativeLayout>

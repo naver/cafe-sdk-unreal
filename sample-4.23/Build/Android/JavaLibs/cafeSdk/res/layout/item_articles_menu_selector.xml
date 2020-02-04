@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white1">
+
+    <RelativeLayout
+        android:id="@+id/menu_list_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentRight="true">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray12" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/cf_icon_open_board" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="47dp"
+        android:background="@color/gray12" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:layout_toLeftOf="@+id/menu_list_button"
+        android:padding="0dp"
+        android:scrollbars="horizontal"
+        android:theme="@android:style/Theme.Holo.Light">
+
+        <RadioGroup
+            android:id="@+id/articles_menu_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <com.naver.plug.cafe.ui.widget.MenuRadioButton
+                android:id="@+id/articles_menu_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/bg_articles_menu_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@string/articles_tab_notice"
+                android:textColor="@color/black1"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <com.naver.plug.cafe.ui.widget.MenuRadioButton
+                android:id="@+id/articles_menu_event"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/bg_articles_menu_selector"
+                android:button="@null"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/menu_selector_padding"
+                android:paddingRight="@dimen/menu_selector_padding"
+                android:text="@string/articles_tab_event"
+                android:textColor="@color/black1"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <com.naver.plug.cafe.ui.widget.MenuRadioButton
+                android:id="@+id/articles_menu_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/bg_articles_menu_selector"
+                android:button="@null"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/menu_selector_padding"
+                android:paddingRight="@dimen/menu_selector_padding"
+                android:text="@string/articles_tab_tip"
+                android:textColor="@color/black1"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <com.naver.plug.cafe.ui.widget.MenuRadioButton
+                android:id="@+id/articles_menu_all_article"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/bg_articles_menu_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/menu_selector_padding"
+                android:paddingRight="@dimen/menu_selector_padding"
+                android:text="@string/articles_tab_all_article"
+                android:textColor="@color/black1"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </RadioGroup>
+
+    </HorizontalScrollView>
+
+</RelativeLayout>
